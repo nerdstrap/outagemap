@@ -1,3 +1,26 @@
+define(function (require) {
+    'use strict';
+
+    var _ = require('underscore');
+
+    // these modules setup functions & configuration that are used elsewhere
+    require('foundation');
+    require('cico-util');
+    require('routers/appRouter');
+
+    Backbone.history.start();
+
+    var doc = $(document);
+    if (doc.foundation) {
+        doc.foundation();
+    }
+
+    cicoStyleOverwrite.disableHover();
+
+});
+
+
+
 (window.onload = function () {
 
     var outageMapReportTemplate = Handlebars.compile('');

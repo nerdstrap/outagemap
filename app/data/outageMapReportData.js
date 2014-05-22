@@ -8,12 +8,18 @@ var outageMapReportData = {
     "incidents": [
         {
             "countyName": "Sullivan Co., TN",
+            "state": "TN",
+            "operatingUnit": "AEP-AP",
+            "repairIssues": 0,
             "customersWithoutPower": 0,
             "totalCustomers": 0,
             "percentage": 0
         },
         {
             "countyName": "Boone Co., WV",
+            "state": "WV",
+            "operatingUnit": "AEP-AP",
+            "repairIssues": 0,
             "customersWithoutPower": 0,
             "totalCustomers": 0,
             "percentage": 0
