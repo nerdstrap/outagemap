@@ -15,6 +15,7 @@ define(
                     extension = config.extension;
                 }
                 extension = extension || 'html';
+
                 var textName = 'text!' + name + '.' + extension;
 
                 return req(['Handlebars', textName], function (Handlebars, template) {

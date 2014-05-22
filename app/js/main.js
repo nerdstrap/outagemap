@@ -1,12 +1,12 @@
 require.config({
     config: {
         'env': {
-            apiUrl: '/outagemap/resources',
-            siteRoot: '/outagemap/app',
-            refreshFrequency: 60000
+            'apiUrl': '/outagemap/resources',
+            'siteRoot': '/outagemap/app',
+            'refreshFrequency': 60000
         },
         'require-hbs': {
-            extension: "html"
+            'extension': 'html'
         },
     },
     paths: {
@@ -15,11 +15,21 @@ require.config({
         'hbs': 'libs/require-hbs',
         'console': 'libs/console',
         'underscore': 'libs/lodash',
-        'Handlebars': 'libs/handlebars-helpers',
-        'handlebars-base': 'libs/handlebars',
+        'Handlebars': 'libs/handlebars',
         'json2': 'libs/json2',
         'globals': 'libs/globals',
-        'env': 'libs/env'
+        'env': 'libs/env',
+        'templates': '../templates',
+        'data': '../data',
+        'maps': '../maps'
+    },
+    shim: {
+        'underscore': {
+            exports: '_'
+        },
+        'Handlebars': {
+            exports: 'Handlebars'
+        }
     }
 });
 

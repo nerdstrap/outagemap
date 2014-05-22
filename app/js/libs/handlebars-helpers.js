@@ -1,7 +1,7 @@
 define(function (require) {
     'use strict';
 
-    var Handlebars = require('Handlebars');
+    var Handlebars = require('Handlebars-base');
 
     Handlebars.registerHelper('defaultValue', function (value, defaultValue, options) {
         if (value) {
