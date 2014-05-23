@@ -2,6 +2,9 @@
     'use strict';
 
     var outageMapData = {
-        "outageMapSrc": "http://localhost:53159/images/sample-map.png"
+        "outageMapSrc": "http://localhost:53159/images/sample-map.png",
+        "outageMapAlt": "what what?"
     };
+
+    return outageMapData;
 });
