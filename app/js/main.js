@@ -15,7 +15,9 @@ require.config({
         'hbs': 'libs/require-hbs',
         'console': 'libs/console',
         'underscore': 'libs/lodash',
-        'Handlebars': 'libs/handlebars',
+        'dates': 'libs/dates',
+        'Handlebars': 'libs/handlebars-helpers',
+        'Handlebars-base': 'libs/handlebars',
         'json2': 'libs/json2',
         'globals': 'libs/globals',
         'env': 'libs/env',
@@ -27,7 +29,7 @@ require.config({
         'underscore': {
             exports: '_'
         },
-        'Handlebars': {
+        'Handlebars-base': {
             exports: 'Handlebars'
         }
     }
