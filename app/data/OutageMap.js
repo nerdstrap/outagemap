@@ -2,7 +2,7 @@
     'use strict';
 
     var outageMapData = {
-        "outageMapSrc": "http://localhost:53159/images/sample-map.png",
+        "outageMapSrc": "/images/sample-map.png",
         "outageMapAlt": "what what?"
     };
 

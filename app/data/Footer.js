@@ -2,7 +2,7 @@
     'use strict';
 
     var footerData = {
-        "logoImageSrc": "http://localhost:53159/images/logo_apco_230x71.jpg",
+        "logoImageSrc": "/images/logo_apco_230x71.jpg",
         "logoImageAlt": "APCO"
     };
 
