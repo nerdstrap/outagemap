@@ -23,6 +23,8 @@ define(function (require) {
     var outageReportData = require('data/OutageReport');
     var outageMapLegendData = require('data/OutageMapLegend');
 
+    var apcoMap = require('svg!maps/apco');
+
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -58,7 +60,8 @@ define(function (require) {
     var outageMapElement = document.getElementById('outage-map-view');
     if (outageMapElement) {
         console.debug('OutageMapView.render()');
-        outageMapElement.innerHTML = outageMapTemplate(outageMapData);
+        /*outageMapElement.innerHTML = outageMapTemplate(outageMapData);*/
+        outageMapElement.innerHTML = apcoMap;
     }
 
     var outageReportElement = document.getElementById('outage-report-view');

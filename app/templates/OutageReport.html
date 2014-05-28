@@ -1,33 +1,31 @@
-﻿<div class="outage-report">
-    <div class="row">
-        <div class="col0">{{{titleText}}}</div>
-    </div>
-    <div class="row">
-        <div class="col0">{{{countyNameTitleText}}}</div>
-        <div class="col1">{{{customersWithoutPowerTitleText}}}</div>
-        <div class="col2">{{{totalCustomersTitleText}}}</div>
-        <div class="col3">{{{percentageTitleText}}}</div>
+﻿<div class="outage-report-view grid-100 grid-parent" >
+    <div class="grid-100">{{{titleText}}}</div>
+    <div class="grid-100 grid-parent">
+        <div class="grid-25">{{{countyNameTitleText}}}</div>
+        <div class="grid-25">{{{customersWithoutPowerTitleText}}}</div>
+        <div class="grid-25">{{{totalCustomersTitleText}}}</div>
+        <div class="grid-25">{{{percentageTitleText}}}</div>
     </div>
     {{#each incidents}}
-    <div class="row">
-        <div class="col0">{{{countyName}}}</div>
-        <div class="col1">{{customersWithoutPower}}</div>
-        <div class="col2">{{totalCustomers}}</div>
-        <div class="col3">{{percentage}}&#37;</div>
+    <div class="grid-100 grid-parent">
+        <div class="grid-25">{{{countyName}}}</div>
+        <div class="grid-25">{{customersWithoutPower}}</div>
+        <div class="grid-25">{{totalCustomers}}</div>
+        <div class="grid-25">{{percentage}}&#37;</div>
     </div>
     {{/each }}
     {{#each states}}
-    <div class="row">
-        <div class="col0">{{{stateName}}} totals&#58;</div>
-        <div class="col1">{{customersWithoutPower}}</div>
-        <div class="col2">{{totalCustomers}}</div>
-        <div class="col3">{{percentage}}&#37;</div>
+    <div class="grid-100 grid-parent">
+        <div class="grid-25">{{{stateName}}} totals&#58;</div>
+        <div class="grid-25">{{customersWithoutPower}}</div>
+        <div class="grid-25">{{totalCustomers}}</div>
+        <div class="grid-25">{{percentage}}&#37;</div>
     </div>
     {{/each}}
-    <div class="row">
-        <div class="col0">{{{grandTotalTitleText}}}</div>
-        <div class="col1">{{customersWithoutPower}}</div>
-        <div class="col2">{{totalCustomers}}</div>
-        <div class="col3">{{percentage}}&#37;</div>
+    <div class="grid-100 grid-parent">
+        <div class="grid-25">{{{grandTotalTitleText}}}</div>
+        <div class="grid-25">{{customersWithoutPower}}</div>
+        <div class="grid-25">{{totalCustomers}}</div>
+        <div class="grid-25">{{percentage}}&#37;</div>
     </div>
 </div>

@@ -13,6 +13,7 @@ require.config({
         'require': 'libs/require',
         'text': 'libs/require-text',
         'hbs': 'libs/require-hbs',
+        'svg': 'libs/require-svg',
         'console': 'libs/console',
         'underscore': 'libs/lodash',
         'dates': 'libs/dates',
