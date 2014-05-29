@@ -3,7 +3,6 @@ define(function (require) {
 
     var module = require('module'),
         Handlebars = require('Handlebars-base'),
-        globals = require('globals'),
         env = require('env'),
         dates = require('dates');
 
@@ -20,10 +19,7 @@ define(function (require) {
             return dates.format(date, format);
         },
         getAppUri: function (relativeUri) {
-            var appFolder = env.getAppFolder();
-            var absoluteUri = appFolder + relativeUri;
-
-            return absoluteUri;
+            return env.getAppFolder() + relativeUri;
         }
     };
 
