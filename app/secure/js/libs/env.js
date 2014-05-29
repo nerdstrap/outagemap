@@ -4,15 +4,15 @@ define(function (require) {
     var module = require('module'),
             masterConfig = module.config(),
             apiUrl = masterConfig.apiUrl || '',
-            siteRoot = masterConfig.siteRoot || '',
+            appFolder = masterConfig.appFolder || '',
             refreshFrequency = masterConfig.refreshFrequency || 60000;
 
     var env = {
         getApiUrl: function () {
             return apiUrl;
         },
-        getSiteRoot: function () {
-            return siteRoot;
+        getAppFolder: function () {
+            return appFolder;
         },
         getRefreshFrequency: function () {
             return refreshFrequency;

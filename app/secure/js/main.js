@@ -1,8 +1,8 @@
 require.config({
     config: {
         'env': {
-            'apiUrl': '/outagemap/resources',
-            'siteRoot': '/outagemap/app',
+            'apiUrl': '/resources',
+            'appFolder': '/secure',
             'refreshFrequency': 60000
         },
         'require-hbs': {
