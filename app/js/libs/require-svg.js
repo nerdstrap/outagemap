@@ -14,7 +14,7 @@ define(
                 if (config.extension) {
                     extension = config.extension;
                 }
-                extension = extension || 'js';
+                extension = extension || 'svg';
 
                 var textName = 'text!' + name + '.' + extension;
 
