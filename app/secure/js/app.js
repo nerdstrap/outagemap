@@ -24,6 +24,7 @@ define(function (require) {
     var outageMapLegendData = require('data/OutageMapLegend');
 
     var apcoMap = require('svg!maps/apco');
+    var aepohioMap = require('svg!maps/aepohio');
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ define(function (require) {
     if (outageMapElement) {
         console.debug('OutageMapView.render()');
         /*outageMapElement.innerHTML = outageMapTemplate(outageMapData);*/
-        outageMapElement.innerHTML = apcoMap;
+        outageMapElement.innerHTML = aepohioMap;
     }
 
     var outageReportElement = document.getElementById('outage-report-view');

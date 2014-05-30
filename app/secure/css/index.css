@@ -46,7 +46,8 @@
     float: right;
 }
 
-.outage-map-view {
+#outage-map-view {
+    background-color: green;
 }
 
 .outage-report-view {

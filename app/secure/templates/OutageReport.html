@@ -1,31 +1,63 @@
-﻿<div class="outage-report-view grid-100 grid-parent" >
-    <div class="grid-100">{{{titleText}}}</div>
-    <div class="grid-100 grid-parent">
-        <div class="grid-25">{{{countyNameTitleText}}}</div>
-        <div class="grid-25">{{{customersWithoutPowerTitleText}}}</div>
-        <div class="grid-25">{{{totalCustomersTitleText}}}</div>
-        <div class="grid-25">{{{percentageTitleText}}}</div>
+﻿<div class="outage-report-view">
+    <div class="row">{{{titleText}}}</div>
+    <div class="row">
+        <div class="small-3 columns">
+            <span>{{{countyNameTitleText}}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{{customersWithoutPowerTitleText}}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{{totalCustomersTitleText}}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{{percentageTitleText}}}</span>
+        </div>
     </div>
     {{#each incidents}}
-    <div class="grid-100 grid-parent">
-        <div class="grid-25">{{{countyName}}}</div>
-        <div class="grid-25">{{customersWithoutPower}}</div>
-        <div class="grid-25">{{totalCustomers}}</div>
-        <div class="grid-25">{{percentage}}&#37;</div>
+    <div class="row">
+        <div class="small-3 columns">
+            <span>{{{countyName}}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{customersWithoutPower}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{totalCustomers}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{percentage}}&#37;</span>
+        </div>
     </div>
     {{/each }}
     {{#each states}}
-    <div class="grid-100 grid-parent">
-        <div class="grid-25">{{{stateName}}} totals&#58;</div>
-        <div class="grid-25">{{customersWithoutPower}}</div>
-        <div class="grid-25">{{totalCustomers}}</div>
-        <div class="grid-25">{{percentage}}&#37;</div>
+    <div class="row">
+        <div class="small-3 columns">
+            <span>{{{stateName}}} totals&#58;</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{customersWithoutPower}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{totalCustomers}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{percentage}}&#37;</span>
+        </div>
     </div>
     {{/each}}
-    <div class="grid-100 grid-parent">
-        <div class="grid-25">{{{grandTotalTitleText}}}</div>
-        <div class="grid-25">{{customersWithoutPower}}</div>
-        <div class="grid-25">{{totalCustomers}}</div>
-        <div class="grid-25">{{percentage}}&#37;</div>
+    <div class="row">
+        <div class="small-3 columns">
+            <span>{{{grandTotalTitleText}}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{customersWithoutPower}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{totalCustomers}}</span>
+        </div>
+        <div class="small-3 columns">
+            <span>{{percentage}}&#37;</span>
+        </div>
     </div>
 </div>

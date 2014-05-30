@@ -1,13 +1,18 @@
-﻿<div class="content-view grid-100 grid-parent">
-    <div class="grid-100">
+﻿<div class="content-view row">
+    <div class="small-12 columns">
         <div class="timestamp">Last updated&#58;&#160;{{{formatDate timestamp "%Y-%m-%d %H:%M:%S %p GMT"}}}</div>
     </div>
-    <div id="outage-map-view" class="grid-100"></div>
-    <div id="outage-report-view" class="hidden grid-100 grid-parent"></div>
-    <div class="grid-100">
-        <div class="service-statistics">{{{serviceStatistics}}}</div>
+</div>
+<div class="row">
+    <div id="outage-map-view" class="small-12 columns"></div>
+</div>
+<div class="row">
+    <div id="outage-report-view" class="small-12 columns">
     </div>
-    <div class="grid-100">
+    <div class="service-statistics">{{{serviceStatistics}}}</div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
         <div class="disclaimer">{{{disclaimer}}}</div>
     </div>
 </div>
