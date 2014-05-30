@@ -1,18 +1,18 @@
-﻿<div class="content-view row">
-    <div class="small-12 columns">
-        <div class="timestamp">Last updated&#58;&#160;{{{formatDate timestamp "%Y-%m-%d %H:%M:%S %p GMT"}}}</div>
+﻿<div class="content-view">
+    <div class="row">
+        <div class="small-12 columns">
+            <span class="timestamp">Last updated&#58;&#160;{{{formatDate timestamp "%Y-%m-%d %H:%M:%S %p GMT"}}}</span>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div id="outage-map-view" class="small-12 columns"></div>
-</div>
-<div class="row">
-    <div id="outage-report-view" class="small-12 columns">
+    <div class="row">
+        <div id="outage-map-view" class="small-12 columns"></div>
     </div>
-    <div class="service-statistics">{{{serviceStatistics}}}</div>
-</div>
-<div class="row">
-    <div class="small-12 columns">
-        <div class="disclaimer">{{{disclaimer}}}</div>
+    <div class="row">
+        <div id="outage-report-view" class="small-12 columns hidden"></div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <span class="service-statistics">{{{serviceStatistics}}}</span>
+        </div>
     </div>
 </div>

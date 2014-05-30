@@ -39,6 +39,7 @@
 /************************************************/
 
 .content-view {
+    background-color: #dedede;
 }
 
 .timestamp {
@@ -46,12 +47,10 @@
     float: right;
 }
 
-#outage-map-view {
-    background-color: #dedede;
+.outage-map-view {
 }
 
-#outage-report-view {
-    background-color: #dedede;
+.outage-report-view {
 }
 
 .service-statistics {
