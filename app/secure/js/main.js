@@ -24,6 +24,7 @@ require.config({
         'env': 'libs/env',
         'templates': '../templates',
         'data': '../data',
+        'views': '../views',
         'maps': '../maps'
     },
     shim: {
