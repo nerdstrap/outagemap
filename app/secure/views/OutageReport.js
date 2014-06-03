@@ -4,10 +4,10 @@
     var outageReportView = {
         "titleText": "Customer Outages",
         "countyNameTitleText": "County",
-        "customersWithoutPowerTitleText": "Customers Without Power",
-        "totalCustomersTitleText": "Total Customers",
+        "customersAffectedTitleText": "Customers Without Power",
+        "customersServedTitleText": "Total Customers",
         "percentageTitleText": "Percentage&#40;&#37;&#41;",
-        "grandTotalTitleText": "Grand Total&#58;",
+        "grandTotalTitleText": "Grand Total&#58;"
     };
 
     return outageReportView;

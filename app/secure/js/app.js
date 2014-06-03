@@ -26,6 +26,8 @@ define(function (require) {
     var apcoMap = require('svg!maps/apco');
     var aepohioMap = require('svg!maps/aepohio');
 
+    var oms2aepwebData = require('data/oms2aepweb');
+
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -55,7 +57,8 @@ define(function (require) {
     var contentViewElement = document.getElementById('content-view');
     if (contentViewElement) {
         console.debug('ContentView.render()');
-        contentViewElement.innerHTML = contentTemplate(contentData);
+        var renderModel = _.assign({}, contentData, { "timestamp": oms2aepwebData.timestamp });
+        contentViewElement.innerHTML = contentTemplate(renderModel);
     }
 
     var outageMapElement = document.getElementById('outage-map-view');
@@ -68,6 +71,10 @@ define(function (require) {
     var outageReportElement = document.getElementById('outage-report-view');
     if (outageReportElement) {
         console.debug('OutageReportView.render()');
+        //var region = globals.window.location.search;
+        //if (region && region.length > 0) {
+        //}
+        var renderModel = _.assign({}, [outageReportData, oms2aepwebData]);
         outageReportElement.innerHTML = outageReportTemplate(outageReportData);
     }
 
