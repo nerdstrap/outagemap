@@ -17,6 +17,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     ShellView.prototype.resources = function resources(culture) {
@@ -31,19 +32,19 @@
 
             var headerView = new HeaderView({
                 el: document.getElementById('header-view'),
-                model: {}
+                model: this.model
             });
             headerView.render();
 
             var contentView = new ContentView({
                 el: document.getElementById('content-view'),
-                model: {}
+                model: this.model
             });
             contentView.render();
 
             var footerView = new FooterView({
                 el: document.getElementById('footer-view'),
-                model: {}
+                model: this.model
             });
             footerView.render();
         }

@@ -1,8 +1,8 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore');
-    var template = require('hbs!templates/OutageMapLegend');
+    var _ = require('underscore'),
+        template = require('hbs!templates/OutageMapLegend');
 
     function OutageMapLegendView(options) {
         console.debug('new OutageMapLegendView()');
@@ -14,6 +14,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     OutageMapLegendView.prototype.resources = function resources(culture) {

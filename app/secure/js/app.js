@@ -2,50 +2,17 @@ define(function (require) {
     'use strict';
 
     var _ = require('underscore'),
-        ShellView = require('views/ShellView');
-
-    var apcoMap = require('svg!maps/apco');
-    var aepohioMap = require('svg!maps/aepohio');
-
-    var oms2aepwebData = require('data/oms2aepweb');
-
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
+        ShellView = require('views/ShellView'),
+        oms2aepwebData = require('data/oms2aepweb');
 
     var shellView = new ShellView({
         el: document.getElementById('shell-view'),
-        model: {}
+        model: oms2aepwebData
     });
     shellView.render();
 
-    var showOutageMapViewButton = document.getElementById('show-outage-map-view-button');
+    /*var showOutageMapViewButton = document.getElementById('show-outage-map-view-button');
     var showOutageReportViewButton = document.getElementById('show-outage-report-view-button');
-
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
-
-    var outageMapElement = document.getElementById('outage-map-view');
-    if (outageMapElement) {
-        console.debug('OutageMapView.render()');
-        /*outageMapElement.innerHTML = outageMapTemplate(outageMapData);*/
-        outageMapElement.innerHTML = aepohioMap;
-    }
-
-    var outageReportElement = document.getElementById('outage-report-view');
-    if (outageReportElement) {
-        console.debug('OutageReportView.render()');
-        //var region = globals.window.location.search;
-        //if (region && region.length > 0) {
-        //}
-        var renderModel = _.assign({}, [outageReportData, oms2aepwebData]);
-        outageReportElement.innerHTML = outageReportTemplate(outageReportData);
-    }
-
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
 
     var showOutageMapView = function (event) {
         console.debug('showOutageMapView()');
@@ -91,5 +58,5 @@ define(function (require) {
 
     if (showOutageReportViewButton) {
         showOutageReportViewButton.onclick = showOutageReportView;
-    }
+    }*/
 });

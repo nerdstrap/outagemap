@@ -1,8 +1,8 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore');
-    var template = require('hbs!templates/Header');
+    var _ = require('underscore'),
+        template = require('hbs!templates/Header');
 
     function HeaderView(options) {
         console.debug('new HeaderView()');
@@ -14,6 +14,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     HeaderView.prototype.resources = function resources(culture) {

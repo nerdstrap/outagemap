@@ -1,10 +1,10 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore');
-    var template = require('hbs!templates/OutageReport');
+    var _ = require('underscore'),
+        template = require('hbs!templates/OutageReport');
 
-    function OutageReportView(options) {
+    var OutageReportView = function(options) {
         console.debug('new OutageReportView()');
         options || (options = {});
         this.initialize.apply(this, arguments);
@@ -14,6 +14,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     OutageReportView.prototype.resources = function resources(culture) {

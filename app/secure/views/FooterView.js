@@ -1,8 +1,9 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore');
-    var template = require('hbs!templates/Footer');
+    var _ = require('underscore'),
+        OutageMapLegendView = require('views/OutageMapLegendView'),
+        template = require('hbs!templates/Footer');
 
     function FooterView(options) {
         console.debug('new FooterView()');
@@ -14,6 +15,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     FooterView.prototype.resources = function resources(culture) {
@@ -28,6 +30,12 @@
         if (this.el) {
             this.el.innerHTML = template(renderModel);
         }
+
+        var outageMapLegendView = new OutageMapLegendView({
+            el: document.getElementById('outage-map-legend-view'),
+            model: this.model
+        });
+
         return this;
     };
 

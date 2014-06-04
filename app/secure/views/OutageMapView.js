@@ -1,8 +1,8 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore');
-    var template = require('hbs!templates/OutageMap');
+    var _ = require('underscore'),
+        template = require('hbs!templates/OutageMap');
 
     function OutageMapView(options) {
         console.debug('new OutageMapView()');
@@ -14,6 +14,7 @@
         options || (options = {});
         this.el = options.el;
         this.model = options.model;
+        this.dispatcher = options.dispatcher || this;
     };
 
     OutageMapView.prototype.resources = function resources(culture) {
