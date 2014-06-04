@@ -2,33 +2,43 @@
     'use strict';
 
     var _ = require('underscore'),
+        View = require('View'),
+        env = require('env'),
         template = require('hbs!templates/OutageMap');
 
-    function OutageMapView(options) {
-        console.debug('new OutageMapView()');
-        options || (options = {});
-        this.initialize.apply(this, arguments);
-    };
+    var OutageMapView = View.extend({
+        initialize: function (options) {
+            console.debug('OutageMapView.initialize()');
+            options || (options = {});
+            this.el = options.el;
+            this.model = options.model;
+            this.dispatcher = options.dispatcher || this;
 
-    OutageMapView.prototype.initialize = function initialize(options) {
-        options || (options = {});
-        this.el = options.el;
-        this.model = options.model;
-        this.dispatcher = options.dispatcher || this;
-    };
+            this.region = env.getParameterByName('region');
+        },
 
-    OutageMapView.prototype.resources = function resources(culture) {
-        return {};
-    }
+        resources: function (culture) {
+            return {};
+        },
 
-    OutageMapView.prototype.render = function render() {
-        console.debug('OutageMapView.render()');
-        var renderModel = _.assign({}, this.resources(), this.model);
-        if (this.el) {
-            this.el.innerHTML = template(renderModel);
+        render: function () {
+            console.debug('OutageMapView.render()');
+            var currentContext = this;
+            var renderModel = _.extend({}, this.resources(), this.model);
+            if (this.el) {
+                this.el.innerHTML = template(renderModel);
+            }
+
+            require(['svg!maps/' + this.region], function (map) {
+                var svgElement = document.getElementById('svg-container');
+                if (svgElement) {
+                    svgElement.innerHTML = map;
+                }
+            });
+
+            return this;
         }
-        return this;
-    };
+    });
 
     return OutageMapView;
 });

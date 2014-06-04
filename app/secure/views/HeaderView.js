@@ -2,36 +2,37 @@
     'use strict';
 
     var _ = require('underscore'),
+        View = require('View'),
         template = require('hbs!templates/Header');
 
-    function HeaderView(options) {
-        console.debug('new HeaderView()');
-        options || (options = {});
-        this.initialize.apply(this, arguments);
-    };
+    var HeaderView = View.extend({
+        initialize: function (options) {
+            console.debug('HeaderView.initialize()');
+            options || (options = {});
+            this.el = options.el;
+            this.model = options.model;
+            this.dispatcher = options.dispatcher || this;
+        },
 
-    HeaderView.prototype.initialize = function initialize(options) {
-        options || (options = {});
-        this.el = options.el;
-        this.model = options.model;
-        this.dispatcher = options.dispatcher || this;
-    };
+        resources: function (culture) {
+            return {
+                'showOutageMapViewButtonText': 'View outage map',
+                'showOutageReportViewButtonText': 'View outage report'
+            };
+        },
 
-    HeaderView.prototype.resources = function resources(culture) {
-        return {
-            'showOutageMapViewButtonText': 'View outage map',
-            'showOutageReportViewButtonText': 'View outage report'
-        };
-    }
+        render: function () {
+            console.debug('HeaderView.render()');
+            var renderModel = _.extend({}, this.resources(), this.model);
+            if (this.el) {
+                this.el.innerHTML = template(renderModel);
+            }
 
-    HeaderView.prototype.render = function render() {
-        console.debug('HeaderView.render()');
-        var renderModel = _.assign({}, this.resources(), this.model);
-        if (this.el) {
-            this.el.innerHTML = template(renderModel);
+
+
+            return this;
         }
-        return this;
-    };
+    });
 
     return HeaderView;
 });
