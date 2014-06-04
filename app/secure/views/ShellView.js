@@ -1,19 +1,18 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore'),
-        View = require('View'),
+    var $ = require('jquery'),
+        _ = require('underscore'),
+        Backbone = require('backbone'),
         HeaderView = require('views/HeaderView'),
         ContentView = require('views/ContentView'),
         FooterView = require('views/FooterView'),
         template = require('hbs!templates/Shell');
 
-    var ShellView = View.extend({
+    var ShellView = Backbone.View.extend({
         initialize: function (options) {
             console.debug('ShellView.initialize()');
             options || (options = {});
-            this.el = options.el;
-            this.model = options.model;
             this.dispatcher = options.dispatcher || this;
         },
 
@@ -23,28 +22,29 @@
 
         render: function () {
             console.debug('ShellView.render()');
+            var currentContext = this;
+
             var renderModel = _.extend({}, this.resources(), this.model);
-            if (this.el) {
-                this.el.innerHTML = template(renderModel);
+            this.$el.html(template(renderModel));
 
-                var headerView = new HeaderView({
-                    el: document.getElementById('header-view'),
-                    model: this.model
-                });
-                headerView.render();
+            var headerView = new HeaderView({
+                el: $('#header-view', currentContext.$el),
+                model: currentContext.model
+            });
+            headerView.render();
 
-                var contentView = new ContentView({
-                    el: document.getElementById('content-view'),
-                    model: this.model
-                });
-                contentView.render();
+            var contentView = new ContentView({
+                el: $('#content-view', currentContext.$el),
+                model: currentContext.model
+            });
+            contentView.render();
 
-                var footerView = new FooterView({
-                    el: document.getElementById('footer-view'),
-                    model: this.model
-                });
-                footerView.render();
-            }
+            var footerView = new FooterView({
+                el: $('#footer-view', currentContext.$el),
+                model: currentContext.model
+            });
+            footerView.render();
+
             return this;
         }
     });

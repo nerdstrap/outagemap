@@ -1,17 +1,16 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore'),
-        View = require('View'),
+    var $ = require('jquery'),
+        _ = require('underscore'),
+        Backbone = require('backbone'),
         env = require('env'),
         template = require('hbs!templates/OutageMap');
 
-    var OutageMapView = View.extend({
+    var OutageMapView = Backbone.View.extend({
         initialize: function (options) {
             console.debug('OutageMapView.initialize()');
             options || (options = {});
-            this.el = options.el;
-            this.model = options.model;
             this.dispatcher = options.dispatcher || this;
 
             this.region = env.getParameterByName('region');
@@ -24,10 +23,9 @@
         render: function () {
             console.debug('OutageMapView.render()');
             var currentContext = this;
+
             var renderModel = _.extend({}, this.resources(), this.model);
-            if (this.el) {
-                this.el.innerHTML = template(renderModel);
-            }
+            this.$el.html(template(renderModel));
 
             require(['svg!maps/' + this.region], function (map) {
                 var svgElement = document.getElementById('svg-container');

@@ -1,16 +1,16 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore'),
-        View = require('View'),
+    var $ = require('jquery'),
+        _ = require('underscore'),
+        Backbone = require('backbone'),
+        appEvents = require('app-events'),
         template = require('hbs!templates/Header');
 
-    var HeaderView = View.extend({
+    var HeaderView = Backbone.View.extend({
         initialize: function (options) {
             console.debug('HeaderView.initialize()');
             options || (options = {});
-            this.el = options.el;
-            this.model = options.model;
             this.dispatcher = options.dispatcher || this;
         },
 
@@ -21,16 +21,35 @@
             };
         },
 
+        events: {
+            'click #show-outage-report-view-button': 'showOutageReportView',
+            'click #show-outage-map-view-button': 'showOutageMapView'
+        },
+
         render: function () {
             console.debug('HeaderView.render()');
+            var currentContext = this;
+
             var renderModel = _.extend({}, this.resources(), this.model);
-            if (this.el) {
-                this.el.innerHTML = template(renderModel);
-            }
-
-
+            this.$el.html(template(renderModel));
 
             return this;
+        },
+
+        showOutageReportView: function (event) {
+            console.debug('HeaderView.showOutageReportView()');
+            if (event) {
+                event.preventDefault();
+            }
+            this.dispatcher.trigger(appEvents.showOutageReport);
+        },
+
+        showOutageMapView: function (event) {
+            console.debug('HeaderView.showOutageMapView()');
+            if (event) {
+                event.preventDefault();
+            }
+            this.dispatcher.trigger(appEvents.showOutageMapView);
         }
     });
 

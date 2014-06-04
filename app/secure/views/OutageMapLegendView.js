@@ -1,16 +1,15 @@
 ﻿define(function (require) {
     'use strict';
 
-    var _ = require('underscore'),
-        View = require('View'),
+    var $ = require('jquery'),
+        _ = require('underscore'),
+        Backbone = require('backbone'),
         template = require('hbs!templates/OutageMapLegend');
 
-    var OutageMapLegendView = View.extend({
+    var OutageMapLegendView = Backbone.View.extend({
         initialize: function (options) {
             console.debug('OutageMapLegendView.initialize()');
             options || (options = {});
-            this.el = options.el;
-            this.model = options.model;
             this.dispatcher = options.dispatcher || this;
         },
 
@@ -32,10 +31,11 @@
 
         render: function () {
             console.debug('OutageMapLegendView.render()');
+            var currentContext = this;
+
             var renderModel = _.extend({}, this.resources(), this.model);
-            if (this.el) {
-                this.el.innerHTML = template(renderModel);
-            }
+            this.$el.html(template(renderModel));
+
             return this;
         }
     });

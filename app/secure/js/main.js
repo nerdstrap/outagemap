@@ -11,11 +11,13 @@ require.config({
     },
     paths: {
         'require': 'libs/require',
+        'jquery': 'libs/jquery',
+        'underscore': 'libs/lodash',
+        'backbone': 'libs/backbone',
         'text': 'libs/require-text',
         'hbs': 'libs/require-hbs',
         'svg': 'libs/require-svg',
         'console': 'libs/console',
-        'underscore': 'libs/lodash',
         'extend': 'libs/extend',
         'Events': 'libs/Events',
         'View': 'libs/View',
@@ -25,12 +27,18 @@ require.config({
         'json2': 'libs/json2',
         'globals': 'libs/globals',
         'env': 'libs/env',
+        'app-events': 'libs/app-events',
+        'routers': '../routers',
         'templates': '../templates',
         'data': '../data',
         'views': '../views',
         'maps': '../maps'
     },
     shim: {
+        'backbone': {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
         'underscore': {
             exports: '_'
         },
