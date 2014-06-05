@@ -41,7 +41,7 @@
             if (event) {
                 event.preventDefault();
             }
-            this.dispatcher.trigger(appEvents.showOutageReport);
+            appEvents.trigger(appEvents.showOutageReport);
         },
 
         showOutageMapView: function (event) {
@@ -49,7 +49,7 @@
             if (event) {
                 event.preventDefault();
             }
-            this.dispatcher.trigger(appEvents.showOutageMapView);
+            appEvents.trigger(appEvents.showOutageMapView);
         }
     });
 
