@@ -45,7 +45,7 @@
 
             currentContext.router.swapContent(contentViewInstance);
             var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
-            currentContext.router.navigate('outageReport?report=' + region, { replace: fragmentAlreadyMatches });
+            currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
             deferred.resolve(contentViewInstance);
 
             return deferred.promise();

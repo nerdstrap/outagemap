@@ -31,12 +31,15 @@
             });
         },
         routes: {
-            '?region=:region': 'goToOutageReport',
+            '': 'defaultRoute',
             'outageReport?region=:region': 'goToOutageReport'
         },
-        goToOutageReport: function (regionName) {
+        defaultRoute: function () {
+            console.debug('appRouter.defaultRoute()');
+        },
+        goToOutageReport: function (region) {
             console.debug('appRouter.goToOutageReport()');
-            this.outageReportControllerInstance.goToOutageReport(regionName);
+            this.outageReportControllerInstance.goToOutageReport(region);
         },
         navigate: function (fragment, options) {
             SwappingRouter.prototype.navigate.call(this, fragment, options);
