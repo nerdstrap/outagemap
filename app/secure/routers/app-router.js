@@ -31,13 +31,11 @@
             });
         },
         routes: {
-            '': 'defaultRoute',
+            '': 'goToOutageReport',
             'outageReport?region=:region': 'goToOutageReport'
         },
-        defaultRoute: function () {
-            console.debug('appRouter.defaultRoute()');
-        },
         goToOutageReport: function (region) {
+            region = region || 'aepohio';
             console.debug('appRouter.goToOutageReport()');
             this.outageReportControllerInstance.goToOutageReport(region);
         },
