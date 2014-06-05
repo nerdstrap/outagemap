@@ -27,7 +27,7 @@
 
             this.outageReportControllerInstance = new OutageReportController({
                 router: currentContext,
-                model: outageReportModelInstance
+                outageReportModelInstance: outageReportModelInstance
             });
         },
         routes: {

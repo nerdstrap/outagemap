@@ -28,7 +28,6 @@
         */
         initialize: function (options) {
             console.debug('OutageReportController.initialize');
-            options || (options = {});
             this.dispatcher = options.dispatcher || appEvents;
         },
         /** Navigates to the outage map

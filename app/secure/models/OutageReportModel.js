@@ -24,17 +24,10 @@
                 return xhr;
             }
         },
-        set: function (attributes, options) {
-            if (typeof attributes === 'object') {
-            }
-            return Backbone.Model.prototype.set.call(this, attributes, options);
-        },
-        getCurrentOutageReport: function (successCallback, errorCallback) {
+        getCurrentOutageReport: function () {
             var xhr = this.fetch({
                 url: env.getApiUrl() + '/getCurrentOutageReport',
-                reset: true,
-                success: successCallback,
-                error: errorCallback
+                reset: true
             });
 
             return xhr;
