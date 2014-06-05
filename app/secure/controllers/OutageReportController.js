@@ -1,0 +1,56 @@
+﻿define(function (require) {
+    'use strict';
+
+    var $ = require('jquery'),
+        _ = require('underscore'),
+        Backbone = require('backbone'),
+        appEvents = require('app-events'),
+        ContentView = require('views/ContentView');
+
+    /**
+    * Creates a new OutageReportController with the specified attributes.
+    * @constructor
+    * @param {object} options
+    */
+    var OutageReportController = function (options) {
+        console.debug('new OutageReportController()');
+        options || (options = {});
+        this.router = options.router;
+        this.outageReportModelInstance = options.outageReportModelInstance;
+
+        this.initialize.apply(this, arguments);
+    };
+
+    _.extend(OutageReportController.prototype, Backbone.Events, {
+        /** @class OutageReportController
+        * @contructs OutageReportController object
+        * @param {object} options
+        */
+        initialize: function (options) {
+            console.debug('OutageReportController.initialize');
+            options || (options = {});
+            this.dispatcher = options.dispatcher || appEvents;
+        },
+        /** Navigates to the outage map
+         */
+        goToOutageReport: function (region) {
+            console.debug('ShellController.goToOutageReport');
+            var currentContext = this,
+                deferred = $.Deferred();
+
+            var contentViewInstance = new ContentView({
+                region: region,
+                model: currentContext.outageReportModelInstance
+            });
+
+            currentContext.router.swapContent(contentViewInstance);
+            var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
+            currentContext.router.navigate('outageReport?report=' + region, { replace: fragmentAlreadyMatches });
+            deferred.resolve(contentViewInstance);
+
+            return deferred.promise();
+        }
+    });
+
+    return OutageReportController;
+});

@@ -4,25 +4,43 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        SwappingRouter = require('routers/SwappingRouter'),
         ShellView = require('views/ShellView'),
-        oms2aepwebData = require('data/oms2aepweb');
+        OutageReportController = require('controllers/OutageReportController'),
+        OutageReportModel = require('models/OutageReportModel');
 
-    var AppRouter = Backbone.Router.extend({
+    var AppRouter = SwappingRouter.extend({
         initialize: function (options) {
             console.debug('appRouter.initialize');
             options || (options = {});
             var currentContext = this;
-            var shellView = new ShellView({
-                el: $('shell-view'),
-                model: oms2aepwebData
+
+            var outageReportModelInstance = new OutageReportModel();
+
+            var shellViewInstance = new ShellView({
+                el: $('#shell-view'),
+                model: outageReportModelInstance
             });
-            shellView.render();
+            shellViewInstance.render();
+            this.contentViewEl = shellViewInstance.contentViewEl();
+            outageReportModelInstance.getCurrentOutageReport();
+
+            this.outageReportControllerInstance = new OutageReportController({
+                router: currentContext,
+                model: outageReportModelInstance
+            });
         },
         routes: {
-            '': 'outageMap'
+            '?region=:region': 'goToOutageReport',
+            'outageReport?region=:region': 'goToOutageReport'
         },
-        outageMap: function () {
-            console.debug('appRouter.outageMap');
+        goToOutageReport: function (regionName) {
+            console.debug('appRouter.goToOutageReport()');
+            this.outageReportControllerInstance.goToOutageReport(regionName);
+        },
+        navigate: function (fragment, options) {
+            SwappingRouter.prototype.navigate.call(this, fragment, options);
+            this.trigger('after-navigate', fragment, options);
         }
     });
 

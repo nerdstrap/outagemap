@@ -33,12 +33,6 @@
             });
             headerView.render();
 
-            var contentView = new ContentView({
-                el: $('#content-view', currentContext.$el),
-                model: currentContext.model
-            });
-            contentView.render();
-
             var footerView = new FooterView({
                 el: $('#footer-view', currentContext.$el),
                 model: currentContext.model
@@ -46,7 +40,11 @@
             footerView.render();
 
             return this;
-        }
+        },
+
+        contentViewEl: function () {
+            return $('#content-view', this.el);
+        },
     });
 
     return ShellView;
