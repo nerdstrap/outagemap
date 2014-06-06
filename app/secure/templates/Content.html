@@ -1,14 +1,16 @@
 ﻿<div class="content-view">
     <div class="row">
         <div class="small-12 columns">
-            <span class="timestamp">{{{lastUpdateTitleText}}}{{{formatDate timestamp "%Y-%m-%d %H:%M:%S %p GMT"}}}</span>
+            <div class="outageReportTimestamp">
+                <span>{{{lastUpdatedTitleText}}}</span><span id="timestamp">{{{timestamp}}}</span>
+            </div>
         </div>
     </div>
     <div class="row">
         <div id="outage-map-view" class="small-12 columns"></div>
     </div>
     <div class="row">
-        <div id="outage-report-view" class="small-12 columns hidden"></div>
+        <div id="outage-report-view" class="small-12 columns"></div>
     </div>
     <div class="row">
         <div class="small-12 columns">

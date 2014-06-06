@@ -16,8 +16,9 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
 
-            this.listenTo(appEvents, appEvents.showOutageMapView, this.showOutageMapView);
-            this.listenTo(appEvents, appEvents.showOutageReportView, this.showOutageReportView);
+            this.listenTo(this.model, 'sync', this.updateViewFromModel);
+            this.listenTo(appEvents, appEvents.showOutageMap, this.showOutageMapView);
+            this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageReportView);
         },
 
         resources: function (culture) {
@@ -30,34 +31,38 @@
             console.debug('ContentView.render()');
             var currentContext = this;
 
-            var renderModel = _.extend({}, this.resources(), this.model);
+            var renderModel = _.extend({}, this.resources(), this.model.attributes);
             this.$el.html(template(renderModel));
 
-            this.outageMapView = new OutageMapView({
+            var outageMapView = new OutageMapView({
                 el: $('#outage-map-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher
             });
-            this.renderChild(this.outageMapView);
+            this.renderChild(outageMapView);
 
-            this.outageReportView = new OutageReportView({
+            var outageReportView = new OutageReportView({
                 el: $('#outage-report-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher
             });
-            this.renderChild(this.outageReportView);
+            this.renderChild(outageReportView);
 
             return this;
         },
 
+        updateViewFromModel: function () {
+            this.$('#timestamp').html(this.model.get('timestamp'));
+        },
+
         showOutageReportView: function (event) {
-            this.outageMapView.addClass('hidden');
-            this.outageReportView.removeClass('hidden');
+            this.$('#outage-map-view').addClass('hidden');
+            this.$('#outage-report-view').removeClass('hidden');
         },
 
         showOutageMapView: function (event) {
-            this.outageReportView.addClass('hidden');
-            this.outageMapView.removeClass('hidden');
+            this.$('#outage-report-view').addClass('hidden');
+            this.$('#outage-map-view').removeClass('hidden');
         }
     });
 

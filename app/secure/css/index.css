@@ -26,7 +26,7 @@ root {
     background-color: #dedede;
 }
 
-.timestamp {
+.outageReportTimestamp {
     text-align: right;
     float: right;
 }

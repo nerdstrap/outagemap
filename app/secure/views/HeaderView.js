@@ -23,8 +23,8 @@
         },
 
         events: {
-            'click #show-outage-report-view-button': 'showOutageReportView',
-            'click #show-outage-map-view-button': 'showOutageMapView'
+            'click #show-outage-report-view-button': 'showOutageReportClick',
+            'click #show-outage-map-view-button': 'showOutageMapClick'
         },
 
         render: function () {
@@ -37,7 +37,7 @@
             return this;
         },
 
-        showOutageReportView: function (event) {
+        showOutageReportClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
@@ -46,13 +46,13 @@
             appEvents.trigger(appEvents.showOutageReport);
         },
 
-        showOutageMapView: function (event) {
+        showOutageMapClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
             this.$('#show-outage-map-view-button').addClass('hidden');
             this.$('#show-outage-report-view-button').removeClass('hidden');
-            appEvents.trigger(appEvents.showOutageMapView);
+            appEvents.trigger(appEvents.showOutageMap);
         },
 
     });
