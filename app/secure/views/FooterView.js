@@ -4,10 +4,11 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        CompositeView = require('views/CompositeView'),
         OutageMapLegendView = require('views/OutageMapLegendView'),
         template = require('hbs!templates/Footer');
 
-    var FooterView = Backbone.View.extend({
+    var FooterView = CompositeView.extend({
         initialize: function (options) {
             console.debug('FooterView.initialize()');
             options || (options = {});
@@ -34,7 +35,7 @@
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher
             });
-            outageMapLegendView.render();
+            this.renderChild(outageMapLegendView);
 
             return this;
         }

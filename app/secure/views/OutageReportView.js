@@ -4,9 +4,10 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        CompositeView = require('views/CompositeView'),
         template = require('hbs!templates/OutageReport');
 
-    var OutageReportView = Backbone.View.extend({
+    var OutageReportView = CompositeView.extend({
         initialize: function (options) {
             console.debug('OutageReportView.initialize()');
             options || (options = {});

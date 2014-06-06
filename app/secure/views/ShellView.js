@@ -4,12 +4,13 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        CompositeView = require('views/CompositeView'),
         HeaderView = require('views/HeaderView'),
         ContentView = require('views/ContentView'),
         FooterView = require('views/FooterView'),
         template = require('hbs!templates/Shell');
 
-    var ShellView = Backbone.View.extend({
+    var ShellView = CompositeView.extend({
         initialize: function (options) {
             console.debug('ShellView.initialize()');
             options || (options = {});
@@ -31,13 +32,13 @@
                 el: $('#header-view', currentContext.$el),
                 model: currentContext.model
             });
-            headerView.render();
+            this.renderChild(headerView);
 
             var footerView = new FooterView({
                 el: $('#footer-view', currentContext.$el),
                 model: currentContext.model
             });
-            footerView.render();
+            this.renderChild(footerView);
 
             return this;
         },

@@ -4,10 +4,11 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        CompositeView = require('views/CompositeView'),
         appEvents = require('app-events'),
         template = require('hbs!templates/Header');
 
-    var HeaderView = Backbone.View.extend({
+    var HeaderView = CompositeView.extend({
         initialize: function (options) {
             console.debug('HeaderView.initialize()');
             options || (options = {});
@@ -37,20 +38,23 @@
         },
 
         showOutageReportView: function (event) {
-            console.debug('HeaderView.showOutageReportView()');
             if (event) {
                 event.preventDefault();
             }
+            this.$('#show-outage-report-view-button').addClass('hidden');
+            this.$('#show-outage-map-view-button').removeClass('hidden');
             appEvents.trigger(appEvents.showOutageReport);
         },
 
         showOutageMapView: function (event) {
-            console.debug('HeaderView.showOutageMapView()');
             if (event) {
                 event.preventDefault();
             }
+            this.$('#show-outage-map-view-button').addClass('hidden');
+            this.$('#show-outage-report-view-button').removeClass('hidden');
             appEvents.trigger(appEvents.showOutageMapView);
-        }
+        },
+
     });
 
     return HeaderView;

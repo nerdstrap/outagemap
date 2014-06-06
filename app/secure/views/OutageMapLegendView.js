@@ -4,9 +4,10 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        CompositeView = require('views/CompositeView'),
         template = require('hbs!templates/OutageMapLegend');
 
-    var OutageMapLegendView = Backbone.View.extend({
+    var OutageMapLegendView = CompositeView.extend({
         initialize: function (options) {
             console.debug('OutageMapLegendView.initialize()');
             options || (options = {});
