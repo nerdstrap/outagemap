@@ -6,6 +6,7 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         env = require('env'),
+        oms2aepwebData = require('data/oms2aepweb'),
         template = require('hbs!templates/OutageMap');
 
     var OutageMapView = CompositeView.extend({
@@ -31,10 +32,13 @@
                 var svgElement = document.getElementById('svg-container');
                 if (svgElement) {
                     svgElement.innerHTML = map;
+                    env.attachEvents(oms2aepwebData.operatingCompanies[3].states[0].incidents);
                 }
             });
-
             return this;
+        },
+        showOutageReportView: function () {
+            console.debug('OutageMapView.showOutageReportView()');
         }
     });
 

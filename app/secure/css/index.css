@@ -1,4 +1,4 @@
-root {
+﻿root {
     display: block;
     font-size: 1em;
 }
@@ -52,4 +52,9 @@ root {
 }
 
 .outage-map-legend-view {
+}
+
+.highlight 
+{
+   background: yellow;
 }

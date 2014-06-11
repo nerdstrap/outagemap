@@ -33,7 +33,8 @@ require.config({
         'controllers': '../controllers',
         'models': '../models',
         'views': '../views',
-        'maps': '../maps'
+        'maps': '../maps',
+        'data': '../data'
     },
     shim: {
         'backbone': {

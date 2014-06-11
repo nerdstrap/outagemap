@@ -13,6 +13,7 @@
             console.debug('HeaderView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageMapButton);
         },
 
         resources: function (culture) {
@@ -54,7 +55,10 @@
             this.$('#show-outage-report-view-button').removeClass('hidden');
             appEvents.trigger(appEvents.showOutageMap);
         },
-
+        showOutageMapButton: function () {
+            this.$('#show-outage-report-view-button').addClass('hidden');
+            this.$('#show-outage-map-view-button').removeClass('hidden');
+        },
     });
 
     return HeaderView;

@@ -8,6 +8,8 @@
         appEvents = require('app-events'),
         OutageMapView = require('views/OutageMapView'),
         OutageReportView = require('views/OutageReportView'),
+        env = require('env'),
+        oms2aepwebData = require('data/oms2aepweb'),
         template = require('hbs!templates/Content');
 
     var ContentView = CompositeView.extend({
@@ -55,14 +57,23 @@
             this.$('#timestamp').html(this.model.get('timestamp'));
         },
 
-        showOutageReportView: function (event) {
+        showOutageReportView: function (countyName) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
+            console.debug(countyName);
+            this.$(".row .countyName").each(function () {
+                if ($(this).text() == countyName) {
+                    $(this).parent().parent().addClass("highlight");
+                } else {
+                    $(this).parent().parent().removeClass("highlight");
+                }
+            });
         },
 
         showOutageMapView: function (event) {
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
+            env.attachEvents(oms2aepwebData.operatingCompanies[3].states[0].incidents);
         }
     });
 
