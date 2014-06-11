@@ -4,10 +4,13 @@ define(function (require) {
     var module = require('module'),
         globals = require('globals'),
         appEvents = require('app-events'),
-        masterConfig = module.config(),
-        apiUrl = masterConfig.apiUrl || '/resources',
+        incidentHelpers = require('incident-helpers');
+
+    var masterConfig = (module.config && module.config()) || {},
+        apiUrl = masterConfig.apiUrl || '/global/data/omsdata/',
         appFolder = masterConfig.appFolder || '/secure',
-        refreshFrequency = masterConfig.refreshFrequency || 60000;
+        refreshInterval = masterConfig.refreshInterval || 30000,
+        dataExpiration = masterConfig.dataExpiration || 3600000;
 
     var env = {
         getApiUrl: function () {
@@ -16,8 +19,11 @@ define(function (require) {
         getAppFolder: function () {
             return appFolder;
         },
-        getRefreshFrequency: function () {
-            return refreshFrequency;
+        getRefreshInterval: function () {
+            return refreshInterval;
+        },
+        getDataExpiration: function () {
+            return dataExpiration;
         },
         getParameterByName: function (name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
