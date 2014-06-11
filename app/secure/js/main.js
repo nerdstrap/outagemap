@@ -59,6 +59,7 @@ require.config({
         'app-events': 'libs/app-events',
         'region-helpers': 'libs/region-helpers',
         'incident-helpers': 'libs/incident-helpers',
+        'resource-helpers': 'libs/resource-helpers',
         /*directories*/
         'templates': '../templates',
         'routers': '../routers',

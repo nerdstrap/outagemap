@@ -5,7 +5,8 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
-        template = require('hbs!templates/OutageReport');
+        template = require('hbs!templates/OutageReport'),
+        resourceHelpers = require('resource-helpers');
 
     var OutageReportView = CompositeView.extend({
         initialize: function (options) {
@@ -18,12 +19,12 @@
 
         resources: function (culture) {
             return {
-                'titleText': 'Customer Outages',
-                'countyNameTitleText': 'County',
-                'customersAffectedTitleText': 'Customers Without Power',
-                'customersServedTitleText': 'Total Customers',
-                'percentageTitleText': 'Percentage&#40;&#37;&#41;',
-                'grandTotalTitleText': 'Grand Total&#58;'
+                'titleText': resourceHelpers.getResource('OutageReportView.titleText').value,
+                'countyNameTitleText': resourceHelpers.getResource('OutageReportView.countyNameTitleText').value,
+                'customersAffectedTitleText': resourceHelpers.getResource('OutageReportView.customersAffectedTitleText').value,
+                'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
+                'percentageTitleText': resourceHelpers.getResource('OutageReportView.percentageTitleText').value,
+                'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value
             };
         },
 

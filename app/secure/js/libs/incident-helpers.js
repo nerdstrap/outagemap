@@ -31,21 +31,18 @@
         }
     ];
 
-
+    var defaultIncidentLevel = { 'id': -1, 'color': '', 'backgroundColor': '', 'min': -1, 'max': -1 };
 
     var incidentHelpers = {
         getAllIncidentLevels: function () {
-            var deferred = $.Deferred(),
-                results = incidentLevels;
-            deferred.resolve(results);
-            return deferred.promise();
+            var results = incidentLevels;
+            return results;
         },
 
         getIncidentLevel: function (customersAffected) {
-            var deferred = $.Deferred(),
-                results = _.filter(incidentLevels, function (incidentLevel) { return customersAffected >= incidentLevel.min && customersAffected <= incidentLevel.max; });
-            deferred.resolve(results);
-            return deferred.promise();
+            var result = _.find(incidentLevels, function (incidentLevel) { return customersAffected >= incidentLevel.min && customersAffected <= incidentLevel.max; });
+            result = result || defaultIncidentLevel;
+            return result;
         }
     };
 

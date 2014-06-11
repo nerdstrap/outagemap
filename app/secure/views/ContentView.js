@@ -60,7 +60,6 @@
         showOutageReportView: function (countyName) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
-            console.debug(countyName);
             this.$(".row .countyName").each(function () {
                 if ($(this).text() == countyName) {
                     $(this).parent().parent().addClass("highlight");
