@@ -1,33 +1,32 @@
-define(
-    [
-        'module'
-    ],
-    function (module) {
+define(function (require) {
+    'use strict';
 
-        var masterConfig = (module.config && module.config()) || {};
+    var module = require('module');
 
-        var svg = {
-            load: function (name, req, load, config) {
-                config = config || {};
+    var masterConfig = (module.config && module.config()) || {};
 
-                var extension = masterConfig.extension;
-                if (config.extension) {
-                    extension = config.extension;
-                }
-                extension = extension || 'svg';
+    var svg = {
+        load: function (name, req, load, config) {
+            config = config || {};
 
-                var textName = 'text!' + name + '.' + extension;
-
-                return req([textName], function (template) {
-                    if (!config.isBuild) {
-                        load(template);
-                    }
-                    else {
-                        load(template);
-                    }
-                });
+            var extension = masterConfig.extension;
+            if (config.extension) {
+                extension = config.extension;
             }
-        };
+            extension = extension || 'svg';
 
-        return svg;
-    });
+            var textName = 'text!' + name + '.' + extension;
+
+            return req([textName], function (template) {
+                if (!config.isBuild) {
+                    load(template);
+                }
+                else {
+                    load(template);
+                }
+            });
+        }
+    };
+
+    return svg;
+});

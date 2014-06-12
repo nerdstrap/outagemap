@@ -1,33 +1,32 @@
-define(
-    [
-        'module'
-    ],
-    function (module) {
+define(function (require) {
+    'use strict';
 
-        var masterConfig = (module.config && module.config()) || {};
+    var module = require('module');
 
-        var hbs = {
-            load: function (name, req, load, config) {
-                config = config || {};
+    var masterConfig = (module.config && module.config()) || {};
 
-                var extension = masterConfig.extension;
-                if (config.extension) {
-                    extension = config.extension;
-                }
-                extension = extension || 'html';
+    var hbs = {
+        load: function (name, req, load, config) {
+            config = config || {};
 
-                var textName = 'text!' + name + '.' + extension;
-
-                return req(['Handlebars', textName], function (Handlebars, template) {
-                    if (!config.isBuild) {
-                        load(Handlebars.compile(template));
-                    }
-                    else {
-                        load(template);
-                    }
-                });
+            var extension = masterConfig.extension;
+            if (config.extension) {
+                extension = config.extension;
             }
-        };
+            extension = extension || 'html';
 
-        return hbs;
-    });
+            var textName = 'text!' + name + '.' + extension;
+
+            return req(['Handlebars', textName], function (Handlebars, template) {
+                if (!config.isBuild) {
+                    load(Handlebars.compile(template));
+                }
+                else {
+                    load(template);
+                }
+            });
+        }
+    };
+
+    return hbs;
+});
