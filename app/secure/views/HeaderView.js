@@ -6,7 +6,8 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         appEvents = require('app-events'),
-        template = require('hbs!templates/Header');
+        template = require('hbs!templates/Header'),
+        resourceHelpers = require('resource-helpers');
 
     var HeaderView = CompositeView.extend({
         initialize: function (options) {
@@ -18,8 +19,8 @@
 
         resources: function (culture) {
             return {
-                'showOutageMapViewButtonText': 'View outage map',
-                'showOutageReportViewButtonText': 'View outage report'
+                'showOutageMapViewButtonText': resourceHelpers.getResource('HeaderView.showOutageMapViewButtonText').value,
+                'showOutageReportViewButtonText': resourceHelpers.getResource('HeaderView.showOutageReportViewButtonText').value
             };
         },
 

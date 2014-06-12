@@ -7,8 +7,16 @@ define(function (require) {
 
     var resources = [
         {
-            'key': 'disclaimer',
-            'value': 'NOTE&#58; This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm or similar event &#8211; the accuracy of this estimate can be affected by a large number of unusual situations that must be analyzed.'
+            'key': 'lastUpdatedTitleText',
+            'value': 'Last updated&#58;&#160;'
+        },
+        {
+            'key': 'HeaderView.showOutageMapViewButtonText',
+            'value': 'View outage map'
+        },
+        {
+            'key': 'HeaderView.showOutageReportViewButtonText',
+            'value': 'View outage report'
         },
         {
             'key': 'noOutagesMessage',
@@ -23,16 +31,12 @@ define(function (require) {
             'value': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
         },
         {
-            'key': 'level0IncidentsTitleText',
-            'value': '100&#8211;500'
+            'key': 'logoImageSrc',
+            'value': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
         },
         {
-            'key': 'level1IncidentsTitleText',
-            'value': '501&#8211;2,000'
-        },
-        {
-            'key': 'level2IncidentsTitleText',
-            'value': '2&#44;001&#43;'
+            'key': 'disclaimerText',
+            'value': 'NOTE&#58; This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm or similar event &#8211; the accuracy of this estimate can be affected by a large number of unusual situations that must be analyzed.'
         },
         {
             'key': 'OutageReportView.titleText',
@@ -57,6 +61,38 @@ define(function (require) {
         {
             'key': 'OutageReportView.grandTotalTitleText',
             'value': 'Grand Total&#58;'
+        },
+        {
+            'key': 'OutageMapLegendView.customerOutagesTitleText',
+            'value': 'CUSTOMER OUTAGES'
+        },
+        {
+            'key': 'OutageMapLegendView.legendTitleText',
+            'value': 'LEGEND'
+        },
+        {
+            'key': 'OutageMapLegendView.level0IncidentsTitleText',
+            'value': '100&#8211;500'
+        },
+        {
+            'key': 'OutageMapLegendView.level1IncidentsTitleText',
+            'value': '501&#8211;2,000'
+        },
+        {
+            'key': 'OutageMapLegendView.level2IncidentsTitleText',
+            'value': '2&#44;001&#43;'
+        },
+        {
+            'key': 'OutageMapLegendView.serviceTerritoryTitleText',
+            'value': 'Service Territory'
+        },
+        {
+            'key': 'OutageMapLegendView.countyLinesTitleText',
+            'value': 'County Lines'
+        },
+        {
+            'key': 'OutageMapLegendView.majorHighwaysTitleText',
+            'value': 'Major Highways'
         }
     ];
 

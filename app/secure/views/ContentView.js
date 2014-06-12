@@ -10,7 +10,8 @@
         OutageReportView = require('views/OutageReportView'),
         env = require('env'),
         oms2aepwebData = require('data/oms2aepweb'),
-        template = require('hbs!templates/Content');
+        template = require('hbs!templates/Content'),
+        resourceHelpers = require('resource-helpers');
 
     var ContentView = CompositeView.extend({
         initialize: function (options) {
@@ -25,7 +26,7 @@
 
         resources: function (culture) {
             return {
-                'lastUpdatedTitleText': 'Last updated&#58;&#160;'
+                'lastUpdatedTitleText': resourceHelpers.getResource('lastUpdatedTitleText').value
             };
         },
 

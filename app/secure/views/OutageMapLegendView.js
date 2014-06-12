@@ -5,7 +5,8 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
-        template = require('hbs!templates/OutageMapLegend');
+        template = require('hbs!templates/OutageMapLegend'),
+        resourceHelpers = require('resource-helpers');
 
     var OutageMapLegendView = CompositeView.extend({
         initialize: function (options) {
@@ -16,14 +17,14 @@
 
         resources: function (culture) {
             return {
-                'customerOutagesTitleText': 'CUSTOMER OUTAGES',
-                'legendTitleText': 'LEGEND',
-                'level0IncidentsTitleText': '100&#8211;500',
-                'level1IncidentsTitleText': '501&#8211;2,000',
-                'level2IncidentsTitleText': '2&#44;001&#43;',
-                'serviceTerritoryTitleText': 'Service Territory',
-                'countyLinesTitleText': 'County Lines',
-                'majorHighwaysTitleText': 'Major Highways'
+                'customerOutagesTitleText': resourceHelpers.getResource('OutageMapLegendView.customerOutagesTitleText').value,
+                'legendTitleText': resourceHelpers.getResource('OutageMapLegendView.legendTitleText').value,
+                'level0IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level0IncidentsTitleText').value,
+                'level1IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level1IncidentsTitleText').value,
+                'level2IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level2IncidentsTitleText').value,
+                'serviceTerritoryTitleText': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryTitleText').value,
+                'countyLinesTitleText': resourceHelpers.getResource('OutageMapLegendView.countyLinesTitleText').value,
+                'majorHighwaysTitleText': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysTitleText').value
             };
         },
 
