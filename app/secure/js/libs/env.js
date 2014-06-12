@@ -34,17 +34,6 @@ define(function (require) {
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         },
         attachEvents: function (incidents) {
-            //            var fillColor = '#ffffff';
-            //            var strokeColor = '#000000';
-            //            var strokeWidth = '1';
-
-            //            var fillColorHover = '#00ff00';
-            //            var strokeColorHover = '#ffffff';
-            //            var strokeWidthHover = '1';
-
-            //            var fillColorSelected = '#ff0000';
-            //            var strokeColorSelected = '#ffffff';
-            //            var strokeWidthSelected = '1';
 
             for (var i = 0, len = incidents.length; i <= len; i++) {
 
@@ -61,7 +50,7 @@ define(function (require) {
                         };
 
                         el.onclick = function () {
-                            appEvents.trigger(appEvents.showOutageReport, this.id, backgroundColor);
+                            appEvents.trigger(appEvents.showOutageReport, this.id, this.getAttribute('fill'));
                         };
 
                         el.onmouseout = function () {
