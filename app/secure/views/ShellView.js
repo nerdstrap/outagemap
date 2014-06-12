@@ -12,7 +12,7 @@
 
     var ShellView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('ShellView.initialize()');
+            console.trace('ShellView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
         },
@@ -22,7 +22,7 @@
         },
 
         render: function () {
-            console.debug('ShellView.render()');
+            console.trace('ShellView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);

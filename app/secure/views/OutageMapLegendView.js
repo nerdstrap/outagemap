@@ -10,7 +10,7 @@
 
     var OutageMapLegendView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('OutageMapLegendView.initialize()');
+            console.trace('OutageMapLegendView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
         },
@@ -29,7 +29,7 @@
         },
 
         render: function () {
-            console.debug('OutageMapLegendView.render()');
+            console.trace('OutageMapLegendView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);

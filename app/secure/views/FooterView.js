@@ -11,7 +11,7 @@
 
     var FooterView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('FooterView.initialize()');
+            console.trace('FooterView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
         },
@@ -25,7 +25,7 @@
         },
 
         render: function () {
-            console.debug('FooterView.render()');
+            console.trace('FooterView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);

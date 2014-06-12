@@ -11,7 +11,7 @@
 
     var HeaderView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('HeaderView.initialize()');
+            console.trace('HeaderView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageMapButton);
@@ -30,7 +30,7 @@
         },
 
         render: function () {
-            console.debug('HeaderView.render()');
+            console.trace('HeaderView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);

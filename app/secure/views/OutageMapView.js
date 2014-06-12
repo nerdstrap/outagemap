@@ -11,7 +11,7 @@
 
     var OutageMapView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('OutageMapView.initialize()');
+            console.trace('OutageMapView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || 'allofaep';
@@ -22,7 +22,7 @@
         },
 
         render: function () {
-            console.debug('OutageMapView.render()');
+            console.trace('OutageMapView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);
@@ -38,7 +38,7 @@
             return this;
         },
         showOutageReportView: function () {
-            console.debug('OutageMapView.showOutageReportView()');
+            console.trace('OutageMapView.showOutageReportView()');
         }
     });
 

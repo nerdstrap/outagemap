@@ -15,7 +15,7 @@
 
     var ContentView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('ContentView.initialize()');
+            console.trace('ContentView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
 
@@ -32,7 +32,7 @@
         },
 
         render: function () {
-            console.debug('ContentView.render()');
+            console.trace('ContentView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model.attributes);

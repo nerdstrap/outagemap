@@ -10,7 +10,7 @@
     var OutageReportModel = Backbone.Model.extend({
         idAttribute: 'outageReportId',
         initialize: function (options) {
-            console.debug('OutageReportModel.initialize()');
+            console.trace('OutageReportModel.initialize()');
             options || (options = {});
         },
         sync: function (method, model, options) {

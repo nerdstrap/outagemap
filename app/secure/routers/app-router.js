@@ -11,7 +11,7 @@
 
     var AppRouter = SwappingRouter.extend({
         initialize: function (options) {
-            console.debug('appRouter.initialize');
+            console.trace('appRouter.initialize');
             options || (options = {});
             var currentContext = this;
 
@@ -36,7 +36,7 @@
         },
         goToOutageReport: function (region) {
             region = region || 'aepohio';
-            console.debug('appRouter.goToOutageReport()');
+            console.trace('appRouter.goToOutageReport()');
             this.outageReportControllerInstance.goToOutageReport(region);
         },
         navigate: function (fragment, options) {

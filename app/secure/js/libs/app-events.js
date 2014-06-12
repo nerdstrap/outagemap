@@ -11,8 +11,8 @@
     };
 
     _.extend(AppEvents.prototype, Backbone.Events, {
-        showOutageReport: "showOutageReport",
-        showOutageMap: "showOutageMap"
+        showOutageReport: 'showOutageReport',
+        showOutageMap: 'showOutageMap'
     });
 
     var appEvents = new AppEvents();

@@ -13,7 +13,7 @@
     * @param {object} options
     */
     var OutageReportController = function (options) {
-        console.debug('new OutageReportController()');
+        console.trace('new OutageReportController()');
         options || (options = {});
         this.router = options.router;
         this.outageReportModelInstance = options.outageReportModelInstance;
@@ -27,13 +27,13 @@
         * @param {object} options
         */
         initialize: function (options) {
-            console.debug('OutageReportController.initialize');
+            console.trace('OutageReportController.initialize');
             this.dispatcher = options.dispatcher || appEvents;
         },
         /** Navigates to the outage map
          */
         goToOutageReport: function (region) {
-            console.debug('ShellController.goToOutageReport');
+            console.trace('ShellController.goToOutageReport');
             var currentContext = this,
                 deferred = $.Deferred();
 

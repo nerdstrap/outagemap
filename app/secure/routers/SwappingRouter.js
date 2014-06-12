@@ -12,7 +12,6 @@
     * @param {object} options
     */
     var SwappingRouter = function (options) {
-        console.debug('new SwappingRouter()');
         Backbone.Router.apply(this, [options]);
     };
 

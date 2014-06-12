@@ -10,7 +10,7 @@
 
     var OutageReportView = CompositeView.extend({
         initialize: function (options) {
-            console.debug('OutageReportView.initialize()');
+            console.trace('OutageReportView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
 
@@ -29,7 +29,7 @@
         },
 
         render: function () {
-            console.debug('OutageReportView.render()');
+            console.trace('OutageReportView.render()');
             var currentContext = this;
 
             var renderModel = _.extend({}, this.resources(), this.model);
