@@ -34,33 +34,34 @@ define(function (require) {
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         },
         attachEvents: function (incidents) {
-            var fillColor = '#ffffff';
-            var strokeColor = '#000000';
-            var strokeWidth = '1';
+            //            var fillColor = '#ffffff';
+            //            var strokeColor = '#000000';
+            //            var strokeWidth = '1';
 
-            var fillColorHover = '#00ff00';
-            var strokeColorHover = '#ffffff';
-            var strokeWidthHover = '1';
+            //            var fillColorHover = '#00ff00';
+            //            var strokeColorHover = '#ffffff';
+            //            var strokeWidthHover = '1';
 
-            var fillColorSelected = '#ff0000';
-            var strokeColorSelected = '#ffffff';
-            var strokeWidthSelected = '1';
+            //            var fillColorSelected = '#ff0000';
+            //            var strokeColorSelected = '#ffffff';
+            //            var strokeWidthSelected = '1';
 
             for (var i = 0, len = incidents.length; i <= len; i++) {
 
                 var incident = incidents[i];
-                if (incident && incident.countyName) {
+                if (incident && incident.countyName && incident.customersAffected >= 100) {
                     //                    var el = document.getElementById('_x3C_' + incident.countyName + '_x3E_');
                     var el = document.getElementById(incident.countyName);
+                    var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).backgroundColor;
                     if (el) {
-                        el.setAttribute('fill', 'yellow');
+                        el.setAttribute('fill', backgroundColor);
 
                         el.onmouseover = function () {
-                            this.setAttribute('fill', 'yellow');
+                            
                         };
 
                         el.onclick = function () {
-                            appEvents.trigger(appEvents.showOutageReport, this.id);
+                            appEvents.trigger(appEvents.showOutageReport, this.id, backgroundColor);
                         };
 
                         el.onmouseout = function () {

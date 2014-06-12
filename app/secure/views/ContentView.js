@@ -61,14 +61,14 @@
             this.$('#serviceStatistics').html(this.getServiceStatistics(operatingCompany));
         },
 
-        showOutageReportView: function (countyName) {
+        showOutageReportView: function (countyName, backgroundColor) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
             this.$(".row .countyName").each(function () {
                 if ($(this).text() == countyName) {
-                    $(this).parent().parent().addClass("highlight");
+                    $(this).parent().parent().css('background', backgroundColor);
                 } else {
-                    $(this).parent().parent().removeClass("highlight");
+                    $(this).parent().parent().css('background', 'transparent');
                 }
             });
         },
