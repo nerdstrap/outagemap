@@ -11,6 +11,14 @@ define(function (require) {
             'value': 'Last updated&#58;&#160;'
         },
         {
+            'key': 'serviceStatisticsFormatString',
+            'value': '{0} serves {1} customers in {2} counties in {3}.'
+        },
+        {
+            'key': 'serviceStatisticsFormatString',
+            'value': '{0} serves {1} customers in {2} counties and parishes in {3}.'
+        },
+        {
             'key': 'HeaderView.showOutageMapViewButtonText',
             'value': 'View outage map'
         },

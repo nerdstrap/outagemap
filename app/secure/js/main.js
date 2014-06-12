@@ -1,7 +1,7 @@
 require.config({
     config: {
         'app': {
-            'consoleLevel' : 'trace'
+            'consoleLevel': 'off'
         },
         'env': {
             'apiUrl': '/global/data/omsdata/',
