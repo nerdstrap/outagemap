@@ -1,6 +1,8 @@
 ﻿define(function (require) {
     'use strict';
 
+    var sourceUrl = "http://aepohio.com/global/data/omsdata/OutageXML.aspx";
+
     var internalOutageReports = [
         {
             'timestamp': '2014-02-28T02:54:22.0000000-05:00',
