@@ -25,7 +25,8 @@
 
         resources: function (culture) {
             return {
-                'lastUpdatedTitleText': 'Last updated&#58;&#160;'
+                'lastUpdatedTitleText': 'Last updated&#58;&#160;',
+                'serviceStatistics': env.getServiceStatistics()
             };
         },
 

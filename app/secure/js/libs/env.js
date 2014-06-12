@@ -4,7 +4,9 @@ define(function (require) {
     var module = require('module'),
         globals = require('globals'),
         appEvents = require('app-events'),
-        incidentHelpers = require('incident-helpers');
+        incidentHelpers = require('incident-helpers'),
+        oms2aepwebData = require('data/oms2aepweb'),
+        regionHelpers = require('region-helpers');
 
     var masterConfig = (module.config && module.config()) || {},
         apiUrl = masterConfig.apiUrl || '/global/data/omsdata/',
@@ -28,8 +30,26 @@ define(function (require) {
         getParameterByName: function (name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(globals.window.location.search);
+                results = regex.exec(globals.window.location.hash);
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        },
+        getServiceStatistics: function () {
+            var numCustomersServed = 0;
+            var numCoutiesServed = 0;
+            var stateNames = '';
+            var serviceStatistics;
+            var states = oms2aepwebData.operatingCompanies[3].states;
+            var region = regionHelpers.getOperatingCompany(this.getParameterByName('region'));
+            for (var i = 0, len = states.length; i < len; i++) {
+                numCustomersServed = parseInt(numCustomersServed, 10) + parseInt(oms2aepwebData.operatingCompanies[3].states[i].customersServed, 10);
+                numCoutiesServed = parseInt(numCoutiesServed, 10) + parseInt(oms2aepwebData.operatingCompanies[3].states[i].countiesServed, 10);
+                stateNames = stateNames + oms2aepwebData.operatingCompanies[3].states[i].stateName + ', ';
+            }
+            serviceStatistics = region.fullName + ' serves ' + numCustomersServed + " customers in " + numCoutiesServed + ' counties in ' + stateNames;
+            if (serviceStatistics.substr(serviceStatistics.length - 2, 2) == ', ') {
+                serviceStatistics = serviceStatistics.substr(0, serviceStatistics.length - 2) + '.';
+            }
+            return serviceStatistics;
         },
         addEvent: function (el, eventType, handler) {
             if (el.addEventListener) { // DOM Level 2 browsers
