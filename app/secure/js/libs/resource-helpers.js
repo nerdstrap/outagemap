@@ -12,11 +12,11 @@ define(function (require) {
         },
         {
             'key': 'serviceStatisticsFormatString',
-            'value': '{0} serves {1} customers in {2} counties in {3}.'
+            'value': '{0} serves {1} customers in {2} counties in {3}'
         },
         {
             'key': 'serviceStatisticsFormatString',
-            'value': '{0} serves {1} customers in {2} counties and parishes in {3}.'
+            'value': '{0} serves {1} customers in {2} counties and parishes in {3}'
         },
         {
             'key': 'HeaderView.showOutageMapViewButtonText',

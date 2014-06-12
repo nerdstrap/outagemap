@@ -12,26 +12,33 @@
 }
 
 .shell-view {
+    width: 744px;
 }
 
 .header-view {
+    width: 744px;
 }
 
     .header-view a {
         text-align: right;
         float: right;
+        margin-bottom: 5px;
     }
 
 .content-view {
     background-color: #dedede;
+    width: 744px;
 }
 
 .outageReportTimestamp {
     text-align: right;
     float: right;
+    margin: 10px 0;
 }
 
 .outage-map-view {
+    width: 744px;
+    height: 484px;
 }
 
     .outage-map-view .incident {
@@ -48,18 +55,19 @@
 .service-statistics {
     text-align: right;
     float: right;
-}
-
-.disclaimer {
+    margin: 10px 0;
 }
 
 .footer-view {
+    width: 744px;
+    margin-top: 5px;
 }
 
 .footer-logo {
 }
 
 .outage-map-legend-view {
+
 }
 
     .outage-map-legend-view .level-0-incident {
@@ -79,3 +87,7 @@
         width: 25px;
         height: 25px;
     }
+
+.footer-view .disclaimer {
+    margin-top: 5px;
+}
