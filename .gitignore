@@ -179,3 +179,4 @@ FakesAssemblies/
 #OS X folder options
 .DS_Store
 *.sln
+*.svn-base
