@@ -99,7 +99,7 @@
 
                 var stateNames = _.pluck(operatingCompany.states, 'stateName').join(' &#38; ');
 
-                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, customersServed, countiesServed, stateNames);
+                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, customersServed.toLocaleString('en'), countiesServed.toLocaleString('en'), stateNames);
 
                 return serviceStatistics;
             }
