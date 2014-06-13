@@ -1,78 +1,69 @@
-﻿root
-{
+﻿root {
     display: block;
     font-size: 1em;
 }
 
-.hidden
-{
+.hidden {
     display: none;
 }
 
-.invisible
-{
+.invisible {
     visibility: hidden;
 }
 
-.shell-view
-{
+.shell-view {
+    width: 744px;
 }
 
-.header-view
-{
+.header-view {
+    width: 744px;
 }
 
-.header-view a
-{
-    text-align: right;
-    float: right;
-}
+    .header-view a {
+        text-align: right;
+        float: right;
+        margin-bottom: 5px;
+    }
 
-.content-view
-{
+.content-view {
     background-color: #dedede;
+    width: 744px;
 }
 
-.outageReportTimestamp
-{
+.outageReportTimestamp {
     text-align: right;
     float: right;
+    margin: 10px 0;
 }
 
-.outage-map-view
-{
+.outage-map-view {
+    width: 744px;
+    height: 484px;
 }
 
-.outage-map-view .incident
-{
-    background-color: #DDD4B7;
+    .outage-map-view .incident {
+        background-color: #DDD4B7;
+    }
+
+.outage-report-view {
 }
 
-.outage-report-view
-{
-}
+    .outage-report-view .highlight {
+        background-color: #DDD4B7;
+    }
 
-.outage-report-view .highlight
-{
-    background-color: #DDD4B7;
-}
-
-.service-statistics
-{
+.service-statistics {
     text-align: right;
     float: right;
+    margin: 10px 0;
 }
 
-.disclaimer
-{
+.footer-view {
+    width: 744px;
+    margin-top: 5px;
 }
 
-.footer-view
-{
-}
-
-.footer-logo
-{
+.footer-logo {
 }
 
 .outage-map-legend-view
