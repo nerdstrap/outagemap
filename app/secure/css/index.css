@@ -66,16 +66,32 @@
         background-color: #FFFF54;
         width: 25px;
         height: 25px;
+        margin-left: 10px;
+        margin-bottom: 2px;
+        margin-top: 2px;
     }
 
     .outage-map-legend-view .level-1-incident {
         background-color: #FFA24F;
         width: 25px;
         height: 25px;
+        margin-left: 10px;
+        margin-bottom: 2px;
+        margin-top: 2px;
     }
 
     .outage-map-legend-view .level-2-incident {
         background-color: #FF4444;
         width: 25px;
         height: 25px;
+        margin-left: 10px;
+        margin-bottom: 2px;
+        margin-top: 2px;
     }
+
+    .legendBackground 
+    {
+        background-color: #DCDCDC;
+    }
+
+    
