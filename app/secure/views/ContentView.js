@@ -11,6 +11,7 @@
         env = require('env'),
         oms2aepwebData = require('data/oms2aepweb'),
         template = require('hbs!templates/Content'),
+        regionHelpers = require('region-helpers'),
         resourceHelpers = require('resource-helpers');
 
     var ContentView = CompositeView.extend({
@@ -84,7 +85,7 @@
 
                 var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;
 
-                var operatingCompanyName = operatingCompany.companyName;
+                var operatingCompanyName = regionHelpers.getOperatingCompany(operatingCompany.companyName).fullName;
 
                 var customersServed = 0;
                 customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {

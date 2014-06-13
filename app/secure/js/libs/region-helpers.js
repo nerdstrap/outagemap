@@ -12,8 +12,8 @@
     var defaultOperatingCompany = { 'id': '', 'fullName': '', 'identifier': '' };
 
     var regionHelper = {
-        getOperatingCompany: function (id) {
-            var result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.id === id; });
+        getOperatingCompany: function (identifier) {
+            var result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.identifier === identifier; });
             result = result || defaultOperatingCompany;
             return result;
         },
