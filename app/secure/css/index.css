@@ -55,6 +55,10 @@
         background-color: #DDD4B7;
     }
 
+    .outage-report-view .small-3.columns {
+        padding: 5px;
+    }
+
 .service-statistics {
     text-align: right;
     float: right;
