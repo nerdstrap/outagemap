@@ -59,12 +59,17 @@
         padding: 5px;
     }
 
-    .outage-report-view .small-12.columns span {
-        font-size: 16px;
-    }
+        .outage-report-view .small-12.columns span {
+            font-size: 16px;
+        }
 
     .outage-report-view .small-3.columns {
         padding: 5px;
+    }
+
+    .outage-report-view .no-incidents {
+        text-align: center;
+        padding: 60px 0;
     }
 
 .service-statistics {
@@ -81,47 +86,39 @@
 .footer-logo {
 }
 
-.outage-map-legend-view
-{
+.outage-map-legend-view {
 }
 
     .outage-map-legend-view > div > div {
         margin-left: 10px;
     }
 
-.outage-map-legend-view .level-0-incident
-{
-    background-color: #FFFF54;
-}
+    .outage-map-legend-view .level-0-incident {
+        background-color: #FFFF54;
+    }
 
-.outage-map-legend-view .level-1-incident
-{
-    background-color: #FFA24F;
-}
+    .outage-map-legend-view .level-1-incident {
+        background-color: #FFA24F;
+    }
 
-.outage-map-legend-view .level-2-incident
-{
-    background-color: #FF4444;
-}
+    .outage-map-legend-view .level-2-incident {
+        background-color: #FF4444;
+    }
 
-.outage-map-legend-view .level-0-incident, .outage-map-legend-view .level-1-incident, .outage-map-legend-view .level-2-incident
-{
-    width: 25px;
-    height: 25px;
-    margin-left: 2px 0 2px 10px;
-}
+    .outage-map-legend-view .level-0-incident, .outage-map-legend-view .level-1-incident, .outage-map-legend-view .level-2-incident {
+        width: 25px;
+        height: 25px;
+        margin-left: 2px 0 2px 10px;
+    }
 
-.legendBackground
-{
+.legendBackground {
     background-color: #DCDCDC;
 }
 
-.outagelegendText
-{
+.outagelegendText {
     margin-top: 6px;
 }
 
-.serviceLegendText
-{
+.serviceLegendText {
     margin-top: 2px;
 }

@@ -4,7 +4,7 @@
             <span>{{{titleText}}}</span>
         </div>
     </div>
-    <div class="row">
+    <div class="row report-header">
         <div class="small-3 columns">
             <span>{{{countyNameTitleText}}}</span>
         </div>
@@ -18,8 +18,13 @@
             <span>{{{percentageTitleText}}}</span>
         </div>
     </div>
+    <div class="row no-incidents hidden">
+        <div class="small-12 columns">
+            <span>{{{noOutagesMessage}}}</span>
+        </div>
+    </div>
     {{#each incidents}}
-    <div class="row">
+    <div class="row incident">
         <div class="small-3 columns">
             <span class="countyName">{{{countyName}}}</span>
         </div>
@@ -35,7 +40,7 @@
     </div>
     {{/each}}
     {{#each states}}
-    <div class="row">
+    <div class="row state-total">
         <div class="small-3 columns">
             <span>{{{stateName}}} totals&#58;</span>
         </div>
@@ -50,7 +55,7 @@
         </div>
     </div>
     {{/each}}
-    <div class="row">
+    <div class="row company-total">
         <div class="small-3 columns">
             <span>{{{grandTotalTitleText}}}</span>
         </div>

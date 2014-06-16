@@ -24,7 +24,8 @@
                 'customersAffectedTitleText': resourceHelpers.getResource('OutageReportView.customersAffectedTitleText').value,
                 'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
                 'percentageTitleText': resourceHelpers.getResource('OutageReportView.percentageTitleText').value,
-                'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value
+                'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
+                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value
             };
         },
 
@@ -54,6 +55,13 @@
 
             var renderModel = _.extend({}, this.resources(), operatingCompanyModel);
             this.$el.html(template(renderModel));
+        },
+
+        showNoOutagesMessage: function () {
+            this.$('.row.no-incidents').removeClass('hidden');
+            this.$('.row.incident').addClass('hidden');
+            this.$('.row.state-total').addClass('hidden');
+            this.$('.row.company-total').addClass('hidden');
         }
     });
 
