@@ -116,6 +116,11 @@
     background-color: #DCDCDC;
 }
 
+.legendTitleFloat
+{
+    float: right
+}
+
 .outagelegendText
 {
     margin-top: 6px;
