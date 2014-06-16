@@ -4,7 +4,7 @@ require.config({
             'consoleLevel': 'off'
         },
         'env': {
-            'apiUrl': '/global/data/omsdata/',
+            'apiUrl': '',
             'appFolder': '/secure',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/

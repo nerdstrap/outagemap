@@ -5,11 +5,10 @@ define(function (require) {
         globals = require('globals'),
         appEvents = require('app-events'),
         incidentHelpers = require('incident-helpers'),
-        oms2aepwebData = require('data/oms2aepweb'),
         regionHelpers = require('region-helpers');
 
     var masterConfig = (module.config && module.config()) || {},
-        apiUrl = masterConfig.apiUrl || '/global/data/omsdata/',
+        apiUrl = masterConfig.apiUrl || '',
         appFolder = masterConfig.appFolder || '/secure',
         refreshInterval = masterConfig.refreshInterval || 30000,
         dataExpiration = masterConfig.dataExpiration || 3600000;
