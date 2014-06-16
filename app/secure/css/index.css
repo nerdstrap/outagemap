@@ -115,7 +115,13 @@
     background-color: #DCDCDC;
 }
 
-.outagelegendText {
+.legendTitleFloat
+{
+    float: right
+}
+
+.outagelegendText
+{
     margin-top: 6px;
 }
 
