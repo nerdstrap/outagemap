@@ -70,7 +70,8 @@ require.config({
         'models': '../models',
         'views': '../views',
         'maps': '../maps',
-        'data': '../data'
+        'data': '../data',
+        'balloon': 'libs/jquery.balloon'
     },
     shim: {
         'backbone': {

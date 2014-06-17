@@ -6,7 +6,8 @@ define(function (require) {
         appEvents = require('app-events'),
         incidentHelpers = require('incident-helpers'),
         oms2aepwebData = require('data/oms2aepweb'),
-        regionHelpers = require('region-helpers');
+        regionHelpers = require('region-helpers'),
+        jqueryBalloon = require('balloon');
 
     var masterConfig = (module.config && module.config()) || {},
         apiUrl = masterConfig.apiUrl || '/global/data/omsdata/',
@@ -42,11 +43,13 @@ define(function (require) {
                     //                    var el = document.getElementById('_x3C_' + incident.countyName + '_x3E_');
                     var el = document.getElementById(incident.countyName);
                     var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).backgroundColor;
+                    var balloonTxt = incident.countyName + ' Co.<br/>' + incident.customersAffected + ' customers affected <br/> (click for details)';
                     if (el) {
                         el.setAttribute('fill', backgroundColor);
+                        el.setAttribute('balloonTxt', balloonTxt);
 
                         el.onmouseover = function () {
-                            
+                            $('#' + this.id).balloon({ offsetX: 0, offsetY: 0, contents: this.getAttribute('balloonTxt'), css: { backgroundColor: 'yellow', color: 'black', borderColor: 'red'} });
                         };
 
                         el.onclick = function () {
