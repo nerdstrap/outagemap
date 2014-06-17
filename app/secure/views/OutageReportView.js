@@ -6,7 +6,9 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         template = require('hbs!templates/OutageReport'),
-        resourceHelpers = require('resource-helpers');
+        env = require('env'),
+        resourceHelpers = require('resource-helpers'),
+        regionHelpers = require('region-helpers');
 
     var OutageReportView = CompositeView.extend({
         initialize: function (options) {
@@ -40,20 +42,28 @@
         },
 
         updateViewFromModel: function () {
-            var operatingCompanyModel;
-            var operatingCompanies = this.model.get('operatingCompanies');
-            if (operatingCompanies) {
-                var aepOH = _.findWhere(operatingCompanies, { companyName: 'AEP-OH' });
-                if (aepOH) {
-                    operatingCompanyModel = aepOH;
-                    var OH = _.findWhere(aepOH.states, { stateName: 'OH' });
-                    if (OH) {
-                        var incidents = OH.incidents;
+            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
+            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
+            var renderModel = {
+                incidents: [],
+                states: []
+            };
+            if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
+                 _.each (operatingCompanyModel.states, function(state) {
+                    if (state.customersAffected > 0) {
+                        if (state.incidents && state.incidents.length > 0) {
+                            _.each (state.incidents, function(incident) {
+                                var incidentCopy = _.clone(incident);
+                                renderModel.incidents.push(incidentCopy);
+                            });
+                        }
+                        var stateCopy = _.clone(state);
+                        renderModel.states.push(stateCopy);
                     }
-                }
+                 });
             }
 
-            var renderModel = _.extend({}, this.resources(), operatingCompanyModel);
+            _.extend(renderModel, this.resources());
             this.$el.html(template(renderModel));
         },
 

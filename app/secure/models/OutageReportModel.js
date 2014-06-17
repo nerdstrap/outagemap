@@ -7,12 +7,18 @@
         env = require('env'),
         outageReportService = require('services/outageReportService');
 
-    var getOperatingCompanyAttributes = function (operatingCompany) {
-        var operatingCompanyInstance = {};
+    var parseOperatingCompany = function (operatingCompany) {
+        var operatingCompanyInstance = {
+            identifier: '',
+            countiesServed: parseInt('0'),
+            customersServed: parseInt('0'),
+            customersAffected: parseInt('0'),
+            repairIssues: parseInt('0')
+        };
 
         // id
         if (operatingCompany.hasOwnProperty('id')) {
-            operatingCompanyInstance.id = operatingCompany.id;
+            operatingCompanyInstance.identifier = operatingCompany.id;
         }
 
         // states
@@ -20,15 +26,26 @@
         if (operatingCompany.hasOwnProperty('state')) {
             var state = operatingCompany.state;
             _.each(state, function (element, index, list) {
-                states.push(getStateAttributes(element));
+                var stateAttributes = parseState(element);
+                operatingCompanyInstance.countiesServed += stateAttributes.countiesServed;
+                operatingCompanyInstance.customersServed += stateAttributes.customersServed;
+                operatingCompanyInstance.customersAffected += stateAttributes.customersAffected;
+                operatingCompanyInstance.repairIssues += stateAttributes.repairIssues;
+                states.push(stateAttributes);
             });
         }
         operatingCompanyInstance.states = states;
 
         return operatingCompanyInstance;
     };
-    var getStateAttributes = function (state) {
-        var stateInstance = {};
+    var parseState = function (state) {
+        var stateInstance = {
+            stateName: '',
+            countiesServed: parseInt('0'),
+            customersServed: parseInt('0'),
+            customersAffected: parseInt('0'),
+            repairIssues: parseInt('0')
+        };
 
         // stateName
         if (state.hasOwnProperty('abbr')) {
@@ -37,12 +54,12 @@
 
         // countiesServed
         if (state.hasOwnProperty('counties_served')) {
-            stateInstance.countiesServed = state.counties_served;
+            stateInstance.countiesServed = parseInt(state.counties_served);
         }
 
         // customersServed
         if (state.hasOwnProperty('customers_served')) {
-            stateInstance.customersServed = state.customers_served;
+            stateInstance.customersServed = parseInt(state.customers_served);
         }
 
         // incidents
@@ -50,7 +67,11 @@
         if (state.hasOwnProperty('incident')) {
             var incident = state.incident;
             _.each(incident, function (element, index, list) {
-                incidents.push(getIncidentAttributes(element));
+                var incidentInstance = parseIncident(element);
+                stateInstance.customersServed += incidentInstance.customersServed;
+                stateInstance.customersAffected += incidentInstance.customersAffected;
+                stateInstance.repairIssues += incidentInstance.repairIssues;
+                incidents.push(incidentInstance);
             });
         }
         stateInstance.incidents = incidents;
@@ -58,8 +79,13 @@
         return stateInstance;
     };
 
-    var getIncidentAttributes = function (incident) {
-        var incidentInstance = {};
+    var parseIncident = function (incident) {
+        var incidentInstance = {
+            countyName: '',
+            customersAffected: parseInt('0'),
+            customersServed: parseInt('0'),
+            repairIssues: parseInt('0')
+        };
 
         // countyName
         if (incident.hasOwnProperty('county')) {
@@ -68,17 +94,17 @@
 
         // customersAffected
         if (incident.hasOwnProperty('customers_affected')) {
-            incidentInstance.customersAffected = incident.customers_affected;
+            incidentInstance.customersAffected = parseInt(incident.customers_affected);
         }
 
         // customersServed
         if (incident.hasOwnProperty('customers_served')) {
-            incidentInstance.customersServed = incident.customers_served;
+            incidentInstance.customersServed = parseInt(incident.customers_served);
         }
 
         // repairIssues
         if (incident.hasOwnProperty('repair_issues')) {
-            incidentInstance.repairIssues = incident.repair_issues;
+            incidentInstance.repairIssues = parseInt(incident.repair_issues);
         }
 
         return incidentInstance;
@@ -109,11 +135,11 @@
 
             return xhr;
         },
-        getOperatingCompany: function (id) {
+        getOperatingCompany: function (identifier) {
             var result;
             var operatingCompanies = this.get('operatingCompanies');
             if (operatingCompanies && operatingCompanies.length > 0) {
-                result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.id === id; });
+                result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.identifier === identifier; });
             }
             return result;
         },
@@ -142,7 +168,8 @@
                         if (OperatingCo && OperatingCo.length > 0) {
                             var operatingCompanies = [];
                             _.each(OperatingCo, function (element, index, list) {
-                                operatingCompanies.push(getOperatingCompanyAttributes(element));
+                                var operatingCompanyInstance = parseOperatingCompany(element);
+                                operatingCompanies.push(operatingCompanyInstance);
                             });
                             derivedAttributes.operatingCompanies = operatingCompanies;
                         }

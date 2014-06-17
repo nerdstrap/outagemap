@@ -57,7 +57,7 @@
 
         updateViewFromModel: function () {
             this.$('#timestamp').html(this.model.get('timestamp'));
-            var operatingCompany = regionHelpers.getOperatingCompany(env.getParameterByName('region'));
+            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
             this.$('#serviceStatistics').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
         },
 
