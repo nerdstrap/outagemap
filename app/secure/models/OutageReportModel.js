@@ -4,7 +4,8 @@
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
-        env = require('env');
+        env = require('env'),
+        outageReportService = require('services/outageReportService');
 
     var getOperatingCompanyAttributes = function (operatingCompany) {
         var operatingCompanyInstance = {};
@@ -88,6 +89,17 @@
         initialize: function (options) {
             console.trace('OutageReportModel.initialize()');
             options || (options = {});
+        },
+        sync: function (method, model, options) {
+            if (method === "read") {
+                var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+                    setTimeout(function () {
+                        options.success(data, 'success', null);
+                    }, 100);
+                });
+                model.trigger('request', model, xhr, options);
+                return xhr;
+            }
         },
         getCurrentOutageReport: function (region) {
             var xhr = this.fetch({
