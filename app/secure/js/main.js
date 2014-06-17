@@ -56,6 +56,8 @@ require.config({
         'text': 'libs/require-text',
         'hbs': 'libs/require-hbs',
         'svg': 'libs/require-svg',
+        /*jquery plugins*/
+        'balloon': 'libs/jquery.balloon',
         /*app-level items*/
         'globals': 'libs/globals',
         'env': 'libs/env',
