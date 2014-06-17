@@ -79,7 +79,6 @@
         showOutageMapView: function (event) {
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
-            //env.attachEvents(oms2aepwebData.operatingCompanies[3].states[0].incidents);
         },
 
         getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
