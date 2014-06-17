@@ -26,12 +26,12 @@
         if (operatingCompany.hasOwnProperty('state')) {
             var state = operatingCompany.state;
             _.each(state, function (element, index, list) {
-                var stateAttributes = parseState(element);
-                operatingCompanyInstance.countiesServed += stateAttributes.countiesServed;
-                operatingCompanyInstance.customersServed += stateAttributes.customersServed;
-                operatingCompanyInstance.customersAffected += stateAttributes.customersAffected;
-                operatingCompanyInstance.repairIssues += stateAttributes.repairIssues;
-                states.push(stateAttributes);
+                var stateInstance = parseState(element);
+                operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
+                operatingCompanyInstance.customersServed += stateInstance.customersServed;
+                operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
+                operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                states.push(stateInstance);
             });
         }
         operatingCompanyInstance.states = states;
@@ -128,6 +128,7 @@
             }
         },
         getCurrentOutageReport: function (region) {
+            this.set({'requestedRegion': region});
             var xhr = this.fetch({
                 url: env.getApiUrl() + '/OutageXml.aspx',
                 reset: true

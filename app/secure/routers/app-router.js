@@ -5,6 +5,7 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         SwappingRouter = require('routers/SwappingRouter'),
+        env = require('env'),
         ShellView = require('views/ShellView'),
         OutageReportController = require('controllers/OutageReportController'),
         OutageReportModel = require('models/OutageReportModel');
@@ -17,17 +18,21 @@
 
             var outageReportModelInstance = new OutageReportModel();
 
+            var requestedRegion = env.getParameterByName('region');
+
             var shellViewInstance = new ShellView({
                 el: $('#shell-view'),
-                model: outageReportModelInstance
+                model: outageReportModelInstance,
+                requestedRegion: requestedRegion
             });
             shellViewInstance.render();
             this.contentViewEl = shellViewInstance.contentViewEl();
-            outageReportModelInstance.getCurrentOutageReport();
+            outageReportModelInstance.getCurrentOutageReport(requestedRegion);
 
             this.outageReportControllerInstance = new OutageReportController({
                 router: currentContext,
-                outageReportModelInstance: outageReportModelInstance
+                outageReportModelInstance: outageReportModelInstance,
+                requestedRegion: requestedRegion
             });
         },
         routes: {
@@ -35,8 +40,7 @@
             'outageReport?region=:region': 'goToOutageReport'
         },
         goToOutageReport: function (region) {
-            region = region || 'aepohio';
-            console.trace('appRouter.goToOutageReport()');
+            console.trace('appRouter.goToOutageReport(' + region + ')');
             this.outageReportControllerInstance.goToOutageReport(region);
         },
         navigate: function (fragment, options) {

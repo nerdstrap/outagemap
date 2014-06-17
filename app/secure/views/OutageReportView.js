@@ -15,6 +15,7 @@
             console.trace('OutageReportView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.region = options.region || '';
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
         },
@@ -42,15 +43,21 @@
         },
 
         updateViewFromModel: function () {
-            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
-            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
+            var operatingCompanyConfig = regionHelpers.getOperatingCompanyById(this.region);
+            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompanyConfig.identifier);
             var renderModel = {
+                countiesServed: parseInt('0'),
+                customersServed: parseInt('0'),
+                customersAffected: parseInt('0'),
+                repairIssues: parseInt('0'),
                 incidents: [],
                 states: []
             };
             if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
                  _.each (operatingCompanyModel.states, function(state) {
                     if (state.customersAffected > 0) {
+                        renderModel.customersServed += state.customersServed;
+                        renderModel.customersAffected += state.customersAffected;
                         if (state.incidents && state.incidents.length > 0) {
                             _.each (state.incidents, function(incident) {
                                 var incidentCopy = _.clone(incident);

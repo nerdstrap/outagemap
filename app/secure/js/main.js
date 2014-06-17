@@ -1,7 +1,7 @@
 require.config({
     config: {
         'app': {
-            'consoleLevel': 'off'
+            'consoleLevel': 'info'
         },
         'env': {
             'apiUrl': '',

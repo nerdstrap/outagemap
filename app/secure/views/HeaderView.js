@@ -14,6 +14,8 @@
             console.trace('HeaderView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.requestedRegion = options.requestedRegion || '';
+            
             this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageMapButton);
         },
 

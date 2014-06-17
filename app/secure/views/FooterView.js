@@ -14,6 +14,7 @@
             console.trace('FooterView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.requestedRegion = options.requestedRegion || '';
         },
 
         resources: function (culture) {

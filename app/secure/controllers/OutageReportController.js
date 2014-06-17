@@ -17,6 +17,7 @@
         options || (options = {});
         this.router = options.router;
         this.outageReportModelInstance = options.outageReportModelInstance;
+        this.requestedRegion = options.requestedRegion || '';
 
         this.initialize.apply(this, arguments);
     };

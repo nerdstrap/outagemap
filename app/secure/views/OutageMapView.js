@@ -13,7 +13,7 @@
             console.trace('OutageMapView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
-            this.region = options.region || 'allofaep';
+            this.region = options.region || '';
         },
 
         resources: function (culture) {

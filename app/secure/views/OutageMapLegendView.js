@@ -13,6 +13,7 @@
             console.trace('OutageMapLegendView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.region = options.region || '';
         },
 
         resources: function (culture) {

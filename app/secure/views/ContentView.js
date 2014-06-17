@@ -18,6 +18,7 @@
             console.trace('ContentView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
+            this.region = options.region || '';
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
             this.listenTo(appEvents, appEvents.showOutageMap, this.showOutageMapView);
@@ -41,14 +42,16 @@
             var outageMapView = new OutageMapView({
                 el: $('#outage-map-view', currentContext.$el),
                 model: currentContext.model,
-                dispatcher: currentContext.dispatcher
+                dispatcher: currentContext.dispatcher,
+                region: this.region
             });
             this.renderChild(outageMapView);
 
             var outageReportView = new OutageReportView({
                 el: $('#outage-report-view', currentContext.$el),
                 model: currentContext.model,
-                dispatcher: currentContext.dispatcher
+                dispatcher: currentContext.dispatcher,
+                region: this.region
             });
             this.renderChild(outageReportView);
 
