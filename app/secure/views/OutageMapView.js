@@ -50,8 +50,6 @@
                                 if (state.incidents && state.incidents.length > 0) {
                                     env.attachEvents(state.incidents);
                                 }
-                                var stateCopy = _.clone(state);
-                                renderModel.states.push(stateCopy);
                             }
                         });
                     }
