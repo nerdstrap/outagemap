@@ -63,7 +63,7 @@ define(function (require) {
             'value': 'Total Customers'
         },
         {
-            'key': 'OutageReportView.percentageTitleText',
+            'key': 'OutageReportView.percentageAffectedTitleText',
             'value': 'Percentage&#40;&#37;&#41;'
         },
         {

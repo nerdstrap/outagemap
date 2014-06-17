@@ -36,6 +36,11 @@
         }
         operatingCompanyInstance.states = states;
 
+        // percentageAffected
+        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0 ) {
+            operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(2) / operatingCompanyInstance.customersServed.toFixed(2)).toFixed(2);
+        }
+
         return operatingCompanyInstance;
     };
     var parseState = function (state) {
@@ -76,6 +81,11 @@
         }
         stateInstance.incidents = incidents;
 
+        // percentageAffected
+        if (stateInstance.customersAffected > 0 && stateInstance.customersServed > 0 ) {
+            stateInstance.percentageAffected = (stateInstance.customersAffected.toFixed(2) / stateInstance.customersServed.toFixed(2)).toFixed(2);
+        }
+
         return stateInstance;
     };
 
@@ -84,7 +94,8 @@
             countyName: '',
             customersAffected: parseInt('0'),
             customersServed: parseInt('0'),
-            repairIssues: parseInt('0')
+            repairIssues: parseInt('0'),
+            percentageAffected: parseFloat('0').toFixed(2)
         };
 
         // countyName
@@ -105,6 +116,11 @@
         // repairIssues
         if (incident.hasOwnProperty('repair_issues')) {
             incidentInstance.repairIssues = parseInt(incident.repair_issues);
+        }
+
+        // percentageAffected
+        if (incidentInstance.customersAffected > 0 && incidentInstance.customersServed > 0 ) {
+            incidentInstance.percentageAffected = (incidentInstance.customersAffected.toFixed(2) / incidentInstance.customersServed.toFixed(2)).toFixed(2);
         }
 
         return incidentInstance;

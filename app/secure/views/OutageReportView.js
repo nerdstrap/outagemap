@@ -26,7 +26,7 @@
                 'countyNameTitleText': resourceHelpers.getResource('OutageReportView.countyNameTitleText').value,
                 'customersAffectedTitleText': resourceHelpers.getResource('OutageReportView.customersAffectedTitleText').value,
                 'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
-                'percentageTitleText': resourceHelpers.getResource('OutageReportView.percentageTitleText').value,
+                'percentageAffectedTitleText': resourceHelpers.getResource('OutageReportView.percentageAffectedTitleText').value,
                 'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
                 'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value
             };
@@ -50,6 +50,7 @@
                 customersServed: parseInt('0'),
                 customersAffected: parseInt('0'),
                 repairIssues: parseInt('0'),
+                percentageAffected: parseFloat('0'),
                 incidents: [],
                 states: []
             };
@@ -68,6 +69,11 @@
                         renderModel.states.push(stateCopy);
                     }
                  });
+            }
+
+            // percentageAffected
+            if (renderModel.customersAffected > 0 && renderModel.customersServed > 0 ) {
+                renderModel.percentageAffected = (renderModel.customersAffected.toFixed(2) / renderModel.customersServed.toFixed(2)).toFixed(2);
             }
 
             _.extend(renderModel, this.resources());
