@@ -9,7 +9,6 @@
         OutageMapView = require('views/OutageMapView'),
         OutageReportView = require('views/OutageReportView'),
         env = require('env'),
-        oms2aepwebData = require('data/oms2aepweb'),
         template = require('hbs!templates/Content'),
         regionHelpers = require('region-helpers'),
         resourceHelpers = require('resource-helpers');
@@ -58,8 +57,8 @@
 
         updateViewFromModel: function () {
             this.$('#timestamp').html(this.model.get('timestamp'));
-            var operatingCompany = oms2aepwebData.operatingCompanies[3];
-            this.$('#serviceStatistics').html(this.getServiceStatistics(operatingCompany));
+            var operatingCompany = regionHelpers.getOperatingCompany(env.getParameterByName('region'));
+            this.$('#serviceStatistics').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
         },
 
         showOutageReportView: function (countyName, backgroundColor) {
@@ -77,15 +76,16 @@
         showOutageMapView: function (event) {
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
-            env.attachEvents(oms2aepwebData.operatingCompanies[3].states[0].incidents);
+            //env.attachEvents(oms2aepwebData.operatingCompanies[3].states[0].incidents);
         },
 
-        getServiceStatistics: function (operatingCompany) {
+        getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
+            var operatingCompany = this.model.getOperatingCompany(operatingCompanyIdentifier);
             if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
 
                 var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;
 
-                var operatingCompanyName = regionHelpers.getOperatingCompany(operatingCompany.companyName).fullName;
+                var operatingCompanyName = fullName;
 
                 var customersServed = 0;
                 customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {
