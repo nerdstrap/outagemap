@@ -20,6 +20,18 @@ define(function (require) {
         },
         getAppUri: function (relativeUri) {
             return env.getAppFolder() + relativeUri;
+        },
+        stripeRows: function (rows, fn) {
+            var buffer = [],
+                i, len;
+            for (i = 0, len = rows.length; i < len; ++i) {
+                var row = rows[i];
+                row.rowClass = (i + 1) % 2 === 0 ? 'row incident' : 'row incident alternate';
+                // Render the block once for each row.
+                buffer.push(fn.fn(row));
+            }
+
+            return buffer.join('');
         }
     };
 

@@ -29,9 +29,9 @@
     }
 
 .content-view {
-    background-color: #dedede;
     width: 746px;
     border: solid 1px #808080;
+    background-color: #dedede;
 }
 
 .outageReportTimestamp {
@@ -53,6 +53,14 @@
 
 .outage-report-view {
 }
+
+    .outage-report-view > .row {
+        background-color: #dedede;
+    }
+
+        .outage-report-view > .row.alternate {
+            background-color: #ffffff;
+        }
 
     .outage-report-view .highlight {
         background-color: #DDD4B7;
@@ -97,19 +105,19 @@
 .outage-map-legend-view {
 }
 
-.outage-map-legend-view > .row.collapse > .small-6.columns {
-    padding: 5px 0 5px 10px;
-}
+    .outage-map-legend-view > .row.collapse > .small-6.columns {
+        padding: 5px 0 5px 10px;
+    }
 
-    .outage-map-legend-view .level-0-incident {
+    .level-0-incident, .outage-report-view > .row.level-0-incident  {
         background-color: #FFFF54;
     }
 
-    .outage-map-legend-view .level-1-incident {
+    .level-1-incident, .outage-report-view > .row.level-1-incident {
         background-color: #FFA24F;
     }
 
-    .outage-map-legend-view .level-2-incident {
+    .level-2-incident, .outage-report-view > .row.level-2-incident {
         background-color: #FF4444;
     }
 

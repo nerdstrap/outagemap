@@ -42,8 +42,10 @@ define(function (require) {
                     //                    var el = document.getElementById('_x3C_' + incident.countyName + '_x3E_');
                     var el = document.getElementById(incident.countyName);
                     var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).color;
+                    var className = incidentHelpers.getIncidentLevel(incident.customersAffected).className;
                     var balloonTxt = incident.countyName + ' Co.<br/>' + incident.customersAffected + ' customers affected <br/> (click for details)';
                     if (el) {
+                        el.setAttribute('data-className', className);
                         el.setAttribute('fill', backgroundColor);
                         el.setAttribute('balloonTxt', balloonTxt);
 
@@ -52,7 +54,7 @@ define(function (require) {
                         };
 
                         el.onclick = function () {
-                            appEvents.trigger(appEvents.showOutageReport, this.id, this.getAttribute('fill'));
+                            appEvents.trigger(appEvents.showOutageReport, this.id, this.getAttribute('data-className'));
                         };
 
                         el.onmouseout = function () {
