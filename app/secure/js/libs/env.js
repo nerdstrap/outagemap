@@ -41,7 +41,7 @@ define(function (require) {
                 if (incident && incident.countyName && incident.customersAffected >= 100) {
                     //                    var el = document.getElementById('_x3C_' + incident.countyName + '_x3E_');
                     var el = document.getElementById(incident.countyName);
-                    var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).backgroundColor;
+                    var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).color;
                     var balloonTxt = incident.countyName + ' Co.<br/>' + incident.customersAffected + ' customers affected <br/> (click for details)';
                     if (el) {
                         el.setAttribute('fill', backgroundColor);
