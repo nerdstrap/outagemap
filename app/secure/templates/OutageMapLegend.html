@@ -1,70 +1,74 @@
 ﻿<div class="outage-map-legend-view">
     <div class="row collapse">
         <div class="small-6 columns">
-            <div class="row">
+            <div class="row collapse legend-header">
                 <div class="small-12 columns">
                     <span>{{{customerOutagesTitleText}}}</span>
                 </div>
             </div>
-            <div class="legendBackground">
-                <div class="row">
-                    <div class="small-6 columns">
-                        <div class="level-0-incident">
+            <div class="row collapse legend-symbols">
+                <div class="small-12 columns">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <div class="level-0-incident">
+                            </div>
+                        </div>
+                        <div class="small-6 columns outageLegendText">
+                            <span>{{{level0IncidentsTitleText}}}</span>
                         </div>
                     </div>
-                    <div class="small-6 columns outageLegendText">
-                        <span>{{{level0IncidentsTitleText}}}</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-6 columns">
-                        <div class="level-1-incident">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <div class="level-1-incident">
+                            </div>
+                        </div>
+                        <div class="small-6 columns outageLegendText">
+                            <span>{{{level1IncidentsTitleText}}}</span>
                         </div>
                     </div>
-                    <div class="small-6 columns outageLegendText">
-                        <span>{{{level1IncidentsTitleText}}}</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-6 columns">
-                        <div class="level-2-incident">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <div class="level-2-incident">
+                            </div>
                         </div>
-                    </div>
-                    <div class="small-6 columns outageLegendText">
-                        <span>{{{level2IncidentsTitleText}}}</span>
+                        <div class="small-6 columns outageLegendText">
+                            <span>{{{level2IncidentsTitleText}}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="small-6 columns">
-            <div class="row">
+            <div class="row collapse legend-header">
                 <div class="small-12 columns">
-                    <span class="legendTitleFloat">{{{legendTitleText}}}</span>
+                    <span>{{{legendTitleText}}}</span>
                 </div>
             </div>
-            <div class="legendBackground">
-                <div class="row">
-                    <div class="small-6 columns">
-                        <span>{{{serviceTerritoryColor}}}</span>
+            <div class="row collapse legend-symbols">
+                <div class="small-12 columns">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <span>{{{serviceTerritoryColor}}}</span>
+                        </div>
+                        <div class="small-6 columns serviceLegendText">
+                            <span>{{{serviceTerritoryTitleText}}}</span>
+                        </div>
                     </div>
-                    <div class="small-6 columns serviceLegendText">
-                        <span>{{{serviceTerritoryTitleText}}}</span>
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <span>{{{countyLinesColor}}}</span>
+                        </div>
+                        <div class="small-6 columns serviceLegendText">
+                            <span>{{{countyLinesTitleText}}}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="small-6 columns">
-                        <span>{{{countyLinesColor}}}</span>
-                    </div>
-                    <div class="small-6 columns serviceLegendText">
-                        <span>{{{countyLinesTitleText}}}</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-6 columns">
-                        <span>{{{majorHighwaysColor}}}</span>
-                    </div>
-                    <div class="small-6 columns serviceLegendText">
-                        <span>{{{majorHighwaysTitleText}}}</span>
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <span>{{{majorHighwaysColor}}}</span>
+                        </div>
+                        <div class="small-6 columns serviceLegendText">
+                            <span>{{{majorHighwaysTitleText}}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
