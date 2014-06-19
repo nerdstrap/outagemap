@@ -15,7 +15,6 @@
             console.trace('OutageReportView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
-            this.region = options.region || '';
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
         },
@@ -26,9 +25,10 @@
                 'countyNameTitleText': resourceHelpers.getResource('OutageReportView.countyNameTitleText').value,
                 'customersAffectedTitleText': resourceHelpers.getResource('OutageReportView.customersAffectedTitleText').value,
                 'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
-                'percentageAffectedTitleText': resourceHelpers.getResource('OutageReportView.percentageAffectedTitleText').value,
+                'percentageTitleText': resourceHelpers.getResource('OutageReportView.percentageTitleText').value,
                 'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
-                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value
+                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value,
+                'formattedCustomersAffected': this.model.customersAffected
             };
         },
 
@@ -43,24 +43,17 @@
         },
 
         updateViewFromModel: function () {
-            var operatingCompanyConfig = regionHelpers.getOperatingCompanyById(this.region);
-            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompanyConfig.identifier);
+            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
+            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
             var renderModel = {
-                countiesServed: parseInt('0'),
-                customersServed: parseInt('0'),
-                customersAffected: parseInt('0'),
-                repairIssues: parseInt('0'),
-                percentageAffected: parseFloat('0'),
                 incidents: [],
                 states: []
             };
             if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
-                 _.each (operatingCompanyModel.states, function(state) {
+                _.each(operatingCompanyModel.states, function (state) {
                     if (state.customersAffected > 0) {
-                        renderModel.customersServed += state.customersServed;
-                        renderModel.customersAffected += state.customersAffected;
                         if (state.incidents && state.incidents.length > 0) {
-                            _.each (state.incidents, function(incident) {
+                            _.each(state.incidents, function (incident) {
                                 var incidentCopy = _.clone(incident);
                                 renderModel.incidents.push(incidentCopy);
                             });
@@ -68,12 +61,7 @@
                         var stateCopy = _.clone(state);
                         renderModel.states.push(stateCopy);
                     }
-                 });
-            }
-
-            // percentageAffected
-            if (renderModel.customersAffected > 0 && renderModel.customersServed > 0 ) {
-                renderModel.percentageAffected = (renderModel.customersAffected.toFixed(2) / renderModel.customersServed.toFixed(2)).toFixed(2);
+                });
             }
 
             _.extend(renderModel, this.resources());
@@ -88,5 +76,12 @@
         }
     });
 
+    Handlebars.registerHelper('formatNumber', function (value) {
+        if (value) {
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } else {
+            return '';
+        }
+    });
     return OutageReportView;
 });
