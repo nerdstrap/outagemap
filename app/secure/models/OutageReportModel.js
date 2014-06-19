@@ -7,16 +7,16 @@
         env = require('env'),
         outageReportService = require('services/outageReportService');
 
+    var _incidentTotalThreshold = env.getIncidentTotalThreshold();
+
     var parseOperatingCompany = function (operatingCompany) {
         var operatingCompanyInstance = {
             identifier: '',
             countiesServed: parseInt('0'),
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
-            customersServedInStatesAffected: parseInt('0'),
             repairIssues: parseInt('0'),
             percentageAffected: parseFloat('0').toFixed(1),
-            percentageAffectedInStatesAffected: parseFloat('0').toFixed(1)
         };
 
         // id
@@ -34,9 +34,6 @@
                 operatingCompanyInstance.customersServed += stateInstance.customersServed;
                 operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
                 operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
-                if (stateInstance.customersAffected > 0) {
-                    operatingCompanyInstance.customersServedInStatesAffected += stateInstance.customersServed
-                }
                 states.push(stateInstance);
             });
         }
@@ -45,11 +42,6 @@
         // percentageAffected
         if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0 ) {
             operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServed.toFixed(1)).toFixed(1);
-        }
-
-        // percentageAffected
-        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServedInStatesAffected > 0) {
-            operatingCompanyInstance.percentageAffectedInStatesAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServedInStatesAffected.toFixed(1)).toFixed(1);
         }
 
         return operatingCompanyInstance;
@@ -85,10 +77,12 @@
             var incident = state.incident;
             _.each(incident, function (element, index, list) {
                 var incidentInstance = parseIncident(element);
-                stateInstance.customersServed += incidentInstance.customersServed;
-                stateInstance.customersAffected += incidentInstance.customersAffected;
-                stateInstance.repairIssues += incidentInstance.repairIssues;
-                incidents.push(incidentInstance);
+                if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                    stateInstance.customersServed += incidentInstance.customersServed;
+                    stateInstance.customersAffected += incidentInstance.customersAffected;
+                    stateInstance.repairIssues += incidentInstance.repairIssues;
+                    incidents.push(incidentInstance);
+                }
             });
         }
         stateInstance.incidents = incidents;

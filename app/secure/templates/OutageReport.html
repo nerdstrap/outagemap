@@ -1,20 +1,20 @@
 ﻿<div class="outage-report-view">
-    <div class="row">
+    <div class="row collapse">
         <div class="small-12 columns">
             <span>{{{titleText}}}</span>
         </div>
     </div>
-    <div class="row report-header">
+    <div class="row collapse report-header">
         <div class="small-3 columns">
             <span>{{{countyNameTitleText}}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 columns numeric">
             <span>{{{customersAffectedTitleText}}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-3 columns numeric">
             <span>{{{customersServedTitleText}}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-2 columns numeric">
             <span>{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
@@ -34,13 +34,13 @@
             <span class="stateName">{{{stateName}}} totals&#58;</span>
             {{/if}}
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 columns numeric">
             <span>{{formatNumber customersAffected}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-3 columns numeric">
             <span>{{formatNumber customersServed}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-2 columns numeric">
             {{#if percentageAffected}}
             <span>{{percentageAffected}}&#37;</span>
             {{/if}}
@@ -49,17 +49,17 @@
     {{/stripeRows}}
     {{/if}}
 
-    <div class="row company-total bold">
-        <div class="small-3 columns">
+    <div class="row collapse company-total bold">
+        <div class="small-3 columns numeric">
             <span>{{{grandTotalTitleText}}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 columns numeric">
             <span>{{formatNumber customersAffected}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-3 columns numeric">
             <span>{{formatNumber customersServed}}</span>
         </div>
-        <div class="small-3 columns">
+        <div class="small-2 columns numeric">
             <span>{{percentageAffected}}&#37;</span>
         </div>
     </div>

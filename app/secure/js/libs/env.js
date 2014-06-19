@@ -12,7 +12,8 @@ define(function (require) {
         apiUrl = masterConfig.apiUrl || '',
         appFolder = masterConfig.appFolder || '/secure',
         refreshInterval = masterConfig.refreshInterval || 30000,
-        dataExpiration = masterConfig.dataExpiration || 3600000;
+        dataExpiration = masterConfig.dataExpiration || 3600000,
+        incidentTotalThreshold = incidentTotalThreshold || 100;
 
     var env = {
         getApiUrl: function () {
@@ -32,6 +33,9 @@ define(function (require) {
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(globals.window.location.hash);
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        },
+        getIncidentTotalThreshold: function () {
+            return incidentTotalThreshold;
         },
         attachEvents: function (incidents) {
 

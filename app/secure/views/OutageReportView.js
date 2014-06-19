@@ -54,7 +54,7 @@
             if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
 
                 renderModel.customersAffected = operatingCompanyModel.customersAffected;
-                renderModel.customersServed = operatingCompanyModel.customersServedInStatesAffected;
+                renderModel.customersServed = operatingCompanyModel.customersServed;
                 renderModel.percentageAffected = operatingCompanyModel.percentageAffected;
 
                 _.each(operatingCompanyModel.states, function (state) {

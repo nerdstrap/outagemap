@@ -26,7 +26,7 @@ define(function (require) {
                 i, len;
             for (i = 0, len = rows.length; i < len; ++i) {
                 var row = rows[i];
-                var rowClass = 'row incident';
+                var rowClass = 'row collapse incident';
                 if (row.stateName) {
                     rowClass = rowClass + ' bold'
                 };
