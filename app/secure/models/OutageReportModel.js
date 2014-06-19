@@ -86,15 +86,27 @@
         var incidents = [];
         if (state.hasOwnProperty('incident')) {
             var incident = state.incident;
-            _.each(incident, function (element, index, list) {
-                var incidentInstance = parseIncident(element);
-                if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
-                    stateInstance.customersServed += incidentInstance.customersServed;
-                    stateInstance.customersAffected += incidentInstance.customersAffected;
-                    stateInstance.repairIssues += incidentInstance.repairIssues;
-                    incidents.push(incidentInstance);
+            if (incident) {
+                if (incident.length && incident.length > 0) {
+                    _.each(incident, function (element, index, list) {
+                        var incidentInstance = parseIncident(element);
+                        if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                            stateInstance.customersServed += incidentInstance.customersServed;
+                            stateInstance.customersAffected += incidentInstance.customersAffected;
+                            stateInstance.repairIssues += incidentInstance.repairIssues;
+                            incidents.push(incidentInstance);
+                        }
+                    });
+                } else {
+                    var incidentInstance = parseIncident(incident);
+                    if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                        stateInstance.customersServed += incidentInstance.customersServed;
+                        stateInstance.customersAffected += incidentInstance.customersAffected;
+                        stateInstance.repairIssues += incidentInstance.repairIssues;
+                        incidents.push(incidentInstance);
+                    }
                 }
-            });
+            }
         }
         stateInstance.incidents = incidents;
 
