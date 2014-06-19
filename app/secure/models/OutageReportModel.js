@@ -83,7 +83,7 @@
 
         // percentageAffected
         if (stateInstance.customersAffected > 0 && stateInstance.customersServed > 0 ) {
-            stateInstance.percentageAffected = (stateInstance.customersAffected.toFixed(2) / stateInstance.customersServed.toFixed(2)).toFixed(2);
+            stateInstance.percentageAffected = (stateInstance.customersAffected.toFixed(1) / stateInstance.customersServed.toFixed(1)).toFixed(1);
         }
 
         return stateInstance;
@@ -120,7 +120,7 @@
 
         // percentageAffected
         if (incidentInstance.customersAffected > 0 && incidentInstance.customersServed > 0 ) {
-            incidentInstance.percentageAffected = (incidentInstance.customersAffected.toFixed(2) / incidentInstance.customersServed.toFixed(2)).toFixed(2);
+            incidentInstance.percentageAffected = (incidentInstance.customersAffected.toFixed(1) / incidentInstance.customersServed.toFixed(1)).toFixed(1);
         }
 
         return incidentInstance;
@@ -132,17 +132,17 @@
             console.trace('OutageReportModel.initialize()');
             options || (options = {});
         },
-        sync: function (method, model, options) {
-            if (method === "read") {
-                var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
-                    setTimeout(function () {
-                        options.success(data, 'success', null);
-                    }, 100);
-                });
-                model.trigger('request', model, xhr, options);
-                return xhr;
-            }
-        },
+        //sync: function (method, model, options) {
+        //    if (method === "read") {
+        //        var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+        //            setTimeout(function () {
+        //                options.success(data, 'success', null);
+        //            }, 100);
+        //        });
+        //        model.trigger('request', model, xhr, options);
+        //        return xhr;
+        //    }
+        //},
         getCurrentOutageReport: function (region) {
             this.set({'requestedRegion': region});
             var xhr = this.fetch({

@@ -73,7 +73,7 @@
 
             // percentageAffected
             if (renderModel.customersAffected > 0 && renderModel.customersServed > 0 ) {
-                renderModel.percentageAffected = (renderModel.customersAffected.toFixed(2) / renderModel.customersServed.toFixed(2)).toFixed(2);
+                renderModel.percentageAffected = (renderModel.customersAffected.toFixed(1) / renderModel.customersServed.toFixed(1)).toFixed(1);
             }
 
             _.extend(renderModel, this.resources());
