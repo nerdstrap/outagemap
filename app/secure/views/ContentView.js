@@ -71,7 +71,7 @@
                 if ($(this).text() == countyName) {
                     $(this).parent().parent().addClass(className);
                 } else {
-                    $(this).parent().parent().removeClass(className);
+                    $(this).parent().parent().removeAttr("class").addClass("row incident");
                 }
             });
         },
