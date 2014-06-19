@@ -15,7 +15,6 @@
             console.trace('OutageReportView.initialize()');
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
-            this.region = options.region || '';
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
         },
@@ -28,7 +27,8 @@
                 'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
                 'percentageAffectedTitleText': resourceHelpers.getResource('OutageReportView.percentageAffectedTitleText').value,
                 'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
-                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value
+                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value,
+                'formattedCustomersAffected': this.model.customersAffected
             };
         },
 
@@ -43,8 +43,8 @@
         },
 
         updateViewFromModel: function () {
-            var operatingCompanyConfig = regionHelpers.getOperatingCompanyById(this.region);
-            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompanyConfig.identifier);
+            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
+            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
             var renderModel = {
                 countiesServed: parseInt('0'),
                 customersServed: parseInt('0'),
@@ -55,12 +55,12 @@
                 states: []
             };
             if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
-                 _.each (operatingCompanyModel.states, function(state) {
+                _.each(operatingCompanyModel.states, function (state) {
                     if (state.customersAffected > 0) {
                         renderModel.customersServed += state.customersServed;
                         renderModel.customersAffected += state.customersAffected;
                         if (state.incidents && state.incidents.length > 0) {
-                            _.each (state.incidents, function(incident) {
+                            _.each(state.incidents, function (incident) {
                                 var incidentCopy = _.clone(incident);
                                 renderModel.incidents.push(incidentCopy);
                             });
@@ -88,5 +88,12 @@
         }
     });
 
+    Handlebars.registerHelper('formatNumber', function (value) {
+        if (value) {
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } else {
+            return '';
+        }
+    });
     return OutageReportView;
 });
