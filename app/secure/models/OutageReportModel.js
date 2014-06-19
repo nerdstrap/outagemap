@@ -28,14 +28,25 @@
         var states = [];
         if (operatingCompany.hasOwnProperty('state')) {
             var state = operatingCompany.state;
-            _.each(state, function (element, index, list) {
-                var stateInstance = parseState(element);
-                operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
-                operatingCompanyInstance.customersServed += stateInstance.customersServed;
-                operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
-                operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
-                states.push(stateInstance);
-            });
+            if (state) {
+                if (state.length && state.length > 0) {
+                    _.each(state, function (element, index, list) {
+                        var stateInstance = parseState(element);
+                        operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
+                        operatingCompanyInstance.customersServed += stateInstance.customersServed;
+                        operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
+                        operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                        states.push(stateInstance);
+                    });
+                } else {
+                    var stateInstance = parseState(state);
+                    operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
+                    operatingCompanyInstance.customersServed += stateInstance.customersServed;
+                    operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
+                    operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                    states.push(stateInstance);
+                }
+            }
         }
         operatingCompanyInstance.states = states;
 
