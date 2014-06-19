@@ -52,10 +52,18 @@
     }
 
 .outage-report-view {
+    padding: 20px 0;
+    border-top: solid 1px #808080;
+    border-bottom: solid 1px #808080;
 }
 
     .outage-report-view > .row {
         background-color: #dedede;
+    }
+
+    .outage-report-view > .row.report-header {
+        font-size: 18px;
+        font-weight: bold;
     }
 
         .outage-report-view > .row.alternate {
@@ -67,16 +75,21 @@
     }
 
     .outage-report-view .small-12.columns {
-        padding: 5px;
+        padding: 10px;
     }
 
         .outage-report-view .small-12.columns span {
-            font-size: 16px;
+            font-size: 20px;
+            font-weight: bold;
         }
 
     .outage-report-view .small-3.columns {
-        padding: 5px;
+        padding: 10px;
     }
+
+        .outage-report-view .small-3.columns span {
+            font-size: 16px;
+        }
 
     .outage-report-view .no-incidents {
         text-align: center;
@@ -99,7 +112,7 @@
 }
 
 .disclaimer {
-    padding: 10px 0;
+    padding: 30px 0 0 0;
 }
 
 .outage-map-legend-view {
