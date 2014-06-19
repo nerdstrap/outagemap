@@ -23,10 +23,16 @@
             <span>{{{noOutagesMessage}}}</span>
         </div>
     </div>
-    {{#each incidents}}
-    <div class="row incident">
+    {{#if incidentRows}}
+    {{#stripeRows incidentRows}}
+    <div class="{{rowClass}}">
         <div class="small-3 columns">
+            {{#if countyName}}
             <span class="countyName">{{{countyName}}}</span>
+            {{/if}}
+            {{#if stateName}}
+            <span class="stateName">{{{stateName}}} totals&#58;</span>
+            {{/if}}
         </div>
         <div class="small-3 columns">
             <span>{{formatNumber customersAffected}}</span>
@@ -35,27 +41,15 @@
             <span>{{formatNumber customersServed}}</span>
         </div>
         <div class="small-3 columns">
+            {{#if percentageAffected}}
             <span>{{percentageAffected}}&#37;</span>
+            {{/if}}
         </div>
     </div>
-    {{/each}}
-    {{#each states}}
-    <div class="row state-total">
-        <div class="small-3 columns">
-            <span>{{{stateName}}} totals&#58;</span>
-        </div>
-        <div class="small-3 columns">
-            <span>{{formatNumber customersAffected}}</span>
-        </div>
-        <div class="small-3 columns">
-            <span>{{formatNumber customersServed}}</span>
-        </div>
-        <div class="small-3 columns">
-            <span>{{percentageAffected}}&#37;</span>
-        </div>
-    </div>
-    {{/each}}
-    <div class="row company-total">
+    {{/stripeRows}}
+    {{/if}}
+
+    <div class="row company-total bold">
         <div class="small-3 columns">
             <span>{{{grandTotalTitleText}}}</span>
         </div>

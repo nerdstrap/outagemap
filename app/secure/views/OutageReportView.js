@@ -46,34 +46,31 @@
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
             var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
             var renderModel = {
-                countiesServed: parseInt('0'),
+                incidentRows: [],
                 customersServed: parseInt('0'),
                 customersAffected: parseInt('0'),
-                repairIssues: parseInt('0'),
                 percentageAffected: parseFloat('0'),
-                incidents: [],
-                states: []
             };
             if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
+
+                renderModel.customersAffected = operatingCompanyModel.customersAffected;
+                renderModel.customersServed = operatingCompanyModel.customersServedInStatesAffected;
+                renderModel.percentageAffected = operatingCompanyModel.percentageAffected;
+
                 _.each(operatingCompanyModel.states, function (state) {
                     if (state.customersAffected > 0) {
-                        renderModel.customersServed += state.customersServed;
-                        renderModel.customersAffected += state.customersAffected;
                         if (state.incidents && state.incidents.length > 0) {
                             _.each(state.incidents, function (incident) {
                                 var incidentCopy = _.clone(incident);
-                                renderModel.incidents.push(incidentCopy);
+                                renderModel.incidentRows.push(incidentCopy);
                             });
+                            renderModel.incidentRows.push({});
                         }
                         var stateCopy = _.clone(state);
-                        renderModel.states.push(stateCopy);
+                        renderModel.incidentRows.push(stateCopy);
+                        renderModel.incidentRows.push({});
                     }
                  });
-            }
-
-            // percentageAffected
-            if (renderModel.customersAffected > 0 && renderModel.customersServed > 0 ) {
-                renderModel.percentageAffected = (renderModel.customersAffected.toFixed(1) / renderModel.customersServed.toFixed(1)).toFixed(1);
             }
 
             _.extend(renderModel, this.resources());

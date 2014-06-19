@@ -13,7 +13,10 @@
             countiesServed: parseInt('0'),
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
-            repairIssues: parseInt('0')
+            customersServedInStatesAffected: parseInt('0'),
+            repairIssues: parseInt('0'),
+            percentageAffected: parseFloat('0').toFixed(1),
+            percentageAffectedInStatesAffected: parseFloat('0').toFixed(1)
         };
 
         // id
@@ -31,6 +34,9 @@
                 operatingCompanyInstance.customersServed += stateInstance.customersServed;
                 operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
                 operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                if (stateInstance.customersAffected > 0) {
+                    operatingCompanyInstance.customersServedInStatesAffected += stateInstance.customersServed
+                }
                 states.push(stateInstance);
             });
         }
@@ -38,7 +44,12 @@
 
         // percentageAffected
         if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0 ) {
-            operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(2) / operatingCompanyInstance.customersServed.toFixed(2)).toFixed(2);
+            operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServed.toFixed(1)).toFixed(1);
+        }
+
+        // percentageAffected
+        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServedInStatesAffected > 0) {
+            operatingCompanyInstance.percentageAffectedInStatesAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServedInStatesAffected.toFixed(1)).toFixed(1);
         }
 
         return operatingCompanyInstance;
@@ -49,7 +60,8 @@
             countiesServed: parseInt('0'),
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
-            repairIssues: parseInt('0')
+            repairIssues: parseInt('0'),
+            percentageAffected: parseFloat('0').toFixed(1)
         };
 
         // stateName
@@ -82,7 +94,7 @@
         stateInstance.incidents = incidents;
 
         // percentageAffected
-        if (stateInstance.customersAffected > 0 && stateInstance.customersServed > 0 ) {
+        if (stateInstance.customersAffected > 0 && stateInstance.customersServed > 0) {
             stateInstance.percentageAffected = (stateInstance.customersAffected.toFixed(1) / stateInstance.customersServed.toFixed(1)).toFixed(1);
         }
 
@@ -95,7 +107,7 @@
             customersAffected: parseInt('0'),
             customersServed: parseInt('0'),
             repairIssues: parseInt('0'),
-            percentageAffected: parseFloat('0').toFixed(2)
+            percentageAffected: parseFloat('0').toFixed(1)
         };
 
         // countyName
