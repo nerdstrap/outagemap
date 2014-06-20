@@ -1,8 +1,8 @@
 ﻿<div class="content-view">
-    <div class="row">
+    <div class="row collapse">
         <div class="small-12 columns">
-            <div class="outageReportTimestamp">
-                <span>{{{lastUpdatedTitleText}}}</span><span id="timestamp">{{{timestamp}}}</span>
+            <div class="timestamp-label-container">
+                <span>{{{lastUpdatedTitleText}}}</span><span id="timestamp-label">{{{timestamp}}}</span>
             </div>
         </div>
     </div>
@@ -12,9 +12,11 @@
     <div class="row collapse">
         <div id="outage-report-view" class="small-12 columns hidden"></div>
     </div>
-    <div class="row">
+    <div class="row collapse">
         <div class="small-12 columns">
-            <span id="serviceStatistics" class="service-statistics">{{{serviceStatistics}}}</span>
+            <div class="service-statistics-label-container">
+                <span id="service-statistics-label">{{{serviceStatistics}}}</span>
+            </div>
         </div>
     </div>
 </div>

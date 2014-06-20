@@ -21,12 +21,19 @@ define(function (require) {
         getAppUri: function (relativeUri) {
             return env.getAppFolder() + relativeUri;
         },
+        formatNumber: function (value) {
+            if (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            } else {
+                return '';
+            }
+        },
         stripeRows: function (rows, fn) {
             var buffer = [],
                 i, len;
             for (i = 0, len = rows.length; i < len; ++i) {
                 var row = rows[i];
-                var rowClass = 'row incident';
+                var rowClass = 'row collapse incident';
                 if (row.stateName) {
                     rowClass = rowClass + ' bold'
                 };

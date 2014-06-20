@@ -59,9 +59,9 @@
         },
 
         updateViewFromModel: function () {
-            this.$('#timestamp').html(this.model.get('timestamp'));
+            this.$('#timestamp-label').html(this.model.get('timestamp'));
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
-            this.$('#serviceStatistics').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
+            this.$('#service-statistics-label').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
         },
 
         showOutageReportView: function (countyName, className) {

@@ -7,16 +7,16 @@
         env = require('env'),
         outageReportService = require('services/outageReportService');
 
+    var _incidentTotalThreshold = env.getIncidentTotalThreshold();
+
     var parseOperatingCompany = function (operatingCompany) {
         var operatingCompanyInstance = {
             identifier: '',
             countiesServed: parseInt('0'),
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
-            customersServedInStatesAffected: parseInt('0'),
             repairIssues: parseInt('0'),
             percentageAffected: parseFloat('0').toFixed(1),
-            percentageAffectedInStatesAffected: parseFloat('0').toFixed(1)
         };
 
         // id
@@ -28,28 +28,31 @@
         var states = [];
         if (operatingCompany.hasOwnProperty('state')) {
             var state = operatingCompany.state;
-            _.each(state, function (element, index, list) {
-                var stateInstance = parseState(element);
-                operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
-                operatingCompanyInstance.customersServed += stateInstance.customersServed;
-                operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
-                operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
-                if (stateInstance.customersAffected > 0) {
-                    operatingCompanyInstance.customersServedInStatesAffected += stateInstance.customersServed
+            if (state) {
+                if (state.length && state.length > 0) {
+                    _.each(state, function (element, index, list) {
+                        var stateInstance = parseState(element);
+                        operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
+                        operatingCompanyInstance.customersServed += stateInstance.customersServed;
+                        operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
+                        operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                        states.push(stateInstance);
+                    });
+                } else {
+                    var stateInstance = parseState(state);
+                    operatingCompanyInstance.countiesServed += stateInstance.countiesServed;
+                    operatingCompanyInstance.customersServed += stateInstance.customersServed;
+                    operatingCompanyInstance.customersAffected += stateInstance.customersAffected;
+                    operatingCompanyInstance.repairIssues += stateInstance.repairIssues;
+                    states.push(stateInstance);
                 }
-                states.push(stateInstance);
-            });
+            }
         }
         operatingCompanyInstance.states = states;
 
         // percentageAffected
         if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0 ) {
             operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServed.toFixed(1)).toFixed(1);
-        }
-
-        // percentageAffected
-        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServedInStatesAffected > 0) {
-            operatingCompanyInstance.percentageAffectedInStatesAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServedInStatesAffected.toFixed(1)).toFixed(1);
         }
 
         return operatingCompanyInstance;
@@ -83,13 +86,27 @@
         var incidents = [];
         if (state.hasOwnProperty('incident')) {
             var incident = state.incident;
-            _.each(incident, function (element, index, list) {
-                var incidentInstance = parseIncident(element);
-                stateInstance.customersServed += incidentInstance.customersServed;
-                stateInstance.customersAffected += incidentInstance.customersAffected;
-                stateInstance.repairIssues += incidentInstance.repairIssues;
-                incidents.push(incidentInstance);
-            });
+            if (incident) {
+                if (incident.length && incident.length > 0) {
+                    _.each(incident, function (element, index, list) {
+                        var incidentInstance = parseIncident(element);
+                        if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                            stateInstance.customersServed += incidentInstance.customersServed;
+                            stateInstance.customersAffected += incidentInstance.customersAffected;
+                            stateInstance.repairIssues += incidentInstance.repairIssues;
+                            incidents.push(incidentInstance);
+                        }
+                    });
+                } else {
+                    var incidentInstance = parseIncident(incident);
+                    if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                        stateInstance.customersServed += incidentInstance.customersServed;
+                        stateInstance.customersAffected += incidentInstance.customersAffected;
+                        stateInstance.repairIssues += incidentInstance.repairIssues;
+                        incidents.push(incidentInstance);
+                    }
+                }
+            }
         }
         stateInstance.incidents = incidents;
 
@@ -144,17 +161,17 @@
             console.trace('OutageReportModel.initialize()');
             options || (options = {});
         },
-        //sync: function (method, model, options) {
-        //    if (method === "read") {
-        //        var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
-        //            setTimeout(function () {
-        //                options.success(data, 'success', null);
-        //            }, 100);
-        //        });
-        //        model.trigger('request', model, xhr, options);
-        //        return xhr;
-        //    }
-        //},
+        sync: function (method, model, options) {
+           if (method === "read") {
+               var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+                   setTimeout(function () {
+                       options.success(data, 'success', null);
+                   }, 100);
+               });
+               model.trigger('request', model, xhr, options);
+               return xhr;
+           }
+        },
         getCurrentOutageReport: function (region) {
             this.set({'requestedRegion': region});
             var xhr = this.fetch({
