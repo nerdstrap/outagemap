@@ -1,10 +1,15 @@
 ﻿<div class="outage-report-view">
     <div class="row collapse">
         <div class="small-12 columns">
-            <span>{{{titleText}}}</span>
+            <span class="title">{{{titleText}}}</span>
         </div>
     </div>
-    <div class="row collapse report-header">
+    <div class="row collapse no-incidents hidden">
+        <div class="small-12 columns">
+            <span>{{{noOutagesMessage}}}</span>
+        </div>
+    </div>
+    <div class="row collapse header">
         <div class="small-3 columns">
             <span>{{{countyNameTitleText}}}</span>
         </div>
@@ -18,27 +23,26 @@
             <span>{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
-    <div class="row no-incidents hidden">
-        <div class="small-12 columns">
-            <span>{{{noOutagesMessage}}}</span>
-        </div>
-    </div>
     {{#if incidentRows}}
     {{#stripeRows incidentRows}}
     <div class="{{rowClass}}">
         <div class="small-3 columns">
             {{#if countyName}}
-            <span class="countyName">{{{countyName}}}</span>
+            <span>{{{countyName}}}</span>
             {{/if}}
             {{#if stateName}}
-            <span class="stateName">{{{stateName}}} totals&#58;</span>
+            <span>{{{stateName}}} totals&#58;</span>
             {{/if}}
         </div>
         <div class="small-4 columns numeric">
             <span>{{formatNumber customersAffected}}</span>
         </div>
         <div class="small-3 columns numeric">
+            {{#if customersServed}}
             <span>{{formatNumber customersServed}}</span>
+            {{else}}
+            <span>&nbsp;</span>
+            {{/if}}
         </div>
         <div class="small-2 columns numeric">
             {{#if percentageAffected}}
@@ -48,9 +52,8 @@
     </div>
     {{/stripeRows}}
     {{/if}}
-
-    <div class="row collapse company-total bold">
-        <div class="small-3 columns numeric">
+    <div class="row collapse footer bold">
+        <div class="small-3 columns">
             <span>{{{grandTotalTitleText}}}</span>
         </div>
         <div class="small-4 columns numeric">

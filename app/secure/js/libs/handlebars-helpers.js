@@ -21,6 +21,13 @@ define(function (require) {
         getAppUri: function (relativeUri) {
             return env.getAppFolder() + relativeUri;
         },
+        formatNumber: function (value) {
+            if (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            } else {
+                return '';
+            }
+        },
         stripeRows: function (rows, fn) {
             var buffer = [],
                 i, len;

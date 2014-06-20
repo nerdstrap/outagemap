@@ -161,17 +161,17 @@
             console.trace('OutageReportModel.initialize()');
             options || (options = {});
         },
-        //sync: function (method, model, options) {
-        //    if (method === "read") {
-        //        var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
-        //            setTimeout(function () {
-        //                options.success(data, 'success', null);
-        //            }, 100);
-        //        });
-        //        model.trigger('request', model, xhr, options);
-        //        return xhr;
-        //    }
-        //},
+        sync: function (method, model, options) {
+           if (method === "read") {
+               var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+                   setTimeout(function () {
+                       options.success(data, 'success', null);
+                   }, 100);
+               });
+               model.trigger('request', model, xhr, options);
+               return xhr;
+           }
+        },
         getCurrentOutageReport: function (region) {
             this.set({'requestedRegion': region});
             var xhr = this.fetch({
