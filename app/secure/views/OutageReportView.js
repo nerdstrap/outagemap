@@ -70,18 +70,22 @@
                         renderModel.incidentRows.push(stateCopy);
                         renderModel.incidentRows.push({});
                     }
-                 });
+                });
             }
 
             _.extend(renderModel, this.resources());
             this.$el.html(template(renderModel));
+
+            if (renderModel.incidentRows.length === 0) {
+                this.showNoOutagesMessage();
+            }
         },
 
         showNoOutagesMessage: function () {
-            this.$('.row.no-incidents').removeClass('hidden');
-            this.$('.row.incident').addClass('hidden');
-            this.$('.row.state-total').addClass('hidden');
-            this.$('.row.company-total').addClass('hidden');
+            this.$('.no-incidents').removeClass('hidden');
+            this.$('.header').addClass('hidden');
+            this.$('.incident').addClass('hidden');
+            this.$('.footer').addClass('hidden');
         }
     });
 
