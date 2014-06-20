@@ -19,8 +19,8 @@
 
         resources: function (culture) {
             return {
-                'logoImageSrc': '/images/logo_apco_230x71.jpg',
-                'logoImageAlt': 'APCO',
+                'logoImageSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSrc').value,
+                'logoImageAlt': 'AEP',
                 'disclaimer': resourceHelpers.getResource('disclaimerText').value
             };
         },

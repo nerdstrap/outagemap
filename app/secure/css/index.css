@@ -12,9 +12,13 @@
 }
 
 #shell-view {
+    width: 768px;
+}
+
+.shell-view {
     width: 748px;
     border: 1px solid #B9B9B9;
-    margin : 0px 11px;
+    margin : 0px 10px;
 }
 
 .header-view {
@@ -22,21 +26,31 @@
 
     .header-view .header-menu {
         float: right;
+        margin: 10px;
+    }
+
+    .header-view .header-menu .button {
+        margin: 0;
     }
 
 .content-view {
     background-color: #E7E7E7;
+    border-top: 1px solid #B9B9B9;
+    border-bottom: 1px solid #B9B9B9;
 }
 
 .timestamp-label-container,
 .service-statistics-label-container {
     float: right;
     margin: 10px 0;
+    padding: 0 10px 0 0;
 }
 
 .outage-map-view {
     width: 744px;
     height: 484px;
+    border-top: 1px solid #B9B9B9;
+    border-bottom: 1px solid #B9B9B9;
 }
 
     .outage-map-view .incident {
@@ -93,17 +107,25 @@
 }
 
 .disclaimer-label-container {
+    margin-top: 30px;
+    padding: 0 10px;
 }
 
 .outage-map-legend-view {
 }
 
-    .outage-map-legend-view .legend-header {
-        font-weight: bold;
+.outage-map-legend-view .row {
     }
 
-    .outage-map-legend-view .legend-symbols {
+    .outage-map-legend-view .row.header {
+        font-size: 16px;
+        padding: 0 0 5px 0;
+    }
+
+    .outage-map-legend-view .row.symbols {
         background-color: #E7E7E7;
+        padding: 5px 10px;
+        vertical-align: middle;
     }
 
 .level-0-incident, .outage-report-view > .row.level-0-incident {
@@ -123,6 +145,7 @@
 .outage-map-legend-view .level-2-incident {
     width: 35px;
     height: 35px;
+        vertical-align: middle;
 }
 
 .service-territory {
@@ -140,6 +163,7 @@
 .service-territory,
 .county-lines,
 .major-highways {
-    width: 45px;
+    width: 55px;
     height: 5px;
+        vertical-align: middle;
 }

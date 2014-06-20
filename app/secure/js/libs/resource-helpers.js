@@ -101,6 +101,34 @@ define(function (require) {
         {
             'key': 'OutageMapLegendView.majorHighwaysTitleText',
             'value': 'Major Highways'
+        },
+        {
+            'key': 'aepohio.logoImageSrc',
+            'value': '/images/aepohio_logo.png'
+        },
+        {
+            'key': 'aeptexas.logoImageSrc',
+            'value': '/images/aeptexas_logo.png'
+        },
+        {
+            'key': 'apco.logoImageSrc',
+            'value': '/images/apco_logo.png'
+        },
+        {
+            'key': 'im.logoImageSrc',
+            'value': '/images/im_logo.png'
+        },
+        {
+            'key': 'kentucky.logoImageSrc',
+            'value': '/images/kentucky_logo.png'
+        },
+        {
+            'key': 'pso.logoImageSrc',
+            'value': '/images/pso_logo.png'
+        },
+        {
+            'key': 'swepco.logoImageSrc',
+            'value': '/images/swepco_logo.png'
         }
     ];
 
