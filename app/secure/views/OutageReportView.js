@@ -44,7 +44,7 @@
 
         updateViewFromModel: function () {
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
-            var operatingCompanyModel = this.model.getOperatingCompany(operatingCompany.identifier);
+            var operatingCompanyModel = this.model.getOperatingCompanyByIdentifier(operatingCompany.identifier);
             var renderModel = {
                 incidentRows: [],
                 customersServed: parseInt('0'),

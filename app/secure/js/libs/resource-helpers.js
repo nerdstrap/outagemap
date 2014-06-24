@@ -20,11 +20,11 @@ define(function (require) {
         },
         {
             'key': 'HeaderView.showOutageMapViewButtonText',
-            'value': 'View outage map'
+            'value': 'View Map'
         },
         {
             'key': 'HeaderView.showOutageReportViewButtonText',
-            'value': 'View outage report'
+            'value': 'View List'
         },
         {
             'key': 'noOutagesMessage',
@@ -39,8 +39,12 @@ define(function (require) {
             'value': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
         },
         {
-            'key': 'logoImageSrc',
-            'value': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
+            'key': 'incidentTooltipFormatString',
+            'value': '{0} County<br/>{1} customers affected.<br/>(click here for details)'
+        },
+        {
+            'key': 'swepcoIncidentTooltipFormatString',
+            'value': '{0} Parish&#46;&#60;br&#47;&#62;{1} customers affected.&#60;br&#47;&#62;(click here for details)'
         },
         {
             'key': 'disclaimerText',

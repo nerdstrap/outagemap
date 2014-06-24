@@ -5,7 +5,7 @@ require.config({
         },
         'env': {
             'apiUrl': '/app',
-            'appFolder': '/secure', /*'appFolder': '/~michaelbaltic/outagemap/app/secure'*/
+            'appFolder': '/~michaelbaltic/outagemap/app/secure', /*'appFolder': '/secure'*/
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100,
@@ -18,24 +18,24 @@ require.config({
             'incidentLevels': [
                 {
                     'id': 0,
-                    'color': '#FFFF54',
-                    'backgroundColor': '#FFFFAB',
+                    'fillColor': '#FFFF54',
+                    'highlightColor': '#FFFFAB',
                     'min': 100,
                     'max': 500,
                     'className': 'level-0-incident'
                 },
                 {
                     'id': 1,
-                    'color': '#FFA24F',
-                    'backgroundColor': '#FFD1A8',
+                    'fillColor': '#FFA24F',
+                    'highlightColor': '#FFD1A8',
                     'min': 501,
                     'max': 2000,
                     'className': 'level-1-incident'
                 },
                 {
                     'id': 2,
-                    'color': '#FF4444',
-                    'backgroundColor': '#FFA3A3',
+                    'fillColor': '#FF4444',
+                    'highlightColor': '#FFA3A3',
                     'min': 2001,
                     'max': Number.MAX_VALUE,
                     'className': 'level-2-incident'
@@ -56,12 +56,12 @@ require.config({
         'json2': 'libs/json2',
         'console': 'libs/console',
         'dates': 'libs/dates',
+        /*jquery plugins*/
+        'jquery-tooltipster': 'libs/jquery-tooltipster',
         /*require plugins*/
         'text': 'libs/require-text',
         'hbs': 'libs/require-hbs',
         'svg': 'libs/require-svg',
-        /*jquery plugins*/
-        'balloon': 'libs/jquery.balloon',
         /*app-level items*/
         'globals': 'libs/globals',
         'env': 'libs/env',
@@ -78,7 +78,6 @@ require.config({
         'views': '../views',
         'maps': '../maps',
         'data': '../data',
-        'balloon': 'libs/jquery.balloon'
     },
     shim: {
         'backbone': {
@@ -90,6 +89,12 @@ require.config({
         },
         'Handlebars-base': {
             exports: 'Handlebars'
+        },
+        'jquery-tooltipster': {
+            deps: [
+            'jquery'
+            ],
+            exports: 'tooltipster'
         }
     }
 });

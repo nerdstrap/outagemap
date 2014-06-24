@@ -5,6 +5,7 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         env = require('env'),
+        regionHelpers = require('region-helpers'),
         outageReportService = require('services/outageReportService');
 
     var _incidentTotalThreshold = env.getIncidentTotalThreshold();
@@ -22,6 +23,9 @@
         // id
         if (operatingCompany.hasOwnProperty('id')) {
             operatingCompanyInstance.identifier = operatingCompany.id;
+            var operatingCompanyConfig = regionHelpers.getOperatingCompanyByIdentifier(operatingCompanyInstance.identifier);
+            operatingCompanyInstance.id = operatingCompanyConfig.id;
+            operatingCompanyConfig.fullName = operatingCompanyConfig.fullName;
         }
 
         // states
@@ -181,7 +185,15 @@
 
             return xhr;
         },
-        getOperatingCompany: function (identifier) {
+        getOperatingCompanyById: function (id) {
+            var result;
+            var operatingCompanies = this.get('operatingCompanies');
+            if (operatingCompanies && operatingCompanies.length > 0) {
+                result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.id === id; });
+            }
+            return result;
+        },
+        getOperatingCompanyByIdentifier: function (identifier) {
             var result;
             var operatingCompanies = this.get('operatingCompanies');
             if (operatingCompanies && operatingCompanies.length > 0) {
