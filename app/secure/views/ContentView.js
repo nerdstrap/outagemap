@@ -85,7 +85,7 @@
             return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
         },
         getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
-            var operatingCompany = this.model.getOperatingCompany(operatingCompanyIdentifier);
+            var operatingCompany = this.model.getOperatingCompanyByIdentifier(operatingCompanyIdentifier);
             if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
 
                 var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;

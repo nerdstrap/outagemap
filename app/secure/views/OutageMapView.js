@@ -1,4 +1,4 @@
-define(function (require) {
+﻿define(function (require) {
     'use strict';
 
     var $ = require('jquery'),
@@ -41,9 +41,9 @@ define(function (require) {
             var renderModel = _.extend({}, this.resources(), this.model);
             this.$el.html(template(renderModel));
 
+
             return this;
         },
-
         updateViewFromModel: function () {
             var currentContext = this;
             require(['svg!maps/' + currentContext.region], function (map) {
@@ -64,7 +64,7 @@ define(function (require) {
             });
         },
 
-        showOutageReport: function(event) {
+        showOutageReport: function (event) {
             if (event) {
                 event.preventDefault();
             }
@@ -74,7 +74,7 @@ define(function (require) {
         delegateEvents: function (incidents) {
             var currentContext = this;
 
-            _.each(incidents, function(incident) {
+            _.each(incidents, function (incident) {
                 if (incident.customersAffected >= _incidentTotalThreshold) {
                     var countySvgElementId = countyPrefix + incident.countyName + countySuffix;
                     var countySvgElement = $('#' + countySvgElementId);
@@ -90,9 +90,11 @@ define(function (require) {
                         countySvgElement.tooltipster({
                             contentAsHTML: true,
                             //autoClose: false,
-                            interactive: true,
+                            //                            interactive: true,
+//                            theme: 'tooltipster-noir',
                             touchDevices: false
                         });
+                        $('.tooltipster-base').click(currentContext.showOutageReport);
                         countySvgElement.click(currentContext.showOutageReport);
                     }
                 }

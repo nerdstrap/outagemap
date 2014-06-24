@@ -5,7 +5,7 @@ require.config({
         },
         'env': {
             'apiUrl': '/app',
-            'appFolder': '/~michaelbaltic/outagemap/app/secure', /*'appFolder': '/secure'*/
+            'appFolder': '/app/secure', /*'appFolder': '/~michaelbaltic/outagemap/app/secure'*/
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100,
@@ -56,12 +56,12 @@ require.config({
         'json2': 'libs/json2',
         'console': 'libs/console',
         'dates': 'libs/dates',
-        /*jquery plugins*/
-        'jquery-tooltipster': 'libs/jquery-tooltipster',
         /*require plugins*/
         'text': 'libs/require-text',
         'hbs': 'libs/require-hbs',
         'svg': 'libs/require-svg',
+        /*jquery plugins*/
+        'jquery-tooltipster': 'libs/jquery-tooltipster',
         /*app-level items*/
         'globals': 'libs/globals',
         'env': 'libs/env',
@@ -77,7 +77,7 @@ require.config({
         'services': '../services',
         'views': '../views',
         'maps': '../maps',
-        'data': '../data',
+        'data': '../data'
     },
     shim: {
         'backbone': {
@@ -91,10 +91,7 @@ require.config({
             exports: 'Handlebars'
         },
         'jquery-tooltipster': {
-            deps: [
-            'jquery'
-            ],
-            exports: 'tooltipster'
+            deps: ['jquery'],
         }
     }
 });

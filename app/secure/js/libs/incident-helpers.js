@@ -8,31 +8,31 @@
         masterConfig = (module.config && module.config()) || {};
 
     var incidentLevels = masterConfig.incidentLevels || [
-        {
-            'id': 0,
-            'fillColor': '#FFFF54',
-            'highlightColor': '#FFFFAB',
-            'min': 100,
-            'max': 500,
-            'className': 'level-0-incident'
-        },
-        {
-            'id': 1,
-            'fillColor': '#FFA24F',
-            'highlightColor': '#FFD1A8',
-            'min': 501,
-            'max': 2000,
-            'className': 'level-1-incident'
-        },
-        {
-            'id': 2,
-            'fillColor': '#FF4444',
-            'highlightColor': '#FFA3A3',
-            'min': 2001,
-            'max': Number.MAX_VALUE,
-            'className': 'level-2-incident'
-        }
-    ];
+                {
+                    'id': 0,
+                    'fillColor': '#FFFF54',
+                    'highlightColor': '#FFFFAB',
+                    'min': 100,
+                    'max': 500,
+                    'className': 'level-0-incident'
+                },
+                {
+                    'id': 1,
+                    'fillColor': '#FFA24F',
+                    'highlightColor': '#FFD1A8',
+                    'min': 501,
+                    'max': 2000,
+                    'className': 'level-1-incident'
+                },
+                {
+                    'id': 2,
+                    'fillColor': '#FF4444',
+                    'highlightColor': '#FFA3A3',
+                    'min': 2001,
+                    'max': Number.MAX_VALUE,
+                    'className': 'level-2-incident'
+                }
+            ];
 
     var defaultIncidentLevel = { 'id': -1, 'fillColor': '', 'highlightColor': '', 'min': -1, 'max': -1, 'className': '' };
 

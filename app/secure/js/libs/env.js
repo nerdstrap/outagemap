@@ -5,8 +5,7 @@ define(function (require) {
         globals = require('globals'),
         appEvents = require('app-events'),
         incidentHelpers = require('incident-helpers'),
-        regionHelpers = require('region-helpers'),
-        jqueryBalloon = require('balloon');
+        regionHelpers = require('region-helpers');
 
     var masterConfig = (module.config && module.config()) || {},
         apiUrl = masterConfig.apiUrl || '',
@@ -54,7 +53,7 @@ define(function (require) {
 
                         el.onmouseover = function () {
                             var currentContext = this;
-                            $('#' + this.id).balloon({ offsetX: 0, offsetY: 0, contents: this.getAttribute('balloonTxt'), classname: "balloon".concat(this.id), css: { backgroundColor: 'yellow', color: 'black', borderColor: 'red'} });
+                            //$('#' + this.id).balloon({ offsetX: 0, offsetY: 0, contents: this.getAttribute('balloonTxt'), classname: "balloon".concat(this.id), css: { backgroundColor: 'yellow', color: 'black', borderColor: 'red'} });
                             $('.balloon' + this.id).click(function () {
                                 appEvents.trigger(appEvents.showOutageReport, currentContext.id, currentContext.getAttribute('data-className'));
                                 $('.balloon' + currentContext.id).hide();
