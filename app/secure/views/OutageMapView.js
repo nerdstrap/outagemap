@@ -89,12 +89,8 @@
                         countySvgElement.attr('title', tooltipText);
                         countySvgElement.tooltipster({
                             contentAsHTML: true,
-                            //autoClose: false,
-                            //                            interactive: true,
-//                            theme: 'tooltipster-noir',
                             touchDevices: false
                         });
-                        $('.tooltipster-base').click(currentContext.showOutageReport);
                         countySvgElement.click(currentContext.showOutageReport);
                     }
                 }

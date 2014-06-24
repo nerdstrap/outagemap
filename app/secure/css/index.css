@@ -88,8 +88,16 @@ root {
             background-color: #FFFFFF;
         }
 
-        .outage-report-view .row.highlight {
-            background-color: #DDD4B7;
+        .outage-report-view .row.level-0-incident {
+            background-color: #FFFFAB;
+        }
+
+        .outage-report-view .row.level-1-incident {
+            background-color: #FFD1A8;
+        }
+
+        .outage-report-view .row.level-2-incident {
+            background-color: #FFA3A3;
         }
 
         .outage-report-view .row.bold {
@@ -123,30 +131,31 @@ root {
     .outage-map-legend-view .row {
     }
 
-    .outage-map-legend-view .row.header {
-    }
-
-        .outage-map-legend-view .row.header > .small-5.columns {
-            font-size: 16px;
-            padding: 0 0 5px 0;
+        .outage-map-legend-view .row.header {
         }
 
-        .outage-map-legend-view .row.header > .small-7.columns {
-            font-size: 16px;
-            padding: 0 0 5px 10px;
-        }
+            .outage-map-legend-view .row.header > .small-5.columns {
+                font-size: 16px;
+                padding: 0 0 5px 0;
+            }
 
-    .outage-map-legend-view .row.symbols {
+            .outage-map-legend-view .row.header > .small-7.columns {
+                font-size: 16px;
+                padding: 0 0 5px 10px;
+            }
+
+        .outage-map-legend-view .row.symbols {
             background-color: #E7E7E7;
-    }
+        }
 
-        .outage-map-legend-view .row.symbols > .small-5.columns {
-            padding: 5px 10px;
-        }
-        .outage-map-legend-view .row.symbols > .small-7.columns {
-            border-left: 10px solid #FFFFFF;
-            padding: 5px 10px;
-        }
+            .outage-map-legend-view .row.symbols > .small-5.columns {
+                padding: 5px 10px;
+            }
+
+            .outage-map-legend-view .row.symbols > .small-7.columns {
+                border-left: 10px solid #FFFFFF;
+                padding: 5px 10px;
+            }
 
     .outage-map-legend-view .min-height-35 {
         min-height: 35px;
@@ -156,15 +165,15 @@ root {
             margin-top: 10px;
         }
 
-.level-0-incident, .outage-report-view > .row.level-0-incident {
+.level-0-incident {
     background-color: #FFFF54;
 }
 
-.level-1-incident, .outage-report-view > .row.level-1-incident {
+.level-1-incident {
     background-color: #FFA24F;
 }
 
-.level-2-incident, .outage-report-view > .row.level-2-incident {
+.level-2-incident {
     background-color: #FF4444;
 }
 
@@ -207,14 +216,15 @@ root {
     width: auto;
     overflow: visible;
 }
-.tooltipster-base .tooltipster-content {
-    overflow: hidden;
-}
+
+    .tooltipster-base .tooltipster-content {
+        overflow: hidden;
+    }
 /* This is the base styling required to make all Tooltipsters work */
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
-    border-radius: 5px; 
+    border-radius: 5px;
     border: 2px solid #000;
     background: #4c4c4c;
     color: #fff;

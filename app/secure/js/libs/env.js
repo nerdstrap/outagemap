@@ -35,41 +35,6 @@ define(function (require) {
         },
         getIncidentTotalThreshold: function () {
             return incidentTotalThreshold;
-        },
-        attachEvents: function (incidents) {
-
-            for (var i = 0, len = incidents.length; i <= len; i++) {
-
-                var incident = incidents[i];
-                if (incident && incident.countyName && incident.customersAffected >= 100) {
-                    var el = document.getElementById(incident.countyName);
-                    var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).color;
-                    var className = incidentHelpers.getIncidentLevel(incident.customersAffected).className;
-                    var balloonTxt = '<b>' + incident.countyName + ' Co.</b><br/>' + incident.customersAffected + ' customers affected <br/> (click for details)';
-                    if (el) {
-                        el.setAttribute('data-className', className);
-                        el.setAttribute('fill', backgroundColor);
-                        el.setAttribute('balloonTxt', balloonTxt);
-
-                        el.onmouseover = function () {
-                            var currentContext = this;
-                            //$('#' + this.id).balloon({ offsetX: 0, offsetY: 0, contents: this.getAttribute('balloonTxt'), classname: "balloon".concat(this.id), css: { backgroundColor: 'yellow', color: 'black', borderColor: 'red'} });
-                            $('.balloon' + this.id).click(function () {
-                                appEvents.trigger(appEvents.showOutageReport, currentContext.id, currentContext.getAttribute('data-className'));
-                                $('.balloon' + currentContext.id).hide();
-                            });
-                        };
-
-                        el.onclick = function () {
-                            appEvents.trigger(appEvents.showOutageReport, this.id, this.getAttribute('data-className'));
-                        };
-
-                        el.onmouseout = function () {
-                        };
-
-                    }
-                }
-            }
         }
     };
 

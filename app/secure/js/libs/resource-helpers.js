@@ -40,11 +40,11 @@ define(function (require) {
         },
         {
             'key': 'incidentTooltipFormatString',
-            'value': '{0} County<br/>{1} customers affected.<br/>(click here for details)'
+            'value': '{0} County<br/>{1} customers affected.<br/>(click for details)'
         },
         {
             'key': 'swepcoIncidentTooltipFormatString',
-            'value': '{0} Parish&#46;&#60;br&#47;&#62;{1} customers affected.&#60;br&#47;&#62;(click here for details)'
+            'value': '{0} Parish<br/>{1} customers affected.<br/>(click for details)'
         },
         {
             'key': 'disclaimerText',

@@ -5,14 +5,10 @@ require.config({
         },
         'env': {
             'apiUrl': '/app',
-            'appFolder': '/app/secure', /*'appFolder': '/~michaelbaltic/outagemap/app/secure'*/
+            'appFolder': '/secure', /*'appFolder': '/~michaelbaltic/outagemap/app/secure'*/
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
-            'incidentTotalThreshold': 100,
-            'disclaimer': 'NOTE&#58; This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm or similar event &#8211; the accuracy of this estimate can be affected by a large number of unusual situations that must be analyzed.',
-            'noOutagesMessage': 'No counties currently have outages affecting more than 100 customers.',
-            'swepcoNoOutagesMessage': 'No counties or parishes currently have outages affecting more than 100 customers.',
-            'serviceUnavailableMessage': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
+            'incidentTotalThreshold': 100
         },
         'incident-helpers': {
             'incidentLevels': [
@@ -76,8 +72,7 @@ require.config({
         'models': '../models',
         'services': '../services',
         'views': '../views',
-        'maps': '../maps',
-        'data': '../data'
+        'maps': '../maps'
     },
     shim: {
         'backbone': {
