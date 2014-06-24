@@ -82,7 +82,6 @@
         },
         formatUTCDate: function (date) {
             date = new Date(date);
-            //            return dates.format(date, format);
             return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
         },
         getServiceStatistics: function (operatingCompanyIdentifier, fullName) {

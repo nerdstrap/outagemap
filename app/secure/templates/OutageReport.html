@@ -1,4 +1,4 @@
-﻿<div class="outage-report-view">
+<div class="outage-report-view">
     <div class="row collapse">
         <div class="small-12 columns">
             <span class="title">{{{titleText}}}</span>
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row collapse header">
-        <div class="small-3 columns">
+        <div class="small-2 columns">
             <span>{{{countyNameTitleText}}}</span>
         </div>
         <div class="small-4 columns numeric">
@@ -19,19 +19,19 @@
         <div class="small-3 columns numeric">
             <span>{{{customersServedTitleText}}}</span>
         </div>
-        <div class="small-2 columns numeric">
+        <div class="small-3 columns numeric">
             <span>{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
     {{#if incidentRows}}
     {{#stripeRows incidentRows}}
     <div class="{{rowClass}}">
-        <div class="small-3 columns countyname">
+        <div class="small-2 columns countyname">
             {{#if countyName}}
-            <span>{{{countyName}}}</span>
+            <span class="county-name">{{{countyName}}}</span>
             {{/if}}
             {{#if stateName}}
-            <span>{{{stateName}}} totals&#58;</span>
+            <span class="state-name">{{{stateName}}} totals&#58;</span>
             {{/if}}
         </div>
         <div class="small-4 columns numeric">
@@ -44,7 +44,7 @@
             <span>&nbsp;</span>
             {{/if}}
         </div>
-        <div class="small-2 columns numeric">
+        <div class="small-3 columns numeric">
             {{#if percentageAffected}}
             <span>{{percentageAffected}}&#37;</span>
             {{/if}}
@@ -53,7 +53,7 @@
     {{/stripeRows}}
     {{/if}}
     <div class="row collapse footer bold">
-        <div class="small-3 columns">
+        <div class="small-2 columns">
             <span>{{{grandTotalTitleText}}}</span>
         </div>
         <div class="small-4 columns numeric">
@@ -62,7 +62,7 @@
         <div class="small-3 columns numeric">
             <span>{{formatNumber customersServed}}</span>
         </div>
-        <div class="small-2 columns numeric">
+        <div class="small-3 columns numeric">
             <span>{{percentageAffected}}&#37;</span>
         </div>
     </div>

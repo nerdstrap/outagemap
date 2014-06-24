@@ -43,7 +43,6 @@ define(function (require) {
 
                 var incident = incidents[i];
                 if (incident && incident.countyName && incident.customersAffected >= 100) {
-//                    var el = document.getElementById('_x3C_' + incident.countyName + '_x3E_');
                     var el = document.getElementById(incident.countyName);
                     var backgroundColor = incidentHelpers.getIncidentLevel(incident.customersAffected).color;
                     var className = incidentHelpers.getIncidentLevel(incident.customersAffected).className;
@@ -57,14 +56,12 @@ define(function (require) {
                             var currentContext = this;
                             $('#' + this.id).balloon({ offsetX: 0, offsetY: 0, contents: this.getAttribute('balloonTxt'), classname: "balloon".concat(this.id), css: { backgroundColor: 'yellow', color: 'black', borderColor: 'red'} });
                             $('.balloon' + this.id).click(function () {
-                                //                                appEvents.trigger(appEvents.showOutageReport, currentContext.id.substr(5, currentContext.id.length - 10), currentContext.getAttribute('data-className'));
                                 appEvents.trigger(appEvents.showOutageReport, currentContext.id, currentContext.getAttribute('data-className'));
                                 $('.balloon' + currentContext.id).hide();
                             });
                         };
 
                         el.onclick = function () {
-                            //                            appEvents.trigger(appEvents.showOutageReport, this.id.substr(5, this.id.length - 10), this.getAttribute('data-className'));
                             appEvents.trigger(appEvents.showOutageReport, this.id, this.getAttribute('data-className'));
                         };
 

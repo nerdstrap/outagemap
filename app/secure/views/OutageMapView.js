@@ -1,4 +1,4 @@
-﻿define(function (require) {
+define(function (require) {
     'use strict';
 
     var $ = require('jquery'),
@@ -6,8 +6,16 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         env = require('env'),
+        appEvents = require('app-events'),
         template = require('hbs!templates/OutageMap'),
-        regionHelpers = require('region-helpers');
+        regionHelpers = require('region-helpers'),
+        incidentHelpers = require('incident-helpers'),
+        resourceHelpers = require('resource-helpers');
+
+    var _incidentTotalThreshold = env.getIncidentTotalThreshold();
+
+    var countyPrefix = '_x3C_';
+    var countySuffix = '_x3E_';
 
     var OutageMapView = CompositeView.extend({
         initialize: function (options) {
@@ -20,7 +28,10 @@
         },
 
         resources: function (culture) {
-            return {};
+            return {
+                'incidentTooltipFormatString': resourceHelpers.getResource('incidentTooltipFormatString').value,
+                'swepcoIncidentTooltipFormatString': resourceHelpers.getResource('swepcoIncidentTooltipFormatString').value
+            };
         },
 
         render: function () {
@@ -30,28 +41,59 @@
             var renderModel = _.extend({}, this.resources(), this.model);
             this.$el.html(template(renderModel));
 
-
             return this;
         },
-        showOutageReportView: function () {
-            console.trace('OutageMapView.showOutageReportView()');
-        },
+
         updateViewFromModel: function () {
             var currentContext = this;
             require(['svg!maps/' + currentContext.region], function (map) {
                 var svgElement = document.getElementById('svg-container');
                 if (svgElement) {
                     svgElement.innerHTML = map;
-                    var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
-                    var operatingCompanyModel = currentContext.model.getOperatingCompany(operatingCompany.identifier);
+                    var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
                     if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
                         _.each(operatingCompanyModel.states, function (state) {
                             if (state.customersAffected > 0) {
                                 if (state.incidents && state.incidents.length > 0) {
-                                    env.attachEvents(state.incidents);
+                                    currentContext.delegateEvents(state.incidents);
                                 }
                             }
                         });
+                    }
+                }
+            });
+        },
+
+        showOutageReport: function(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            appEvents.trigger(appEvents.showOutageReport, this.getAttribute('data-county-name'), this.getAttribute('data-class-name'));
+        },
+
+        delegateEvents: function (incidents) {
+            var currentContext = this;
+
+            _.each(incidents, function(incident) {
+                if (incident.customersAffected >= _incidentTotalThreshold) {
+                    var countySvgElementId = countyPrefix + incident.countyName + countySuffix;
+                    var countySvgElement = $('#' + countySvgElementId);
+                    if (countySvgElement) {
+                        var incidentLevelConfig = incidentHelpers.getIncidentLevel(incident.customersAffected);
+                        var incidentTooltipFormatString = currentContext.resources().incidentTooltipFormatString;
+                        var tooltipText = incidentTooltipFormatString.format(incident.countyName, incident.customersAffected);
+                        countySvgElement.attr('fill', incidentLevelConfig.fillColor);
+                        countySvgElement.attr('data-class-name', incidentLevelConfig.className);
+                        countySvgElement.attr('data-county-name', incident.countyName);
+                        countySvgElement.title = tooltipText;
+                        countySvgElement.attr('title', tooltipText);
+                        countySvgElement.tooltipster({
+                            contentAsHTML: true,
+                            //autoClose: false,
+                            interactive: true,
+                            touchDevices: false
+                        });
+                        countySvgElement.click(currentContext.showOutageReport);
                     }
                 }
             });

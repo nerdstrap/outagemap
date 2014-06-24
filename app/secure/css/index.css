@@ -1,6 +1,12 @@
-﻿root {
+﻿@font-face {
+    font-family: aepoutagefont;
+    src: url(../fonts/HELVETICANEUELTSTD-BD.OTF);
+}
+
+root {
     display: block;
     font-size: 1em;
+    font-family: aepoutagefont;
 }
 
 .hidden {
@@ -17,7 +23,7 @@
 
 .shell-view {
     width: 748px;
-    margin : 0px 10px;
+    margin: 0px 10px;
 }
 
 .header-view {
@@ -28,9 +34,9 @@
         margin: 10px 0;
     }
 
-    .header-view .header-menu .button {
-        margin: 0;
-    }
+        .header-view .header-menu .button {
+            margin: 0;
+        }
 
 .content-view {
     background-color: #E7E7E7;
@@ -49,6 +55,7 @@
     height: 484px;
     border-top: 1px solid #B9B9B9;
     border-bottom: 1px solid #B9B9B9;
+    font-family: aepoutagefont;
 }
 
     .outage-map-view .incident {
@@ -58,20 +65,20 @@
 .outage-report-view {
 }
 
-.outage-report-view .title {
-    font-size: 20px;
-    padding: 10px;
-}
+    .outage-report-view .title {
+        font-size: 20px;
+        padding: 10px;
+    }
 
     .outage-report-view .row {
         background-color: #E7E7E7;
     }
 
-    .outage-report-view .row.header .columns,
-    .outage-report-view .row.incident .columns,
-    .outage-report-view .row.footer .columns {
-        padding: 10px;
-    }
+        .outage-report-view .row.header .columns,
+        .outage-report-view .row.incident .columns,
+        .outage-report-view .row.footer .columns {
+            padding: 10px;
+        }
 
         .outage-report-view .row.header {
             font-size: 18px;
@@ -95,6 +102,7 @@
 
     .outage-report-view .no-incidents {
         text-align: center;
+        padding: 60px 0;
     }
 
 .footer-view {
@@ -112,19 +120,41 @@
 .outage-map-legend-view {
 }
 
-.outage-map-legend-view .row {
+    .outage-map-legend-view .row {
     }
 
     .outage-map-legend-view .row.header {
-        font-size: 16px;
-        padding: 0 0 5px 0;
     }
 
+        .outage-map-legend-view .row.header > .small-5.columns {
+            font-size: 16px;
+            padding: 0 0 5px 0;
+        }
+
+        .outage-map-legend-view .row.header > .small-7.columns {
+            font-size: 16px;
+            padding: 0 0 5px 10px;
+        }
+
     .outage-map-legend-view .row.symbols {
-        background-color: #E7E7E7;
-        padding: 5px 10px;
-        vertical-align: middle;
+            background-color: #E7E7E7;
     }
+
+        .outage-map-legend-view .row.symbols > .small-5.columns {
+            padding: 5px 10px;
+        }
+        .outage-map-legend-view .row.symbols > .small-7.columns {
+            border-left: 10px solid #FFFFFF;
+            padding: 5px 10px;
+        }
+
+    .outage-map-legend-view .min-height-35 {
+        min-height: 35px;
+    }
+
+        .outage-map-legend-view .min-height-35 > div {
+            margin-top: 10px;
+        }
 
 .level-0-incident, .outage-report-view > .row.level-0-incident {
     background-color: #FFFF54;
@@ -143,19 +173,18 @@
 .outage-map-legend-view .level-2-incident {
     width: 35px;
     height: 35px;
-        vertical-align: middle;
 }
 
 .service-territory {
-    background-color: blue;
+    background-color: #A3C7D3;
 }
 
 .county-lines {
-    background-color: green;
+    background-color: #DBD8BD;
 }
 
 .major-highways {
-    background-color: orange;
+    background-color: #EFCC9E;
 }
 
 .service-territory,
@@ -163,5 +192,30 @@
 .major-highways {
     width: 55px;
     height: 5px;
-        vertical-align: middle;
+}
+
+/* This is the base styling required to make all Tooltipsters work */
+.tooltipster-base {
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+    pointer-events: none;
+    width: auto;
+    overflow: visible;
+}
+.tooltipster-base .tooltipster-content {
+    overflow: hidden;
+}
+/* This is the base styling required to make all Tooltipsters work */
+
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+    border-radius: 5px; 
+    border: 2px solid #000;
+    background: #4c4c4c;
+    color: #fff;
 }
