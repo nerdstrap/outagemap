@@ -35,6 +35,13 @@ define(function (require) {
         },
         getIncidentTotalThreshold: function () {
             return incidentTotalThreshold;
+        },
+        formatNumber: function (value) {
+            if (value) {
+                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            } else {
+                return '';
+            }
         }
     };
 

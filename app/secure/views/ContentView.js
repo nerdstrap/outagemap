@@ -104,7 +104,7 @@
 
                 var stateNames = _.pluck(operatingCompany.states, 'stateName').join(' &#38; ');
 
-                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, customersServed.toLocaleString('en'), countiesServed.toLocaleString('en'), stateNames);
+                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, env.formatNumber(customersServed), env.formatNumber(countiesServed), stateNames);
 
                 return serviceStatistics;
             }

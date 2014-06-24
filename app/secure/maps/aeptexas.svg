@@ -618,7 +618,7 @@
 		524.7,468.2 525.1,468.2 524.7,466 527.3,466 528.7,461.2 530.4,461.2 530,466 527.8,467.9 530,469.2 534.4,464 535.8,459.9 
 		537.2,458.2 538.9,452.4 514.6,452.3 	"/>
 	
-		<polygon id="_x3C_HILDAGO_x3E_" fill="none" stroke="#DBD8BD" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.8637" points="
+		<polygon id="_x3C_HIDALGO_x3E_" fill="none" stroke="#DBD8BD" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.8637" points="
 		506.3,499.5 489.8,499.8 476.3,532.9 494.3,544.1 501.9,546 512,544.3 512.2,527 512.6,521.7 505.6,519.4 507.9,511.1 	"/>
 	
 		<polygon id="_x3C_BROOKS_x3E_" fill="none" stroke="#DBD8BD" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.8637" points="
@@ -1083,52 +1083,52 @@
 			S428,33.9,424.7,33.9L424.7,33.9z"/>
 	</g>
 	<rect x="387.7" y="317.7" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 396.9106 330.8233)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">San Anto</text>
-	<text transform="matrix(1 0 0 1 468.5303 330.8233)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">-</text>
+	<text transform="matrix(1 0 0 1 396.9106 330.8233)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">San Anto</text>
+	<text transform="matrix(1 0 0 1 468.5303 330.8233)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">-</text>
 	<rect x="283.7" y="209.4" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 286.71 222.6187)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">San Angelo</text>
+	<text transform="matrix(1 0 0 1 286.71 222.6187)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">San Angelo</text>
 	<rect x="317.9" y="33.6" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 356.3501 46.7275)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Vernon</text>
+	<text transform="matrix(1 0 0 1 356.3501 46.7275)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Vernon</text>
 	<rect x="310.1" y="140.5" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 345.3154 153.5551)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Abilene</text>
+	<text transform="matrix(1 0 0 1 345.3154 153.5551)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Abilene</text>
 	<rect x="121.3" y="271.8" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 165.9399 284.8809)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Alpine</text>
+	<text transform="matrix(1 0 0 1 165.9399 284.8809)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Alpine</text>
 	<rect x="639.9" y="291.2" fill="none" width="95.7" height="24.5"/>
-	<text transform="matrix(1 0 0 1 639.8652 304.4101)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Houston</text>
+	<text transform="matrix(1 0 0 1 639.8652 304.4101)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Houston</text>
 	<rect x="548" y="426" fill="none" width="123.3" height="27.4"/>
-	<text transform="matrix(1 0 0 1 548.0137 439.1182)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Corpus Christi</text>
+	<text transform="matrix(1 0 0 1 548.0137 439.1182)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Corpus Christi</text>
 	<rect x="602.5" y="393.4" fill="none" width="123.3" height="27.4"/>
-	<text transform="matrix(1 0 0 1 602.4971 406.5732)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Victoria</text>
+	<text transform="matrix(1 0 0 1 602.4971 406.5732)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Victoria</text>
 	<rect x="524.9" y="265.8" fill="none" width="123.3" height="27.4"/>
-	<text transform="matrix(1 0 0 1 524.8702 278.9005)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Austin</text>
+	<text transform="matrix(1 0 0 1 524.8702 278.9005)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Austin</text>
 	<rect x="412.7" y="529.5" fill="none" width="69.5" height="22.3"/>
-	<text transform="matrix(1 0 0 1 418.3598 542.6085)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">McAllen</text>
+	<text transform="matrix(1 0 0 1 418.3598 542.6085)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">McAllen</text>
 	<rect x="440.2" y="442.2" fill="none" width="123.3" height="27.4"/>
-	<text transform="matrix(1 0 0 1 440.1806 455.4024)" fill="#58595B" font-family="'HelveticaNeue'" font-size="18.5124">Laredo</text>
+	<text transform="matrix(1 0 0 1 440.1806 455.4024)" fill="#58595B" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124">Laredo</text>
 	<g>
 		<rect x="502.1" y="26.1" fill="none" width="116.9" height="20.5"/>
 		
-			<text transform="matrix(1 0 0 1 503.8174 39.3105)" fill="#BBB5AF" font-family="'Helvetica'" font-size="18.5124" letter-spacing="2">OKLAHOMA</text>
+			<text transform="matrix(1 0 0 1 503.8174 39.3105)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124" letter-spacing="2">OKLAHOMA</text>
 	</g>
 	<g>
 		<rect x="54.7" y="124.1" fill="none" width="196.7" height="33.1"/>
 		
-			<text transform="matrix(1 0 0 1 88.8383 137.2441)" fill="#BBB5AF" font-family="'Helvetica'" font-size="18.5124" letter-spacing="2">NEW MEXICO</text>
+			<text transform="matrix(1 0 0 1 88.8383 137.2441)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124" letter-spacing="2">NEW MEXICO</text>
 	</g>
 	<g>
 		<rect x="144.3" y="435.9" fill="none" width="196.7" height="33.1"/>
 		
-			<text transform="matrix(1 0 0 1 204.5367 448.9551)" fill="#BBB5AF" font-family="'Helvetica'" font-size="18.5124" letter-spacing="2">MEXICO</text>
+			<text transform="matrix(1 0 0 1 204.5367 448.9551)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124" letter-spacing="2">MEXICO</text>
 	</g>
 	<g>
 		<rect x="719.4" y="67.8" fill="none" width="121.7" height="31.9"/>
 		
-			<text transform="matrix(1 0 0 1 728.2891 80.9638)" fill="#BBB5AF" font-family="'Helvetica'" font-size="18.5124" letter-spacing="2">ARKANSAS</text>
+			<text transform="matrix(1 0 0 1 728.2891 80.9638)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124" letter-spacing="2">ARKANSAS</text>
 	</g>
 	<g>
 		<rect x="749.5" y="260.1" fill="none" width="121.7" height="31.9"/>
 		
-			<text transform="matrix(1 0 0 1 756.0518 273.2075)" fill="#BBB5AF" font-family="'Helvetica'" font-size="18.5124" letter-spacing="2">LOUISIANA</text>
+			<text transform="matrix(1 0 0 1 756.0518 273.2075)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh'" font-size="18.5124" letter-spacing="2">LOUISIANA</text>
 	</g>
 </g>
 </svg>

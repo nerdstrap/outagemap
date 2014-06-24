@@ -4,8 +4,8 @@ require.config({
             'consoleLevel': 'off'
         },
         'env': {
-            'apiUrl': '/app',
-            'appFolder': '/secure', /*'appFolder': '/~michaelbaltic/outagemap/app/secure'*/
+            'apiUrl': '',
+            'appFolder': '/secure',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
@@ -86,7 +86,7 @@ require.config({
             exports: 'Handlebars'
         },
         'jquery-tooltipster': {
-            deps: ['jquery'],
+            deps: ['jquery']
         }
     }
 });
