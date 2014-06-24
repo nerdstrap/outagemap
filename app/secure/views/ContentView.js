@@ -59,7 +59,7 @@
         },
 
         updateViewFromModel: function () {
-            this.$('#timestamp-label').html(this.model.get('timestamp'));
+            this.$('#timestamp-label').html(this.formatUTCDate(this.model.get('timestamp')));
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
             this.$('#service-statistics-label').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
         },
@@ -67,7 +67,7 @@
         showOutageReportView: function (countyName, className) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
-            this.$(".row .countyName").each(function () {
+            this.$(".row .incident .countyname span:first-child").each(function () {
                 if ($(this).text() == countyName) {
                     $(this).parent().parent().addClass(className);
                 } else {
@@ -80,7 +80,11 @@
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
         },
-
+        formatUTCDate: function (date) {
+            date = new Date(date);
+            //            return dates.format(date, format);
+            return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
+        },
         getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
             var operatingCompany = this.model.getOperatingCompany(operatingCompanyIdentifier);
             if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
