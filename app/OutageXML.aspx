@@ -16,6 +16,7 @@
 			if(host.Contains("localhost")) { return EnvironmentType.Localhost; }
 			if(host.Contains("dev.") || host.Contains("dev2009.")) { return EnvironmentType.Development; }
 			if(host.Contains("test.") || host.Contains("test2009.")) { return EnvironmentType.Test; }
+            if (host.Contains("outagemap.azurewebsites.net")) { return EnvironmentType.Azure; }
 			// default to production
 			return EnvironmentType.Production;
 		}
@@ -180,12 +181,12 @@
 		Page page = (Page)HttpContext.Current.CurrentHandler;
 
 
-		// Check cache for value first
-		if(page.Cache[cacheKey] != null) {
-			//page.Cache.Remove(cacheKey);
-			// Use cached value if it exists
-			return (string)page.Cache[cacheKey];
-		} else {
+        //// Check cache for value first
+        //if(page.Cache[cacheKey] != null) {
+        //    //page.Cache.Remove(cacheKey);
+        //    // Use cached value if it exists
+        //    return (string)page.Cache[cacheKey];
+        //} else {
 			// Get XML
 			string xmlPath = (CurrentEnvironment == EnvironmentType.Development) ?
 				page.Server.MapPath(@"~/global/DATA/omsdata/oms2aepweb.xml") :
@@ -201,8 +202,13 @@
 			string rawXML = sr.ReadToEnd();
 			sr.Close();
 			XmlDocument xmlDoc = new XmlDocument();
-			xmlDoc.LoadXml(rawXML);
-
+            if (CurrentEnvironment == EnvironmentType.Azure)
+            {
+                xmlDoc.Load("http://aepohio.com/global/data/omsdata/oms2aepweb.xml");
+            }
+            else {
+                xmlDoc.LoadXml(rawXML);            
+            }
 			xml = CleanUpXML(xmlDoc);
 
 			// Add xml to cache
@@ -217,7 +223,7 @@
 			//page.Cache.Insert(cacheKey, xml, dependency, staleDate, Cache.NoSlidingExpiration);
 			
 			
-		}
+        //}
 
 		return xml;
 	}
@@ -587,7 +593,8 @@
 		Localhost,
 		Development,
 		Test,
-		Production
+		Production,
+        Azure
 	}
 
     public static class JSon
