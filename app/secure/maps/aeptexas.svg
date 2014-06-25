@@ -5,14 +5,15 @@
 	 viewBox="0 0 744 484" enable-background="new 0 0 744 484" xml:space="preserve">
 <g id="BASE_LAYER">
 	
-		<radialGradient id="_x3C_BACKGROUND_BLEND_x3E__1_" cx="443.5034" cy="231.7502" r="307.3869" gradientTransform="matrix(1.0409 0 0 0.6844 -89.6525 83.3798)" gradientUnits="userSpaceOnUse">
+		<radialGradient id="_x3C_BACKGROUND_BLEND_x3E__1_" cx="440.6214" cy="231.7502" r="307.3869" gradientTransform="matrix(1.0409 0 0 0.6844 -89.6525 83.3798)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="0.1216" style="stop-color:#F9F8F3"/>
 		<stop  offset="0.4762" style="stop-color:#E8E7D6"/>
 		<stop  offset="0.7814" style="stop-color:#DFDCC3"/>
 		<stop  offset="1" style="stop-color:#DBD8BD"/>
 	</radialGradient>
-	<rect id="_x3C_BACKGROUND_BLEND_x3E_" opacity="0.7" fill="url(#_x3C_BACKGROUND_BLEND_x3E__1_)" width="744" height="484"/>
+	
+		<rect id="_x3C_BACKGROUND_BLEND_x3E_" x="-3" opacity="0.7" fill="url(#_x3C_BACKGROUND_BLEND_x3E__1_)" width="744" height="484"/>
 	<path id="_x3C_WATER2_x3E_" opacity="0.13" fill="#9FC0FF" d="M744,242c-0.5,0.4-1,0.8-1.4,1.3c-1,1.5-2,2.9-3.3,4.3
 		c-1.3,1.4-2.4,4.9-0.9,6.4c1.1,1.1,2.6,1.6,4.1,1.9c0.5,0.1,1,0.2,1.5,0.2V242z"/>
 	<path id="_x3C_WATER1_x3E_" fill="#9FC0FF" d="M409.8,408.3l6.9,0.8c0.5,0.1,0.9,0.6,0.7,1.1l-1.4,5.1l-2.7,10.3
@@ -1085,16 +1086,16 @@
 	<text transform="matrix(1 0 0 1 265.1315 40.3861)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Vernon</text>
 	<rect x="225.2" y="121.4" fill="none" width="82.7" height="21.2"/>
 	<text transform="matrix(1 0 0 1 255.5941 132.7156)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Abilene</text>
-	<rect x="58" y="234.9" fill="none" width="82.7" height="21.2"/>
-	<text transform="matrix(1 0 0 1 96.5625 246.219)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Alpine</text>
-	<rect x="516.2" y="257.7" fill="none" width="82.7" height="21.2"/>
-	<text transform="matrix(1 0 0 1 516.1692 269.0975)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Houston</text>
-	<rect x="430.8" y="368.2" fill="none" width="106.6" height="23.7"/>
-	<text transform="matrix(1 0 0 1 430.7834 379.5235)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Corpus Christi</text>
-	<rect x="477.9" y="340" fill="none" width="106.6" height="23.7"/>
-	<text transform="matrix(1 0 0 1 477.8723 351.3956)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Victoria</text>
-	<rect x="420.8" y="235.7" fill="none" width="106.6" height="23.7"/>
-	<text transform="matrix(1 0 0 1 420.7807 247.0499)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Austin</text>
+	<rect x="62" y="234.9" fill="none" width="82.7" height="21.2"/>
+	<text transform="matrix(1 0 0 1 100.5625 246.219)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Alpine</text>
+	<rect x="522.2" y="263.7" fill="none" width="82.7" height="21.2"/>
+	<text transform="matrix(1 0 0 1 522.1692 275.0975)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Houston</text>
+	<rect x="433.8" y="367.2" fill="none" width="106.6" height="23.7"/>
+	<text transform="matrix(1 0 0 1 433.7834 378.5235)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Corpus Christi</text>
+	<rect x="449.9" y="319" fill="none" width="106.6" height="23.7"/>
+	<text transform="matrix(1 0 0 1 449.8723 330.3956)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Victoria</text>
+	<rect x="418.8" y="238.7" fill="none" width="106.6" height="23.7"/>
+	<text transform="matrix(1 0 0 1 418.7807 250.0499)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Austin</text>
 	<rect x="313.8" y="457.6" fill="none" width="60.1" height="19.3"/>
 	<text transform="matrix(1 0 0 1 318.7253 468.969)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">McAllen</text>
 	<rect x="337.6" y="382.2" fill="none" width="106.6" height="23.7"/>
