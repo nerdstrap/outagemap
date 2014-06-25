@@ -35,6 +35,7 @@
 .content-view {
     background-color: #E7E7E7;
     border: 1px solid #B9B9B9;
+    width: 746px;
 }
 
 .timestamp-label-container,
@@ -46,7 +47,7 @@
 
 .outage-map-view {
     width: 744px;
-    height: 484px;
+    height: 486px;
     border-top: 1px solid #B9B9B9;
     border-bottom: 1px solid #B9B9B9;
 }
