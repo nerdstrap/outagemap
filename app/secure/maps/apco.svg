@@ -675,35 +675,35 @@
 </g>
 <g id="STATE_NAMES_x2F__CITIES">
 	<rect x="359.4" y="327" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 359.4025 338.3963)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif'" font-size="18">Chilicothe</text>
+	<text transform="matrix(1 0 0 1 359.4025 338.3963)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif'" font-size="16">Chilicothe</text>
 	<g>
 		<rect x="75.8" y="432.5" fill="none" width="186.3" height="19.9"/>
 		
-			<text transform="matrix(1 0 0 1 124.612 443.8635)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18" letter-spacing="2">KENTUCKY</text>
+			<text transform="matrix(1 0 0 1 124.612 443.8635)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">KENTUCKY</text>
 	</g>
 	<g>
 		<rect x="0.2" y="193.3" fill="none" width="127.1" height="20.7"/>
 		
-			<text transform="matrix(1 0 0 1 27.0988 204.6562)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18" letter-spacing="2">INDIANA</text>
+			<text transform="matrix(1 0 0 1 27.0988 204.6562)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">INDIANA</text>
 	</g>
 	<g>
 		<rect x="516" y="380.1" fill="none" width="186.3" height="19.9"/>
 		
-			<text transform="matrix(1 0 0 1 544.6127 391.5073)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18" letter-spacing="2">WEST VIRGINIA</text>
+			<text transform="matrix(1 0 0 1 544.6127 391.5073)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">WEST VIRGINIA</text>
 	</g>
 	<g>
 		<rect x="657" y="188" fill="none" width="87.3" height="13.6"/>
 		
-			<text transform="matrix(1 0 0 1 690.2473 199.392)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18" letter-spacing="2">PA</text>
+			<text transform="matrix(1 0 0 1 690.2473 199.392)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">PA</text>
 	</g>
 	<rect x="362.4" y="222.9" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 362.447 234.2155)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18">Columbus</text>
+	<text transform="matrix(1 0 0 1 362.447 234.2155)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Columbus</text>
 	<rect x="567.2" y="85.3" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 567.2224 96.6411)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18">Canton</text>
+	<text transform="matrix(1 0 0 1 567.2224 96.6411)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Canton</text>
 	<rect x="288.7" y="50.4" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 288.725 61.7098)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18">Findlay</text>
+	<text transform="matrix(1 0 0 1 288.725 61.7098)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Findlay</text>
 	<rect x="490.5" y="231.9" fill="none" width="73.6" height="13.3"/>
-	<text transform="matrix(1 0 0 1 490.5295 243.2101)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="18">Zanesville</text>
+	<text transform="matrix(1 0 0 1 490.5295 243.2101)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Zanesville</text>
 	<g>
 		<path fill="#58595B" d="M280.4,60.9c-2.5,0-4.6-2.1-4.6-4.6c0-2.5,2.1-4.6,4.6-4.6c2.5,0,4.6,2.1,4.6,4.6
 			C285,58.8,283,60.9,280.4,60.9z"/>
