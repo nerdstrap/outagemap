@@ -5,7 +5,8 @@ define(function (require) {
         globals = require('globals'),
         appEvents = require('app-events'),
         incidentHelpers = require('incident-helpers'),
-        regionHelpers = require('region-helpers');
+        regionHelpers = require('region-helpers'),
+        dates = require('dates');
 
     var masterConfig = (module.config && module.config()) || {},
         apiUrl = masterConfig.apiUrl || '',
@@ -35,6 +36,14 @@ define(function (require) {
         },
         getIncidentTotalThreshold: function () {
             return incidentTotalThreshold;
+        },
+        formatDate: function (date, format) {
+            date = new Date(date);
+            return dates.format(date, format);
+        },
+        formatUTCDate: function (date) {
+            date = new Date(date);
+            return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
         },
         formatNumber: function (value) {
             if (value) {

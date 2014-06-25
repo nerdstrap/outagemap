@@ -108,7 +108,7 @@ define(function (require) {
         },
         {
             'key': 'aepohio.logoImageSrc',
-            'value': '/images/aepohio_logo.png'
+            'value': '/images/aepohio_logo.svg'
         },
         {
             'key': 'aeptexas.logoImageSrc',

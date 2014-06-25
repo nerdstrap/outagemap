@@ -1,11 +1,12 @@
 require.config({
     config: {
+        enforceDefine: true,
         'app': {
             'consoleLevel': 'off'
         },
         'env': {
             'apiUrl': '',
-            'appFolder': '/secure',
+            'appFolder': '/~michaelbaltic/outagemap/app/secure', /*'appFolder': '/secure',*/
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
@@ -72,7 +73,9 @@ require.config({
         'models': '../models',
         'services': '../services',
         'views': '../views',
-        'maps': '../maps'
+        'maps': '../maps',
+        'images': '../images',
+        'fonts': '../fonts'
     },
     shim: {
         'backbone': {

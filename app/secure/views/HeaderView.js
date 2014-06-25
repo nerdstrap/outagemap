@@ -58,6 +58,7 @@
             this.$('#show-outage-report-view-button-container').removeClass('hidden');
             appEvents.trigger(appEvents.showOutageMap);
         },
+        
         showOutageMapButton: function () {
             this.$('#show-outage-report-view-button-container').addClass('hidden');
             this.$('#show-outage-map-view-button-container').removeClass('hidden');

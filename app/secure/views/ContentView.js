@@ -59,9 +59,8 @@
         },
 
         updateViewFromModel: function () {
-            this.$('#timestamp-label').html(this.formatUTCDate(this.model.get('timestamp')));
-            var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
-            this.$('#service-statistics-label').html(this.getServiceStatistics(operatingCompany.identifier, operatingCompany.fullName));
+            this.$('#timestamp-label').html(env.formatUTCDate(this.model.get('timestamp')));
+            this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
 
         showOutageReportView: function (countyName, className) {
@@ -80,17 +79,14 @@
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
         },
-        formatUTCDate: function (date) {
-            date = new Date(date);
-            return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
-        },
+
         getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
-            var operatingCompany = this.model.getOperatingCompanyByIdentifier(operatingCompanyIdentifier);
+            var operatingCompany = this.model.getOperatingCompanyById(this.region);
             if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
 
                 var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;
 
-                var operatingCompanyName = fullName;
+                var operatingCompanyName = operatingCompany.fullName;
 
                 var customersServed = 0;
                 customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {

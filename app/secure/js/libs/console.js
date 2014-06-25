@@ -105,8 +105,6 @@ define(function (require) {
 
     // manage global JS errors
     window.onerror = function (message, url, linenumber) {
-        if (enabledFor('error')) {
-            console.log(message);
-        }
+        console.log(message);
     };
 });

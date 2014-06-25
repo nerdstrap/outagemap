@@ -32,6 +32,10 @@
             var renderModel = _.extend({}, this.resources(), this.model);
             this.$el.html(template(renderModel));
 
+            require(['svg!images/' + currentContext.requestedRegion + '_logo'], function (logo) {
+                currentContext.$('.footer-logo').html(logo);
+            });
+
             var outageMapLegendView = new OutageMapLegendView({
                 el: $('#outage-map-legend-view', currentContext.$el),
                 model: currentContext.model,
