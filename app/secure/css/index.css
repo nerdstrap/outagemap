@@ -16,8 +16,8 @@
 }
 
 .shell-view {
-    width: 748px;
-    margin: 0px 10px;
+    width: 758px;
+    margin: 5px;
 }
 
 .header-view {
@@ -33,108 +33,95 @@
         }
 
 .content-view {
-    background-color: #E7E7E7;
+    width: 758px;
     border: 1px solid #B9B9B9;
-    width: 746px;
 }
 
 .outage-map-view {
-    width: 744px;
+    width: 746px;
     height: 486px;
-    border-top: 1px solid #B9B9B9;
-    border-bottom: 1px solid #B9B9B9;
+    margin: 5px;
+    border: 1px solid #B9B9B9;
 }
 
-    .outage-map-view .incident {
-        background-color: #DDD4B7;
-    }
-
-.outage-report-view {
+#outage-report-view .outage-report-view {
+    width: 746px;
+    margin: 5px;
 }
 
-    .outage-report-view .row.title {
-        font-size: 20px;
-        padding: 10px;
+    #outage-report-view .outage-report-view .row.title {
     }
 
-    .outage-report-view .timestamp-label-container {
-        font-size: 16px;
+    #outage-report-view .outage-report-view .timestamp-label-container {
         float: right;
     }
 
-    .outage-report-view .row {
+    #outage-report-view .outage-report-view .row.collapse {
         background-color: #E7E7E7;
+        margin: 5px 0;
+        padding: 10px;
     }
 
-        .outage-report-view .row.header .columns,
-        .outage-report-view .row.incident .columns,
-        .outage-report-view .row.footer .columns {
-            padding: 10px;
+        #outage-report-view .outage-report-view .row.collapse.header .columns,
+        #outage-report-view .outage-report-view .row.collapse.incident .columns,
+        #outage-report-view .outage-report-view .row.collapse.footer .columns {
         }
 
-        .outage-report-view .row.statistics {
-            padding: 20px 10px;
+        #outage-report-view .outage-report-view .row.collapse.statistics {
+            padding-top: 70px;
         }
 
-        .outage-report-view .row.disclaimer {
-            padding: 40px 10px;
+        #outage-report-view .outage-report-view .row.collapse.disclaimer {
         }
 
-        .outage-report-view .row.header {
+        #outage-report-view .outage-report-view .row.collapse.header {
         }
 
-            .outage-report-view .row.header > div > div {
-                position: relative;
-                height: 40px;
-            }
+.outage-report-view .row.header > div > div {
+    /*position: relative;*/
+}
 
-                .outage-report-view .row.header > div > div > span {
-                    position: absolute;
+    .outage-report-view .row.header > div > div > span {
+        /*position: absolute;
                     bottom: 0;
-                    left: 0;
-                    font-size: 18px;
-                    line-height: 20px;
-                }
-
-            .outage-report-view .row.header > div.numeric > div > span {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                font-size: 18px;
-                line-height: 20px;
-            }
-
-        .outage-report-view .row.alternate {
-            background-color: #FFFFFF;
-        }
-
-        .outage-report-view .row.level-0-incident {
-            background-color: #FFFFAB;
-        }
-
-        .outage-report-view .row.level-1-incident {
-            background-color: #FFD1A8;
-        }
-
-        .outage-report-view .row.level-2-incident {
-            background-color: #FFA3A3;
-        }
-
-        .outage-report-view .row.bold {
-            font-weight: bold;
-        }
-
-        .outage-report-view .row .numeric {
-            text-align: right;
-        }
-
-    .outage-report-view .no-incidents {
-        text-align: center;
-        padding: 60px 0;
+                    left: 0;*/
     }
+
+.outage-report-view .row.header > div.numeric > div > span {
+    /*position: absolute;
+                bottom: 0;
+                right: 0;*/
+}
+
+#outage-report-view .outage-report-view .row.collapse.alternate {
+    background-color: #FFFFFF;
+}
+
+#outage-report-view .outage-report-view .row.collapse.level-0-incident {
+    background-color: #FFFFAB;
+}
+
+#outage-report-view .outage-report-view .row.collapse.level-1-incident {
+    background-color: #FFD1A8;
+}
+
+#outage-report-view .outage-report-view .row.collapse.level-2-incident {
+    background-color: #FFA3A3;
+}
+
+#outage-report-view .outage-report-view .row.collapse.bold {
+    font-weight: bold;
+}
+
+#outage-report-view .outage-report-view .row.collapse .numeric {
+    text-align: right;
+}
+
+#outage-report-view .outage-report-view .row.collapse.no-incidents {
+    text-align: center;
+}
 
 .footer-view {
-    padding: 30px 0;
 }
 
 .footer-logo {
