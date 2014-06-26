@@ -73,7 +73,7 @@ define(function (require) {
         },
         {
             'key': 'OutageReportView.grandTotalTitleText',
-            'value': 'Grand Total&#58;'
+            'value': 'Total Outages'
         },
         {
             'key': 'OutageMapLegendView.customerOutagesTitleText',
