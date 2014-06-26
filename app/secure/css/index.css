@@ -38,13 +38,6 @@
     width: 746px;
 }
 
-.timestamp-label-container,
-.service-statistics-label-container {
-    float: right;
-    margin: 10px 0;
-    padding: 0 10px 0 0;
-}
-
 .outage-map-view {
     width: 744px;
     height: 486px;
@@ -59,9 +52,14 @@
 .outage-report-view {
 }
 
-    .outage-report-view .title {
+    .outage-report-view .row.title {
         font-size: 20px;
         padding: 10px;
+    }
+
+    .outage-report-view .timestamp-label-container {
+        font-size: 16px;
+        float: right;
     }
 
     .outage-report-view .row {
@@ -74,9 +72,37 @@
             padding: 10px;
         }
 
-        .outage-report-view .row.header {
-            font-size: 18px;
+        .outage-report-view .row.statistics {
+            padding: 20px 10px;
         }
+
+        .outage-report-view .row.disclaimer {
+            padding: 40px 10px;
+        }
+
+        .outage-report-view .row.header {
+        }
+
+            .outage-report-view .row.header > div > div {
+                position: relative;
+                height: 40px;
+            }
+
+                .outage-report-view .row.header > div > div > span {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+
+            .outage-report-view .row.header > div.numeric > div > span {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: 18px;
+                line-height: 20px;
+            }
 
         .outage-report-view .row.alternate {
             background-color: #FFFFFF;
@@ -116,11 +142,6 @@
     height: 90px;
 }
 
-.disclaimer-label-container {
-    margin-top: 30px;
-    padding: 0 10px;
-}
-
 .outage-map-legend-view {
 }
 
@@ -140,13 +161,13 @@
                 padding: 0 0 5px 0;
             }
 
-            .outage-map-legend-view .row.symbols > .small-5.columns {
-                padding: 5px 10px;
-            }
+        .outage-map-legend-view .row.symbols > .small-5.columns {
+            padding: 5px 10px;
+        }
 
-            .outage-map-legend-view .row.symbols > .small-7.columns {
-                padding: 5px 10px;
-            }
+        .outage-map-legend-view .row.symbols > .small-7.columns {
+            padding: 5px 10px;
+        }
 
     .outage-map-legend-view .min-height-35 {
         min-height: 35px;

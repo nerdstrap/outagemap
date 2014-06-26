@@ -60,7 +60,8 @@ define(function (require) {
         },
         {
             'key': 'OutageReportView.customersAffectedTitleText',
-            'value': 'Customers Without Power'
+            'value': 'Customers<br/>Without Power'
+            /*'value': 'Customers&#60;br&#47;&#62;Without Power'*/
         },
         {
             'key': 'OutageReportView.customersServedTitleText',
