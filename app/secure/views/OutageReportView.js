@@ -14,6 +14,7 @@
         initialize: function (options) {
             console.trace('OutageReportView.initialize()');
             options || (options = {});
+            this.region = options.region || '';
             this.dispatcher = options.dispatcher || this;
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
@@ -28,7 +29,10 @@
                 'percentageAffectedTitleText': resourceHelpers.getResource('OutageReportView.percentageAffectedTitleText').value,
                 'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
                 'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value,
-                'formattedCustomersAffected': this.model.customersAffected
+                'formattedCustomersAffected': this.model.customersAffected,
+                'lastUpdatedTitleText': resourceHelpers.getResource('lastUpdatedTitleText').value,
+                'serviceStatistics': '',
+                'disclaimer': resourceHelpers.getResource('disclaimerText').value
             };
         },
 
@@ -79,6 +83,9 @@
             if (renderModel.incidentRows.length === 0) {
                 this.showNoOutagesMessage();
             }
+
+            this.$('#timestamp-label').html(env.formatUTCDate(this.model.get('timestamp')));
+            this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
 
         showNoOutagesMessage: function () {
@@ -86,6 +93,31 @@
             this.$('.header').addClass('hidden');
             this.$('.incident').addClass('hidden');
             this.$('.footer').addClass('hidden');
+        },
+        getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
+            var operatingCompany = this.model.getOperatingCompanyById(this.region);
+            if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
+
+                var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;
+
+                var operatingCompanyName = operatingCompany.fullName;
+
+                var customersServed = 0;
+                customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {
+                    return customersServed + parseInt(state.customersServed);
+                }, 0);
+
+                var countiesServed = 0;
+                countiesServed = _.reduce(operatingCompany.states, function (countiesServed, state) {
+                    return countiesServed + parseInt(state.countiesServed);
+                }, 0);
+
+                var stateNames = _.pluck(operatingCompany.states, 'stateName').join(' &#38; ');
+
+                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, env.formatNumber(customersServed), env.formatNumber(countiesServed), stateNames);
+
+                return serviceStatistics;
+            }
         }
     });
 

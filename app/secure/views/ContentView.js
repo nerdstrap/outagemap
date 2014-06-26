@@ -27,8 +27,6 @@
 
         resources: function (culture) {
             return {
-                'lastUpdatedTitleText': resourceHelpers.getResource('lastUpdatedTitleText').value,
-                'serviceStatistics': ''
             };
         },
 
@@ -59,8 +57,6 @@
         },
 
         updateViewFromModel: function () {
-            this.$('#timestamp-label').html(env.formatUTCDate(this.model.get('timestamp')));
-            this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
 
         showOutageReportView: function (countyName, className) {
@@ -78,32 +74,6 @@
         showOutageMapView: function (event) {
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
-        },
-
-        getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
-            var operatingCompany = this.model.getOperatingCompanyById(this.region);
-            if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
-
-                var serviceStatisticsFormatString = resourceHelpers.getResource('serviceStatisticsFormatString').value;
-
-                var operatingCompanyName = operatingCompany.fullName;
-
-                var customersServed = 0;
-                customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {
-                    return customersServed + parseInt(state.customersServed);
-                }, 0);
-
-                var countiesServed = 0;
-                countiesServed = _.reduce(operatingCompany.states, function (countiesServed, state) {
-                    return countiesServed + parseInt(state.countiesServed);
-                }, 0);
-
-                var stateNames = _.pluck(operatingCompany.states, 'stateName').join(' &#38; ');
-
-                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, env.formatNumber(customersServed), env.formatNumber(countiesServed), stateNames);
-
-                return serviceStatistics;
-            }
         }
     });
 

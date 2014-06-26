@@ -1,7 +1,10 @@
 <div class="outage-report-view">
     <div class="row collapse">
-        <div class="small-12 columns">
+        <div class="small-4 columns">
             <span class="title">{{{titleText}}}</span>
+        </div>
+        <div class="small-5 columns timestamp-label-container">
+            <span>{{{lastUpdatedTitleText}}}</span><span id="timestamp-label">{{{timestamp}}}</span>
         </div>
     </div>
     <div class="row collapse no-incidents hidden">
@@ -64,6 +67,20 @@
         </div>
         <div class="small-3 columns numeric">
             <span>{{percentageAffected}}&#37;</span>
+        </div>
+    </div>
+    <div class="row collapse">
+        <div class="small-12 columns">
+            <div class="service-statistics-label-container">
+                <span id="service-statistics-label">{{{serviceStatistics}}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row collapse">
+        <div class="small-12 columns">
+            <div class="disclaimer-label-container">
+                <span id="disclaimer-label">{{{disclaimer}}}</span>
+            </div>
         </div>
     </div>
 </div>
