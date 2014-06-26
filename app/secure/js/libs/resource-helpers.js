@@ -68,7 +68,7 @@ define(function (require) {
         },
         {
             'key': 'OutageReportView.percentageAffectedTitleText',
-            'value': 'Percentage&#40;&#37;&#41;'
+            'value': 'Percentage'
         },
         {
             'key': 'OutageReportView.grandTotalTitleText',

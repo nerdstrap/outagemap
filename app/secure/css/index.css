@@ -137,19 +137,14 @@
 
             .outage-map-legend-view .row.header > .small-7.columns {
                 font-size: 16px;
-                padding: 0 0 5px 10px;
+                padding: 0 0 5px 0;
             }
-
-        .outage-map-legend-view .row.symbols {
-            background-color: #E7E7E7;
-        }
 
             .outage-map-legend-view .row.symbols > .small-5.columns {
                 padding: 5px 10px;
             }
 
             .outage-map-legend-view .row.symbols > .small-7.columns {
-                border-left: 10px solid #FFFFFF;
                 padding: 5px 10px;
             }
 
