@@ -51,6 +51,12 @@ define(function (require) {
             } else {
                 return '';
             }
+        },
+        toTitleCase: function (str) {
+            var strTitleCase = str.toLowerCase();
+            return strTitleCase.replace(/(?:^|\s)\w/g, function (match) {
+                return match.toUpperCase();
+            });
         }
     };
 

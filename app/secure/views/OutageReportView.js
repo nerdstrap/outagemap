@@ -66,6 +66,7 @@
                         if (state.incidents && state.incidents.length > 0) {
                             _.each(state.incidents, function (incident) {
                                 var incidentCopy = _.clone(incident);
+                                incidentCopy.countyNameFormatted = env.toTitleCase(incidentCopy.countyName) + ' Co., ' + state.stateName;
                                 renderModel.incidentRows.push(incidentCopy);
                             });
                             renderModel.incidentRows.push({});

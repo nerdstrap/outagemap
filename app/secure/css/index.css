@@ -64,7 +64,6 @@
 
 #outage-report-view .outage-report-view .row.collapse {
     background-color: #EAE7D0;
-    margin: 5px 0;
     padding: 10px;
 }
 
@@ -78,9 +77,12 @@
     }
 
     #outage-report-view .outage-report-view .row.collapse.disclaimer {
+        margin-top: 5px;
+        padding: 20px 10px;
     }
 
     #outage-report-view .outage-report-view .row.collapse.header {
+        margin-top: 5px;
         font-weight: bold;
         font-size: 18px;
     }
