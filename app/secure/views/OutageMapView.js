@@ -44,7 +44,7 @@
 
             return this;
         },
-        
+
         updateViewFromModel: function () {
             var currentContext = this;
             require(['svg!maps/' + currentContext.region], function (map) {

@@ -9,9 +9,7 @@
         OutageMapView = require('views/OutageMapView'),
         OutageReportView = require('views/OutageReportView'),
         env = require('env'),
-        template = require('hbs!templates/Content'),
-        regionHelpers = require('region-helpers'),
-        resourceHelpers = require('resource-helpers');
+        template = require('hbs!templates/Content');
 
     var ContentView = CompositeView.extend({
         initialize: function (options) {
@@ -20,7 +18,6 @@
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
 
-            this.listenTo(this.model, 'sync', this.updateViewFromModel);
             this.listenTo(appEvents, appEvents.showOutageMap, this.showOutageMapView);
             this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageReportView);
         },
@@ -54,9 +51,6 @@
             this.renderChild(outageReportView);
 
             return this;
-        },
-
-        updateViewFromModel: function () {
         },
 
         showOutageReportView: function (countyName, className) {

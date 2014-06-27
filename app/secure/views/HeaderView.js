@@ -15,7 +15,7 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.requestedRegion = options.requestedRegion || '';
-            
+
             this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageMapButton);
         },
 
@@ -58,7 +58,7 @@
             this.$('#show-outage-report-view-button-container').removeClass('hidden');
             appEvents.trigger(appEvents.showOutageMap);
         },
-        
+
         showOutageMapButton: function () {
             this.$('#show-outage-report-view-button-container').addClass('hidden');
             this.$('#show-outage-map-view-button-container').removeClass('hidden');

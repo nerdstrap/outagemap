@@ -55,7 +55,7 @@
         operatingCompanyInstance.states = states;
 
         // percentageAffected
-        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0 ) {
+        if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0) {
             operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServed.toFixed(1)).toFixed(1);
         }
 
@@ -152,7 +152,7 @@
         }
 
         // percentageAffected
-        if (incidentInstance.customersAffected > 0 && incidentInstance.customersServed > 0 ) {
+        if (incidentInstance.customersAffected > 0 && incidentInstance.customersServed > 0) {
             incidentInstance.percentageAffected = (incidentInstance.customersAffected.toFixed(1) / incidentInstance.customersServed.toFixed(1)).toFixed(1);
         }
 
@@ -166,18 +166,18 @@
             options || (options = {});
         },
         sync: function (method, model, options) {
-         if (method === "read") {
-             var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
-                 setTimeout(function () {
-                     options.success(data, 'success', null);
-                 }, 100);
-             });
-             model.trigger('request', model, xhr, options);
-             return xhr;
-         }
+            if (method === "read") {
+                var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+                    setTimeout(function () {
+                        options.success(data, 'success', null);
+                    }, 100);
+                });
+                model.trigger('request', model, xhr, options);
+                return xhr;
+            }
         },
         getCurrentOutageReport: function (region) {
-            this.set({'requestedRegion': region});
+            this.set({ 'requestedRegion': region });
             var xhr = this.fetch({
                 url: env.getApiUrl() + '/OutageXml.aspx',
                 reset: true
