@@ -38,7 +38,7 @@
     </div>
     {{#if incidentRows}}
     {{#stripeRows incidentRows}}
-    <div class="{{rowClass}}">
+    <div class="{{rowClass}}" data-countyname="{{countyName}}">
         <div class="small-3 columns">
             {{#if countyName}}
             <span class="county-name">{{{countyNameFormatted}}}</span>

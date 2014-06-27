@@ -62,11 +62,13 @@
         showOutageReportView: function (countyName, className) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
-            this.$('.row.incident .county-name').each(function () {
-                if ($(this).text().indexOf(env.toTitleCase(countyName) > -1)) {
-                    $(this).parent().parent().addClass(className);
+            this.$('.row.incident').each(function (idx, row) {
+                var rowObj = $(row);
+                var rowId = rowObj.data('countyname');
+                if (rowId && rowId === countyName) {
+                    rowObj.addClass(className);
                 } else {
-                    $(this).parent().parent().removeClass('level-0-incident').removeClass('level-1-incident').removeClass('level-2-incident');
+                    rowObj.removeClass('level-0-incident').removeClass('level-1-incident').removeClass('level-2-incident');
                 }
             });
         },

@@ -176,7 +176,11 @@
                 }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .icon-title {
-                padding-top: 10px;
+                padding-top: 15px;
+            }
+            #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .legend-icon {
+                width: 96px;
+                height: 56px;
             }
 
 .level-0-incident {
