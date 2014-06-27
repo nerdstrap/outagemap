@@ -9,37 +9,51 @@
         {
             'id': 'aepohio',
             'fullName': 'AEP Ohio',
-            'identifier': 'AEP-OH'
+            'identifier': 'AEP-OH',
+            'twitterProfile': 'aepohio',
+            'facebookProfile': 'aepohio'
         },
         {
             'id': 'aeptexas',
             'fullName': 'AEP Texas',
-            'identifier': 'AEP-TX'
+            'identifier': 'AEP-TX',
+            'twitterProfile': 'aeptexas',
+            'facebookProfile': 'aeptexas'
         },
         {
             'id': 'apco',
             'fullName': 'Appalachian Power',
-            'identifier': 'AEP-AP'
+            'identifier': 'AEP-AP',
+            'twitterProfile': 'appalachianpowe',
+            'facebookProfile': 'appalachianpower'
         },
         {
             'id': 'im',
             'fullName': 'Indiana Michigan Power',
-            'identifier': 'AEP-I&M'
+            'identifier': 'AEP-I&M',
+            'twitterProfile': 'in_mi_power',
+            'facebookProfile': 'indianamichiganpower'
         },
         {
             'id': 'kentucky',
             'fullName': 'Kentucky Power',
-            'identifier': 'AEP-KYP'
+            'identifier': 'AEP-KYP',
+            'twitterProfile': 'kentuckypower',
+            'facebookProfile': 'kentuckypower'
         },
         {
             'id': 'pso',
             'fullName': 'Public Service Company of Oklahoma',
-            'identifier': 'AEP-PSO'
+            'identifier': 'AEP-PSO',
+            'twitterProfile': 'publicserviceco',
+            'facebookProfile': 'psoklahoma'
         },
         {
             'id': 'swepco',
             'fullName': 'Southwestern Electric Power Company',
-            'identifier': 'AEP-SEP'
+            'identifier': 'AEP-SEP',
+            'twitterProfile': 'swepconews',
+            'facebookProfile': 'swepco'
         }
     ];
 

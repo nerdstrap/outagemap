@@ -134,6 +134,26 @@ define(function (require) {
         {
             'key': 'swepco.logoImageSrc',
             'value': '/images/swepco_logo.png'
+        },
+        {
+            'key': 'twitterPostLink',
+            'value': 'http://twitter.com/home?status={0}%20{1}'
+        },
+        {
+            'key': 'twitterFollowLink',
+            'value': 'http://twitter.com/intent/user?screen_name={0}'
+        },
+        {
+            'key': 'facebookPostLink',
+            'value': 'http://www.facebook.com/sharer.php?u={0}&t={1}'
+        },
+        {
+            'key': 'facebookFollowLink',
+            'value': 'http://www.facebook.com/{0}'
+        },
+        {
+            'key': 'outageMapDirectLink',
+            'value': 'https://www.aepcustomer.com/outagemap/main.aspx?region={0}'
         }
     ];
 
