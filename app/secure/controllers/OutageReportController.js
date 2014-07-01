@@ -63,7 +63,7 @@
         twitterPost: function () {
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
             if (operatingCompany) {
-                var statusPostFormatString = resourceHelpers.getResource('statusPostFormatString').value;
+                var statusPostFormatString = resourceHelpers.getResource('twitterStatusPostFormatString').value;
                 var twitterPostLinkFormatString = resourceHelpers.getResource('twitterPostLinkFormatString').value;
                 var statusPost = statusPostFormatString.format(operatingCompany.fullName, operatingCompany.outageMapLink)
                 var twitterPostLink = twitterPostLinkFormatString.format(statusPost);
@@ -83,7 +83,7 @@
         facebookPost: function () {
             var operatingCompany = regionHelpers.getOperatingCompanyById(env.getParameterByName('region'));
             if (operatingCompany) {
-                var statusPostFormatString = resourceHelpers.getResource('statusPostFormatString').value;
+                var statusPostFormatString = resourceHelpers.getResource('facebookStatusPostFormatString').value;
                 var facebookPostLinkFormatString = resourceHelpers.getResource('facebookPostLinkFormatString').value;
                 var statusPost = statusPostFormatString.format(operatingCompany.fullName)
                 var facebookPostLink = facebookPostLinkFormatString.format(operatingCompany.outageMapLink, statusPost);

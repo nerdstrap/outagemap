@@ -19,42 +19,48 @@
             'fullName': 'AEP Texas',
             'identifier': 'AEP-TX',
             'twitterProfile': 'aeptexas',
-            'facebookProfile': 'aeptexas'
+            'facebookProfile': 'aeptexas',
+            'outageMapLink': 'http://aeptexas.com/outages/?map=1'
         },
         {
             'id': 'apco',
             'fullName': 'Appalachian Power',
             'identifier': 'AEP-AP',
             'twitterProfile': 'appalachianpowe',
-            'facebookProfile': 'appalachianpower'
+            'facebookProfile': 'appalachianpower',
+            'outageMapLink': 'http://apcopwr.com/outages/?map=1'
         },
         {
             'id': 'im',
             'fullName': 'Indiana Michigan Power',
             'identifier': 'AEP-I&M',
             'twitterProfile': 'in_mi_power',
-            'facebookProfile': 'indianamichiganpower'
+            'facebookProfile': 'indianamichiganpower',
+            'outageMapLink': 'http://iandmpwr.com/outages/?map=1'
         },
         {
             'id': 'kentucky',
             'fullName': 'Kentucky Power',
             'identifier': 'AEP-KYP',
             'twitterProfile': 'kentuckypower',
-            'facebookProfile': 'kentuckypower'
+            'facebookProfile': 'kentuckypower',
+            'outageMapLink': 'http://kypco.com/outages/?map=1'
         },
         {
             'id': 'pso',
             'fullName': 'Public Service Company of Oklahoma',
             'identifier': 'AEP-PSO',
             'twitterProfile': 'publicserviceco',
-            'facebookProfile': 'psoklahoma'
+            'facebookProfile': 'psoklahoma',
+            'outageMapLink': 'http://psoklahoma.com/outages/?map=1'
         },
         {
             'id': 'swepco',
             'fullName': 'Southwestern Electric Power Company',
             'identifier': 'AEP-SEP',
             'twitterProfile': 'swepconews',
-            'facebookProfile': 'swepco'
+            'facebookProfile': 'swepco',
+            'outageMapLink': 'http://swepco.com/outages/?map=1'
         }
     ];
 

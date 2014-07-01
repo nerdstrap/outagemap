@@ -219,8 +219,12 @@ define(function (require) {
             'value': '/images/swepco_logo.svg'
         },
         {
-            'key': 'statusPostFormatString',
+            'key': 'twitterStatusPostFormatString',
             'value': 'Outage map of {0} service territory {1}'
+        },
+        {
+            'key': 'facebookStatusPostFormatString',
+            'value': 'Outage map of {0} service territory'
         },
         {
             'key': 'twitterPostLinkFormatString',
