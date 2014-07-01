@@ -26,6 +26,9 @@
             var operatingCompanyConfig = regionHelpers.getOperatingCompanyByIdentifier(operatingCompanyInstance.identifier);
             operatingCompanyInstance.id = operatingCompanyConfig.id;
             operatingCompanyInstance.fullName = operatingCompanyConfig.fullName;
+            operatingCompanyInstance.twitterProfile = operatingCompanyConfig.twitterProfile;
+            operatingCompanyInstance.facebookProfile = operatingCompanyConfig.facebookProfile;
+            operatingCompanyInstance.outageMapLink = operatingCompanyConfig.outageMapLink;
         }
 
         // states

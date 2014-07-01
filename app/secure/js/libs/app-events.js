@@ -12,7 +12,11 @@
 
     _.extend(AppEvents.prototype, Backbone.Events, {
         showOutageReport: 'showOutageReport',
-        showOutageMap: 'showOutageMap'
+        showOutageMap: 'showOutageMap',
+        twitterPost: 'twitterPost',
+        twitterFollowUs: 'twitterFollowUs',
+        facebookPost: 'facebookPost',
+        facebookFollowUs: 'facebookFollowUs'
     });
 
     var appEvents = new AppEvents();

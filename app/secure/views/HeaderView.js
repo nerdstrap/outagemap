@@ -24,7 +24,9 @@
                 'showOutageMapViewButtonText': resourceHelpers.getResource('HeaderView.showOutageMapViewButtonText').value,
                 'showOutageReportViewButtonText': resourceHelpers.getResource('HeaderView.showOutageReportViewButtonText').value,
                 'twitterIconSrc': resourceHelpers.getResource('HeaderView.twitterIconSrc').value,
+                'twitterIconSvgSrc': resourceHelpers.getResource('HeaderView.twitterIconSvgSrc').value,
                 'facebookIconSrc': resourceHelpers.getResource('HeaderView.facebookIconSrc').value,
+                'facebookIconSvgSrc': resourceHelpers.getResource('HeaderView.facebookIconSvgSrc').value,
                 'twitterPostButtonText': resourceHelpers.getResource('HeaderView.twitterPostButtonText').value,
                 'twitterFollowUsButtonText': resourceHelpers.getResource('HeaderView.twitterFollowUsButtonText').value,
                 'facebookPostButtonText': resourceHelpers.getResource('HeaderView.facebookPostButtonText').value,
@@ -62,21 +64,21 @@
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.twitterFollowClick);
+            appEvents.trigger(appEvents.twitterFollowUs);
         },
 
         facebookPostClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.facebookPostClick);
+            appEvents.trigger(appEvents.facebookPost);
         },
 
         facebookFollowClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.facebookFollowClick);
+            appEvents.trigger(appEvents.facebookFollowUs);
         },
 
         showOutageReportClick: function (event) {

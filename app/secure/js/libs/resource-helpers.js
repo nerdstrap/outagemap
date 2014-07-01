@@ -93,7 +93,6 @@ define(function (require) {
         {
             'key': 'OutageReportView.customersAffectedTitleText',
             'value': 'Customers<br/>Without Power'
-            /*'value': 'Customers&#60;br&#47;&#62;Without Power'*/
         },
         {
             'key': 'OutageReportView.customersServedTitleText',
@@ -140,52 +139,104 @@ define(function (require) {
             'value': 'Major Highways'
         },
         {
+            'key': 'OutageMapLegendView.serviceTerritoryIconSrc',
+            'value': '/images/service_territory_icon.png'
+        },
+        {
+            'key': 'OutageMapLegendView.serviceTerritoryIconSvgSrc',
+            'value': '/images/service_territory_icon.svg'
+        },
+        {
+            'key': 'OutageMapLegendView.countyLinesIconSrc',
+            'value': '/images/county_lines.png'
+        },
+        {
+            'key': 'OutageMapLegendView.countyLinesIconSvgSrc',
+            'value': '/images/county_lines_icon.svg'
+        },
+        {
+            'key': 'OutageMapLegendView.majorHighwaysIconSrc',
+            'value': '/images/major_highways_icon.png'
+        },
+        {
+            'key': 'OutageMapLegendView.majorHighwaysIconSvgSrc',
+            'value': '/images/major_highways_icon.svg'
+        },
+        {
             'key': 'aepohio.logoImageSrc',
-            'value': '/images/aepohio_logo.svg'
+            'value': '/images/service_territory_icon.svg'
+        },
+        {
+            'key': 'aepohio.logoImageSvgSrc',
+            'value': '/images/service_territory_icon.svg'
         },
         {
             'key': 'aeptexas.logoImageSrc',
             'value': '/images/aeptexas_logo.png'
         },
         {
+            'key': 'aeptexas.logoImageSvgSrc',
+            'value': '/images/aeptexas_logo.svg'
+        },
+        {
             'key': 'apco.logoImageSrc',
             'value': '/images/apco_logo.png'
+        },
+        {
+            'key': 'apco.logoImageSvgSrc',
+            'value': '/images/apco_logo.svg'
         },
         {
             'key': 'im.logoImageSrc',
             'value': '/images/im_logo.png'
         },
         {
+            'key': 'im.logoImageSvgSrc',
+            'value': '/images/im_logo.svg'
+        },
+        {
             'key': 'kentucky.logoImageSrc',
             'value': '/images/kentucky_logo.png'
+        },
+        {
+            'key': 'kentucky.logoImageSvgSrc',
+            'value': '/images/kentucky_logo.svg'
         },
         {
             'key': 'pso.logoImageSrc',
             'value': '/images/pso_logo.png'
         },
         {
+            'key': 'pso.logoImageSvgSrc',
+            'value': '/images/pso_logo.svg'
+        },
+        {
             'key': 'swepco.logoImageSrc',
             'value': '/images/swepco_logo.png'
         },
         {
-            'key': 'twitterPostLink',
-            'value': 'http://twitter.com/home?status={0}%20{1}'
+            'key': 'swepco.logoImageSvgSrc',
+            'value': '/images/swepco_logo.svg'
         },
         {
-            'key': 'twitterFollowLink',
+            'key': 'statusPostFormatString',
+            'value': 'Outage map of {0} service territory {1}'
+        },
+        {
+            'key': 'twitterPostLinkFormatString',
+            'value': 'http://twitter.com/home?status={0}'
+        },
+        {
+            'key': 'twitterFollowUsLinkFormatString',
             'value': 'http://twitter.com/intent/user?screen_name={0}'
         },
         {
-            'key': 'facebookPostLink',
+            'key': 'facebookPostLinkFormatString',
             'value': 'http://www.facebook.com/sharer.php?u={0}&t={1}'
         },
         {
-            'key': 'facebookFollowLink',
+            'key': 'facebookFollowUsLinkFormatString',
             'value': 'http://www.facebook.com/{0}'
-        },
-        {
-            'key': 'outageMapDirectLink',
-            'value': 'https://www.aepcustomer.com/outagemap/main.aspx?region={0}'
         }
     ];
 

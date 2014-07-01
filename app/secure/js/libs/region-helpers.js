@@ -11,7 +11,8 @@
             'fullName': 'AEP Ohio',
             'identifier': 'AEP-OH',
             'twitterProfile': 'aepohio',
-            'facebookProfile': 'aepohio'
+            'facebookProfile': 'aepohio',
+            'outageMapLink': 'http://aepohio.com/outages/?map=1'
         },
         {
             'id': 'aeptexas',
