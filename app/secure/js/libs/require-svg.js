@@ -13,7 +13,7 @@ define(function (require) {
             if (config.extension) {
                 extension = config.extension;
             }
-            extension = extension || 'svg';
+            extension = extension || 'xml';
 
             var textName = 'text!' + name + '.' + extension;
 

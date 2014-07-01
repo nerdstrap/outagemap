@@ -47,7 +47,7 @@
 
         updateViewFromModel: function () {
             var currentContext = this;
-            require(['svg!maps/' + currentContext.region], function (map) {
+            require(['svg!maps/' + currentContext.region + '.svg'], function (map) {
                 var svgElement = document.getElementById('svg-container');
                 if (svgElement) {
                     svgElement.innerHTML = map;

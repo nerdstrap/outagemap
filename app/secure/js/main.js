@@ -42,6 +42,9 @@ require.config({
         'require-hbs': {
             'extension': 'html'
         },
+        'require-svg': {
+            'extension': 'xml'
+        },
     },
     paths: {
         'require': 'libs/require',
