@@ -20,8 +20,8 @@
         resources: function (culture) {
             return {
                 'logoImageSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSrc').value,
-                'logoImageAlt': 'AEP',
-                'disclaimer': resourceHelpers.getResource('disclaimerText').value
+                'logoImageSvgSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSvgSrc').value,
+                'logoImageAlt': 'AEP'
             };
         },
 
@@ -31,10 +31,6 @@
 
             var renderModel = _.extend({}, this.resources(), this.model);
             this.$el.html(template(renderModel));
-
-            require(['svg!images/' + currentContext.requestedRegion + '_logo'], function (logo) {
-                currentContext.$('.footer-logo').html(logo);
-            });
 
             var outageMapLegendView = new OutageMapLegendView({
                 el: $('#outage-map-legend-view', currentContext.$el),

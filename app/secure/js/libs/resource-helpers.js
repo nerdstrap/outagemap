@@ -148,7 +148,7 @@ define(function (require) {
         },
         {
             'key': 'OutageMapLegendView.countyLinesIconSrc',
-            'value': '/images/county_lines.png'
+            'value': '/images/county_lines_icon.png'
         },
         {
             'key': 'OutageMapLegendView.countyLinesIconSvgSrc',
@@ -164,11 +164,11 @@ define(function (require) {
         },
         {
             'key': 'aepohio.logoImageSrc',
-            'value': '/images/service_territory_icon.svg'
+            'value': '/images/aepohio_logo.svg'
         },
         {
             'key': 'aepohio.logoImageSvgSrc',
-            'value': '/images/service_territory_icon.svg'
+            'value': '/images/aepohio_logo.svg'
         },
         {
             'key': 'aeptexas.logoImageSrc',

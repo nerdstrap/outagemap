@@ -25,7 +25,13 @@
                 'level2IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level2IncidentsTitleText').value,
                 'serviceTerritoryTitleText': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryTitleText').value,
                 'countyLinesTitleText': resourceHelpers.getResource('OutageMapLegendView.countyLinesTitleText').value,
-                'majorHighwaysTitleText': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysTitleText').value
+                'majorHighwaysTitleText': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysTitleText').value,
+                'serviceTerritoryIconSrc': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryIconSrc').value,
+                'serviceTerritoryIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryIconSvgSrc').value,
+                'countyLinesIconSrc': resourceHelpers.getResource('OutageMapLegendView.countyLinesIconSrc').value,
+                'countyLinesIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.countyLinesIconSvgSrc').value,
+                'majorHighwaysIconSrc': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysIconSrc').value,
+                'majorHighwaysIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysIconSvgSrc').value
             };
         },
 
