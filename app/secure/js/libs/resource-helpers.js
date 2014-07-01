@@ -19,6 +19,38 @@ define(function (require) {
             'value': '{0} serves {1} customers in {2} counties and parishes in {3}'
         },
         {
+            'key': 'HeaderView.twitterIconSrc',
+            'value': '/images/twitter_icon.png'
+        },
+        {
+            'key': 'HeaderView.twitterIconSvgSrc',
+            'value': '/images/twitter_icon.svg'
+        },
+        {
+            'key': 'HeaderView.facebookIconSrc',
+            'value': '/images/facebook_icon.png'
+        },
+        {
+            'key': 'HeaderView.facebookIconSvgSrc',
+            'value': '/images/facebook_icon.svg'
+        },
+        {
+            'key': 'HeaderView.twitterPostButtonText',
+            'value': 'Tweet This'
+        },
+        {
+            'key': 'HeaderView.twitterFollowUsButtonText',
+            'value': 'Follow Us For Updates'
+        },
+        {
+            'key': 'HeaderView.facebookPostButtonText',
+            'value': 'Post This'
+        },
+        {
+            'key': 'HeaderView.facebookFollowUsButtonText',
+            'value': 'Follow Us For Updates'
+        },
+        {
             'key': 'HeaderView.showOutageMapViewButtonText',
             'value': 'View Map'
         },

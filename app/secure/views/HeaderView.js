@@ -22,11 +22,21 @@
         resources: function (culture) {
             return {
                 'showOutageMapViewButtonText': resourceHelpers.getResource('HeaderView.showOutageMapViewButtonText').value,
-                'showOutageReportViewButtonText': resourceHelpers.getResource('HeaderView.showOutageReportViewButtonText').value
+                'showOutageReportViewButtonText': resourceHelpers.getResource('HeaderView.showOutageReportViewButtonText').value,
+                'twitterIconSrc': resourceHelpers.getResource('HeaderView.twitterIconSrc').value,
+                'facebookIconSrc': resourceHelpers.getResource('HeaderView.facebookIconSrc').value,
+                'twitterPostButtonText': resourceHelpers.getResource('HeaderView.twitterPostButtonText').value,
+                'twitterFollowUsButtonText': resourceHelpers.getResource('HeaderView.twitterFollowUsButtonText').value,
+                'facebookPostButtonText': resourceHelpers.getResource('HeaderView.facebookPostButtonText').value,
+                'facebookFollowUsButtonText': resourceHelpers.getResource('HeaderView.facebookFollowUsButtonText').value
             };
         },
 
         events: {
+            'click #twitter-post-button': 'twitterPostClick',
+            'click #twitter-follow-us-button': 'twitterFollowClick',
+            'click #facebook-post-button': 'facebookPostClick',
+            'click #facebook-follow-us-button': 'facebookFollowClick',
             'click #show-outage-report-view-button': 'showOutageReportClick',
             'click #show-outage-map-view-button': 'showOutageMapClick'
         },
@@ -41,12 +51,39 @@
             return this;
         },
 
+        twitterPostClick: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+            appEvents.trigger(appEvents.twitterPost);
+        },
+
+        twitterFollowClick: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+            appEvents.trigger(appEvents.twitterFollowClick);
+        },
+
+        facebookPostClick: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+            appEvents.trigger(appEvents.facebookPostClick);
+        },
+
+        facebookFollowClick: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+            appEvents.trigger(appEvents.facebookFollowClick);
+        },
+
         showOutageReportClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            this.$('#show-outage-report-view-button-container').addClass('hidden');
-            this.$('#show-outage-map-view-button-container').removeClass('hidden');
+            this.showOutageMapButton();
             appEvents.trigger(appEvents.showOutageReport);
         },
 
@@ -54,15 +91,19 @@
             if (event) {
                 event.preventDefault();
             }
+            this.showOutageReportButton();
+            appEvents.trigger(appEvents.showOutageMap);
+        },
+
+        showOutageReportButton: function () {
             this.$('#show-outage-map-view-button-container').addClass('hidden');
             this.$('#show-outage-report-view-button-container').removeClass('hidden');
-            appEvents.trigger(appEvents.showOutageMap);
         },
 
         showOutageMapButton: function () {
             this.$('#show-outage-report-view-button-container').addClass('hidden');
             this.$('#show-outage-map-view-button-container').removeClass('hidden');
-        },
+        }
     });
 
     return HeaderView;

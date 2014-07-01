@@ -19,6 +19,12 @@
         this.outageReportModelInstance = options.outageReportModelInstance;
         this.requestedRegion = options.requestedRegion || '';
 
+        //'twitterPostLinkFormatString': resourceHelpers.getResource('twitterPostLinkFormatString').value,
+        //        'twitterFollowLinkFormatString': resourceHelpers.getResource('twitterFollowLinkFormatString').value,
+        //        'facebookPostLinkFormatString': resourceHelpers.getResource('facebookPostLinkFormatString').value,
+        //        'facebookFollowLinkFormatString': resourceHelpers.getResource('facebookFollowLinkFormatString').value,
+        //        'outageMapDirectLinkFormatString': resourceHelpers.getResource('outageMapDirectLinkFormatString').value
+
         this.initialize.apply(this, arguments);
     };
 
