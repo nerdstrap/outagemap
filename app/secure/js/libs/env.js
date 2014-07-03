@@ -10,7 +10,7 @@ define(function (require) {
 
     var masterConfig = (module.config && module.config()) || {},
         apiUrl = masterConfig.apiUrl || '',
-        appFolder = masterConfig.appFolder || '/secure',
+        appFolder = masterConfig.appFolder || '',
         refreshInterval = masterConfig.refreshInterval || 30000,
         dataExpiration = masterConfig.dataExpiration || 3600000,
         incidentTotalThreshold = incidentTotalThreshold || 100;
