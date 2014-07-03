@@ -164,7 +164,7 @@ define(function (require) {
         },
         {
             'key': 'aepohio.logoImageSrc',
-            'value': '/images/aepohio_logo.svg'
+            'value': '/images/aepohio_logo.png'
         },
         {
             'key': 'aepohio.logoImageSvgSrc',
