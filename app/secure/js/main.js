@@ -5,8 +5,8 @@ require.config({
             'consoleLevel': 'off'
         },
         'env': {
-            'apiUrl': '/app',
-            'appFolder': '/app/secure',
+            'apiUrl': '',
+            'appFolder': '/secure',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100

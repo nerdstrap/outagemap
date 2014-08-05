@@ -859,38 +859,38 @@
 	<g>
 		<rect x="571.9" y="27.5" fill="none" width="57.7" height="21.3"/>
 		
-			<text transform="matrix(1 0 0 1 571.8781 38.8603)" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">OHIO</text>
+			<text transform="matrix(1 0 0 1 571.8781 38.8603)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">OHIO</text>
 	</g>
 	<g>
 		<rect x="11.4" y="38.2" fill="none" width="84.2" height="21.7"/>
 		
-			<text transform="matrix(1 0 0 1 11.3852 49.5311)" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">INDIANA</text>
+			<text transform="matrix(1 0 0 1 11.3852 49.5311)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">INDIANA</text>
 	</g>
 	<g>
 		<rect x="119.3" y="328" fill="none" width="95.5" height="18.3"/>
 		
-			<text transform="matrix(1 0 0 1 119.3191 339.3243)" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">KENTUCKY</text>
+			<text transform="matrix(1 0 0 1 119.3191 339.3243)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">KENTUCKY</text>
 	</g>
 	<g>
 		<rect x="641.8" y="140.7" fill="none" width="75.6" height="55.2"/>
-		<text transform="matrix(1 0 0 1 657.3819 152.0619)"><tspan x="0" y="0" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">WEST </tspan><tspan x="-10.5" y="19.2" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">VIRGIN</tspan><tspan x="50" y="19.2" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">-</tspan><tspan x="14.2" y="38.4" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2">IA</tspan></text>
+		<text transform="matrix(1 0 0 1 657.3819 152.0619)"><tspan x="0" y="0" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">WEST </tspan><tspan x="-10.5" y="19.2" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">VIRGIN</tspan><tspan x="50" y="19.2" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">-</tspan><tspan x="14.2" y="38.4" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">IA</tspan></text>
 	</g>
 	<g>
 		<rect x="596.8" y="413" fill="none" width="105.2" height="27.6"/>
 		
-			<text transform="matrix(1 0 0 1 608.2333 424.3285)" fill="#BBB5AF" font-family="'HelveticaNeue-BoldCond'" font-size="16" letter-spacing="2"> VIRGINIA</text>
+			<text transform="matrix(1 0 0 1 608.2333 424.3285)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2"> VIRGINIA</text>
 	</g>
 	<rect x="174.3" y="129.3" fill="none" width="75.4" height="12.4"/>
-	<text transform="matrix(1 0 0 1 174.3004 140.6241)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Frankfort</text>
+	<text transform="matrix(1 0 0 1 174.3004 140.6241)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Frankfort</text>
 	<rect x="16.2" y="159.6" fill="none" width="76.8" height="17.4"/>
-	<text transform="matrix(1 0 0 1 16.2091 170.9478)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Louisville</text>
+	<text transform="matrix(1 0 0 1 16.2091 170.9478)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Louisville</text>
 	<rect x="233.7" y="195.2" fill="none" width="82.7" height="21.2"/>
-	<text transform="matrix(1 0 0 1 233.7012 206.5204)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Lexington</text>
+	<text transform="matrix(1 0 0 1 233.7012 206.5204)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Lexington</text>
 	<rect x="487.3" y="369.8" fill="none" width="56" height="21.2"/>
-	<text transform="matrix(1 0 0 1 487.313 381.1275)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Hazard</text>
+	<text transform="matrix(1 0 0 1 487.313 381.1275)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Hazard</text>
 	<rect x="572.7" y="108.1" fill="none" width="56" height="21.2"/>
-	<text transform="matrix(1 0 0 1 572.7086 119.4907)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Ashland</text>
+	<text transform="matrix(1 0 0 1 572.7086 119.4907)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Ashland</text>
 	<rect x="623.7" y="294.7" fill="none" width="78" height="21.2"/>
-	<text transform="matrix(1 0 0 1 623.667 306.0825)" fill="#58595B" font-family="'HelveticaNeue-Condensed'" font-size="16">Pikeville</text>
+	<text transform="matrix(1 0 0 1 623.667 306.0825)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Pikeville</text>
 </g>
 </svg>
