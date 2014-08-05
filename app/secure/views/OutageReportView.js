@@ -59,19 +59,21 @@
 
                 renderModel.customersAffected = operatingCompanyModel.customersAffected;
                 renderModel.customersServed = operatingCompanyModel.customersServed;
-                renderModel.percentageAffected = operatingCompanyModel.percentageAffected;
+                renderModel.percentageAffected = (operatingCompanyModel.percentageAffected * 100).toFixed(1);
 
                 _.each(operatingCompanyModel.states, function (state) {
                     if (state.customersAffected > 0) {
                         if (state.incidents && state.incidents.length > 0) {
                             _.each(state.incidents, function (incident) {
                                 var incidentCopy = _.clone(incident);
+                                incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
                                 incidentCopy.countyNameFormatted = env.toTitleCase(incidentCopy.countyName) + ' Co., ' + state.stateName;
                                 renderModel.incidentRows.push(incidentCopy);
                             });
                             renderModel.incidentRows.push({});
                         }
                         var stateCopy = _.clone(state);
+                        stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
                         renderModel.incidentRows.push(stateCopy);
                         renderModel.incidentRows.push({});
                     }

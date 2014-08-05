@@ -17,7 +17,7 @@
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
             repairIssues: parseInt('0'),
-            percentageAffected: parseFloat('0').toFixed(1),
+            percentageAffected: parseFloat('0'),
         };
 
         // id
@@ -59,7 +59,7 @@
 
         // percentageAffected
         if (operatingCompanyInstance.customersAffected > 0 && operatingCompanyInstance.customersServed > 0) {
-            operatingCompanyInstance.percentageAffected = (operatingCompanyInstance.customersAffected.toFixed(1) / operatingCompanyInstance.customersServed.toFixed(1)).toFixed(1);
+            operatingCompanyInstance.percentageAffected = operatingCompanyInstance.customersAffected / operatingCompanyInstance.customersServed;
         }
 
         return operatingCompanyInstance;
@@ -71,7 +71,7 @@
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
             repairIssues: parseInt('0'),
-            percentageAffected: parseFloat('0').toFixed(1)
+            percentageAffected: parseFloat('0')
         };
 
         // stateName
@@ -119,7 +119,7 @@
 
         // percentageAffected
         if (stateInstance.customersAffected > 0 && stateInstance.customersServed > 0) {
-            stateInstance.percentageAffected = (stateInstance.customersAffected.toFixed(1) / stateInstance.customersServed.toFixed(1)).toFixed(1);
+            stateInstance.percentageAffected = stateInstance.customersAffected / stateInstance.customersServed;
         }
 
         return stateInstance;
@@ -131,7 +131,7 @@
             customersAffected: parseInt('0'),
             customersServed: parseInt('0'),
             repairIssues: parseInt('0'),
-            percentageAffected: parseFloat('0').toFixed(1)
+            percentageAffected: parseFloat('0')
         };
 
         // countyName
@@ -156,7 +156,7 @@
 
         // percentageAffected
         if (incidentInstance.customersAffected > 0 && incidentInstance.customersServed > 0) {
-            incidentInstance.percentageAffected = (incidentInstance.customersAffected.toFixed(1) / incidentInstance.customersServed.toFixed(1)).toFixed(1);
+            incidentInstance.percentageAffected = incidentInstance.customersAffected / incidentInstance.customersServed;
         }
 
         return incidentInstance;
