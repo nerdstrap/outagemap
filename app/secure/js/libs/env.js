@@ -43,7 +43,7 @@ define(function (require) {
         },
         formatUTCDate: function (date) {
             date = new Date(date);
-            return date.getUTCFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getUTCHours() + ':' + date.getUTCMinutes() + ':' + date.getUTCSeconds() + ' GMT';
+            return date.getHours() + ':' + date.getMinutes() + ' GMT&nbsp;&nbsp;&nbsp;' + date.getMonth() + '-' + date.getDate() + '-' + date.getUTCFullYear();
         },
         formatNumber: function (value) {
             if (value) {

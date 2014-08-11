@@ -31,6 +31,14 @@
             operatingCompanyInstance.outageMapLink = operatingCompanyConfig.outageMapLink;
         }
 
+        // disabled
+        if (operatingCompany.hasOwnProperty('disabled')) {
+            if (operatingCompany.disabled === "true") {
+                operatingCompanyInstance.disabled = true;
+                return operatingCompanyInstance;
+            }
+        }
+
         // states
         var states = [];
         if (operatingCompany.hasOwnProperty('state')) {
