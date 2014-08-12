@@ -29,8 +29,7 @@
 
         resources: function (culture) {
             return {
-                'incidentTooltipFormatString': resourceHelpers.getResource('incidentTooltipFormatString').value,
-                'swepcoIncidentTooltipFormatString': resourceHelpers.getResource('swepcoIncidentTooltipFormatString').value
+                'incidentTooltipFormatString': this.region === 'swepco' ? resourceHelpers.getResource('swepcoIncidentTooltipFormatString').value : resourceHelpers.getResource('incidentTooltipFormatString').value
             };
         },
 
@@ -48,18 +47,32 @@
         updateViewFromModel: function () {
             var currentContext = this;
             require(['svg!maps/' + currentContext.region + '.svg'], function (map) {
-                var svgElement = document.getElementById('svg-container');
+                var svgElement = $('#svg-container');
                 if (svgElement) {
-                    svgElement.innerHTML = map;
+                    svgElement.html(map);
                     var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
-                    if (operatingCompanyModel && operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
-                        _.each(operatingCompanyModel.states, function (state) {
-                            if (state.customersAffected > 0) {
-                                if (state.incidents && state.incidents.length > 0) {
-                                    currentContext.delegateEvents(state.incidents);
-                                }
+                    if (operatingCompanyModel) {
+                        if (operatingCompanyModel.disabled) {
+                            var serviceUnavailableMessage = resourceHelpers.getResource('serviceUnavailableMessage').value;
+                            svgElement.title = serviceUnavailableMessage;
+                            svgElement.attr('title', serviceUnavailableMessage);
+                            svgElement.tooltipster({
+                                contentAsHTML: true,
+                                touchDevices: false,
+                                arrow: false,
+                                offsetY: (svgElement.height() / 2) * -1
+                            });
+                        } else {
+                            if (operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
+                                _.each(operatingCompanyModel.states, function (state) {
+                                    if (state.customersAffected > 0) {
+                                        if (state.incidents && state.incidents.length > 0) {
+                                            currentContext.delegateEvents(state.incidents);
+                                        }
+                                    }
+                                });
                             }
-                        });
+                        }
                     }
                 }
             });

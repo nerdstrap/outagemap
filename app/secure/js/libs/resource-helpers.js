@@ -15,7 +15,7 @@ define(function (require) {
             'value': '{0} serves {1} customers in {2} counties in {3}'
         },
         {
-            'key': 'serviceStatisticsFormatString',
+            'key': 'swepcoServiceStatisticsFormatString',
             'value': '{0} serves {1} customers in {2} counties and parishes in {3}'
         },
         {
@@ -27,12 +27,20 @@ define(function (require) {
             'value': '/images/twitter_icon.svg'
         },
         {
+            'key': 'HeaderView.twitterIconAlt',
+            'value': 'twitter logo'
+        },
+        {
             'key': 'HeaderView.facebookIconSrc',
             'value': '/images/facebook_icon.png'
         },
         {
             'key': 'HeaderView.facebookIconSvgSrc',
             'value': '/images/facebook_icon.svg'
+        },
+        {
+            'key': 'HeaderView.facebookIconAlt',
+            'value': 'facebook logo'
         },
         {
             'key': 'HeaderView.twitterPostButtonText',
@@ -68,7 +76,7 @@ define(function (require) {
         },
         {
             'key': 'serviceUnavailableMessage',
-            'value': 'We&#39;re sorry. This system is temporarily unavailable. We are working to fix technical problems.'
+            'value': 'We&#39;re sorry. This system is temporarily unavailable.<br/>We are working to fix technical problems.'
         },
         {
             'key': 'incidentTooltipFormatString',
@@ -76,7 +84,7 @@ define(function (require) {
         },
         {
             'key': 'swepcoIncidentTooltipFormatString',
-            'value': '{0} Parish<br/>{1} customers affected.<br/>(click for details)'
+            'value': '{0} County&#47;Parish<br/>{1} customers affected.<br/>(click for details)'
         },
         {
             'key': 'disclaimerText',
@@ -89,6 +97,10 @@ define(function (require) {
         {
             'key': 'OutageReportView.countyNameTitleText',
             'value': 'County'
+        },
+        {
+            'key': 'OutageReportView.swepcoCountyNameTitleText',
+            'value': 'County&#47;Parish'
         },
         {
             'key': 'OutageReportView.customersAffectedTitleText',
@@ -171,12 +183,20 @@ define(function (require) {
             'value': '/images/aepohio_logo.svg'
         },
         {
+            'key': 'aepohio.logoImageAlt',
+            'value': 'AEP Ohio logo'
+        },
+        {
             'key': 'aeptexas.logoImageSrc',
             'value': '/images/aeptexas_logo.png'
         },
         {
             'key': 'aeptexas.logoImageSvgSrc',
             'value': '/images/aeptexas_logo.svg'
+        },
+        {
+            'key': 'aeptexas.logoImageAlt',
+            'value': 'AEP Texas logo'
         },
         {
             'key': 'apco.logoImageSrc',
@@ -187,12 +207,20 @@ define(function (require) {
             'value': '/images/apco_logo.svg'
         },
         {
+            'key': 'apco.logoImageAlt',
+            'value': 'Appalachian Power logo'
+        },
+        {
             'key': 'im.logoImageSrc',
             'value': '/images/im_logo.png'
         },
         {
             'key': 'im.logoImageSvgSrc',
             'value': '/images/im_logo.svg'
+        },
+        {
+            'key': 'im.logoImageAlt',
+            'value': 'Indiana&amp;Michigan Power logo'
         },
         {
             'key': 'kentucky.logoImageSrc',
@@ -203,6 +231,10 @@ define(function (require) {
             'value': '/images/kentucky_logo.svg'
         },
         {
+            'key': 'kentucky.logoImageAlt',
+            'value': 'Kentucky Power logo'
+        },
+        {
             'key': 'pso.logoImageSrc',
             'value': '/images/pso_logo.png'
         },
@@ -211,12 +243,20 @@ define(function (require) {
             'value': '/images/pso_logo.svg'
         },
         {
+            'key': 'pso.logoImageAlt',
+            'value': 'Public Service of Oklahoma logo'
+        },
+        {
             'key': 'swepco.logoImageSrc',
             'value': '/images/swepco_logo.png'
         },
         {
             'key': 'swepco.logoImageSvgSrc',
             'value': '/images/swepco_logo.svg'
+        },
+        {
+            'key': 'swepco.logoImageAlt',
+            'value': 'Southwestern Power Company logo'
         },
         {
             'key': 'twitterStatusPostFormatString',

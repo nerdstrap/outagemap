@@ -21,7 +21,7 @@
             return {
                 'logoImageSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSrc').value,
                 'logoImageSvgSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSvgSrc').value,
-                'logoImageAlt': 'AEP'
+                'logoImageAlt': resourceHelpers.getResource(this.requestedRegion + '.logoImageAlt').value
             };
         },
 

@@ -79,7 +79,8 @@
             padding: 10px;
         }
 
-            #outage-report-view .outage-report-view .row.collapse.no-incidents {
+            #outage-report-view .outage-report-view .row.collapse.no-incidents,
+            #outage-report-view .outage-report-view .row.collapse.service-unavailable {
                 text-align: center;
                 margin-top: 5px;
                 padding: 100px 10px 40px 10px;

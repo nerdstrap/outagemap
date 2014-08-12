@@ -32,7 +32,7 @@ define(function (require) {
             var dayDiff = (target - jan4) / 86400000;
             return 1 + Math.ceil(dayDiff / 7);
         },
-        tweleveHour: function (date) {
+        twelveHour: function (date) {
             if (date.getHours() > 12) {
                 return date.getHours() - 12;
             } else {
@@ -73,13 +73,13 @@ define(function (require) {
                     case 'H':
                         return dates.padNumber(date.getHours(), 2);
                     case 'I':
-                        return dates.padNumber(dates.tweleveHour(date), 2);
+                        return dates.padNumber(dates.twelveHour(date), 2);
                     case 'j':
                         return dates.padNumber(dates.dayOfYear(date), 3);
                     case 'k':
                         return dates.padNumber(date.getHours(), 2, ' ');
                     case 'l':
-                        return dates.padNumber(dates.tweleveHour(date), 2, ' ');
+                        return dates.padNumber(dates.twelveHour(date), 2, ' ');
                     case 'L':
                         return dates.padNumber(date.getMilliseconds(), 3);
                     case 'm':
