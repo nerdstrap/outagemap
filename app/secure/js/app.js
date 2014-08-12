@@ -6,7 +6,7 @@ define(function (require) {
         _ = require('underscore'),
         Backbone = require('backbone'),
         appRouter = require('routers/app-router'),
-        tooltipster = require('jquery-tooltipster');
+        tooltipster = require('tooltipster');
 
     var masterConfig = (module.config && module.config()) || {},
         consoleLevel = masterConfig.consoleLevel || 'off';

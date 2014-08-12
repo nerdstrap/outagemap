@@ -6,7 +6,7 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         template = require('hbs!templates/OutageMapLegend'),
-        resourceHelpers = require('resource-helpers');
+        appResources = require('resources');
 
     var OutageMapLegendView = CompositeView.extend({
         initialize: function (options) {
@@ -18,20 +18,20 @@
 
         resources: function (culture) {
             return {
-                'customerOutagesTitleText': resourceHelpers.getResource('OutageMapLegendView.customerOutagesTitleText').value,
-                'legendTitleText': resourceHelpers.getResource('OutageMapLegendView.legendTitleText').value,
-                'level0IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level0IncidentsTitleText').value,
-                'level1IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level1IncidentsTitleText').value,
-                'level2IncidentsTitleText': resourceHelpers.getResource('OutageMapLegendView.level2IncidentsTitleText').value,
-                'serviceTerritoryTitleText': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryTitleText').value,
-                'countyLinesTitleText': resourceHelpers.getResource('OutageMapLegendView.countyLinesTitleText').value,
-                'majorHighwaysTitleText': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysTitleText').value,
-                'serviceTerritoryIconSrc': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryIconSrc').value,
-                'serviceTerritoryIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.serviceTerritoryIconSvgSrc').value,
-                'countyLinesIconSrc': resourceHelpers.getResource('OutageMapLegendView.countyLinesIconSrc').value,
-                'countyLinesIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.countyLinesIconSvgSrc').value,
-                'majorHighwaysIconSrc': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysIconSrc').value,
-                'majorHighwaysIconSvgSrc': resourceHelpers.getResource('OutageMapLegendView.majorHighwaysIconSvgSrc').value
+                'customerOutagesTitleText': appResources.getResource('OutageMapLegendView.customerOutagesTitleText').value,
+                'legendTitleText': appResources.getResource('OutageMapLegendView.legendTitleText').value,
+                'level0IncidentsTitleText': appResources.getResource('OutageMapLegendView.level0IncidentsTitleText').value,
+                'level1IncidentsTitleText': appResources.getResource('OutageMapLegendView.level1IncidentsTitleText').value,
+                'level2IncidentsTitleText': appResources.getResource('OutageMapLegendView.level2IncidentsTitleText').value,
+                'serviceTerritoryTitleText': appResources.getResource('OutageMapLegendView.serviceTerritoryTitleText').value,
+                'countyLinesTitleText': appResources.getResource('OutageMapLegendView.countyLinesTitleText').value,
+                'majorHighwaysTitleText': appResources.getResource('OutageMapLegendView.majorHighwaysTitleText').value,
+                'serviceTerritoryIconSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSrc').value,
+                'serviceTerritoryIconSvgSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSvgSrc').value,
+                'countyLinesIconSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSrc').value,
+                'countyLinesIconSvgSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSvgSrc').value,
+                'majorHighwaysIconSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSrc').value,
+                'majorHighwaysIconSvgSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSvgSrc').value
             };
         },
 

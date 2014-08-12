@@ -6,79 +6,80 @@ require.config({
         },
         'env': {
             'apiUrl': '',
-            'appFolder': '',
+            'appFolder': '/secure',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
         },
-        'incident-helpers': {
-            'incidentLevels': [
-                {
-                    'id': 0,
-                    'fillColor': '#FFFF54',
-                    'highlightColor': '#FFFFAB',
-                    'min': 100,
-                    'max': 500,
-                    'className': 'level-0-incident'
-                },
-                {
-                    'id': 1,
-                    'fillColor': '#FFA24F',
-                    'highlightColor': '#FFD1A8',
-                    'min': 501,
-                    'max': 2000,
-                    'className': 'level-1-incident'
-                },
-                {
-                    'id': 2,
-                    'fillColor': '#FF4444',
-                    'highlightColor': '#FFA3A3',
-                    'min': 2001,
-                    'max': Number.MAX_VALUE,
-                    'className': 'level-2-incident'
-                }
-            ]
-        },
-        'require-hbs': {
+        'hbs': {
             'extension': 'html'
         },
-        'require-svg': {
+        'svg': {
             'extension': 'xml'
         },
     },
     paths: {
+        /* Require */
         'require': 'libs/require',
+        'text': 'libs/text',
+        'hbs': 'libs/hbs',
+        'svg': 'libs/svg',
+        
+        /* jQuery */
         'jquery': 'libs/jquery',
+        'tooltipster': 'libs/jquery.tooltipster',
+        
+        /* Underscore */
         'underscore': 'libs/lodash',
+        
+        /* Backbone */
         'backbone': 'libs/backbone',
-        'Handlebars': 'libs/handlebars-helpers',
+        
+        /* Handlebars */
         'Handlebars-base': 'libs/handlebars',
-        'json2': 'libs/json2',
-        'console': 'libs/console',
-        'dates': 'libs/dates',
-        /*require plugins*/
-        'text': 'libs/require-text',
-        'hbs': 'libs/require-hbs',
-        'svg': 'libs/require-svg',
-        /*jquery plugins*/
-        'jquery-tooltipster': 'libs/jquery-tooltipster',
-        /*app-level items*/
-        'globals': 'libs/globals',
-        'env': 'libs/env',
-        'app-events': 'libs/app-events',
-        'region-helpers': 'libs/region-helpers',
-        'incident-helpers': 'libs/incident-helpers',
-        'resource-helpers': 'libs/resource-helpers',
-        /*directories*/
-        'templates': '../templates',
-        'routers': '../routers',
+        'Handlebars': 'libs/handlebars.helpers',
+        
+        /* Modernizr */
+        'modernizr': 'libs/modernizr',
+        
+        /* Foundation */
+        'foundation.core': 'libs/foundation',
+        'foundation.abide': 'libs/foundation.abide',
+        'foundation.accordion': 'libs/foundation.accordion',
+        'foundation.alert': 'libs/foundation.alert',
+        'foundation.clearing': 'libs/foundation.clearing',
+        'foundation.dropdown': 'libs/foundation.dropdown',
+        'foundation.equalizer': 'libs/foundation.equalizer',
+        'foundation.interchange': 'libs/foundation.interchange',
+        'foundation.joyride': 'libs/foundation.joyride',
+        'foundation.magellan': 'libs/foundation.magellan',
+        'foundation.offcanvas': 'libs/foundation.offcanvas',
+        'foundation.orbit': 'libs/foundation.orbit',
+        'foundation.reveal': 'libs/foundation.reveal',
+        'foundation.tab': 'libs/foundation.tab',
+        'foundation.tooltip': 'libs/foundation.tooltip',
+        'foundation.topbar': 'libs/foundation.topbar',
+        
+        /* App */
+        'console': 'app/console',
+        'dates': 'app/dates',
+        'env': 'app/env',
+        'events': 'app/events',
+        'globals': 'app/globals',
+        'incidents': 'app/incidents',
+        'regions': 'app/regions',
+        'resources': 'app/resources',
+        
+        /* Convenience */
+        'collections': '../collections',
         'controllers': '../controllers',
-        'models': '../models',
-        'services': '../services',
-        'views': '../views',
+        'enums': '../enums',
         'maps': '../maps',
-        'images': '../images',
-        'fonts': '../fonts'
+        'models': '../models',
+        'routers': '../routers',
+        'services': '../services',
+        'templates': '../templates',
+        'views': '../views'
     },
     shim: {
         'backbone': {
@@ -91,7 +92,7 @@ require.config({
         'Handlebars-base': {
             exports: 'Handlebars'
         },
-        'jquery-tooltipster': {
+        'tooltipster': {
             deps: ['jquery']
         }
     }

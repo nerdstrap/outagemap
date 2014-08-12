@@ -6,11 +6,11 @@
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
         env = require('env'),
-        appEvents = require('app-events'),
+        events = require('events'),
         template = require('hbs!templates/OutageMap'),
-        regionHelpers = require('region-helpers'),
-        incidentHelpers = require('incident-helpers'),
-        resourceHelpers = require('resource-helpers');
+        regions = require('regions'),
+        appIncidents = require('incidents'),
+        appResources = require('resources');
 
     var _incidentTotalThreshold = env.getIncidentTotalThreshold();
 
@@ -29,7 +29,7 @@
 
         resources: function (culture) {
             return {
-                'incidentTooltipFormatString': this.region === 'swepco' ? resourceHelpers.getResource('swepcoIncidentTooltipFormatString').value : resourceHelpers.getResource('incidentTooltipFormatString').value
+                'incidentTooltipFormatString': this.region === 'swepco' ? appResources.getResource('swepcoIncidentTooltipFormatString').value : appResources.getResource('incidentTooltipFormatString').value
             };
         },
 
@@ -53,7 +53,7 @@
                     var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
                     if (operatingCompanyModel) {
                         if (operatingCompanyModel.disabled) {
-                            var serviceUnavailableMessage = resourceHelpers.getResource('serviceUnavailableMessage').value;
+                            var serviceUnavailableMessage = appResources.getResource('serviceUnavailableMessage').value;
                             svgElement.title = serviceUnavailableMessage;
                             svgElement.attr('title', serviceUnavailableMessage);
                             svgElement.tooltipster({
@@ -82,7 +82,7 @@
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.showOutageReport, this.getAttribute('data-county-name'), this.getAttribute('data-class-name'));
+            events.trigger(events.showOutageReport, this.getAttribute('data-county-name'), this.getAttribute('data-class-name'));
         },
 
         delegateEvents: function (incidents) {
@@ -93,7 +93,7 @@
                     var countySvgElementId = countyPrefix + incident.countyName + countySuffix;
                     var countySvgElement = $('#' + countySvgElementId);
                     if (countySvgElement) {
-                        var incidentLevelConfig = incidentHelpers.getIncidentLevel(incident.customersAffected);
+                        var incidentLevelConfig = appIncidents.getIncidentLevel(incident.customersAffected);
                         var incidentTooltipFormatString = currentContext.resources().incidentTooltipFormatString;
                         var tooltipText = incidentTooltipFormatString.format(incident.countyName, incident.customersAffected);
                         countySvgElement.attr('fill', incidentLevelConfig.fillColor);

@@ -4,13 +4,13 @@
     var _ = require('underscore'),
         Backbone = require('backbone');
 
-    var AppEvents = function (options) {
+    var Events = function (options) {
         if (this.initialize) {
             this.initialize.apply(this, arguments);
         }
     };
 
-    _.extend(AppEvents.prototype, Backbone.Events, {
+    _.extend(Events.prototype, Backbone.Events, {
         showOutageReport: 'showOutageReport',
         showOutageMap: 'showOutageMap',
         twitterPost: 'twitterPost',
@@ -19,6 +19,6 @@
         facebookFollowUs: 'facebookFollowUs'
     });
 
-    var appEvents = new AppEvents();
-    return appEvents;
+    var events = new Events();
+    return events;
 });

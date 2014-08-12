@@ -5,9 +5,9 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
-        appEvents = require('app-events'),
+        events = require('events'),
         template = require('hbs!templates/Header'),
-        resourceHelpers = require('resource-helpers');
+        appResources = require('resources');
 
     var HeaderView = CompositeView.extend({
         initialize: function (options) {
@@ -16,23 +16,23 @@
             this.dispatcher = options.dispatcher || this;
             this.requestedRegion = options.requestedRegion || '';
 
-            this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageMapButton);
+            this.listenTo(events, events.showOutageReport, this.showOutageMapButton);
         },
 
         resources: function (culture) {
             return {
-                'showOutageMapViewButtonText': resourceHelpers.getResource('HeaderView.showOutageMapViewButtonText').value,
-                'showOutageReportViewButtonText': resourceHelpers.getResource('HeaderView.showOutageReportViewButtonText').value,
-                'twitterIconSrc': resourceHelpers.getResource('HeaderView.twitterIconSrc').value,
-                'twitterIconSvgSrc': resourceHelpers.getResource('HeaderView.twitterIconSvgSrc').value,
-                'twitterIconAlt': resourceHelpers.getResource('HeaderView.twitterIconAlt').value,
-                'facebookIconSrc': resourceHelpers.getResource('HeaderView.facebookIconSrc').value,
-                'facebookIconSvgSrc': resourceHelpers.getResource('HeaderView.facebookIconSvgSrc').value,
-                'facebookIconAlt': resourceHelpers.getResource('HeaderView.facebookIconAlt').value,
-                'twitterPostButtonText': resourceHelpers.getResource('HeaderView.twitterPostButtonText').value,
-                'twitterFollowUsButtonText': resourceHelpers.getResource('HeaderView.twitterFollowUsButtonText').value,
-                'facebookPostButtonText': resourceHelpers.getResource('HeaderView.facebookPostButtonText').value,
-                'facebookFollowUsButtonText': resourceHelpers.getResource('HeaderView.facebookFollowUsButtonText').value
+                'showOutageMapViewButtonText': appResources.getResource('HeaderView.showOutageMapViewButtonText').value,
+                'showOutageReportViewButtonText': appResources.getResource('HeaderView.showOutageReportViewButtonText').value,
+                'twitterIconSrc': appResources.getResource('HeaderView.twitterIconSrc').value,
+                'twitterIconSvgSrc': appResources.getResource('HeaderView.twitterIconSvgSrc').value,
+                'twitterIconAlt': appResources.getResource('HeaderView.twitterIconAlt').value,
+                'facebookIconSrc': appResources.getResource('HeaderView.facebookIconSrc').value,
+                'facebookIconSvgSrc': appResources.getResource('HeaderView.facebookIconSvgSrc').value,
+                'facebookIconAlt': appResources.getResource('HeaderView.facebookIconAlt').value,
+                'twitterPostButtonText': appResources.getResource('HeaderView.twitterPostButtonText').value,
+                'twitterFollowUsButtonText': appResources.getResource('HeaderView.twitterFollowUsButtonText').value,
+                'facebookPostButtonText': appResources.getResource('HeaderView.facebookPostButtonText').value,
+                'facebookFollowUsButtonText': appResources.getResource('HeaderView.facebookFollowUsButtonText').value
             };
         },
 
@@ -59,28 +59,28 @@
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.twitterPost);
+            events.trigger(events.twitterPost);
         },
 
         twitterFollowClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.twitterFollowUs);
+            events.trigger(events.twitterFollowUs);
         },
 
         facebookPostClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.facebookPost);
+            events.trigger(events.facebookPost);
         },
 
         facebookFollowClick: function (event) {
             if (event) {
                 event.preventDefault();
             }
-            appEvents.trigger(appEvents.facebookFollowUs);
+            events.trigger(events.facebookFollowUs);
         },
 
         showOutageReportClick: function (event) {
@@ -88,7 +88,7 @@
                 event.preventDefault();
             }
             this.showOutageMapButton();
-            appEvents.trigger(appEvents.showOutageReport);
+            events.trigger(events.showOutageReport);
         },
 
         showOutageMapClick: function (event) {
@@ -96,7 +96,7 @@
                 event.preventDefault();
             }
             this.showOutageReportButton();
-            appEvents.trigger(appEvents.showOutageMap);
+            events.trigger(events.showOutageMap);
         },
 
         showOutageReportButton: function () {

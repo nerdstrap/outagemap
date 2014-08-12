@@ -7,7 +7,7 @@
         CompositeView = require('views/CompositeView'),
         OutageMapLegendView = require('views/OutageMapLegendView'),
         template = require('hbs!templates/Footer'),
-        resourceHelpers = require('resource-helpers');
+        appResources = require('resources');
 
     var FooterView = CompositeView.extend({
         initialize: function (options) {
@@ -19,9 +19,9 @@
 
         resources: function (culture) {
             return {
-                'logoImageSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSrc').value,
-                'logoImageSvgSrc': resourceHelpers.getResource(this.requestedRegion + '.logoImageSvgSrc').value,
-                'logoImageAlt': resourceHelpers.getResource(this.requestedRegion + '.logoImageAlt').value
+                'logoImageSrc': appResources.getResource(this.requestedRegion + '.logoImageSrc').value,
+                'logoImageSvgSrc': appResources.getResource(this.requestedRegion + '.logoImageSvgSrc').value,
+                'logoImageAlt': appResources.getResource(this.requestedRegion + '.logoImageAlt').value
             };
         },
 

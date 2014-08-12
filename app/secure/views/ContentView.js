@@ -5,7 +5,7 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
-        appEvents = require('app-events'),
+        events = require('events'),
         OutageMapView = require('views/OutageMapView'),
         OutageReportView = require('views/OutageReportView'),
         env = require('env'),
@@ -18,8 +18,8 @@
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
 
-            this.listenTo(appEvents, appEvents.showOutageMap, this.showOutageMapView);
-            this.listenTo(appEvents, appEvents.showOutageReport, this.showOutageReportView);
+            this.listenTo(events, events.showOutageMap, this.showOutageMapView);
+            this.listenTo(events, events.showOutageReport, this.showOutageReportView);
         },
 
         resources: function (culture) {

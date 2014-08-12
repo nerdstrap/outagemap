@@ -5,7 +5,7 @@
         _ = require('underscore'),
         Backbone = require('backbone'),
         env = require('env'),
-        regionHelpers = require('region-helpers'),
+        regions = require('regions'),
         outageReportService = require('services/outageReportService');
 
     var _incidentTotalThreshold = env.getIncidentTotalThreshold();
@@ -23,7 +23,7 @@
         // id
         if (operatingCompany.hasOwnProperty('id')) {
             operatingCompanyInstance.identifier = operatingCompany.id;
-            var operatingCompanyConfig = regionHelpers.getOperatingCompanyByIdentifier(operatingCompanyInstance.identifier);
+            var operatingCompanyConfig = regions.getOperatingCompanyByIdentifier(operatingCompanyInstance.identifier);
             operatingCompanyInstance.id = operatingCompanyConfig.id;
             operatingCompanyInstance.fullName = operatingCompanyConfig.fullName;
             operatingCompanyInstance.twitterProfile = operatingCompanyConfig.twitterProfile;

@@ -3,9 +3,9 @@ define(function (require) {
 
     var module = require('module'),
         globals = require('globals'),
-        appEvents = require('app-events'),
-        incidentHelpers = require('incident-helpers'),
-        regionHelpers = require('region-helpers'),
+        events = require('events'),
+        incidents = require('incidents'),
+        regions = require('regions'),
         dates = require('dates');
 
     var masterConfig = (module.config && module.config()) || {},
@@ -40,10 +40,6 @@ define(function (require) {
         formatDate: function (date, format) {
             date = new Date(date);
             return dates.format(date, format);
-        },
-        formatUTCDate: function (date) {
-            date = new Date(date);
-            return date.getHours() + ':' + date.getMinutes() + ' GMT&nbsp;&nbsp;&nbsp;' + date.getMonth() + '-' + date.getDate() + '-' + date.getUTCFullYear();
         },
         formatNumber: function (value) {
             if (value) {

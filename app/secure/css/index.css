@@ -29,10 +29,24 @@
     }
 
         #header-view .header-view .row.collapse .columns .social-media-link {
+            font-size: 0.875em;
+            text-decoration: underline;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        #header-view #show-outage-map-view-button-container,
+        #header-view #show-outage-report-view-button-container {
+            text-align: right;
+            height: 24px;
+            vertical-align: middle;
         }
 
         #header-view .header-view .row.collapse .columns .outage-app-link {
-            text-align: right;
+            font-size: 0.875em;
+            text-decoration: underline;
+            height: 24px;
+            vertical-align: middle;
         }
 
 #content-view {
@@ -66,18 +80,23 @@
         }
 
             #outage-report-view .outage-report-view .row.collapse.title .columns .title-label {
-                font-size: 24px;
+                font-size: 1.125em;
                 font-weight: bold;
             }
 
         #outage-report-view .outage-report-view .timestamp-label-container {
             text-align: right;
+            font-size: 0.875em;
         }
 
         #outage-report-view .outage-report-view .row.collapse {
             background-color: #EAE7D0;
             padding: 10px;
         }
+
+            #outage-report-view .outage-report-view .row.collapse.incident {
+                padding: 5px 10px;
+            }
 
             #outage-report-view .outage-report-view .row.collapse.no-incidents,
             #outage-report-view .outage-report-view .row.collapse.service-unavailable {
@@ -100,8 +119,7 @@
                         bottom: 0;
                         left: 0;
                         font-weight: bold;
-                        font-size: 18px;
-                        line-height: 25px;
+                        line-height: 1.5em;
                     }
 
                 #outage-report-view .outage-report-view .row.collapse.header .columns.numeric .header-label span {
@@ -109,8 +127,7 @@
                     bottom: 0;
                     right: 0;
                     font-weight: bold;
-                    font-size: 18px;
-                    line-height: 25px;
+                    line-height: 1.5em;
                 }
 
             #outage-report-view .outage-report-view .row.collapse.alternate {
@@ -139,11 +156,13 @@
 
             #outage-report-view .outage-report-view .row.collapse.statistics {
                 padding-top: 70px;
+                font-size: 0.875em;
             }
 
             #outage-report-view .outage-report-view .row.collapse.disclaimer {
                 margin-top: 5px;
                 padding: 20px 10px;
+                font-size: 0.875em;
             }
 
 #footer-view {
@@ -174,10 +193,11 @@
 
                 #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns span {
                     font-weight: bold;
+                    font-size: 0.875em;
                 }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .icon-title {
-                padding-top: 15px;
+                font-size: 0.875em;
             }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .legend-icon {

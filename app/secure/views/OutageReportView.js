@@ -7,8 +7,8 @@
         CompositeView = require('views/CompositeView'),
         template = require('hbs!templates/OutageReport'),
         env = require('env'),
-        resourceHelpers = require('resource-helpers'),
-        regionHelpers = require('region-helpers');
+        appResources = require('resources'),
+        regions = require('regions');
 
     var OutageReportView = CompositeView.extend({
         initialize: function (options) {
@@ -22,16 +22,16 @@
 
         resources: function (culture) {
             return {
-                'titleText': resourceHelpers.getResource('OutageReportView.titleText').value,
-                'countyNameTitleText': this.region === 'swepco' ? resourceHelpers.getResource('OutageReportView.swepcoCountyNameTitleText').value : resourceHelpers.getResource('OutageReportView.countyNameTitleText').value,
-                'customersAffectedTitleText': resourceHelpers.getResource('OutageReportView.customersAffectedTitleText').value,
-                'customersServedTitleText': resourceHelpers.getResource('OutageReportView.customersServedTitleText').value,
-                'percentageAffectedTitleText': resourceHelpers.getResource('OutageReportView.percentageAffectedTitleText').value,
-                'grandTotalTitleText': resourceHelpers.getResource('OutageReportView.grandTotalTitleText').value,
-                'noOutagesMessage': resourceHelpers.getResource('noOutagesMessage').value,
-                'serviceUnavailableMessage': resourceHelpers.getResource('serviceUnavailableMessage').value,
-                'lastUpdatedTitleText': resourceHelpers.getResource('lastUpdatedTitleText').value,
-                'disclaimer': resourceHelpers.getResource('disclaimerText').value
+                'titleText': appResources.getResource('OutageReportView.titleText').value,
+                'countyNameTitleText': this.region === 'swepco' ? appResources.getResource('OutageReportView.swepcoCountyNameTitleText').value : appResources.getResource('OutageReportView.countyNameTitleText').value,
+                'customersAffectedTitleText': appResources.getResource('OutageReportView.customersAffectedTitleText').value,
+                'customersServedTitleText': appResources.getResource('OutageReportView.customersServedTitleText').value,
+                'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText').value,
+                'grandTotalTitleText': appResources.getResource('OutageReportView.grandTotalTitleText').value,
+                'noOutagesMessage': appResources.getResource('noOutagesMessage').value,
+                'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage').value,
+                'lastUpdatedTitleText': appResources.getResource('lastUpdatedTitleText').value,
+                'disclaimer': appResources.getResource('disclaimerText').value
             };
         },
 
@@ -63,17 +63,19 @@
                         renderModel.customersServed = operatingCompanyModel.customersServed;
                         renderModel.percentageAffected = (operatingCompanyModel.percentageAffected * 100).toFixed(1);
 
-                        var countyNameFormatString = resourceHelpers.getResource('OutageReportView.countyNameFormatString').value;
-                        var countyAbbreviation = resourceHelpers.getResource('OutageReportView.countyAbbreviation').value;
-                        var parishAbbreviation = resourceHelpers.getResource('OutageReportView.parishAbbreviation').value;
+                        var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString').value;
+                        var countyAbbreviation = appResources.getResource('OutageReportView.countyAbbreviation').value;
+                        var parishAbbreviation = appResources.getResource('OutageReportView.parishAbbreviation').value;
 
                         _.each(operatingCompanyModel.states, function (state) {
+                            var countyNamePostfix = state.stateName === 'LA' ? parishAbbreviation : countyAbbreviation;
+
                             if (state.customersAffected > 0) {
                                 if (state.incidents && state.incidents.length > 0) {
                                     _.each(state.incidents, function (incident) {
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
-                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), state.stateName === 'LA' ? parishAbbreviation : countyAbbreviation, state.stateName);
+                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), countyNamePostfix, state.stateName);
                                         renderModel.incidentRows.push(incidentCopy);
                                     });
                                     renderModel.incidentRows.push({});
@@ -97,7 +99,7 @@
                 this.showNoOutagesMessage();
             }
 
-            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? resourceHelpers.getResource('OutageReportView.centralTimezoneAbbreviation').value : resourceHelpers.getResource('OutageReportView.easternTimezoneAbbreviation').value;
+            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
             this.$('#timestamp-label').html(env.formatDate(this.model.get('timestamp'), '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y'));
             this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
@@ -122,7 +124,7 @@
             var operatingCompany = this.model.getOperatingCompanyById(this.region);
             if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
 
-                var serviceStatisticsFormatString = this.region === 'swepco' ? resourceHelpers.getResource('swepcoServiceStatisticsFormatString').value : resourceHelpers.getResource('serviceStatisticsFormatString').value;
+                var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
 
                 var operatingCompanyName = operatingCompany.fullName;
 

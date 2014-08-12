@@ -365,7 +365,7 @@ define(function (require) {
                             },
                             {
                                 "county": "FRANKLIN",
-                                "customers_affected": "500",
+                                "customers_affected": "20000",
                                 "customers_served": "513697",
                                 "repair_issues": "35"
                             },

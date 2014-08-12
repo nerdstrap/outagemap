@@ -34,9 +34,9 @@
                 }
             ];
 
-    var defaultIncidentLevel = { 'id': -1, 'fillColor': '', 'highlightColor': '', 'min': -1, 'max': -1, 'className': '' };
+    var defaultIncidentLevel = { 'id': -1, 'fillColor': '#FFFFFF', 'highlightColor': '#FFFFFF', 'min': -1, 'max': -1, 'className': '' };
 
-    var incidentHelpers = {
+    var incidentHelper = {
         getAllIncidentLevels: function () {
             var results = incidentLevels;
             return results;
@@ -49,6 +49,6 @@
         }
     };
 
-    return incidentHelpers;
+    return incidentHelper;
 
 });
