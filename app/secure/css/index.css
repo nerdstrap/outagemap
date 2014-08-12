@@ -166,7 +166,7 @@
             }
 
 #footer-view {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
     #footer-view .footer-view {
@@ -185,10 +185,10 @@
     }
 
         #outage-map-legend-view .outage-map-legend-view .row.collapse {
+            padding: 5px 0px;
         }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse.header {
-                margin-bottom: 20px;
             }
 
                 #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns span {
@@ -202,7 +202,8 @@
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .legend-icon {
                 width: 96px;
-                height: 56px;
+                height: 35px;
+                vertical-align: middle;
             }
 
 .level-0-incident {

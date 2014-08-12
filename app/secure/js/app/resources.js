@@ -88,7 +88,7 @@ define(function (require) {
         },
         {
             'key': 'disclaimerText',
-            'value': '<strong>NOTE&#58;</strong> This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm or similar event &#8211; the accuracy of this estimate can be affected by a large number of unusual situations that must be analyzed.'
+            'value': '<strong>Note&#58;</strong> This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm or similar event &#8211; the accuracy of this estimate can be affected by a large number of unusual situations that must be analyzed.'
         },
         {
             'key': 'OutageReportView.titleText',
@@ -140,11 +140,11 @@ define(function (require) {
         },
         {
             'key': 'OutageMapLegendView.customerOutagesTitleText',
-            'value': 'CUSTOMER OUTAGES'
+            'value': 'Customer Outages'
         },
         {
             'key': 'OutageMapLegendView.legendTitleText',
-            'value': 'LEGEND'
+            'value': 'Legend'
         },
         {
             'key': 'OutageMapLegendView.level0IncidentsTitleText',
@@ -160,11 +160,11 @@ define(function (require) {
         },
         {
             'key': 'OutageMapLegendView.serviceTerritoryTitleText',
-            'value': 'Service Territory'
+            'value': 'Service Area'
         },
         {
             'key': 'OutageMapLegendView.countyLinesTitleText',
-            'value': 'County Lines'
+            'value': 'County Borders'
         },
         {
             'key': 'OutageMapLegendView.majorHighwaysTitleText',
