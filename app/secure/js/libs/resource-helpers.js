@@ -117,6 +117,14 @@ define(function (require) {
         {
             'key': 'OutageReportView.grandTotalTitleText',
             'value': 'Total Outages'
+        },        
+        {
+            'key': 'OutageReportView.countyNameFormatString',
+            'value': '{0} Co., {1}'
+        },
+        {
+            'key': 'OutageReportView.swepcoCountyNameFormatString',
+            'value': '{0} Parish, {1}'
         },
         {
             'key': 'OutageMapLegendView.customerOutagesTitleText',

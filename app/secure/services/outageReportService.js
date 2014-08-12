@@ -518,7 +518,6 @@ define(function (require) {
                 },
                 {
                     "id": "AEP-SEP",
-                    "disabled": "true",
                     "state": [
                       {
                           "abbr": "AR",

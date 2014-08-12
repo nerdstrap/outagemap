@@ -66,10 +66,11 @@
                         _.each(operatingCompanyModel.states, function (state) {
                             if (state.customersAffected > 0) {
                                 if (state.incidents && state.incidents.length > 0) {
+                                    var countyNameFormatString = currentContext.region === 'swepco' ? resourceHelpers.getResource('OutageReportView.swepcoCountyNameFormatString').value : resourceHelpers.getResource('OutageReportView.countyNameFormatString').value;
                                     _.each(state.incidents, function (incident) {
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
-                                        incidentCopy.countyNameFormatted = env.toTitleCase(incidentCopy.countyName) + ' Co., ' + state.stateName;
+                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), state.stateName);
                                         renderModel.incidentRows.push(incidentCopy);
                                     });
                                     renderModel.incidentRows.push({});
