@@ -63,14 +63,17 @@
                         renderModel.customersServed = operatingCompanyModel.customersServed;
                         renderModel.percentageAffected = (operatingCompanyModel.percentageAffected * 100).toFixed(1);
 
+                        var countyNameFormatString = resourceHelpers.getResource('OutageReportView.countyNameFormatString').value;
+                        var countyAbbreviation = resourceHelpers.getResource('OutageReportView.countyAbbreviation').value;
+                        var parishAbbreviation = resourceHelpers.getResource('OutageReportView.parishAbbreviation').value;
+
                         _.each(operatingCompanyModel.states, function (state) {
                             if (state.customersAffected > 0) {
                                 if (state.incidents && state.incidents.length > 0) {
-                                    var countyNameFormatString = currentContext.region === 'swepco' ? resourceHelpers.getResource('OutageReportView.swepcoCountyNameFormatString').value : resourceHelpers.getResource('OutageReportView.countyNameFormatString').value;
                                     _.each(state.incidents, function (incident) {
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
-                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), state.stateName);
+                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), state.stateName === 'LA' ? parishAbbreviation : countyAbbreviation, state.stateName);
                                         renderModel.incidentRows.push(incidentCopy);
                                     });
                                     renderModel.incidentRows.push({});
@@ -94,7 +97,8 @@
                 this.showNoOutagesMessage();
             }
 
-            this.$('#timestamp-label').html(env.formatDate(this.model.get('timestamp'), '%I:%M %p EST %m-%d-%Y'));
+            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? resourceHelpers.getResource('OutageReportView.centralTimezoneAbbreviation').value : resourceHelpers.getResource('OutageReportView.easternTimezoneAbbreviation').value;
+            this.$('#timestamp-label').html(env.formatDate(this.model.get('timestamp'), '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y'));
             this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
 

@@ -120,11 +120,23 @@ define(function (require) {
         },        
         {
             'key': 'OutageReportView.countyNameFormatString',
-            'value': '{0} Co., {1}'
+            'value': '{0} {1}, {2}'
         },
         {
-            'key': 'OutageReportView.swepcoCountyNameFormatString',
-            'value': '{0} Parish, {1}'
+            'key': 'OutageReportView.countyAbbreviation',
+            'value': 'Co.'
+        },
+        {
+            'key': 'OutageReportView.parishAbbreviation',
+            'value': 'Parish'
+        },
+        {
+            'key': 'OutageReportView.easternTimezoneAbbreviation',
+            'value': 'ET'
+        },
+        {
+            'key': 'OutageReportView.centralTimezoneAbbreviation',
+            'value': 'CT'
         },
         {
             'key': 'OutageMapLegendView.customerOutagesTitleText',
