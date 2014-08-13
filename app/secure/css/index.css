@@ -1,4 +1,52 @@
-﻿root {
+﻿.headline {
+    font-size: 1.5em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+}
+
+.subheader {
+    font-size: 1em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+}
+
+.body {
+    font-size: 1em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.detail {
+    font-size: 0.875em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.footnote {
+    font-size: 0.750em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.links {
+    font-size: 0.813em;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: left;
+}
+
+root {
     display: block;
     font-size: 1em;
 }
@@ -21,7 +69,7 @@
     }
 
 #header-view {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
     #header-view .header-view .row.collapse {
@@ -29,28 +77,22 @@
     }
 
         #header-view .header-view .row.collapse .columns .social-media-link {
-            font-size: 0.875em;
+            font-size: 0.813em;
             text-decoration: underline;
-            height: 24px;
-            line-height: 24px;
+            line-height: 1.5em;
             vertical-align: middle;
         }
 
-        #header-view #show-outage-map-view-button-container,
-        #header-view #show-outage-report-view-button-container {
+        #header-view .header-view .row.collapse .columns .outage-app-link-container {
             text-align: right;
-            height: 24px;
-            line-height: 24px;
-            vertical-align: middle;
         }
 
-        #header-view .header-view .row.collapse .columns .outage-app-link {
-            font-size: 0.875em;
-            text-decoration: underline;
-            height: 24px;
-            line-height: 24px;
-            vertical-align: middle;
-        }
+            #header-view .header-view .row.collapse .columns .outage-app-link-container .outage-app-link {
+                font-size: 0.813em;
+                text-decoration: underline;
+                line-height: 1.5em;
+                vertical-align: middle;
+            }
 
 #content-view {
 }
@@ -83,7 +125,7 @@
         }
 
             #outage-report-view .outage-report-view .row.collapse.title .columns .title-label {
-                font-size: 1.125em;
+                font-size: 1.5em;
                 font-weight: bold;
             }
 
@@ -122,7 +164,7 @@
                         bottom: 0;
                         left: 0;
                         font-weight: bold;
-                        line-height: 1.5em;
+                        line-height: 1em;
                     }
 
                 #outage-report-view .outage-report-view .row.collapse.header .columns.numeric .header-label span {
@@ -130,7 +172,7 @@
                     bottom: 0;
                     right: 0;
                     font-weight: bold;
-                    line-height: 1.5em;
+                    line-height: 1em;
                 }
 
             #outage-report-view .outage-report-view .row.collapse.alternate {
@@ -195,23 +237,21 @@
             }
 
                 #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns {
-                    height: 24px;
                 }
 
-                #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns span {
-                    font-weight: bold;
-                    font-size: 0.875em;
-                }
+                    #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns span {
+                        font-weight: bold;
+                        font-size: 1em;
+                    }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .icon-title {
-                font-size: 0.875em;
-                line-height: 24px;
+                line-height: 1.333em;
+                font-size: 0.750em;
             }
 
             #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .legend-icon {
                 width: 72px;
                 height: 24px;
-                vertical-align: middle;
             }
 
 .level-0-incident {
