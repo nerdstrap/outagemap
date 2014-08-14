@@ -72,27 +72,37 @@ root {
     margin-bottom: 10px;
 }
 
-    #header-view .header-view .row.collapse {
-        padding: 10px;
+    #header-view .header-view {
+        line-height: 24px;
     }
 
-        #header-view .header-view .row.collapse .columns .social-media-link {
-            font-size: 0.813em;
-            text-decoration: underline;
-            line-height: 1.5em;
-            vertical-align: middle;
-        }
+#twitter-link-container,
+#facebook-link-container {
+    line-height: 24px;
+}
 
-        #header-view .header-view .row.collapse .columns .outage-app-link-container {
-            text-align: right;
-        }
+#twitter-icon,
+#facebook-icon {
+    height: 24px;
+    width: 24px;
+}
 
-            #header-view .header-view .row.collapse .columns .outage-app-link-container .outage-app-link {
-                font-size: 0.813em;
-                text-decoration: underline;
-                line-height: 1.5em;
-                vertical-align: middle;
-            }
+#show-outage-map-view-button-container,
+#show-outage-report-view-button-container {
+    text-align: right;
+    line-height: 24px;
+}
+
+#twitter-post-button,
+#twitter-follow-us-button,
+#facebook-follow-us-button,
+#facebook-post-button,
+#show-outage-map-view-button,
+#show-outage-report-view-button {
+    font-size: 0.813em;
+    text-decoration: underline;
+    vertical-align: middle;
+}
 
 #content-view {
 }
@@ -120,95 +130,134 @@ root {
         margin: 5px;
     }
 
-        #outage-report-view .outage-report-view .row.collapse.title {
-            background-color: #FFF8CC;
-        }
+#outage-report-title-container {
+    background-color: #FFF8CC;
+    padding: 10px 5px;
+    line-height: 1.5em;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.title .columns .title-label {
-                font-size: 1.5em;
-                font-weight: bold;
-            }
+#report-title-label {
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
-        #outage-report-view .outage-report-view .timestamp-label-container {
+#timestamp-label-container {
+    text-align: right;
+    line-height: 1.5em;
+}
+
+#timestamp-header-label,
+#timestamp-label {
+    font-size: 0.875em;
+}
+
+#outage-report-no-incidents-container,
+#outage-report-service-unavailable-container {
+    background-color: #EAE7D0;
+    text-align: center;
+    padding: 70px 40px 0 10px;
+}
+
+#no-incidents-label,
+#service-unavailable-label {
+    font-size: 1em;
+}
+
+#outage-report-header-container {
+    background-color: #EAE7D0;
+    padding: 10px;
+}
+
+    #outage-report-header-container .columns {
+        position: relative;
+        height: 50px;
+    }
+
+        #outage-report-header-container .columns.numeric {
             text-align: right;
-            font-size: 0.875em;
         }
 
-        #outage-report-view .outage-report-view .row.collapse {
-            background-color: #EAE7D0;
-            padding: 10px;
+        #outage-report-header-container .columns .header-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: initial;
+            font-weight: bold;
+            font-size: 1em;
+            line-height: 1.5em;
         }
 
-            #outage-report-view .outage-report-view .row.collapse.incident {
-                padding: 5px 10px;
-            }
+        #outage-report-header-container .columns.numeric .header-label {
+            left: initial;
+            right: 0;
+        }
 
-            #outage-report-view .outage-report-view .row.collapse.no-incidents,
-            #outage-report-view .outage-report-view .row.collapse.service-unavailable {
-                text-align: center;
-                margin-top: 5px;
-                padding: 100px 10px 40px 10px;
-            }
+#outage-report-view .outage-report-view .incident {
+    background-color: #EAE7D0;
+    padding: 2px 10px;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.header {
-                margin-top: 5px;
-            }
+    #outage-report-view .outage-report-view .incident .columns {
+        font-size: 1em;
+        line-height: 1em;
+    }
 
-                #outage-report-view .outage-report-view .row.collapse.header .columns .header-label {
-                    position: relative;
-                    height: 50px;
-                }
+        #outage-report-view .outage-report-view .incident .columns.numeric {
+            text-align: right;
+        }
 
-                    #outage-report-view .outage-report-view .row.collapse.header .columns .header-label span {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        font-weight: bold;
-                        line-height: 1em;
-                    }
+        #outage-report-view .outage-report-view .incident .columns.bold {
+            font-weight: bold;
+        }
 
-                #outage-report-view .outage-report-view .row.collapse.header .columns.numeric .header-label span {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    font-weight: bold;
-                    line-height: 1em;
-                }
+#outage-report-view .outage-report-view .alternate {
+    background-color: #FFFFFF;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.alternate {
-                background-color: #FFFFFF;
-            }
+#outage-report-view .outage-report-view .level-0-incident {
+    background-color: #FFDD00;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.level-0-incident {
-                background-color: #FFDD00;
-            }
+#outage-report-view .outage-report-view .level-1-incident {
+    background-color: #F4B576;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.level-1-incident {
-                background-color: #F4B576;
-            }
+#outage-report-view .outage-report-view .level-2-incident {
+    background-color: #D6AAAA;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.level-2-incident {
-                background-color: #D6AAAA;
-            }
+#outage-report-footer-container {
+    background-color: #EAE7D0;
+    padding: 2px 10px;
+}
 
-            #outage-report-view .outage-report-view .row.collapse .columns.numeric {
-                text-align: right;
-            }
+    #outage-report-footer-container .numeric {
+        text-align: right;
+    }
 
-            #outage-report-view .outage-report-view .row.collapse.bold {
-                font-weight: bold;
-            }
+    #outage-report-footer-container .columns .footer-label {
+        font-weight: bold;
+        font-size: 1em;
+    }
 
-            #outage-report-view .outage-report-view .row.collapse.statistics {
-                padding-top: 70px;
-                font-size: 0.875em;
-            }
+#outage-report-service-statistics-container {
+    background-color: #EAE7D0;
+    padding: 70px 10px 10px 10px;
+}
 
-            #outage-report-view .outage-report-view .row.collapse.disclaimer {
-                margin-top: 5px;
-                padding: 20px 10px;
-                font-size: 0.875em;
-            }
+#service-statistics-label {
+    font-size: 0.875em;
+}
+
+#outage-report-disclaimer-container {
+    background-color: #EAE7D0;
+    margin-top: 5px;
+    padding: 20px 10px;
+}
+
+#disclaimer-label {
+    font-size: 0.875em;
+}
 
 #footer-view {
     margin-top: 20px;
@@ -218,10 +267,10 @@ root {
         padding: 0 20px;
     }
 
-        #footer-view .footer-view .footer-logo img {
-            width: 268px;
-            height: 78px;
-        }
+#logo-icon {
+    width: 268px;
+    height: 78px;
+}
 
 #outage-map-legend-view {
 }

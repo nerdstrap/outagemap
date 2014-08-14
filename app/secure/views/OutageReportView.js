@@ -105,7 +105,7 @@
         },
 
         showNoOutagesMessage: function () {
-            this.$('.no-incidents').removeClass('hidden');
+            this.$('#outage-report-no-incidents-container').removeClass('hidden');
             this.$('.service-unavailable').addClass('hidden');
             this.$('.header').addClass('hidden');
             this.$('.incident').addClass('hidden');
@@ -113,8 +113,8 @@
         },
 
         showServiceUnavailableMessage: function () {
-            this.$('.service-unavailable').removeClass('hidden');
-            this.$('.no-incidents').addClass('hidden');
+            this.$('#outage-report-no-incidents-container').addClass('hidden');
+            this.$('#outage-report-service-unavailable-container').removeClass('hidden');
             this.$('.header').addClass('hidden');
             this.$('.incident').addClass('hidden');
             this.$('.footer').addClass('hidden');

@@ -1,44 +1,24 @@
 <div class="outage-report-view">
-    <div class="row collapse title">
+    <div id="outage-report-title-container" class="row collapse">
         <div class="small-6 columns">
-            <span class="title-label">{{{titleText}}}</span>
+            <span id="report-title-label">{{{titleText}}}</span>
         </div>
-        <div class="small-6 columns">
-            <div class="timestamp-label-container">
-                <span>{{{lastUpdatedTitleText}}}</span><span id="timestamp-label">{{{timestamp}}}</span>
-            </div>
+        <div id="timestamp-label-container" class="small-6 columns">
+            <span id="timestamp-header-label">{{{lastUpdatedTitleText}}}</span><span id="timestamp-label">{{{timestamp}}}</span>
         </div>
     </div>
-    <div class="row collapse no-incidents hidden">
-        <div class="small-12 columns">
-            <span>{{{noOutagesMessage}}}</span>
-        </div>
-    </div>
-    <div class="row collapse service-unavailable hidden">
-        <div class="small-12 columns">
-            <span>{{{serviceUnavailableMessage}}}</span>
-        </div>
-    </div>
-    <div class="row collapse header">
+    <div id="outage-report-header-container" class="row collapse">
         <div class="small-3 columns">
-            <div class="header-label">
-                <span>{{{countyNameTitleText}}}</span>
-            </div>
+            <span class="header-label">{{{countyNameTitleText}}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <div class="header-label">
-                <span>{{{customersAffectedTitleText}}}</span>
-            </div>
+            <span class="header-label">{{{customersAffectedTitleText}}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <div class="header-label">
-                <span>{{{customersServedTitleText}}}</span>
-            </div>
+            <span class="header-label">{{{customersServedTitleText}}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <div class="header-label">
-                <span>{{{percentageAffectedTitleText}}}</span>
-            </div>
+            <span class="header-label">{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
     {{#if incidentRows}}
@@ -46,50 +26,60 @@
     <div class="{{rowClass}}" data-countyname="{{countyName}}">
         <div class="small-3 columns">
             {{#if countyName}}
-            <span class="county-name">{{{countyNameFormatted}}}</span>
+            <span class="county-name-label">{{{countyNameFormatted}}}</span>
             {{/if}}
             {{#if stateName}}
-            <span class="state-name">{{{stateName}}} totals&#58;</span>
+            <span class="state-name-label">{{{stateName}}} totals&#58;</span>
             {{/if}}
         </div>
         <div class="small-3 columns numeric">
-            <span>{{formatNumber customersAffected}}</span>
+            <span class="customers-affected-label">{{formatNumber customersAffected}}</span>
         </div>
         <div class="small-3 columns numeric">
             {{#if customersServed}}
-            <span>{{formatNumber customersServed}}</span>
+            <span class="customers-served-label">{{formatNumber customersServed}}</span>
             {{else}}
-            <span>&nbsp;</span>
+            <span class="customers-served-label">&nbsp;</span>
             {{/if}}
         </div>
         <div class="small-3 columns numeric">
             {{#if percentageAffected}}
-            <span>{{percentageAffected}}</span>
+            <span class="percentage-affected-label">{{percentageAffected}}</span>
             {{/if}}
         </div>
     </div>
     {{/stripeRows}}
     {{/if}}
-    <div class="row collapse footer bold">
+    <div id="outage-report-footer-container" class="row collapse">
         <div class="small-3 columns">
-            <span>{{{grandTotalTitleText}}}</span>
+            <span class="footer-label">{{{grandTotalTitleText}}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <span>{{formatNumber customersAffected}}</span>
+            <span class="footer-label">{{formatNumber customersAffected}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <span>{{formatNumber customersServed}}</span>
+            <span class="footer-label">{{formatNumber customersServed}}</span>
         </div>
         <div class="small-3 columns numeric">
-            <span>{{percentageAffected}}</span>
+            <span class="footer-label">{{percentageAffected}}</span>
         </div>
     </div>
-    <div class="row collapse statistics">
+    <div id="outage-report-no-incidents-container" class="row collapse hidden">
+        <div class="small-12 columns">
+            <span id="no-incidents-label">{{{noOutagesMessage}}}</span>
+        </div>
+    </div>
+    <div id="outage-report-service-unavailable-container" class="row collapse hidden">
+        <div class="small-12 columns">
+            <span id="service-unavailable-label">{{{serviceUnavailableMessage}}}</span>
+        </div>
+    </div>
+    <div id="outage-report-service-statistics-container" class="row collapse">
         <div class="small-12 columns">
             <span id="service-statistics-label">{{{serviceStatistics}}}</span>
         </div>
     </div>
-    <div class="row collapse disclaimer">
+    <div id="outage-report-disclaimer-container" class="row collapse">
         <div class="small-12 columns">
             <span id="disclaimer-label">{{{disclaimer}}}</span>
         </div>
