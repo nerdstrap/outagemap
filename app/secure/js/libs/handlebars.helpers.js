@@ -28,21 +28,19 @@ define(function (require) {
                 return '';
             }
         },
-        stripeRows: function (rows, fn) {
-            var buffer = [],
-                i, len;
-            for (i = 0, len = rows.length; i < len; ++i) {
-                var row = rows[i];
-                var rowClass = 'row collapse incident';
-                if (row.stateName) {
-                    rowClass = rowClass + ' bold'
-                };
-                row.rowClass = (i + 1) % 2 === 0 ? rowClass : rowClass + ' alternate';
-                // Render the block once for each row.
-                buffer.push(fn.fn(row));
-            }
+        stripeRows: function (rows, evenClass, oddClass, fn) {
+            if (rows && rows.length > 0){
+                var buffer = [],
+                    i, len;
+                for (i = 0, len = rows.length; i < len; ++i) {
+                    var row = rows[i];
+                    row.stripeClass = ((i + 1) % 2 === 0 ? evenClass : oddClass);
+                    // Render the block once for each row.
+                    buffer.push(fn.fn(row));
+                }
 
-            return buffer.join('');
+                return buffer.join('');
+            }
         }
     };
 

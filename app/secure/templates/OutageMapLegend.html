@@ -1,89 +1,77 @@
 ﻿<div class="outage-map-legend-view">
     <div class="row collapse header">
-        <div class="small-6 columns">
-            <span>{{{customerOutagesTitleText}}}</span>
+        <div class="small-7 columns">
+            <span id="outages-header-label">{{{customerOutagesTitleText}}}</span>
         </div>
-        <div class="small-6 columns">
-            <span>{{{legendTitleText}}}</span>
+        <div class="small-5 columns">
+            <span id="legend-header-label">{{{legendTitleText}}}</span>
         </div>
     </div>
-    <div class="row collapse symbols">
-        <div class="small-6 columns">
+    <div class="row collapse icons">
+        <div class="small-7 columns">
             <div class="row collapse">
                 <div class="small-3 columns">
-                    <div class="level-0-incident">
+                    <div id="level-0-incident-icon">
                     </div>
                 </div>
                 <div class="small-9 columns">
-                    <div class="icon-title">
-                        <span>{{{level0IncidentsTitleText}}}</span>
-                    </div>
+                    <span id="level-0-incident-label">{{{level0IncidentsTitleText}}}</span>
                 </div>
             </div>
         </div>
-        <div class="small-6 columns">
+        <div class="small-5 columns">
             <div class="row collapse">
                 <div class="small-8 columns">
-                    <div class="icon-title">
-                        <span>{{{serviceTerritoryTitleText}}}</span>
-                    </div>
+                    <span id="service-territory-label">{{{serviceTerritoryTitleText}}}</span>
                 </div>
                 <div class="small-4 columns">
-                    <img xlink:href="{{getAppUri serviceTerritoryIconSvgSrc}}" src="{{getAppUri serviceTerritoryIconSrc}}" class="legend-icon" />
+                    <img id="service-territory-icon" xlink:href="{{getAppUri serviceTerritoryIconSvgSrc}}" src="{{getAppUri serviceTerritoryIconSrc}}" alt="{{serviceTerritoryIconAlt}}" />
                 </div>
             </div>
         </div>
     </div>
-    <div class="row collapse symbols">
-        <div class="small-6 columns">
+    <div class="row collapse icons">
+        <div class="small-7 columns">
             <div class="row collapse">
                 <div class="small-3 columns">
-                    <div class="level-1-incident">
+                    <div id="level-1-incident-icon">
                     </div>
                 </div>
                 <div class="small-9 columns">
-                    <div class="icon-title">
-                        <span>{{{level1IncidentsTitleText}}}</span>
-                    </div>
+                    <span id="level-1-incident-label">{{{level1IncidentsTitleText}}}</span>
                 </div>
             </div>
         </div>
-        <div class="small-6 columns">
+        <div class="small-5 columns">
             <div class="row collapse">
                 <div class="small-8 columns">
-                    <div class="icon-title">
-                        <span>{{{countyLinesTitleText}}}</span>
-                    </div>
+                    <span id="county-lines-label">{{{countyLinesTitleText}}}</span>
                 </div>
                 <div class="small-4 columns">
-                    <img xlink:href="{{getAppUri countyLinesIconSvgSrc}}" src="{{getAppUri countyLinesIconSrc}}" class="legend-icon" />
+                    <img id="county-lines-icon" xlink:href="{{getAppUri countyLinesIconSvgSrc}}" src="{{getAppUri countyLinesIconSrc}}" alt="{{countyLinesIconAlt}}" />
                 </div>
             </div>
         </div>
     </div>
-    <div class="row collapse symbols">
-        <div class="small-6 columns">
+    <div class="row collapse icons">
+        <div class="small-7 columns">
             <div class="row collapse">
                 <div class="small-3 columns">
-                    <div class="level-2-incident">
+                    <div id="level-2-incident-icon">
                     </div>
                 </div>
                 <div class="small-9 columns">
-                    <div class="icon-title">
-                        <span>{{{level2IncidentsTitleText}}}</span>
-                    </div>
+                    <span id="level-2-incident-label">{{{level2IncidentsTitleText}}}</span>
                 </div>
             </div>
         </div>
-        <div class="small-6 columns">
+        <div class="small-5 columns">
             <div class="row collapse">
                 <div class="small-8 columns">
-                    <div class="icon-title">
-                        <span>{{{majorHighwaysTitleText}}}</span>
-                    </div>
+                    <span id="major-highways-label">{{{majorHighwaysTitleText}}}</span>
                 </div>
                 <div class="small-4 columns">
-                    <img xlink:href="{{getAppUri majorHighwaysIconSvgSrc}}" src="{{getAppUri majorHighwaysIconSrc}}" class="legend-icon" />
+                    <img id="major-highways-icon" xlink:href="{{getAppUri majorHighwaysIconSvgSrc}}" src="{{getAppUri majorHighwaysIconSrc}}" alt="{{majorHighwaysIconAlt}}" />
                 </div>
             </div>
         </div>

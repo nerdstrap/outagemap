@@ -73,7 +73,6 @@ root {
 }
 
     #header-view .header-view {
-        line-height: 24px;
     }
 
 #twitter-link-container,
@@ -132,7 +131,7 @@ root {
 
 #outage-report-title-container {
     background-color: #FFF8CC;
-    padding: 10px 5px;
+    padding: 10px;
     line-height: 1.5em;
 }
 
@@ -173,7 +172,7 @@ root {
         height: 50px;
     }
 
-        #outage-report-header-container .columns.numeric {
+        #outage-report-header-container .numeric {
             text-align: right;
         }
 
@@ -187,7 +186,7 @@ root {
             line-height: 1.5em;
         }
 
-        #outage-report-header-container .columns.numeric .header-label {
+        #outage-report-header-container .numeric .header-label {
             left: initial;
             right: 0;
         }
@@ -197,20 +196,16 @@ root {
     padding: 2px 10px;
 }
 
-    #outage-report-view .outage-report-view .incident .columns {
+    #outage-report-view .outage-report-view .incident .columns span {
         font-size: 1em;
         line-height: 1em;
     }
 
-        #outage-report-view .outage-report-view .incident .columns.numeric {
+        #outage-report-view .outage-report-view .incident .numeric {
             text-align: right;
         }
 
-        #outage-report-view .outage-report-view .incident .columns.bold {
-            font-weight: bold;
-        }
-
-#outage-report-view .outage-report-view .alternate {
+#outage-report-view .outage-report-view .incident.alternate {
     background-color: #FFFFFF;
 }
 
@@ -225,6 +220,25 @@ root {
 #outage-report-view .outage-report-view .level-2-incident {
     background-color: #D6AAAA;
 }
+
+#outage-report-view .outage-report-view .state {
+    background-color: #EAE7D0;
+    padding: 2px 10px;
+}
+
+    #outage-report-view .outage-report-view .state .columns span {
+        font-size: 1em;
+        line-height: 1em;
+        font-weight: bold;
+    }
+
+#outage-report-view .outage-report-view .state.alternate {
+    background-color: #FFFFFF;
+}
+
+        #outage-report-view .outage-report-view .state .numeric {
+            text-align: right;
+        }
 
 #outage-report-footer-container {
     background-color: #EAE7D0;
@@ -278,46 +292,55 @@ root {
     #outage-map-legend-view .outage-map-legend-view {
     }
 
-        #outage-map-legend-view .outage-map-legend-view .row.collapse {
-            padding: 2px 0px;
-        }
+    #outage-map-legend-view .outage-map-legend-view .header {
+        line-height: 1.333em;
+        padding: 2px 5px; 
+    }
 
-            #outage-map-legend-view .outage-map-legend-view .row.collapse.header {
-            }
+    #outage-map-legend-view .outage-map-legend-view .icons {
+        line-height: 1.333em;
+        padding: 2px 5px;
+    }
 
-                #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns {
-                }
+#outages-header-label,
+#legend-header-label {
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.333em;
+}
 
-                    #outage-map-legend-view .outage-map-legend-view .row.collapse.header .columns span {
-                        font-weight: bold;
-                        font-size: 1em;
-                    }
+#level-0-incident-label,
+#level-1-incident-label,
+#level-2-incident-label,
+#service-territory-label,
+#county-lines-label,
+#major-highways-label  {
+    line-height: 1.333em;
+    font-size: 0.750em;
+}
 
-            #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .icon-title {
-                line-height: 1.333em;
-                font-size: 0.750em;
-            }
-
-            #outage-map-legend-view .outage-map-legend-view .row.collapse .columns .legend-icon {
-                width: 72px;
-                height: 24px;
-            }
-
-.level-0-incident {
+#level-0-incident-icon {
     background-color: #FFFF54;
 }
 
-.level-1-incident {
+#level-1-incident-icon {
     background-color: #FFA24F;
 }
 
-.level-2-incident {
+#level-2-incident-icon {
     background-color: #FF4444;
 }
 
-.outage-map-legend-view .level-0-incident,
-.outage-map-legend-view .level-1-incident,
-.outage-map-legend-view .level-2-incident {
+#level-0-incident-icon,
+#level-1-incident-icon,
+#level-2-incident-icon {
     width: 24px;
+    height: 24px;
+}
+
+#service-territory-icon,
+#county-lines-icon,
+#major-highways-icon {
+    width: 72px;
     height: 24px;
 }

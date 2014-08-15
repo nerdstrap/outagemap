@@ -11,12 +11,55 @@ define(function (require) {
               "OperatingCo": [
                 {
                     "id": "AEP-AP",
-                    "disabled": "true",
                     "state": [
                       {
                           "abbr": "TN",
                           "counties_served": "3",
-                          "customers_served": "47343"
+                          "customers_served": "47343",
+                          "incident": [
+                            {
+                                "county": "BUCHANAN",
+                                "customers_affected": "430",
+                                "customers_served": "13123",
+                                "repair_issues": "1"
+                            },
+                            {
+                                "county": "DICKENSON",
+                                "customers_affected": "100",
+                                "customers_served": "8947",
+                                "repair_issues": "1"
+                            },
+                            {
+                                "county": "FLOYD",
+                                "customers_affected": "700",
+                                "customers_served": "9226",
+                                "repair_issues": "2"
+                            },
+                            {
+                                "county": "GILES",
+                                "customers_affected": "400",
+                                "customers_served": "9869",
+                                "repair_issues": "3"
+                            },
+                            {
+                                "county": "LYNCHBURG(IND CITY)",
+                                "customers_affected": "6",
+                                "customers_served": "36173",
+                                "repair_issues": "1"
+                            },
+                            {
+                                "county": "RUSSELL",
+                                "customers_affected": "2",
+                                "customers_served": "14217",
+                                "repair_issues": "1"
+                            },
+                            {
+                                "county": "TAZEWELL",
+                                "customers_affected": "4",
+                                "customers_served": "21653",
+                                "repair_issues": "2"
+                            }
+                          ]
                       },
                       {
                           "abbr": "VA",

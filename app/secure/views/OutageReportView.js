@@ -49,7 +49,8 @@
             var currentContext = this;
             var operatingCompanyModel = this.model.getOperatingCompanyById(currentContext.region);
             var renderModel = {
-                incidentRows: [],
+                incidents: [],
+                states: [],
                 customersServed: parseInt('0'),
                 customersAffected: parseInt('0'),
                 percentageAffected: parseFloat('0'),
@@ -76,16 +77,16 @@
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
                                         incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), countyNamePostfix, state.stateName);
-                                        renderModel.incidentRows.push(incidentCopy);
+                                        renderModel.incidents.push(incidentCopy);
                                     });
-                                    renderModel.incidentRows.push({});
                                 }
                                 var stateCopy = _.clone(state);
                                 stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
-                                renderModel.incidentRows.push(stateCopy);
-                                renderModel.incidentRows.push({});
+                                renderModel.states.push(stateCopy);
                             }
                         });
+                        renderModel.incidents.push({});
+                        renderModel.states.push({});
                     }
                 }
             }
@@ -95,7 +96,7 @@
 
             if (renderModel.disabled) {
                 this.showServiceUnavailableMessage();
-            } else if (renderModel.incidentRows.length === 0) {
+            } else if (renderModel.incidents.length === 0) {
                 this.showNoOutagesMessage();
             }
 
