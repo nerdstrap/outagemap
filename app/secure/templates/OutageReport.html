@@ -22,37 +22,12 @@
         </div>
     </div>
     {{#if incidents}}
-    {{#stripeRows incidents "row collapse incident" "row collapse incident alternate"}}
+    {{#stripeRows incidents "row collapse incident" "row collapse incident alternate" "stateName" "bold"}}
     <div class="{{stripeClass}}" data-countyname="{{countyName}}">
         <div class="small-3 columns">
             {{#if countyName}}
             <span class="county-name-label">{{{countyNameFormatted}}}</span>
             {{/if}}
-        </div>
-        <div class="small-3 columns numeric">
-            {{#if customersAffected}}
-            <span class="customers-affected-label">{{formatNumber customersAffected}}</span>
-            {{/if}}
-        </div>
-        <div class="small-3 columns numeric">
-            {{#if customersServed}}
-            <span class="customers-served-label">{{formatNumber customersServed}}</span>
-            {{else}}
-            <span class="customers-served-label">&nbsp;</span>
-            {{/if}}
-        </div>
-        <div class="small-3 columns numeric">
-            {{#if percentageAffected}}
-            <span class="percentage-affected-label">{{percentageAffected}}</span>
-            {{/if}}
-        </div>
-    </div>
-    {{/stripeRows}}
-    {{/if}}
-    {{#if states}}
-    {{#stripeRows states "row collapse state" "row collapse state alternate"}}
-    <div class="{{stripeClass}}">
-        <div class="small-3 columns">
             {{#if stateName}}
             <span class="state-name-label">{{{stateName}}} totals&#58;</span>
             {{/if}}

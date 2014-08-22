@@ -28,13 +28,16 @@ define(function (require) {
                 return '';
             }
         },
-        stripeRows: function (rows, evenClass, oddClass, fn) {
+        stripeRows: function (rows, evenClass, oddClass, optionalParameter, optionalClass, fn) {
             if (rows && rows.length > 0){
                 var buffer = [],
                     i, len;
                 for (i = 0, len = rows.length; i < len; ++i) {
                     var row = rows[i];
                     row.stripeClass = ((i + 1) % 2 === 0 ? evenClass : oddClass);
+                    if (row[optionalParameter]) {
+                        row.stripeClass += ' ' + optionalClass;
+                    }
                     // Render the block once for each row.
                     buffer.push(fn.fn(row));
                 }

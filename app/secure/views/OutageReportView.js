@@ -50,7 +50,6 @@
             var operatingCompanyModel = this.model.getOperatingCompanyById(currentContext.region);
             var renderModel = {
                 incidents: [],
-                states: [],
                 customersServed: parseInt('0'),
                 customersAffected: parseInt('0'),
                 percentageAffected: parseFloat('0'),
@@ -68,6 +67,9 @@
                         var countyAbbreviation = appResources.getResource('OutageReportView.countyAbbreviation').value;
                         var parishAbbreviation = appResources.getResource('OutageReportView.parishAbbreviation').value;
 
+                        var countyIncidents = [];
+                        var stateIncidents = [];
+
                         _.each(operatingCompanyModel.states, function (state) {
                             var countyNamePostfix = state.stateName === 'LA' ? parishAbbreviation : countyAbbreviation;
 
@@ -77,16 +79,27 @@
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
                                         incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), countyNamePostfix, state.stateName);
-                                        renderModel.incidents.push(incidentCopy);
+                                        countyIncidents.push(incidentCopy);
                                     });
                                 }
                                 var stateCopy = _.clone(state);
                                 stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
-                                renderModel.states.push(stateCopy);
+                                stateIncidents.push(stateCopy);
                             }
                         });
+                        
+                        for (var i = 0; i < countyIncidents.length; i++) {
+                            renderModel.incidents.push(countyIncidents[i]);
+                        };
                         renderModel.incidents.push({});
-                        renderModel.states.push({});
+                        if (stateIncidents.length > 1) {
+                            for (var j = 0; j < stateIncidents.length; j++) {
+                                renderModel.incidents.push(stateIncidents[j]);
+                            };
+                            if (renderModel.incidents.length % 2 === 0) {
+                                renderModel.incidents.push({});
+                            }
+                        }
                     }
                 }
             }

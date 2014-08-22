@@ -60,8 +60,10 @@
                                 contentAsHTML: true,
                                 touchDevices: false,
                                 arrow: false,
+                                autoClose: false,
                                 offsetY: (svgElement.height() / 2) * -1
                             });
+                            svgElement.tooltipster('show');
                         } else {
                             if (operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
                                 _.each(operatingCompanyModel.states, function (state) {
@@ -82,6 +84,7 @@
             if (event) {
                 event.preventDefault();
             }
+            $(this).tooltipster('hide');
             events.trigger(events.showOutageReport, this.getAttribute('data-county-name'), this.getAttribute('data-class-name'));
         },
 
