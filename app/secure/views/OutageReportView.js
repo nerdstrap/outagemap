@@ -83,6 +83,7 @@
                                     });
                                 }
                                 var stateCopy = _.clone(state);
+                                stateCopy.grandTotal = true,
                                 stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
                                 stateIncidents.push(stateCopy);
                             }
@@ -96,10 +97,9 @@
                             for (var j = 0; j < stateIncidents.length; j++) {
                                 renderModel.incidents.push(stateIncidents[j]);
                             };
-                            if (renderModel.incidents.length % 2 === 0) {
-                                renderModel.incidents.push({});
-                            }
+                            renderModel.incidents.push({});
                         }
+                        renderModel.incidents.push({ grandTotal: true, grandTotalTitleText: currentContext.resources().grandTotalTitleText, customersAffected: renderModel.customersAffected, customersServed: renderModel.customersServed, percentageAffected: renderModel.percentageAffected });
                     }
                 }
             }
@@ -152,7 +152,13 @@
                     return countiesServed + parseInt(state.countiesServed);
                 }, 0);
 
-                var stateNames = _.pluck(operatingCompany.states, 'stateName').join(' &#38; ');
+                var stateNames = _.pluck(operatingCompany.states, 'stateName');
+                if (stateNames.length < 2) {
+                    stateNames = stateNames.join('&#32;&#38;&#32;');
+                } else {
+                    var lastState = _.last(stateNames);
+                    stateNames = _.initial(stateNames).join('&#44;&#32;') + '&#32;&#38;&#32;' + lastState.toString();
+                }
 
                 var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, env.formatNumber(customersServed), env.formatNumber(countiesServed), stateNames);
 

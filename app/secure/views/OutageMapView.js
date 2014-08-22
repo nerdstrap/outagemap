@@ -104,6 +104,7 @@
                         countySvgElement.attr('data-county-name', incident.countyName);
                         countySvgElement.title = tooltipText;
                         countySvgElement.attr('title', tooltipText);
+                        countySvgElement.attr('cursor', 'pointer');
                         countySvgElement.tooltipster({
                             contentAsHTML: true,
                             touchDevices: false

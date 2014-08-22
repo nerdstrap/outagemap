@@ -1,4 +1,19 @@
-﻿.headline {
+﻿@font-face {
+    font-family: 'HelveticaNeueW01-45Ligh';
+    src: url('../fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix') format('embedded-opentype'), url('../fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff') format('woff'), url('../fonts/688ab72b-4deb-4e15-a088-89166978d469.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueW01-55Roma';
+    src: url('../fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix') format('embedded-opentype'), url('../fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff') format('woff'), url('../fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueW01-75Bold';
+    src: url('../fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix') format('embedded-opentype'), url('../fonts/14ff6081-326d-4dae-b778-d7afa66166fc.woff') format('woff'), url('../fonts/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf') format('truetype');
+}
+
+.headline {
     font-size: 1.5em;
     font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -49,6 +64,10 @@
 root {
     display: block;
     font-size: 1em;
+}
+
+body {
+    font-family: 'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
 .hidden {
@@ -137,7 +156,7 @@ root {
 
 #report-title-label {
     font-size: 1.5em;
-    font-weight: bold;
+    font-family: 'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
 #timestamp-label-container {
@@ -172,42 +191,42 @@ root {
         height: 50px;
     }
 
-        #outage-report-header-container .numeric {
-            text-align: right;
-        }
+    #outage-report-header-container .numeric {
+        text-align: right;
+    }
 
-        #outage-report-header-container .columns .header-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: initial;
-            font-weight: bold;
-            font-size: 1em;
-            line-height: 1.5em;
-        }
+    #outage-report-header-container .columns .header-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: initial;
+        font-size: 1em;
+        line-height: 1.5em;
+        font-family: 'HelveticaNeueW01-75Bold', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
 
-        #outage-report-header-container .numeric .header-label {
-            left: initial;
-            right: 0;
-        }
+    #outage-report-header-container .numeric .header-label {
+        left: initial;
+        right: 0;
+    }
 
 #outage-report-view .outage-report-view .incident {
     background-color: #EAE7D0;
     padding: 2px 10px;
 }
 
-    #outage-report-view .outage-report-view .bold {
-        font-weight: bold;
-    }
+#outage-report-view .outage-report-view .bold {
+    font-family: 'HelveticaNeueW01-75Bold', 'Helvetica', Helvetica, Arial, sans-serif;
+}
 
-    #outage-report-view .outage-report-view .incident .columns span {
-        font-size: 1em;
-        line-height: 1em;
-    }
+#outage-report-view .outage-report-view .incident .columns span {
+    font-size: 1em;
+    line-height: 1em;
+}
 
-        #outage-report-view .outage-report-view .incident .numeric {
-            text-align: right;
-        }
+#outage-report-view .outage-report-view .incident .numeric {
+    text-align: right;
+}
 
 #outage-report-view .outage-report-view .alternate {
     background-color: #FFFFFF;
@@ -224,21 +243,6 @@ root {
 #outage-report-view .outage-report-view .level-2-incident {
     background-color: #D6AAAA;
 }
-
-#outage-report-footer-container {
-    background-color: #EAE7D0;
-    margin-top: 5px;
-    padding: 2px 10px;
-}
-
-    #outage-report-footer-container .numeric {
-        text-align: right;
-    }
-
-    #outage-report-footer-container .columns .footer-label {
-        font-weight: bold;
-        font-size: 1em;
-    }
 
 #outage-report-service-statistics-container {
     background-color: #EAE7D0;
@@ -278,19 +282,19 @@ root {
     #outage-map-legend-view .outage-map-legend-view {
     }
 
-    #outage-map-legend-view .outage-map-legend-view .header {
-        line-height: 1.333em;
-        padding: 2px 5px; 
-    }
+        #outage-map-legend-view .outage-map-legend-view .header {
+            line-height: 1.333em;
+            padding: 2px 5px;
+        }
 
-    #outage-map-legend-view .outage-map-legend-view .icons {
-        line-height: 1.333em;
-        padding: 2px 5px;
-    }
+        #outage-map-legend-view .outage-map-legend-view .icons {
+            line-height: 1.333em;
+            padding: 2px 5px;
+        }
 
 #outages-header-label,
 #legend-header-label {
-    font-weight: bold;
+    font-family: 'HelveticaNeueW01-75Bold', 'Helvetica', Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1.333em;
 }
@@ -300,7 +304,7 @@ root {
 #level-2-incident-label,
 #service-territory-label,
 #county-lines-label,
-#major-highways-label  {
+#major-highways-label {
     line-height: 1.333em;
     font-size: 0.750em;
 }
@@ -329,4 +333,10 @@ root {
 #major-highways-icon {
     width: 72px;
     height: 24px;
+}
+
+.tooltipster-default {
+    background-color: #FFF8CC;
+    border: 2px solid #000;
+    color: #000000;
 }
