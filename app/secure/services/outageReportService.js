@@ -11,6 +11,7 @@ define(function (require) {
               "OperatingCo": [
                 {
                     "id": "AEP-AP",
+                    "disabled": "true",
                     "state": [
                       {
                           "abbr": "TN",

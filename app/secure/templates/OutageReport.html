@@ -23,10 +23,10 @@
     </div>
     {{#if incidents}}
     {{#stripeRows incidents "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
-    <div class="{{stripeClass}}" data-countyname="{{countyName}}">
+    <div class="{{stripeClass}}" data-uuid="{{uuid}}">
         <div class="small-3 columns">
-            {{#if countyName}}
-            <span class="county-name-label">{{{countyNameFormatted}}}</span>
+            {{#if properCountyName}}
+            <span class="county-name-label">{{{properCountyName}}}</span>
             {{/if}}
             {{#if stateName}}
             <span class="state-name-label">{{{stateName}}} totals&#58;</span>

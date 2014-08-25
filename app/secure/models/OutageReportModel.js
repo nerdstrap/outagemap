@@ -106,6 +106,10 @@
                     _.each(incident, function (element, index, list) {
                         var incidentInstance = parseIncident(element);
                         if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                            var serviceCountyConfig = regions.getServiceCounty(stateInstance.stateName, incidentInstance.countyId);
+                            if (serviceCountyConfig) {
+                                incidentInstance.properCountyName = serviceCountyConfig.properCountyName;
+                            }
                             stateInstance.customersServed += incidentInstance.customersServed;
                             stateInstance.customersAffected += incidentInstance.customersAffected;
                             stateInstance.repairIssues += incidentInstance.repairIssues;
@@ -115,6 +119,10 @@
                 } else {
                     var incidentInstance = parseIncident(incident);
                     if (incidentInstance.customersAffected >= _incidentTotalThreshold) {
+                        var serviceCountyConfig = regions.getServiceCounty(stateInstance.stateName, incidentInstance.countyId);
+                        if (serviceCountyConfig) {
+                            incidentInstance.properCountyName = serviceCountyConfig.properCountyName;
+                        }
                         stateInstance.customersServed += incidentInstance.customersServed;
                         stateInstance.customersAffected += incidentInstance.customersAffected;
                         stateInstance.repairIssues += incidentInstance.repairIssues;
@@ -135,6 +143,7 @@
 
     var parseIncident = function (incident) {
         var incidentInstance = {
+            uuid: env.getNewGuid(),
             countyName: '',
             customersAffected: parseInt('0'),
             customersServed: parseInt('0'),
@@ -142,9 +151,9 @@
             percentageAffected: parseFloat('0')
         };
 
-        // countyName
+        // countyId
         if (incident.hasOwnProperty('county')) {
-            incidentInstance.countyName = incident.county;
+            incidentInstance.countyId = incident.county;
         }
 
         // customersAffected

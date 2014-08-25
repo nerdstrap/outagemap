@@ -56,7 +56,7 @@
             };
             if (operatingCompanyModel) {
                 if (operatingCompanyModel.disabled) {
-                    renderModel.disabled = true;
+                    this.showServiceUnavailableMessage();
                 } else {
                     if (operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
                         renderModel.customersAffected = operatingCompanyModel.customersAffected;
@@ -67,19 +67,16 @@
                         var countyAbbreviation = appResources.getResource('OutageReportView.countyAbbreviation').value;
                         var parishAbbreviation = appResources.getResource('OutageReportView.parishAbbreviation').value;
 
-                        var countyIncidents = [];
                         var stateIncidents = [];
 
                         _.each(operatingCompanyModel.states, function (state) {
-                            var countyNamePostfix = state.stateName === 'LA' ? parishAbbreviation : countyAbbreviation;
-
                             if (state.customersAffected > 0) {
                                 if (state.incidents && state.incidents.length > 0) {
                                     _.each(state.incidents, function (incident) {
                                         var incidentCopy = _.clone(incident);
                                         incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
-                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(env.toTitleCase(incidentCopy.countyName), countyNamePostfix, state.stateName);
-                                        countyIncidents.push(incidentCopy);
+                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(incidentCopy.properCountyName, state.stateName);
+                                        renderModel.incidents.push(incidentCopy);
                                     });
                                 }
                                 var stateCopy = _.clone(state);
@@ -88,82 +85,59 @@
                                 stateIncidents.push(stateCopy);
                             }
                         });
-                        
-                        for (var i = 0; i < countyIncidents.length; i++) {
-                            renderModel.incidents.push(countyIncidents[i]);
-                        };
-                        renderModel.incidents.push({});
+
+                        if (renderModel.incidents.length > 0) {
+                            renderModel.incidents.push({});
+                        }
+
                         if (stateIncidents.length > 1) {
                             for (var j = 0; j < stateIncidents.length; j++) {
                                 renderModel.incidents.push(stateIncidents[j]);
                             };
                             renderModel.incidents.push({});
                         }
-                        renderModel.incidents.push({ grandTotal: true, grandTotalTitleText: currentContext.resources().grandTotalTitleText, customersAffected: renderModel.customersAffected, customersServed: renderModel.customersServed, percentageAffected: renderModel.percentageAffected });
+
+                        if (renderModel.incidents.length > 0) {
+                            renderModel.incidents.push({ grandTotal: true, grandTotalTitleText: currentContext.resources().grandTotalTitleText, customersAffected: renderModel.customersAffected, customersServed: renderModel.customersServed, percentageAffected: renderModel.percentageAffected });
+                        }
+
+                        var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
+
+                        var stateNames = _.pluck(operatingCompanyModel.states, 'stateName');
+                        if (stateNames.length < 2) {
+                            stateNames = stateNames.join('&#32;&#38;&#32;');
+                        } else {
+                            var lastState = _.last(stateNames);
+                            stateNames = _.initial(stateNames).join('&#44;&#32;') + '&#32;&#38;&#32;' + lastState.toString();
+                        }
+
+                        renderModel.serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyModel.fullName, env.formatNumber(operatingCompanyModel.customersServed), env.formatNumber(operatingCompanyModel.countiesServed), stateNames);
+                    }
+                    if (renderModel.incidents.length === 0) {
+                        this.showNoOutagesMessage();
+                    } else {
+                        _.extend(renderModel, this.resources());
+                        this.$el.html(template(renderModel));
                     }
                 }
             }
 
-            _.extend(renderModel, this.resources());
-            this.$el.html(template(renderModel));
-
-            if (renderModel.disabled) {
-                this.showServiceUnavailableMessage();
-            } else if (renderModel.incidents.length === 0) {
-                this.showNoOutagesMessage();
-            }
-
             var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
             this.$('#timestamp-label').html(env.formatDate(this.model.get('timestamp'), '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y'));
-            this.$('#service-statistics-label').html(this.getServiceStatistics());
         },
 
         showNoOutagesMessage: function () {
             this.$('#outage-report-no-incidents-container').removeClass('hidden');
-            this.$('.service-unavailable').addClass('hidden');
-            this.$('.header').addClass('hidden');
+            this.$('#outage-report-service-unavailable-container').addClass('hidden');
+            this.$('#outage-report-header-container').addClass('hidden');
             this.$('.incident').addClass('hidden');
-            this.$('.footer').addClass('hidden');
         },
 
         showServiceUnavailableMessage: function () {
             this.$('#outage-report-no-incidents-container').addClass('hidden');
             this.$('#outage-report-service-unavailable-container').removeClass('hidden');
-            this.$('.header').addClass('hidden');
+            this.$('#outage-report-header-container').addClass('hidden');
             this.$('.incident').addClass('hidden');
-            this.$('.footer').addClass('hidden');
-        },
-
-        getServiceStatistics: function (operatingCompanyIdentifier, fullName) {
-            var operatingCompany = this.model.getOperatingCompanyById(this.region);
-            if (operatingCompany && operatingCompany.states && operatingCompany.states.length > 0) {
-
-                var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
-
-                var operatingCompanyName = operatingCompany.fullName;
-
-                var customersServed = 0;
-                customersServed = _.reduce(operatingCompany.states, function (customersServed, state) {
-                    return customersServed + parseInt(state.customersServed);
-                }, 0);
-
-                var countiesServed = 0;
-                countiesServed = _.reduce(operatingCompany.states, function (countiesServed, state) {
-                    return countiesServed + parseInt(state.countiesServed);
-                }, 0);
-
-                var stateNames = _.pluck(operatingCompany.states, 'stateName');
-                if (stateNames.length < 2) {
-                    stateNames = stateNames.join('&#32;&#38;&#32;');
-                } else {
-                    var lastState = _.last(stateNames);
-                    stateNames = _.initial(stateNames).join('&#44;&#32;') + '&#32;&#38;&#32;' + lastState.toString();
-                }
-
-                var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, env.formatNumber(customersServed), env.formatNumber(countiesServed), stateNames);
-
-                return serviceStatistics;
-            }
         }
     });
 

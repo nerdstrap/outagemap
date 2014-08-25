@@ -13,6 +13,8 @@
     _.extend(Events.prototype, Backbone.Events, {
         showOutageReport: 'showOutageReport',
         showOutageMap: 'showOutageMap',
+        beforeShowOutageMap: 'beforeShowOutageMap',
+        beforeHideOutageMap: 'beforeHideOutageMap',
         twitterPost: 'twitterPost',
         twitterFollowUs: 'twitterFollowUs',
         facebookPost: 'facebookPost',

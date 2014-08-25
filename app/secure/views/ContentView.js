@@ -34,32 +34,32 @@
             var renderModel = _.extend({}, this.resources(), this.model.attributes);
             this.$el.html(template(renderModel));
 
-            var outageMapView = new OutageMapView({
+            var outageMapViewInstance = new OutageMapView({
                 el: $('#outage-map-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher,
                 region: this.region
             });
-            this.renderChild(outageMapView);
+            this.renderChild(outageMapViewInstance);
 
-            var outageReportView = new OutageReportView({
+            var outageReportViewInstance = new OutageReportView({
                 el: $('#outage-report-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher,
                 region: this.region
             });
-            this.renderChild(outageReportView);
+            this.renderChild(outageReportViewInstance);
 
             return this;
         },
 
-        showOutageReportView: function (countyName, className) {
+        showOutageReportView: function (uuid, className) {
             this.$('#outage-map-view').addClass('hidden');
             this.$('#outage-report-view').removeClass('hidden');
-            this.$('.row.incident').each(function (idx, row) {
+            this.$('#outage-report-view .incident').each(function (idx, row) {
                 var rowObj = $(row);
-                var rowId = rowObj.data('countyname');
-                if (rowId && rowId === countyName) {
+                var rowId = rowObj.data('uuid');
+                if (rowId && rowId === uuid) {
                     rowObj.addClass(className);
                 } else {
                     rowObj.removeClass('level-0-incident').removeClass('level-1-incident').removeClass('level-2-incident');

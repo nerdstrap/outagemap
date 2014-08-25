@@ -88,6 +88,7 @@
                 event.preventDefault();
             }
             this.showOutageMapButton();
+            events.trigger(events.beforeHideOutageMap);
             events.trigger(events.showOutageReport);
         },
 
@@ -96,6 +97,7 @@
                 event.preventDefault();
             }
             this.showOutageReportButton();
+            events.trigger(events.beforeShowOutageMap);
             events.trigger(events.showOutageMap);
         },
 

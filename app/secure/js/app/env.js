@@ -15,6 +15,12 @@ define(function (require) {
         dataExpiration = masterConfig.dataExpiration || 3600000,
         incidentTotalThreshold = incidentTotalThreshold || 100;
 
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+                   .toString(16)
+                   .substring(1);
+    };
+
     var env = {
         getApiUrl: function () {
             return apiUrl;
@@ -37,6 +43,11 @@ define(function (require) {
         getIncidentTotalThreshold: function () {
             return incidentTotalThreshold;
         },
+        getNewGuid: function () {
+            return s4() + s4();
+            //return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            //        s4() + '-' + s4() + s4() + s4();
+        },
         formatDate: function (date, format) {
             date = new Date(date);
             return dates.format(date, format);
@@ -47,12 +58,6 @@ define(function (require) {
             } else {
                 return '';
             }
-        },
-        toTitleCase: function (str) {
-            var strTitleCase = str.toLowerCase();
-            return strTitleCase.replace(/(?:^|\s)\w/g, function (match) {
-                return match.toUpperCase();
-            });
         }
     };
 

@@ -80,11 +80,11 @@ define(function (require) {
         },
         {
             'key': 'incidentTooltipFormatString',
-            'value': '{0} County<br/>{1} customers out.<br/>(click for details)'
+            'value': '{0} <br/>{1} customers out.<br/>(click for details)'
         },
         {
             'key': 'swepcoIncidentTooltipFormatString',
-            'value': '{0} County&#47;Parish<br/>{1} customers out.<br/>(click for details)'
+            'value': '{0} <br/>{1} customers out.<br/>(click for details)'
         },
         {
             'key': 'disclaimerText',
@@ -120,15 +120,7 @@ define(function (require) {
         },        
         {
             'key': 'OutageReportView.countyNameFormatString',
-            'value': '{0} {1}, {2}'
-        },
-        {
-            'key': 'OutageReportView.countyAbbreviation',
-            'value': 'Co.'
-        },
-        {
-            'key': 'OutageReportView.parishAbbreviation',
-            'value': 'Parish'
+            'value': '{0}, {1}'
         },
         {
             'key': 'OutageReportView.easternTimezoneAbbreviation',

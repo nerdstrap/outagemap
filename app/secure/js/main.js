@@ -6,7 +6,7 @@ require.config({
         },
         'env': {
             'apiUrl': '',
-            'appFolder': '/~michaelbaltic/outagemap/app/secure',
+            'appFolder': '/secure',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
