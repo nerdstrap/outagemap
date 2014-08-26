@@ -21,8 +21,8 @@
             <span class="header-label">{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
-    {{#if incidents}}
-    {{#stripeRows incidents "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
+    {{#if reportRows}}
+    {{#stripeRows reportRows "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
     <div class="{{stripeClass}}" data-uuid="{{uuid}}">
         <div class="small-3 columns">
             {{#if properCountyName}}

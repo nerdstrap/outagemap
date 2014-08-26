@@ -72,6 +72,7 @@
 
         return operatingCompanyInstance;
     };
+
     var parseState = function (state) {
         var stateInstance = {
             stateName: '',
@@ -185,43 +186,28 @@
             console.trace('OutageReportModel.initialize()');
             options || (options = {});
         },
-        sync: function (method, model, options) {
-            if (method === "read") {
-                var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
-                    setTimeout(function () {
-                        options.success(data, 'success', null);
-                    }, 100);
-                });
-                model.trigger('request', model, xhr, options);
-                return xhr;
-            }
-        },
+        //sync: function (method, model, options) {
+        //    if (method === "read") {
+        //        var xhr = options.xhr = outageReportService.getCurrentOutageReport().done(function (data) {
+        //            setTimeout(function () {
+        //                options.success(data, 'success', null);
+        //            }, 100);
+        //        });
+        //        model.trigger('request', model, xhr, options);
+        //        return xhr;
+        //    }
+        //},
         getCurrentOutageReport: function (region) {
-            this.set({ 'requestedRegion': region });
+            this.requestedRegion = region;
             var xhr = this.fetch({
                 url: env.getApiUrl() + '/OutageXml.aspx',
-                reset: true
+                reset: true,
             });
 
             return xhr;
         },
-        getOperatingCompanyById: function (id) {
-            var result;
-            var operatingCompanies = this.get('operatingCompanies');
-            if (operatingCompanies && operatingCompanies.length > 0) {
-                result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.id === id; });
-            }
-            return result;
-        },
-        getOperatingCompanyByIdentifier: function (identifier) {
-            var result;
-            var operatingCompanies = this.get('operatingCompanies');
-            if (operatingCompanies && operatingCompanies.length > 0) {
-                result = _.find(operatingCompanies, function (operatingCompany) { return operatingCompany.identifier === identifier; });
-            }
-            return result;
-        },
         set: function (key, val, options) {
+            var currentContext = this;
             var attributes;
             if (typeof key === 'object') {
                 attributes = key;
@@ -232,29 +218,118 @@
             var derivedAttributes = {};
             if (attributes) {
                 if (attributes.hasOwnProperty('NewDataSet')) {
+
                     var NewDataSet = attributes.NewDataSet;
-                    if (NewDataSet.hasOwnProperty('dataset')) {
-                        var dataset = NewDataSet.dataset;
-                        if (dataset.hasOwnProperty('timestamp')) {
-                            var timestamp = dataset.timestamp;
-                            derivedAttributes.timestamp = timestamp;
-                        }
-                    }
 
                     if (NewDataSet.hasOwnProperty('OperatingCo')) {
                         var OperatingCo = NewDataSet.OperatingCo;
                         if (OperatingCo && OperatingCo.length > 0) {
-                            var operatingCompanies = [];
-                            _.each(OperatingCo, function (element, index, list) {
+                            _.every(OperatingCo, function (element, index, list) {
                                 var operatingCompanyInstance = parseOperatingCompany(element);
-                                operatingCompanies.push(operatingCompanyInstance);
+                                if (operatingCompanyInstance.id === currentContext.requestedRegion) {
+                                    derivedAttributes = operatingCompanyInstance;
+                                    return false;
+                                }
+                                return true;
                             });
-                            derivedAttributes.operatingCompanies = operatingCompanies;
+                        }
+                    }
+
+                    if (NewDataSet.hasOwnProperty('dataset')) {
+                        var dataset = NewDataSet.dataset;
+                        if (dataset.hasOwnProperty('timestamp')) {
+                            try {
+                                var timestamp = new Date(dataset.timestamp);
+                                derivedAttributes.timestamp = timestamp;
+                            }
+                            catch (e) {
+                                if (e) {
+                                    console.trace(e.message);
+                                }
+                            }
                         }
                     }
                 }
             }
-            return Backbone.Model.prototype.set.call(this, derivedAttributes, options);
+            return Backbone.Model.prototype.set.call(currentContext, derivedAttributes, options);
+        },
+        getTimestamp: function () {
+            if (this.has('timestamp')) {
+                return this.get('timestamp');
+            }
+            return new Date(0);
+        },
+        getOperatingCompanyName: function () {
+            if (this.has('fullName')) {
+                return this.get('fullName');
+            }
+            return '';
+        },
+        getId: function () {
+            if (this.has('id')) {
+                return this.get('id');
+            }
+            return '';
+        },
+        getIdentifier: function () {
+            if (this.has('identifier')) {
+                return this.get('identifier');
+            }
+            return '';
+        },
+        getTwitterProfile: function () {
+            if (this.has('twitterProfile')) {
+                return this.get('twitterProfile');
+            }
+            return '';
+        },
+        getFacebookProfile: function () {
+            if (this.has('facebookProfile')) {
+                return this.get('facebookProfile');
+            }
+            return '';
+        },
+        getOutageMapLink: function () {
+            if (this.has('outageMapLink')) {
+                return this.get('outageMapLink');
+            }
+            return '';
+        },
+        getDisabled: function () {
+            return this.has('disabled') && this.get('disabled') === true;
+        },
+        getCountiesServed: function () {
+            if (this.has('countiesServed')) {
+                return this.get('countiesServed');
+            }
+            return parseInt('0');
+        },
+        getCustomersAffected: function () {
+            if (this.has('customersAffected')) {
+                return this.get('customersAffected');
+            }
+            return parseInt('0');
+        },
+        getCustomersServed: function () {
+            if (this.has('customersServed')) {
+                return this.get('customersServed');
+            }
+            return parseInt('0');
+        },
+        getPercentageAffected: function () {
+            if (this.has('percentageAffected')) {
+                return this.get('percentageAffected');
+            }
+            return parseFloat('0').toFixed(1);
+        },
+        getStates: function () {
+            if (this.has('states')) {
+                var states = this.get('states');
+                if (states.length > 0) {
+                    return states;
+                }
+            }
+            return [];
         }
     });
 

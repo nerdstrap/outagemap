@@ -32,12 +32,12 @@
             var renderModel = _.extend({}, this.resources(), this.model);
             this.$el.html(template(renderModel));
 
-            var outageMapLegendView = new OutageMapLegendView({
+            var outageMapLegendViewInstance = new OutageMapLegendView({
                 el: $('#outage-map-legend-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher
             });
-            this.renderChild(outageMapLegendView);
+            this.renderChild(outageMapLegendViewInstance);
 
             return this;
         }

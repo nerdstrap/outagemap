@@ -61,43 +61,31 @@
         },
 
         twitterPost: function () {
-            var operatingCompany = regions.getOperatingCompanyById(env.getParameterByName('region'));
-            if (operatingCompany) {
-                var statusPostFormatString = appResources.getResource('twitterStatusPostFormatString').value;
-                var twitterPostLinkFormatString = appResources.getResource('twitterPostLinkFormatString').value;
-                var statusPost = statusPostFormatString.format(operatingCompany.fullName, operatingCompany.outageMapLink)
-                var twitterPostLink = twitterPostLinkFormatString.format(statusPost);
-                globals.window.open(twitterPostLink);
-            }
+            var statusPostFormatString = appResources.getResource('twitterStatusPostFormatString').value;
+            var twitterPostLinkFormatString = appResources.getResource('twitterPostLinkFormatString').value;
+            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName(), this.outageReportModelInstance.getOutageMapLink())
+            var twitterPostLink = twitterPostLinkFormatString.format(statusPost);
+            globals.window.open(twitterPostLink);
         },
 
         twitterFollowUs: function () {
-            var operatingCompany = regions.getOperatingCompanyById(env.getParameterByName('region'));
-            if (operatingCompany) {
-                var twitterFollowUsLinkFormatString = appResources.getResource('twitterFollowUsLinkFormatString').value;
-                var twitterFollowUsLink = twitterFollowUsLinkFormatString.format(operatingCompany.twitterProfile);
-                globals.window.open(twitterFollowUsLink);
-            }
+            var twitterFollowUsLinkFormatString = appResources.getResource('twitterFollowUsLinkFormatString').value;
+            var twitterFollowUsLink = twitterFollowUsLinkFormatString.format(this.outageReportModelInstance.getTwitterProfile());
+            globals.window.open(twitterFollowUsLink);
         },
 
         facebookPost: function () {
-            var operatingCompany = regions.getOperatingCompanyById(env.getParameterByName('region'));
-            if (operatingCompany) {
-                var statusPostFormatString = appResources.getResource('facebookStatusPostFormatString').value;
-                var facebookPostLinkFormatString = appResources.getResource('facebookPostLinkFormatString').value;
-                var statusPost = statusPostFormatString.format(operatingCompany.fullName)
-                var facebookPostLink = facebookPostLinkFormatString.format(operatingCompany.outageMapLink, statusPost);
-                globals.window.open(facebookPostLink);
-            }
+            var statusPostFormatString = appResources.getResource('facebookStatusPostFormatString').value;
+            var facebookPostLinkFormatString = appResources.getResource('facebookPostLinkFormatString').value;
+            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName())
+            var facebookPostLink = facebookPostLinkFormatString.format(this.outageReportModelInstance.getOutageMapLink(), statusPost);
+            globals.window.open(facebookPostLink);
         },
 
         facebookFollowUs: function () {
-            var operatingCompany = regions.getOperatingCompanyById(env.getParameterByName('region'));
-            if (operatingCompany) {
-                var facebookFollowUsLinkFormatString = appResources.getResource('facebookFollowUsLinkFormatString').value;
-                var facebookFollowUsLink = facebookFollowUsLinkFormatString.format(operatingCompany.facebookProfile);
-                globals.window.open(facebookFollowUsLink);
-            }
+            var facebookFollowUsLinkFormatString = appResources.getResource('facebookFollowUsLinkFormatString').value;
+            var facebookFollowUsLink = facebookFollowUsLinkFormatString.format(this.outageReportModelInstance.getFacebookProfile());
+            globals.window.open(facebookFollowUsLink);
         }
     });
 

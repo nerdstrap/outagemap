@@ -49,24 +49,33 @@
                 var svgElement = $('#svg-container');
                 if (svgElement) {
                     svgElement.html(map);
-                    var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
-                    if (operatingCompanyModel) {
-                        if (operatingCompanyModel.disabled) {
-                            currentContext.renderServiceUnavailableTooltip(svgElement);
-                        } else {
-                            if (operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
-                                _.each(operatingCompanyModel.states, function (state) {
-                                    if (state.customersAffected > 0) {
-                                        if (state.incidents && state.incidents.length > 0) {
-                                            currentContext.delegateEvents(state.incidents);
-                                        }
-                                    }
-                                });
-                            }
-                        }
+                    if (currentContext.model.getDisabled()) {
+                        currentContext.renderServiceUnavailableTooltip(svgElement);
+                    } else {
+                        currentContext.renderIncidents();
                     }
                 }
             });
+        },
+
+        beforeShowOutageMap: function () {
+            var currentContext = this;
+            if (currentContext.model.getDisabled()) {
+                var svgElement = $('#svg-container');
+                if (svgElement) {
+                    svgElement.tooltipster('show');
+                }
+            }
+        },
+
+        beforeHideOutageMap: function () {
+            var currentContext = this;
+            if (currentContext.model.getDisabled()) {
+                var svgElement = $('#svg-container');
+                if (svgElement) {
+                    svgElement.tooltipster('hide');
+                }
+            }
         },
 
         showOutageReport: function (event) {
@@ -77,42 +86,24 @@
             events.trigger(events.showOutageReport, this.getAttribute('data-uuid'), this.getAttribute('data-class-name'));
         },
 
-        delegateEvents: function (incidents) {
+        renderIncidents: function () {
             var currentContext = this;
+            var incidentTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentTooltipFormatString').value : appResources.getResource('incidentTooltipFormatString').value;
+            var states = currentContext.model.getStates();
 
-            _.each(incidents, function (incident) {
-                var countySvgElementId = _countyPrefix + incident.countyId + _countySuffix;
-                var countySvgElement = $('#' + countySvgElementId);
-                if (countySvgElement) {
-                    currentContext.renderIncidentTooltip(countySvgElement, incident);
+            _.each(states, function (state) {
+                if (state.customersAffected > 0) {
+                    if (state.incidents && state.incidents.length > 0) {
+                        _.each(state.incidents, function (incident) {
+                            var countySvgElementId = _countyPrefix + incident.countyId + _countySuffix;
+                            var countySvgElement = $('#' + countySvgElementId);
+                            if (countySvgElement) {
+                                currentContext.renderIncidentTooltip(countySvgElement, incident, incidentTooltipFormatString);
+                            }
+                        });
+                    }
                 }
             });
-        },
-
-        beforeShowOutageMap: function () {
-            var currentContext = this;
-            var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
-            if (operatingCompanyModel) {
-                if (operatingCompanyModel.disabled) {
-                    var svgElement = $('#svg-container');
-                    if (svgElement) {
-                        svgElement.tooltipster('show');
-                    }
-                }
-            }
-        },
-
-        beforeHideOutageMap: function () {
-            var currentContext = this;
-            var operatingCompanyModel = currentContext.model.getOperatingCompanyById(currentContext.region);
-            if (operatingCompanyModel) {
-                if (operatingCompanyModel.disabled) {
-                    var svgElement = $('#svg-container');
-                    if (svgElement) {
-                        svgElement.tooltipster('hide');
-                    }
-                }
-            }
         },
 
         renderServiceUnavailableTooltip: function (svgElement) {
@@ -130,12 +121,11 @@
             svgElement.tooltipster('show');
         },
 
-        renderIncidentTooltip: function (countySvgElement, incident) {
+        renderIncidentTooltip: function (countySvgElement, incident, tooltipFormatString) {
             var currentContext = this;
             var incidentLevelConfig = appIncidents.getIncidentLevel(incident.customersAffected);
             if (incidentLevelConfig) {
-                var incidentTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentTooltipFormatString').value : appResources.getResource('incidentTooltipFormatString').value;
-                var tooltipText = incidentTooltipFormatString.format(incident.properCountyName, env.formatNumber(incident.customersAffected));
+                var tooltipText = tooltipFormatString.format(incident.properCountyName, env.formatNumber(incident.customersAffected));
                 countySvgElement.attr('cursor', 'pointer');
                 countySvgElement.attr('fill', incidentLevelConfig.fillColor);
                 countySvgElement.attr('data-uuid', incident.uuid);

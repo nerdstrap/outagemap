@@ -49,7 +49,6 @@ define(function (require) {
             //        s4() + '-' + s4() + s4() + s4();
         },
         formatDate: function (date, format) {
-            date = new Date(date);
             return dates.format(date, format);
         },
         formatNumber: function (value) {

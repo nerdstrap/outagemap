@@ -27,7 +27,6 @@
                 'customersAffectedTitleText': appResources.getResource('OutageReportView.customersAffectedTitleText').value,
                 'customersServedTitleText': appResources.getResource('OutageReportView.customersServedTitleText').value,
                 'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText').value,
-                'grandTotalTitleText': appResources.getResource('OutageReportView.grandTotalTitleText').value,
                 'noOutagesMessage': appResources.getResource('noOutagesMessage').value,
                 'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage').value,
                 'lastUpdatedTitleText': appResources.getResource('lastUpdatedTitleText').value,
@@ -47,83 +46,93 @@
 
         updateViewFromModel: function () {
             var currentContext = this;
-            var operatingCompanyModel = this.model.getOperatingCompanyById(currentContext.region);
-            var renderModel = {
-                incidents: [],
-                customersServed: parseInt('0'),
-                customersAffected: parseInt('0'),
-                percentageAffected: parseFloat('0'),
-            };
-            if (operatingCompanyModel) {
-                if (operatingCompanyModel.disabled) {
-                    this.showServiceUnavailableMessage();
-                } else {
-                    if (operatingCompanyModel.states && operatingCompanyModel.states.length > 0) {
-                        renderModel.customersAffected = operatingCompanyModel.customersAffected;
-                        renderModel.customersServed = operatingCompanyModel.customersServed;
-                        renderModel.percentageAffected = (operatingCompanyModel.percentageAffected * 100).toFixed(1);
+            if (currentContext.model.getDisabled()) {
+                this.showServiceUnavailableMessage();
+            } else {
+                currentContext.renderOutageReport();
+            }
+        },
 
-                        var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString').value;
-                        var countyAbbreviation = appResources.getResource('OutageReportView.countyAbbreviation').value;
-                        var parishAbbreviation = appResources.getResource('OutageReportView.parishAbbreviation').value;
+        renderOutageReport: function () {
+            var currentContext = this;
+            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
+            var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString').value;
+            var grandTotalTitleText = appResources.getResource('OutageReportView.grandTotalTitleText').value;
+            var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
+            var reportRows = [];
+            var stateReportRows = [];
 
-                        var stateIncidents = [];
+            // timestamp
+            var timestampValue = currentContext.model.getTimestamp();
+            if ((currentContext.region === 'aeptexas' || currentContext.region === 'pso')) {
+                timestampValue.addHours(-1);
+            }
+            var timestamp = env.formatDate(timestampValue, '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y');
 
-                        _.each(operatingCompanyModel.states, function (state) {
-                            if (state.customersAffected > 0) {
-                                if (state.incidents && state.incidents.length > 0) {
-                                    _.each(state.incidents, function (incident) {
-                                        var incidentCopy = _.clone(incident);
-                                        incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
-                                        incidentCopy.countyNameFormatted = countyNameFormatString.format(incidentCopy.properCountyName, state.stateName);
-                                        renderModel.incidents.push(incidentCopy);
-                                    });
-                                }
-                                var stateCopy = _.clone(state);
-                                stateCopy.grandTotal = true,
-                                stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
-                                stateIncidents.push(stateCopy);
-                            }
+            // company statistics
+            var operatingCompanyName = currentContext.model.getOperatingCompanyName();
+            var customersAffected = env.formatNumber(currentContext.model.getCustomersAffected());
+            var customersServed = env.formatNumber(currentContext.model.getCustomersServed());
+            var percentageAffected = (currentContext.model.getPercentageAffected() * 100).toFixed(1);
+            var countiesServed = env.formatNumber(currentContext.model.getCountiesServed());
+
+            // report rows
+            var states = currentContext.model.getStates();
+            _.each(states, function (state) {
+                if (state.customersAffected > 0) {
+                    if (state.incidents && state.incidents.length > 0) {
+                        _.each(state.incidents, function (incident) {
+                            var incidentCopy = _.clone(incident);
+                            incidentCopy.percentageAffected = (incident.percentageAffected * 100).toFixed(1);
+                            incidentCopy.countyNameFormatted = countyNameFormatString.format(incidentCopy.properCountyName, state.stateName);
+                            reportRows.push(incidentCopy);
                         });
-
-                        if (renderModel.incidents.length > 0) {
-                            renderModel.incidents.push({});
-                        }
-
-                        if (stateIncidents.length > 1) {
-                            for (var j = 0; j < stateIncidents.length; j++) {
-                                renderModel.incidents.push(stateIncidents[j]);
-                            };
-                            renderModel.incidents.push({});
-                        }
-
-                        if (renderModel.incidents.length > 0) {
-                            renderModel.incidents.push({ grandTotal: true, grandTotalTitleText: currentContext.resources().grandTotalTitleText, customersAffected: renderModel.customersAffected, customersServed: renderModel.customersServed, percentageAffected: renderModel.percentageAffected });
-                        }
-
-                        var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
-
-                        var stateNames = _.pluck(operatingCompanyModel.states, 'stateName');
-                        if (stateNames.length < 2) {
-                            stateNames = stateNames.join('&#32;&#38;&#32;');
-                        } else {
-                            var lastState = _.last(stateNames);
-                            stateNames = _.initial(stateNames).join('&#44;&#32;') + '&#32;&#38;&#32;' + lastState.toString();
-                        }
-
-                        renderModel.serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyModel.fullName, env.formatNumber(operatingCompanyModel.customersServed), env.formatNumber(operatingCompanyModel.countiesServed), stateNames);
                     }
-                    if (renderModel.incidents.length === 0) {
-                        this.showNoOutagesMessage();
-                    } else {
-                        _.extend(renderModel, this.resources());
-                        this.$el.html(template(renderModel));
-                    }
+
+                    var stateCopy = _.clone(state);
+                    stateCopy.grandTotal = true,
+                    stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
+                    stateReportRows.push(stateCopy);
                 }
+            });
+
+            if (reportRows.length > 0) {
+                reportRows.push({});
             }
 
-            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
-            this.$('#timestamp-label').html(env.formatDate(this.model.get('timestamp'), '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y'));
+            // #businessrule only show state totals when there is more than 1
+            if (stateReportRows.length > 1) {
+                for (var j = 0; j < stateReportRows.length; j++) {
+                    reportRows.push(stateReportRows[j]);
+                };
+                reportRows.push({});
+            }
+
+            if (reportRows.length > 0) {
+                reportRows.push({ grandTotal: true, grandTotalTitleText: grandTotalTitleText, customersAffected: customersAffected, customersServed: customersServed, percentageAffected: percentageAffected });
+            }
+
+            // servic statistics
+            var stateNames = _.pluck(states, 'stateName');
+            if (stateNames.length < 2) {
+                stateNames = stateNames.join('&#32;&#38;&#32;');
+            } else {
+                var lastState = _.last(stateNames);
+                stateNames = _.initial(stateNames).join('&#44;&#32;') + '&#32;&#38;&#32;' + lastState.toString();
+            }
+            var serviceStatistics = serviceStatisticsFormatString.format(operatingCompanyName, customersServed, countiesServed, stateNames);
+
+            var renderModel = {
+                timestamp: timestamp,
+                reportRows: reportRows,
+                serviceStatistics: serviceStatistics
+            };
+            _.extend(renderModel, this.resources());
+            this.$el.html(template(renderModel));
+
+            if (reportRows.length === 0) {
+                this.showNoOutagesMessage();
+            }
         },
 
         showNoOutagesMessage: function () {

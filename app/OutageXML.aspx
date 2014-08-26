@@ -13,7 +13,7 @@
 	protected static EnvironmentType CurrentEnvironment {
 		get {
 			string host = HttpContext.Current.Request.Url.Host.ToLower();
-			if(host.Contains("localhost")) { return EnvironmentType.Localhost; }
+			if(host.Contains("localhost")) { return EnvironmentType.Production; }
 			if(host.Contains("dev.") || host.Contains("dev2009.")) { return EnvironmentType.Development; }
 			if(host.Contains("test.") || host.Contains("test2009.")) { return EnvironmentType.Test; }
             if (host.Contains("outagemap.azurewebsites.net")) { return EnvironmentType.Azure; }

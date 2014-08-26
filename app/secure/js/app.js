@@ -25,5 +25,10 @@ define(function (require) {
         };
     }
 
+    Date.prototype.addHours = function (h) {
+        this.setHours(this.getHours() + h);
+        return this;
+    }
+
     Backbone.history.start();
 });
