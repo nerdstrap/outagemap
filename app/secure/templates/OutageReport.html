@@ -4,7 +4,7 @@
             <span id="report-title-label">{{{titleText}}}</span>
         </div>
         <div id="timestamp-label-container" class="small-6 columns">
-            <span id="timestamp-header-label">{{{lastUpdatedTitleText}}}</span><span id="timestamp-label">{{{timestamp}}}</span>
+            <span id="timestamp-label">{{{timestamp}}}</span>
         </div>
     </div>
     <div id="outage-report-header-container" class="row collapse">
@@ -26,7 +26,7 @@
     <div class="{{stripeClass}}" data-uuid="{{uuid}}">
         <div class="small-3 columns">
             {{#if properCountyName}}
-            <span class="county-name-label">{{{properCountyName}}}</span>
+            <span class="county-name-label">{{{countyNameFormatted}}}</span>
             {{/if}}
             {{#if stateName}}
             <span class="state-name-label">{{{stateName}}} totals&#58;</span>

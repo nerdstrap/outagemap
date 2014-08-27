@@ -29,7 +29,6 @@
                 'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText').value,
                 'noOutagesMessage': appResources.getResource('noOutagesMessage').value,
                 'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage').value,
-                'lastUpdatedTitleText': appResources.getResource('lastUpdatedTitleText').value,
                 'disclaimer': appResources.getResource('disclaimerText').value
             };
         },
@@ -55,6 +54,7 @@
 
         renderOutageReport: function () {
             var currentContext = this;
+            var lastUpdatedFormatString = appResources.getResource('OutageReportView.lastUpdatedFormatString').value;
             var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
             var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString').value;
             var grandTotalTitleText = appResources.getResource('OutageReportView.grandTotalTitleText').value;
@@ -67,7 +67,7 @@
             if ((currentContext.region === 'aeptexas' || currentContext.region === 'pso')) {
                 timestampValue.addHours(-1);
             }
-            var timestamp = env.formatDate(timestampValue, '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y');
+            var timestamp = lastUpdatedFormatString.format(env.formatDate(timestampValue, '%I:%M %p ' + timezoneAbbreviation + ' %m-%d-%Y'));
 
             // company statistics
             var operatingCompanyName = currentContext.model.getOperatingCompanyName();
@@ -101,7 +101,7 @@
             }
 
             // #businessrule only show state totals when there is more than 1
-            if (stateReportRows.length > 1) {
+            if (states.length > 1 && stateReportRows.length > 0) {
                 for (var j = 0; j < stateReportRows.length; j++) {
                     reportRows.push(stateReportRows[j]);
                 };

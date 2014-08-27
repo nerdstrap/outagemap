@@ -368,67 +368,67 @@
           {
               "stateName": "LA",
               "countyId": "BIENVILLE",
-              "properCountyName": "Bienville Parish"
+              "properCountyName": "Bienville Par."
           },
           {
               "stateName": "LA",
               "countyId": "BOSSIER",
-              "properCountyName": "Bossier Parish"
+              "properCountyName": "Bossier Par."
           },
           {
               "stateName": "LA",
               "countyId": "CADDO",
-              "properCountyName": "Caddo Parish"
+              "properCountyName": "Caddo Par."
           },
           {
               "stateName": "LA",
               "countyId": "DESOTO",
-              "properCountyName": "Desoto Parish"
+              "properCountyName": "Desoto Par."
           },
           {
               "stateName": "LA",
               "countyId": "GRANT",
-              "properCountyName": "Grant Parish"
+              "properCountyName": "Grant Par."
           },
           {
               "stateName": "LA",
               "countyId": "GRANT PARISH",
-              "properCountyName": "Grant Parish"
+              "properCountyName": "Grant Par."
           },
           {
               "stateName": "LA",
               "countyId": "NATCHITOCHES",
-              "properCountyName": "Natchitoches Parish"
+              "properCountyName": "Natchitoches Par."
           },
           {
               "stateName": "LA",
               "countyId": "RAPIDES",
-              "properCountyName": "Rapides Parish"
+              "properCountyName": "Rapides Par."
           },
           {
               "stateName": "LA",
               "countyId": "RED RIVER",
-              "properCountyName": "Red River Parish"
+              "properCountyName": "Red River Par."
           },
           {
               "stateName": "LA",
               "countyId": "SABINE",
-              "properCountyName": "Sabine Parish"
+              "properCountyName": "Sabine Par."
           },
           {
               "stateName": "LA",
               "countyId": "VERNON",
-              "properCountyName": "Vernon Parish"
+              "properCountyName": "Vernon Par."
           },
           {
               "stateName": "LA",
               "countyId": "WEBSTER",
-              "properCountyName": "Webster Parish"
+              "properCountyName": "Webster Par."
           },
           {
               "stateName": "LA",
               "countyId": "WINN",
-              "properCountyName": "Winn Parish"
+              "properCountyName": "Winn Par."
           },
           {
               "stateName": "MI",
