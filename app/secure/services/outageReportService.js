@@ -11,7 +11,6 @@ define(function (require) {
               "OperatingCo": [
                 {
                     "id": "AEP-AP",
-                    "disabled": "true",
                     "state": [
                       {
                           "abbr": "TN",
@@ -472,11 +471,6 @@ define(function (require) {
                                 "repair_issues": "1"
                             }
                           ]
-                      },
-                      {
-                          "abbr": "WV",
-                          "counties_served": "4",
-                          "customers_served": "41609"
                       }
                     ],
                     "xmlns": ""
