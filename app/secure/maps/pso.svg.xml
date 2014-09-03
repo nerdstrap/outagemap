@@ -804,13 +804,13 @@
 </g>
 <g id="STATE_NAMES_x2F_CITIES">
 	<rect x="168.9" y="331.8" fill="none" width="106.6" height="23.7"/>
-	<text transform="matrix(1 0 0 1 224.6979 343.1694)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Lawton</text>
+	<text transform="matrix(1 0 0 1 224.6979 343.1694)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Lawton</text>
 	<rect x="317.9" y="207" fill="none" width="106.6" height="23.7"/>
-	<text transform="matrix(1 0 0 1 321.2288 218.3531)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Oklahoma City</text>
+	<text transform="matrix(1 0 0 1 321.2288 218.3531)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Oklahoma City</text>
 	<rect x="487.4" y="131.7" fill="none" width="106.6" height="15.1"/>
-	<text transform="matrix(1 0 0 1 523.0707 143.0768)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Tulsa</text>
+	<text transform="matrix(1 0 0 1 523.0707 143.0768)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Tulsa</text>
 	<rect x="496.3" y="285.4" fill="none" width="106.6" height="15.1"/>
-	<text transform="matrix(1 0 0 1 515.7531 296.7988)" fill="#58595B" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">McAlester</text>
+	<text transform="matrix(1 0 0 1 515.7531 296.7988)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">McAlester</text>
 	<g>
 		<path fill="#58595B" d="M373.5,233.9c-2.5,0-4.6-2.1-4.6-4.6s2.1-4.6,4.6-4.6s4.6,2.1,4.6,4.6S376,233.9,373.5,233.9z"/>
 		<path fill="#998675" d="M373.5,226c1.8,0,3.3,1.5,3.3,3.3s-1.5,3.3-3.3,3.3c-1.8,0-3.3-1.5-3.3-3.3S371.7,226,373.5,226
@@ -848,22 +848,22 @@
 	<g>
 		<rect x="80.1" y="414.8" fill="none" width="170" height="28.6"/>
 		
-			<text transform="matrix(1 0 0 1 139.043 426.1889)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">TEXAS</text>
+			<text transform="matrix(1 0 0 1 139.043 426.1889)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">TEXAS</text>
 	</g>
 	<g>
 		<rect x="288.5" y="20.2" fill="none" width="170" height="21.6"/>
 		
-			<text transform="matrix(1 0 0 1 340.2006 31.5326)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">KANSAS</text>
+			<text transform="matrix(1 0 0 1 340.2006 31.5326)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">KANSAS</text>
 	</g>
 	<g>
 		<rect x="690.6" y="273.6" fill="none" width="48" height="38.8"/>
 		
-			<text transform="matrix(1 0 0 1 704.2001 284.9115)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">AR</text>
+			<text transform="matrix(1 0 0 1 704.2001 284.9115)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">AR</text>
 	</g>
 	<g>
 		<rect x="681.6" y="40.3" fill="none" width="48" height="38.8"/>
 		
-			<text transform="matrix(1 0 0 1 692.456 51.7055)" fill="#BBB5AF" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">MO</text>
+			<text transform="matrix(1 0 0 1 692.456 51.7055)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">MO</text>
 	</g>
 </g>
 </svg>

@@ -1209,20 +1209,20 @@
 			S281.6,175.5,278.7,175.5L278.7,175.5z"/>
 	</g>
 	<rect x="299.3" y="99.5" fill="none" width="82.2" height="18"/>
-	<text transform="matrix(1 0 0 1 299.3295 110.8209)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Texarkana</text>
+	<text transform="matrix(1 0 0 1 299.3295 110.8209)" fill="#59595C" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Texarkana</text>
 	<rect x="247.2" y="191.4" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 247.2487 202.764)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Longview</text>
+	<text transform="matrix(1 0 0 1 247.2487 202.764)" fill="#59595C" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Longview</text>
 	<rect x="446.7" y="113.2" fill="none" width="82.1" height="18"/>
-	<text transform="matrix(1 0 0 1 446.6545 124.5229)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Fayetteville</text>
+	<text transform="matrix(1 0 0 1 446.6545 124.5229)" fill="#59595C" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Fayetteville</text>
 	<rect x="605.8" y="112.7" fill="none" width="81.8" height="18"/>
-	<text transform="matrix(1 0 0 1 605.7797 124.084)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Shreveport</text>
+	<text transform="matrix(1 0 0 1 605.7797 124.084)" fill="#59595C" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Shreveport</text>
 	<rect x="565.2" y="18.4" fill="none" width="179.3" height="26"/>
-	<text transform="matrix(1 0 0 1 622.6115 29.8054)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Louisiana</text>
+	<text transform="matrix(1 0 0 1 622.6115 29.8054)" fill="#59595C" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Louisiana</text>
 	<rect x="377.1" y="18.4" fill="none" width="179.2" height="26"/>
-	<text transform="matrix(1 0 0 1 436.3293 29.8055)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Arkansas</text>
+	<text transform="matrix(1 0 0 1 436.3293 29.8055)" fill="#59595C" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Arkansas</text>
 	<rect x="187.5" y="18.4" fill="none" width="181.1" height="18.3"/>
-	<text transform="matrix(1 0 0 1 243.3658 29.8055)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">East Texas</text>
+	<text transform="matrix(1 0 0 1 243.3658 29.8055)" fill="#59595C" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">East Texas</text>
 	<rect x="-0.4" y="18.4" fill="none" width="181.1" height="18.3"/>
-	<text transform="matrix(1 0 0 1 32.9659 29.8055)" fill="#59595C" font-family="'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Texas Panhandle</text>
+	<text transform="matrix(1 0 0 1 32.9659 29.8055)" fill="#59595C" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Texas Panhandle</text>
 </g>
 </svg>
