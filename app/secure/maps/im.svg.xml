@@ -419,24 +419,24 @@
 	<g>
 		<rect x="557.7" y="281.4" fill="none" width="186.3" height="19.9"/>
 		
-			<text transform="matrix(1 0 0 1 629.0815 292.7469)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">OHIO</text>
+			<text transform="matrix(1 0 0 1 629.0815 292.7469)" fill="#BBB5AF" font-family="HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">OHIO</text>
 	</g>
 	<g>
 		<rect x="0" y="281.4" fill="none" width="183.9" height="39.9"/>
 		
-			<text transform="matrix(1 0 0 1 55.5516 292.7469)" fill="#BBB5AF" font-family="'HelveticaNeueW01-45Ligh', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">ILLINOIS</text>
+			<text transform="matrix(1 0 0 1 55.5516 292.7469)" fill="#BBB5AF" font-family="HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="2">ILLINOIS</text>
 	</g>
 	<rect x="524.9" y="245.8" fill="none" width="83.8" height="18"/>
-	<text transform="matrix(1 0 0 1 524.9081 257.1179)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Fort Wayne</text>
+	<text transform="matrix(1 0 0 1 524.9081 257.1179)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Fort Wayne</text>
 	<rect x="259.3" y="73.9" fill="none" width="73.6" height="18"/>
-	<text transform="matrix(1 0 0 1 259.3021 85.2951)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">St. Joseph</text>
+	<text transform="matrix(1 0 0 1 259.3021 85.2951)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">St. Joseph</text>
 	<rect x="327.5" y="159.6" fill="none" width="81.6" height="18"/>
-	<text transform="matrix(1 0 0 1 327.4551 171.0029)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">South Bend</text>
+	<text transform="matrix(1 0 0 1 327.4551 171.0029)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">South Bend</text>
 	<rect x="458.2" y="97.8" fill="none" width="83.3" height="18"/>
-	<text transform="matrix(1 0 0 1 458.2037 109.1922)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Three Rivers</text>
+	<text transform="matrix(1 0 0 1 458.2037 109.1922)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Three Rivers</text>
 	<rect x="338.1" y="443" fill="none" width="94.3" height="18.7"/>
-	<text transform="matrix(1 0 0 1 343.6432 454.3976)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Indianapolis</text>
+	<text transform="matrix(1 0 0 1 343.6432 454.3976)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Indianapolis</text>
 	<rect x="459.2" y="376.1" fill="none" width="51.9" height="14.3"/>
-	<text transform="matrix(1 0 0 1 459.2437 387.5075)" fill="#58595B" font-family="'HelveticaNeueW01-55Roma', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Muncie</text>
+	<text transform="matrix(1 0 0 1 459.2437 387.5075)" fill="#58595B" font-family="'HelveticaNeue Condensed', 'Helvetica', Helvetica, Arial, sans-serif" font-size="16">Muncie</text>
 </g>
 </svg>
