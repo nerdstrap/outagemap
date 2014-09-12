@@ -10,7 +10,7 @@
     src: url("../fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix") format("eot"),url("../fonts/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff") format("woff"),url("../fonts/c74505d5-13e8-47ed-94a8-630aab4da3e6.ttf") format("truetype"),url("../fonts/6cd480d1-47d0-48b4-86bd-283db2cb9235.svg#6cd480d1-47d0-48b4-86bd-283db2cb9235") format("svg");
 }
 
-.headline {
+/*.headline {
     font-size: 1.5em;
     font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #000000;
@@ -45,7 +45,7 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-decoration: underline;
     color: #0251F0;
-}
+}*/
 
 root {
     display: block;
@@ -54,7 +54,7 @@ root {
 
 body {
     font-family: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-color: #58595b;
+    color: #58595b;
 }
 
 .hidden {
@@ -261,7 +261,7 @@ color: #58595b;
 #logo-icon {
     width: 268px;
     height: 78px;
-margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 
 #outage-map-legend-view {
@@ -321,10 +321,4 @@ margin-top: 0.5em;
 #major-highways-icon {
     width: 72px;
     height: 24px;
-}
-
-.tooltipster-default {
-    background-color: #FFF8CC;
-    border: 2px solid #000;
-    color: #000000;
 }
