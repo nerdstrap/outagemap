@@ -8,6 +8,7 @@
         events = require('events'),
         OutageMapView = require('views/OutageMapView'),
         OutageReportView = require('views/OutageReportView'),
+        globals = require('globals'),
         env = require('env'),
         template = require('hbs!templates/Content');
 
@@ -61,6 +62,11 @@
                 var rowId = rowObj.data('uuid');
                 if (rowId && rowId === uuid) {
                     rowObj.addClass(className);
+                    var offsetTop = rowObj.offset().top;
+                    if (offsetTop > 200) {
+                        offsetTop -= 200;
+                    }
+                    globals.window.scroll(0, offsetTop);
                 } else {
                     rowObj.removeClass('level-0-incident').removeClass('level-1-incident').removeClass('level-2-incident');
                 }

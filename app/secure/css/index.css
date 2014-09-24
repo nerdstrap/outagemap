@@ -105,6 +105,7 @@ body {
 #facebook-post-button,
 #show-outage-map-view-button,
 #show-outage-report-view-button {
+    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 0.8125em;
     text-decoration: underline;
     vertical-align: middle;
