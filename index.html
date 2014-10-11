@@ -19,18 +19,12 @@
     <link href="css/tooltipster.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript">
-        window.onerror = function (message) {
-            var runtimeErrorDiv = document.createElement('div');
-            runtimeErrorDiv.className = 'runtime-error';
-            runtimeErrorDiv.innerHTML = '<span>' + message + '</span>';
-            document.getElementById('runtime-errors').appendChild(runtimeErrorDiv);
-            console.log(message);
-        };
+
     </script>
-    <script data-main="js/main.js" src="js/libs/require.js"></script>
+    
+    <script data-main="js/main.js" src="js/libs/require.min.js"></script>
 </head>
 <body>
     <div id="shell-view"></div>
-    <div id="runtime-errors"></div>
 </body>
 </html>

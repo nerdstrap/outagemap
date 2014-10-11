@@ -21,6 +21,7 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
+            this.outageMap = options.outageMap;
 
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
 
@@ -37,25 +38,26 @@
             console.trace('OutageMapView.render()');
             var currentContext = this;
 
-            var renderModel = _.extend({}, this.resources(), this.model);
-            this.$el.html(template(renderModel));
+            var renderModel = _.extend({}, currentContext.resources(), currentContext.model);
+            currentContext.$el.html(template(renderModel));
+            var svgElement = currentContext.$el.find('#svg-container');
+            if (svgElement) {
+                svgElement.html(currentContext.outageMap);
+            }
 
             return this;
         },
 
         updateViewFromModel: function () {
             var currentContext = this;
-            require(['svg!maps/' + currentContext.region + '.svg'], function (map) {
-                var svgElement = $('#svg-container');
-                if (svgElement) {
-                    svgElement.html(map);
-                    if (currentContext.model.getDisabled()) {
-                        currentContext.renderServiceUnavailableTooltip(svgElement);
-                    } else {
-                        currentContext.renderIncidents();
-                    }
+            var svgElement = $('#svg-container');
+            if (svgElement) {
+                if (currentContext.model.getDisabled()) {
+                    currentContext.renderServiceUnavailableTooltip(svgElement);
+                } else {
+                    currentContext.renderIncidents();
                 }
-            });
+            }
         },
 
         beforeShowOutageMap: function () {

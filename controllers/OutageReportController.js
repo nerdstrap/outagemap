@@ -47,15 +47,19 @@
             var currentContext = this,
                 deferred = $.Deferred();
 
-            var contentViewInstance = new ContentView({
-                region: region,
-                model: currentContext.outageReportModelInstance
-            });
+            require(['svg!maps/' + region + '.svg'], function (outageMap) {
+                var contentViewInstance = new ContentView({
+                    region: region,
+                    model: currentContext.outageReportModelInstance,
+                    outageMap : outageMap
+                });
 
-            currentContext.router.swapContent(contentViewInstance);
-            var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
-            currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
-            deferred.resolve(contentViewInstance);
+                currentContext.router.swapContent(contentViewInstance);
+                currentContext.outageReportModelInstance.getCurrentOutageReport(region);
+                var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
+                currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
+                deferred.resolve(contentViewInstance);
+            });
 
             return deferred.promise();
         },

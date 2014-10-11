@@ -19,17 +19,16 @@
             var outageReportModelInstance = new OutageReportModel();
 
             var requestedRegion = env.getParameterByName('region');
-
+            
             var shellViewInstance = new ShellView({
                 el: $('#shell-view'),
                 model: outageReportModelInstance,
                 requestedRegion: requestedRegion
             });
             shellViewInstance.render();
-            this.contentViewEl = shellViewInstance.contentViewEl();
-            outageReportModelInstance.getCurrentOutageReport(requestedRegion);
+            currentContext.contentViewEl = shellViewInstance.contentViewEl();
 
-            this.outageReportControllerInstance = new OutageReportController({
+            currentContext.outageReportControllerInstance = new OutageReportController({
                 router: currentContext,
                 outageReportModelInstance: outageReportModelInstance,
                 requestedRegion: requestedRegion

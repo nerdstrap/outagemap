@@ -6,7 +6,7 @@ require.config({
         },
         'env': {
             'apiUrl': '',
-            'appFolder': '/secure',
+            'appFolder': '',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
@@ -20,30 +20,24 @@ require.config({
     },
     paths: {
         /* Require */
-        'require': 'libs/require',
+        'require': 'libs/require.min',
         'text': 'libs/text',
         'hbs': 'libs/hbs',
         'svg': 'libs/svg',
         
         /* jQuery */
-        'jquery': 'libs/jquery',
-        'tooltipster': 'libs/jquery.tooltipster',
+        'jquery': 'libs/jquery.min',
+        'tooltipster': 'libs/jquery.tooltipster.min',
         
         /* Underscore */
-        'underscore': 'libs/lodash',
+        'underscore': 'libs/lodash.min',
         
         /* Backbone */
-        'backbone': 'libs/backbone',
+        'backbone': 'libs/backbone.min',
         
         /* Handlebars */
         'Handlebars-base': 'libs/handlebars',
         'Handlebars': 'libs/handlebars.helpers',
-        
-        /* Modernizr */
-        'modernizr': 'libs/modernizr',
-        
-        /* Foundation */
-        'foundation.core': 'libs/foundation',
         
         /* App */
         'console': 'app/console',

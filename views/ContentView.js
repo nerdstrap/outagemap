@@ -18,6 +18,7 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
+            this.outageMap = options.outageMap;
 
             this.listenTo(events, events.showOutageMap, this.showOutageMapView);
             this.listenTo(events, events.showOutageReport, this.showOutageReportView);
@@ -39,7 +40,8 @@
                 el: $('#outage-map-view', currentContext.$el),
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher,
-                region: this.region
+                region: currentContext.region,
+                outageMap: currentContext.outageMap
             });
             this.renderChild(outageMapViewInstance);
 
