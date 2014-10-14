@@ -87,6 +87,14 @@ define(function (require) {
             'value': '<strong>Note&#58;</strong> This system uses outage information reported by our customers to create a computer projection of the total number of customers affected by an outage event. During fast&#45;changing situations &#8211; such as a major storm &#8211; the accuracy of this estimate can be affected by the large number of unusual situations that must be analyzed.'
         },
         {
+            'key': 'loadingMessage',
+            'value': 'Updating outage data...'
+        },
+        {
+            'key': 'loadingIconSrc',
+            'value': '/images/loading.gif'
+        },
+        {
             'key': 'OutageReportView.lastUpdatedFormatString',
             'value': 'Last updated&#58;&#160; {0}'
         },

@@ -23,6 +23,7 @@
             this.region = options.region || '';
             this.outageMap = options.outageMap;
 
+            //this.listenTo(this.model, 'request', this.showLoading);
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
 
             this.listenTo(events, events.beforeShowOutageMap, this.beforeShowOutageMap);
@@ -31,6 +32,7 @@
 
         resources: function (culture) {
             return {
+                'loadingMessage': appResources.getResource('loadingMessage').value
             };
         },
 
@@ -48,10 +50,23 @@
             return this;
         },
 
+        showLoading: function () {
+            var currentContext = this;
+            if (currentContext.loadingRendered) {
+                var svgElement = currentContext.$el.find('#svg-container');
+                if (svgElement) {
+                    svgElement.tooltipster('show');
+                }
+            }
+        },
+
         updateViewFromModel: function () {
             var currentContext = this;
-            var svgElement = $('#svg-container');
+            var renderModel = _.extend({}, currentContext.resources(), currentContext.model);
+            currentContext.$el.html(template(renderModel));
+            var svgElement = currentContext.$el.find('#svg-container');
             if (svgElement) {
+                svgElement.html(currentContext.outageMap);
                 if (currentContext.model.getDisabled()) {
                     currentContext.renderServiceUnavailableTooltip(svgElement);
                 } else {

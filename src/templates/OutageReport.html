@@ -21,40 +21,46 @@
             <span class="header-label">{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
-    {{#if reportRows}}
-    {{#stripeRows reportRows "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
-    <div class="{{stripeClass}}" data-uuid="{{uuid}}">
-        <div class="small-3 columns">
-            {{#if properCountyName}}
-            <span class="county-name-label">{{{countyNameFormatted}}}</span>
-            {{/if}}
-            {{#if stateName}}
-            <span class="state-name-label">{{{stateName}}} totals&#58;</span>
-            {{/if}}
-            {{#if grandTotalTitleText}}
-            <span class="footer-label">{{{grandTotalTitleText}}}</span>
-            {{/if}}
+    <div id="outage-report-data-container">
+        {{#if reportRows}}
+        {{#stripeRows reportRows "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
+        <div class="{{stripeClass}}" data-uuid="{{uuid}}">
+            <div class="small-3 columns">
+                {{#if properCountyName}}
+                <span class="county-name-label">{{{countyNameFormatted}}}</span>
+                {{/if}}
+                {{#if stateName}}
+                <span class="state-name-label">{{{stateName}}} totals&#58;</span>
+                {{/if}}
+                {{#if grandTotalTitleText}}
+                <span class="footer-label">{{{grandTotalTitleText}}}</span>
+                {{/if}}
+            </div>
+            <div class="small-3 columns numeric">
+                {{#if customersAffected}}
+                <span class="customers-affected-label">{{formatNumber customersAffected}}</span>
+                {{/if}}
+            </div>
+            <div class="small-3 columns numeric">
+                {{#if customersServed}}
+                <span class="customers-served-label">{{formatNumber customersServed}}</span>
+                {{else}}
+                <span class="customers-served-label">&nbsp;</span>
+                {{/if}}
+            </div>
+            <div class="small-3 columns numeric">
+                {{#if percentageAffected}}
+                <span class="percentage-affected-label">{{percentageAffected}}</span>
+                {{/if}}
+            </div>
         </div>
-        <div class="small-3 columns numeric">
-            {{#if customersAffected}}
-            <span class="customers-affected-label">{{formatNumber customersAffected}}</span>
-            {{/if}}
-        </div>
-        <div class="small-3 columns numeric">
-            {{#if customersServed}}
-            <span class="customers-served-label">{{formatNumber customersServed}}</span>
-            {{else}}
-            <span class="customers-served-label">&nbsp;</span>
-            {{/if}}
-        </div>
-        <div class="small-3 columns numeric">
-            {{#if percentageAffected}}
-            <span class="percentage-affected-label">{{percentageAffected}}</span>
-            {{/if}}
-        </div>
+        {{/stripeRows}}
+        {{/if}}
     </div>
-    {{/stripeRows}}
-    {{/if}}
+    <div id="outage-report-loading-container" class="hidden">
+        <span class="loading-message">{{{loadingMessage}}}</span>
+        <img id="outage-report-loading-icon" src="{{getAppUri loadingIconSrc}}" />
+    </div>
     <div id="outage-report-no-incidents-container" class="row collapse hidden">
         <div class="small-12 columns">
             <span id="no-incidents-label">{{{noOutagesMessage}}}</span>

@@ -17,6 +17,7 @@
             this.region = options.region || '';
             this.dispatcher = options.dispatcher || this;
 
+            this.listenTo(this.model, 'request', this.showLoading);
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
         },
 
@@ -29,7 +30,9 @@
                 'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText').value,
                 'noOutagesMessage': appResources.getResource('noOutagesMessage').value,
                 'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage').value,
-                'disclaimer': appResources.getResource('disclaimerText').value
+                'disclaimer': appResources.getResource('disclaimerText').value,
+                'loadingMessage': appResources.getResource('loadingMessage').value,
+                'loadingIconSrc': appResources.getResource('loadingIconSrc').value
             };
         },
 
@@ -41,6 +44,11 @@
             this.$el.html(template(renderModel));
 
             return this;
+        },
+
+        showLoading: function () {
+            this.$('#outage-report-data-container').addClass('hidden');
+            this.$('#outage-report-loading-container').removeClass('hidden');
         },
 
         updateViewFromModel: function () {

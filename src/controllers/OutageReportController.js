@@ -56,6 +56,10 @@
 
                 currentContext.router.swapContent(contentViewInstance);
                 currentContext.outageReportModelInstance.getCurrentOutageReport(region);
+                setInterval(function () {
+                    currentContext.refreshData();
+                //}, 3000);
+                }, env.getRefreshInterval());
                 var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
                 currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
                 deferred.resolve(contentViewInstance);
@@ -90,6 +94,10 @@
             var facebookFollowUsLinkFormatString = appResources.getResource('facebookFollowUsLinkFormatString').value;
             var facebookFollowUsLink = facebookFollowUsLinkFormatString.format(this.outageReportModelInstance.getFacebookProfile());
             globals.window.open(facebookFollowUsLink);
+        },
+        refreshData: function () {
+            var currentContext = this;
+            currentContext.outageReportModelInstance.getCurrentOutageReport(currentContext.requestedRegion);
         }
     });
 

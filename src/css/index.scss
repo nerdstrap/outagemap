@@ -1,4 +1,6 @@
-﻿@font-face {
+﻿@charset "UTF-8";
+ 
+ @font-face {
     font-family: "HelveticaNeue Condensed Heavy";
     src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix");
     src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix") format("eot"),url("../fonts/33bb86d1-8adf-454e-aee3-ca1c89445476.woff") format("woff"),url("../fonts/921ef834-872c-4460-ac11-f5fbcac9fa2d.ttf") format("truetype"),url("../fonts/9d3bb5f2-6932-419e-a56f-382131ffd4b8.svg#9d3bb5f2-6932-419e-a56f-382131ffd4b8") format("svg");
@@ -66,11 +68,11 @@ body {
 }
 
 #shell-view {
-    width: 728px;
+    width: 768px;
 }
 
     #shell-view .shell-view {
-        width: 718px;
+        width: 758px;
         margin: 5px;
     }
 
@@ -116,7 +118,7 @@ body {
 }
 
     #content-view .content-view {
-        width: 718px;
+        width: 758px;
         border: 1px solid #B9B9B9;
     }
 
@@ -124,7 +126,7 @@ body {
 }
 
     #outage-map-view .outage-map-view {
-        width: 706px;
+        width: 746px;
         height: 486px;
         margin: 5px;
         border: 1px solid #B9B9B9;
@@ -134,7 +136,7 @@ body {
 }
 
     #outage-report-view .outage-report-view {
-        width: 706px;
+        width: 746px;
         margin: 5px;
     }
 
@@ -175,41 +177,29 @@ body {
     padding: 0.875em;
 }
 
-/*#outage-report-data-container {
-    height: 300px;
-    overflow: scroll;
-    overflow-x: hidden;
-}*/
+    #outage-report-header-container .columns {
+        position: relative;
+        height: 50px;
+    }
 
-#outage-report-loading-container {
-    background-color: #EAE7D0;
-    text-align: center;
-    padding: 40px 0.875em;
-}
+    #outage-report-header-container .numeric {
+        text-align: right;
+    }
 
-#outage-report-header-container .columns {
-    position: relative;
-    height: 50px;
-}
+    #outage-report-header-container .columns .header-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: initial;
+        font-size: 1em;
+        line-height: 1.5em;
+        font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
 
-#outage-report-header-container .numeric {
-    text-align: right;
-}
-
-#outage-report-header-container .columns .header-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: initial;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-#outage-report-header-container .numeric .header-label {
-    left: initial;
-    right: 0;
-}
+    #outage-report-header-container .numeric .header-label {
+        left: initial;
+        right: 0;
+    }
 
 #outage-report-view .outage-report-view .incident {
     background-color: #EAE7D0;

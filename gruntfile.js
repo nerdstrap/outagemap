@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today(\'dd-mm-yyyy\') %> */\n'
             },
             dist: {
                 files: {
@@ -22,24 +22,43 @@ module.exports = function (grunt) {
             }
         },
         handlebars: {
-            options: {
-                namespace: function (filename) {
-                    var names = filename.replace(/src\/templates\/(\w+\.html)/, '$1');
-                    return names.split('/').join('.');
+            compile: {
+                options: {
+                    amd: true,
                 },
-                files: {
-                    'ns_nested_tmpls.js': ['src/templates/*.html']
-                }
+                src: ['src/templates/**/*.html'],
+                dest: 'dist/precompiled.handlebars.js'
+            }
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    appDir: 'src',
+                    baseUrl: 'js',
+                    dir: 'dist/',
+                    findNestedDependencies: true,
+                    inlineText: false,
+                    mainConfigFile: 'src/js/main.js',
+                    modules: [
+                        {
+                            name: 'main'
+                        }
+                    ],
+                    removeCombined: true,
+                    optimize: "uglify2",
+                    preserveLicenseComments: false
+                }                
             }
         },
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
                     sourcemap: 'none'
                 },
                 files: {
-                    'dist/css/foundation.css': 'src/css/foundation.scss'
+                    'dist/css/normalize.css': 'src/css/normalize.scss',
+                    'dist/css/foundation.css': 'src/css/foundation.scss',
+                    'dist/css/index.css': 'src/css/index.scss'
                 }
             }
         }
@@ -49,6 +68,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
 
     grunt.registerTask('default', ['concat', 'uglify']);
 
