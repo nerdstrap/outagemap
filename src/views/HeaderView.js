@@ -21,18 +21,18 @@
 
         resources: function (culture) {
             return {
-                'showOutageMapViewButtonText': appResources.getResource('HeaderView.showOutageMapViewButtonText').value,
-                'showOutageReportViewButtonText': appResources.getResource('HeaderView.showOutageReportViewButtonText').value,
-                'twitterIconSrc': appResources.getResource('HeaderView.twitterIconSrc').value,
-                'twitterIconSvgSrc': appResources.getResource('HeaderView.twitterIconSvgSrc').value,
-                'twitterIconAlt': appResources.getResource('HeaderView.twitterIconAlt').value,
-                'facebookIconSrc': appResources.getResource('HeaderView.facebookIconSrc').value,
-                'facebookIconSvgSrc': appResources.getResource('HeaderView.facebookIconSvgSrc').value,
-                'facebookIconAlt': appResources.getResource('HeaderView.facebookIconAlt').value,
-                'twitterPostButtonText': appResources.getResource('HeaderView.twitterPostButtonText').value,
-                'twitterFollowUsButtonText': appResources.getResource('HeaderView.twitterFollowUsButtonText').value,
-                'facebookPostButtonText': appResources.getResource('HeaderView.facebookPostButtonText').value,
-                'facebookFollowUsButtonText': appResources.getResource('HeaderView.facebookFollowUsButtonText').value
+                'showOutageMapViewButtonText': appResources.getResource('HeaderView.showOutageMapViewButtonText'),
+                'showOutageReportViewButtonText': appResources.getResource('HeaderView.showOutageReportViewButtonText'),
+                'twitterIconSrc': appResources.getResource('HeaderView.twitterIconSrc'),
+                'twitterIconSvgSrc': appResources.getResource('HeaderView.twitterIconSvgSrc'),
+                'twitterIconAlt': appResources.getResource('HeaderView.twitterIconAlt'),
+                'facebookIconSrc': appResources.getResource('HeaderView.facebookIconSrc'),
+                'facebookIconSvgSrc': appResources.getResource('HeaderView.facebookIconSvgSrc'),
+                'facebookIconAlt': appResources.getResource('HeaderView.facebookIconAlt'),
+                'twitterPostButtonText': appResources.getResource('HeaderView.twitterPostButtonText'),
+                'twitterFollowUsButtonText': appResources.getResource('HeaderView.twitterFollowUsButtonText'),
+                'facebookPostButtonText': appResources.getResource('HeaderView.facebookPostButtonText'),
+                'facebookFollowUsButtonText': appResources.getResource('HeaderView.facebookFollowUsButtonText')
             };
         },
 

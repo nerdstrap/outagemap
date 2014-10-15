@@ -38,6 +38,10 @@ require.config({
         /* Handlebars */
         'Handlebars-base': 'libs/handlebars',
         'Handlebars': 'libs/handlebars.helpers',
+
+        /* Raphael */
+        'raphael': 'libs/raphael.min',
+        'raphael.svg.import': 'libs/raphael.svg.import.min',
         
         /* App */
         'console': 'app/console',

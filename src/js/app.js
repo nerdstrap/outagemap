@@ -6,7 +6,8 @@ define(function (require) {
         _ = require('underscore'),
         Backbone = require('backbone'),
         appRouter = require('routers/app-router'),
-        tooltipster = require('tooltipster');
+        tooltipster = require('tooltipster'),
+        svg = require('svg');
 
     var masterConfig = (module.config && module.config()) || {},
         consoleLevel = masterConfig.consoleLevel || 'off';

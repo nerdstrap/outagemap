@@ -19,9 +19,9 @@
 
         resources: function (culture) {
             return {
-                'logoImageSrc': appResources.getResource(this.requestedRegion + '.logoImageSrc').value,
-                'logoImageSvgSrc': appResources.getResource(this.requestedRegion + '.logoImageSvgSrc').value,
-                'logoImageAlt': appResources.getResource(this.requestedRegion + '.logoImageAlt').value
+                'logoImageSrc': appResources.getResource(this.requestedRegion + '.logoImageSrc'),
+                'logoImageSvgSrc': appResources.getResource(this.requestedRegion + '.logoImageSvgSrc'),
+                'logoImageAlt': appResources.getResource(this.requestedRegion + '.logoImageAlt')
             };
         },
 

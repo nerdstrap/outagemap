@@ -50,6 +50,11 @@ define(function (require) {
         },
         swapped: function () {
             this.trigger('swapped');
+            this.children.chain().clone().each(function (view) {
+                if (view.swapped) {
+                    view.swapped();
+                }
+            });
         },
         _leaveChildren: function () {
             this.children.chain().clone().each(function (view) {

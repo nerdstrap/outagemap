@@ -18,20 +18,20 @@
 
         resources: function (culture) {
             return {
-                'customerOutagesTitleText': appResources.getResource('OutageMapLegendView.customerOutagesTitleText').value,
-                'legendTitleText': appResources.getResource('OutageMapLegendView.legendTitleText').value,
-                'level0IncidentsTitleText': appResources.getResource('OutageMapLegendView.level0IncidentsTitleText').value,
-                'level1IncidentsTitleText': appResources.getResource('OutageMapLegendView.level1IncidentsTitleText').value,
-                'level2IncidentsTitleText': appResources.getResource('OutageMapLegendView.level2IncidentsTitleText').value,
-                'serviceTerritoryTitleText': appResources.getResource('OutageMapLegendView.serviceTerritoryTitleText').value,
-                'countyLinesTitleText': appResources.getResource('OutageMapLegendView.countyLinesTitleText').value,
-                'majorHighwaysTitleText': appResources.getResource('OutageMapLegendView.majorHighwaysTitleText').value,
-                'serviceTerritoryIconSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSrc').value,
-                'serviceTerritoryIconSvgSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSvgSrc').value,
-                'countyLinesIconSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSrc').value,
-                'countyLinesIconSvgSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSvgSrc').value,
-                'majorHighwaysIconSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSrc').value,
-                'majorHighwaysIconSvgSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSvgSrc').value
+                'customerOutagesTitleText': appResources.getResource('OutageMapLegendView.customerOutagesTitleText'),
+                'legendTitleText': appResources.getResource('OutageMapLegendView.legendTitleText'),
+                'level0IncidentsTitleText': appResources.getResource('OutageMapLegendView.level0IncidentsTitleText'),
+                'level1IncidentsTitleText': appResources.getResource('OutageMapLegendView.level1IncidentsTitleText'),
+                'level2IncidentsTitleText': appResources.getResource('OutageMapLegendView.level2IncidentsTitleText'),
+                'serviceTerritoryTitleText': appResources.getResource('OutageMapLegendView.serviceTerritoryTitleText'),
+                'countyLinesTitleText': appResources.getResource('OutageMapLegendView.countyLinesTitleText'),
+                'majorHighwaysTitleText': appResources.getResource('OutageMapLegendView.majorHighwaysTitleText'),
+                'serviceTerritoryIconSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSrc'),
+                'serviceTerritoryIconSvgSrc': appResources.getResource('OutageMapLegendView.serviceTerritoryIconSvgSrc'),
+                'countyLinesIconSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSrc'),
+                'countyLinesIconSvgSrc': appResources.getResource('OutageMapLegendView.countyLinesIconSvgSrc'),
+                'majorHighwaysIconSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSrc'),
+                'majorHighwaysIconSvgSrc': appResources.getResource('OutageMapLegendView.majorHighwaysIconSvgSrc')
             };
         },
 

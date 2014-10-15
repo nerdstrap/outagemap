@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "HelveticaNeue Condensed Heavy";
+    src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix");
+    src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix") format("eot"),url("../fonts/33bb86d1-8adf-454e-aee3-ca1c89445476.woff") format("woff"),url("../fonts/921ef834-872c-4460-ac11-f5fbcac9fa2d.ttf") format("truetype"),url("../fonts/9d3bb5f2-6932-419e-a56f-382131ffd4b8.svg#9d3bb5f2-6932-419e-a56f-382131ffd4b8") format("svg");
+}
+@font-face {
+    font-family: "HelveticaNeue Condensed";
+    src: url("../fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix");
+    src: url("../fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix") format("eot"),url("../fonts/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff") format("woff"),url("../fonts/c74505d5-13e8-47ed-94a8-630aab4da3e6.ttf") format("truetype"),url("../fonts/6cd480d1-47d0-48b4-86bd-283db2cb9235.svg#6cd480d1-47d0-48b4-86bd-283db2cb9235") format("svg");
+}
+root {
+    display: block;
+    font-size: 1em;
+}
+body {
+    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #58595b;
+}
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
+}
+#shell-view {
+    width: 728px;
+}
+    #shell-view .shell-view {
+        width: 718px;
+        margin: 5px;
+    }
+#header-view {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+    #header-view .header-view {
+    }
+#twitter-link-container,
+#facebook-link-container {
+    line-height: 24px;
+}
+#twitter-icon,
+#facebook-icon {
+    height: 24px;
+    width: 24px;
+}
+#show-outage-map-view-button-container,
+#show-outage-report-view-button-container {
+    text-align: right;
+    line-height: 24px;
+}
+#twitter-post-button,
+#twitter-follow-us-button,
+#facebook-follow-us-button,
+#facebook-post-button,
+#show-outage-map-view-button,
+#show-outage-report-view-button {
+    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.8125em;
+    text-decoration: underline;
+    vertical-align: middle;
+    color: #0251F0;
+}
+#content-view {
+}
+    #content-view .content-view {
+        width: 718px;
+        border: 1px solid #B9B9B9;
+    }
+#outage-map-view {
+}
+    #outage-map-view .outage-map-view {
+        width: 706px;
+        height: 486px;
+        margin: 5px;
+        border: 1px solid #B9B9B9;
+    }
+#outage-report-view {
+}
+    #outage-report-view .outage-report-view {
+        width: 706px;
+        margin: 5px;
+    }
+#outage-report-title-container {
+    background-color: #FFF8CC;
+    padding: 0.875em;
+    line-height: 1.5em;
+}
+#report-title-label {
+    font-size: 1.5em;
+    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#timestamp-label-container {
+    text-align: right;
+    line-height: 1.5em;
+}
+#timestamp-label {
+    font-size: 0.875em;
+}
+#outage-report-no-incidents-container,
+#outage-report-service-unavailable-container {
+    background-color: #EAE7D0;
+    text-align: center;
+    padding: 70px 40px 0 0.875em;
+}
+#no-incidents-label,
+#service-unavailable-label {
+    font-size: 1em;
+}
+#outage-report-header-container {
+    background-color: #EAE7D0;
+    padding: 0.875em;
+}
+#outage-report-loading-container {
+    background-color: #EAE7D0;
+    text-align: center;
+    padding: 40px 0.875em;
+}
+#outage-report-header-container .columns {
+    position: relative;
+    height: 50px;
+}
+#outage-report-header-container .numeric {
+    text-align: right;
+}
+#outage-report-header-container .columns .header-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: initial;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#outage-report-header-container .numeric .header-label {
+    left: initial;
+    right: 0;
+}
+#outage-report-view .outage-report-view .incident {
+    background-color: #EAE7D0;
+    padding: 3px 0.875em;
+}
+#outage-report-view .outage-report-view .bold {
+    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#outage-report-view .outage-report-view .incident .columns span {
+    font-size: 1em;
+    line-height: 1em;
+}
+#outage-report-view .outage-report-view .incident .numeric {
+    text-align: right;
+}
+#outage-report-view .outage-report-view .alternate {
+    background-color: #FFFFFF;
+}
+#outage-report-view .outage-report-view .level-0-incident {
+    background-color: #FFDD00;
+}
+#outage-report-view .outage-report-view .level-1-incident {
+    background-color: #F4B576;
+}
+#outage-report-view .outage-report-view .level-2-incident {
+    background-color: #F78D8D;
+}
+#outage-report-service-statistics-container {
+    background-color: #EAE7D0;
+    padding: 4em 0.875em 0.875em;
+}
+#service-statistics-label {
+    font-size: 0.875em;
+}
+#outage-report-disclaimer-container {
+    background-color: #EAE7D0;
+    margin-top: 5px;
+    padding: 20px 0.875em;
+}
+#disclaimer-label {
+    font-size: 0.875em;
+}
+#footer-view {
+    margin-top: 0.75em;
+}
+    #footer-view .footer-view {
+        padding: 0 20px;
+    }
+#logo-icon {
+    width: 268px;
+    height: 78px;
+    margin-top: 0.5em;
+}
+#outage-map-legend-view {
+}
+    #outage-map-legend-view .outage-map-legend-view {
+    }
+        #outage-map-legend-view .outage-map-legend-view .header {
+            line-height: 1.333em;
+            padding: 2px 5px;
+        }
+        #outage-map-legend-view .outage-map-legend-view .icons {
+            line-height: 1.333em;
+            padding: 2px 5px;
+        }
+#outages-header-label,
+#legend-header-label {
+    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.333em;
+}
+#level-0-incident-label,
+#level-1-incident-label,
+#level-2-incident-label,
+#service-territory-label,
+#county-lines-label,
+#major-highways-label {
+    line-height: 1.333em;
+    font-size: 0.750em;
+}
+#level-0-incident-icon {
+    background-color: #FFFF54;
+}
+#level-1-incident-icon {
+    background-color: #FFA24F;
+}
+#level-2-incident-icon {
+    background-color: #FF4444;
+}
+#level-0-incident-icon,
+#level-1-incident-icon,
+#level-2-incident-icon {
+    width: 24px;
+    height: 24px;
+}
+#service-territory-icon,
+#county-lines-icon,
+#major-highways-icon {
+    width: 72px;
+    height: 24px;
+}

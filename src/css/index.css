@@ -66,11 +66,11 @@ body {
 }
 
 #shell-view {
-    width: 728px;
+    width: 768px;
 }
 
     #shell-view .shell-view {
-        width: 718px;
+        width: 758px;
         margin: 5px;
     }
 
@@ -116,7 +116,7 @@ body {
 }
 
     #content-view .content-view {
-        width: 718px;
+        width: 758px;
         border: 1px solid #B9B9B9;
     }
 
@@ -124,7 +124,7 @@ body {
 }
 
     #outage-map-view .outage-map-view {
-        width: 706px;
+        width: 746px;
         height: 486px;
         margin: 5px;
         border: 1px solid #B9B9B9;
@@ -134,7 +134,7 @@ body {
 }
 
     #outage-report-view .outage-report-view {
-        width: 706px;
+        width: 746px;
         margin: 5px;
     }
 

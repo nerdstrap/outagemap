@@ -10,7 +10,8 @@
         template = require('hbs!templates/OutageMap'),
         regions = require('regions'),
         appIncidents = require('incidents'),
-        appResources = require('resources');
+        appResources = require('resources'),
+        aeptexas = require('maps/aeptexas');
 
     var _countyPrefix = '_x3C_';
     var _countySuffix = '_x3E_';
@@ -23,8 +24,10 @@
             this.region = options.region || '';
             this.outageMap = options.outageMap;
 
-            //this.listenTo(this.model, 'request', this.showLoading);
+            this.listenTo(this.model, 'request', this.showLoading);
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
+
+            this.listenTo(this, 'swapped', this._renderLegacy);
 
             this.listenTo(events, events.beforeShowOutageMap, this.beforeShowOutageMap);
             this.listenTo(events, events.beforeHideOutageMap, this.beforeHideOutageMap);
@@ -32,7 +35,7 @@
 
         resources: function (culture) {
             return {
-                'loadingMessage': appResources.getResource('loadingMessage').value
+                'loadingMessage': appResources.getResource('loadingMessage')
             };
         },
 
@@ -42,36 +45,35 @@
 
             var renderModel = _.extend({}, currentContext.resources(), currentContext.model);
             currentContext.$el.html(template(renderModel));
-            var svgElement = currentContext.$el.find('#svg-container');
-            if (svgElement) {
-                svgElement.html(currentContext.outageMap);
-            }
 
             return this;
         },
 
+        _renderLegacy: function () {
+            var currentContext = this;
+            if (!this.mapInitialized) {
+                aeptexas.render('svg-container');
+                this.svgRendered = true;
+                this.trigger('svg-rendered');
+            }
+        },
+
         showLoading: function () {
             var currentContext = this;
-            if (currentContext.loadingRendered) {
-                var svgElement = currentContext.$el.find('#svg-container');
-                if (svgElement) {
-                    svgElement.tooltipster('show');
-                }
-            }
         },
 
         updateViewFromModel: function () {
             var currentContext = this;
-            var renderModel = _.extend({}, currentContext.resources(), currentContext.model);
-            currentContext.$el.html(template(renderModel));
-            var svgElement = currentContext.$el.find('#svg-container');
-            if (svgElement) {
-                svgElement.html(currentContext.outageMap);
+
+            if (!this.svgRendered) {
+                currentContext.listenToOnce(currentContext, 'svg-rendered', currentContext.updateViewFromModel)
+            } else {
                 if (currentContext.model.getDisabled()) {
                     currentContext.renderServiceUnavailableTooltip(svgElement);
                 } else {
                     currentContext.renderIncidents();
                 }
+                this.trigger('data-loaded');
             }
         },
 
@@ -103,9 +105,17 @@
             events.trigger(events.showOutageReport, this.getAttribute('data-uuid'), this.getAttribute('data-class-name'));
         },
 
+        showOutageReportLegacy: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+            events.trigger(events.showOutageReport, this.data('data-uuid'), this.data('data-class-name'));
+        },
+
         renderIncidents: function () {
             var currentContext = this;
-            var incidentTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentTooltipFormatString').value : appResources.getResource('incidentTooltipFormatString').value;
+            var incidentTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentTooltipFormatString') : appResources.getResource('incidentTooltipFormatString');
+            var incidentLegacyTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentLegacyTooltipFormatString') : appResources.getResource('incidentLegacyTooltipFormatString');
             var states = currentContext.model.getStates();
 
             _.each(states, function (state) {
@@ -113,10 +123,12 @@
                     if (state.incidents && state.incidents.length > 0) {
                         _.each(state.incidents, function (incident) {
                             var countySvgElementId = _countyPrefix + incident.countyId + _countySuffix;
-                            var countySvgElement = $('#' + countySvgElementId);
-                            if (countySvgElement) {
-                                currentContext.renderIncidentTooltip(countySvgElement, incident, incidentTooltipFormatString);
-                            }
+                            //currentContext.renderLegacyIncidentTooltip(countySvgElementId, incident, incidentTooltipFormatString);
+                            currentContext.renderLegacyIncidentTooltip(countySvgElementId, incident, incidentLegacyTooltipFormatString);
+                            //var countySvgElement = $('#' + countySvgElementId);
+                            //if (countySvgElement) {
+                            //    currentContext.renderIncidentTooltip(countySvgElement, incident, incidentTooltipFormatString);
+                            //}
                         });
                     }
                 }
@@ -154,6 +166,25 @@
                     touchDevices: false
                 });
                 countySvgElement.click(currentContext.showOutageReport);
+            }
+        },
+
+        renderLegacyIncidentTooltip: function (countySvgElementId, incident, tooltipFormatString) {
+            var currentContext = this;
+            var incidentLevelConfig = appIncidents.getIncidentLevel(incident.customersAffected);
+            if (incidentLevelConfig) {
+                var tooltipText = tooltipFormatString.format(incident.properCountyName, env.formatNumber(incident.customersAffected));
+                var serviceCounty = aeptexas.getServiceCounty(countySvgElementId);
+                if (serviceCounty) {
+                    serviceCounty.attr({
+                        'cursor': 'pointer',
+                        'fill': incidentLevelConfig.fillColor,
+                        'title': tooltipText
+                    });
+                    serviceCounty.data('data-class-name', incidentLevelConfig.className);
+                    serviceCounty.data('data-uuid', incident.uuid);
+                    serviceCounty.click(currentContext.showOutageReportLegacy);
+                }
             }
         }
     });

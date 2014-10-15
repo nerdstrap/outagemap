@@ -23,16 +23,16 @@
 
         resources: function (culture) {
             return {
-                'titleText': appResources.getResource('OutageReportView.titleText').value,
-                'countyNameTitleText': this.region === 'swepco' ? appResources.getResource('OutageReportView.swepcoCountyNameTitleText').value : appResources.getResource('OutageReportView.countyNameTitleText').value,
-                'customersAffectedTitleText': appResources.getResource('OutageReportView.customersAffectedTitleText').value,
-                'customersServedTitleText': appResources.getResource('OutageReportView.customersServedTitleText').value,
-                'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText').value,
-                'noOutagesMessage': appResources.getResource('noOutagesMessage').value,
-                'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage').value,
-                'disclaimer': appResources.getResource('disclaimerText').value,
-                'loadingMessage': appResources.getResource('loadingMessage').value,
-                'loadingIconSrc': appResources.getResource('loadingIconSrc').value
+                'titleText': appResources.getResource('OutageReportView.titleText'),
+                'countyNameTitleText': this.region === 'swepco' ? appResources.getResource('OutageReportView.swepcoCountyNameTitleText') : appResources.getResource('OutageReportView.countyNameTitleText'),
+                'customersAffectedTitleText': appResources.getResource('OutageReportView.customersAffectedTitleText'),
+                'customersServedTitleText': appResources.getResource('OutageReportView.customersServedTitleText'),
+                'percentageAffectedTitleText': appResources.getResource('OutageReportView.percentageAffectedTitleText'),
+                'noOutagesMessage': appResources.getResource('noOutagesMessage'),
+                'serviceUnavailableMessage': appResources.getResource('serviceUnavailableMessage'),
+                'disclaimer': appResources.getResource('disclaimerText'),
+                'loadingMessage': appResources.getResource('loadingMessage'),
+                'loadingIconSrc': appResources.getResource('loadingIconSrc')
             };
         },
 
@@ -62,11 +62,11 @@
 
         renderOutageReport: function () {
             var currentContext = this;
-            var lastUpdatedFormatString = appResources.getResource('OutageReportView.lastUpdatedFormatString').value;
-            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation').value : appResources.getResource('OutageReportView.easternTimezoneAbbreviation').value;
-            var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString').value;
-            var grandTotalTitleText = appResources.getResource('OutageReportView.grandTotalTitleText').value;
-            var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString').value : appResources.getResource('serviceStatisticsFormatString').value;
+            var lastUpdatedFormatString = appResources.getResource('OutageReportView.lastUpdatedFormatString');
+            var timezoneAbbreviation = (currentContext.region === 'aeptexas' || currentContext.region === 'pso') ? appResources.getResource('OutageReportView.centralTimezoneAbbreviation') : appResources.getResource('OutageReportView.easternTimezoneAbbreviation');
+            var countyNameFormatString = appResources.getResource('OutageReportView.countyNameFormatString');
+            var grandTotalTitleText = appResources.getResource('OutageReportView.grandTotalTitleText');
+            var serviceStatisticsFormatString = this.region === 'swepco' ? appResources.getResource('swepcoServiceStatisticsFormatString') : appResources.getResource('serviceStatisticsFormatString');
             var reportRows = [];
             var stateReportRows = [];
 

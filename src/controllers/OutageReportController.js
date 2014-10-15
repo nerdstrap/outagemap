@@ -58,7 +58,6 @@
                 currentContext.outageReportModelInstance.getCurrentOutageReport(region);
                 setInterval(function () {
                     currentContext.refreshData();
-                //}, 3000);
                 }, env.getRefreshInterval());
                 var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
                 currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
@@ -69,29 +68,29 @@
         },
 
         twitterPost: function () {
-            var statusPostFormatString = appResources.getResource('twitterStatusPostFormatString').value;
-            var twitterPostLinkFormatString = appResources.getResource('twitterPostLinkFormatString').value;
+            var statusPostFormatString = appResources.getResource('twitterStatusPostFormatString');
+            var twitterPostLinkFormatString = appResources.getResource('twitterPostLinkFormatString');
             var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName(), this.outageReportModelInstance.getOutageMapLink())
             var twitterPostLink = twitterPostLinkFormatString.format(statusPost);
             globals.window.open(twitterPostLink);
         },
 
         twitterFollowUs: function () {
-            var twitterFollowUsLinkFormatString = appResources.getResource('twitterFollowUsLinkFormatString').value;
+            var twitterFollowUsLinkFormatString = appResources.getResource('twitterFollowUsLinkFormatString');
             var twitterFollowUsLink = twitterFollowUsLinkFormatString.format(this.outageReportModelInstance.getTwitterProfile());
             globals.window.open(twitterFollowUsLink);
         },
 
         facebookPost: function () {
-            var statusPostFormatString = appResources.getResource('facebookStatusPostFormatString').value;
-            var facebookPostLinkFormatString = appResources.getResource('facebookPostLinkFormatString').value;
+            var statusPostFormatString = appResources.getResource('facebookStatusPostFormatString');
+            var facebookPostLinkFormatString = appResources.getResource('facebookPostLinkFormatString');
             var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName())
             var facebookPostLink = facebookPostLinkFormatString.format(this.outageReportModelInstance.getOutageMapLink(), statusPost);
             globals.window.open(facebookPostLink);
         },
 
         facebookFollowUs: function () {
-            var facebookFollowUsLinkFormatString = appResources.getResource('facebookFollowUsLinkFormatString').value;
+            var facebookFollowUsLinkFormatString = appResources.getResource('facebookFollowUsLinkFormatString');
             var facebookFollowUsLink = facebookFollowUsLinkFormatString.format(this.outageReportModelInstance.getFacebookProfile());
             globals.window.open(facebookFollowUsLink);
         },
