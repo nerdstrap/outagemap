@@ -55,10 +55,10 @@
                 });
 
                 currentContext.router.swapContent(contentViewInstance);
-                //currentContext.outageReportModelInstance.getCurrentOutageReport(region);
-                //setInterval(function () {
-                //    currentContext.refreshData();
-                //}, env.getRefreshInterval());
+                currentContext.outageReportModelInstance.getCurrentOutageReport(region);
+                setInterval(function () {
+                    currentContext.refreshData();
+                }, env.getRefreshInterval());
                 var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
                 currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
                 deferred.resolve(contentViewInstance);

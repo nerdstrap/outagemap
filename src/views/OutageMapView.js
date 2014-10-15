@@ -11,7 +11,7 @@
         regions = require('regions'),
         appIncidents = require('incidents'),
         appResources = require('resources'),
-        aeptexas = require('maps/aeptexas');
+        aeptexas = require('maps/aeptexas2');
 
     var _countyPrefix = '_x3C_';
     var _countySuffix = '_x3E_';
