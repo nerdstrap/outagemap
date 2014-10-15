@@ -47,11 +47,12 @@
             var currentContext = this,
                 deferred = $.Deferred();
 
-            require(['svg!maps/' + region + '.svg'], function (outageMap) {
+            require(['svg!maps/' + region + '.svg', 'maps/' + region], function (outageMapSvg, outageMapJs) {
                 var contentViewInstance = new ContentView({
                     region: region,
                     model: currentContext.outageReportModelInstance,
-                    outageMap : outageMap
+                    outageMapSvg : outageMapSvg,
+                    outageMapJs: outageMapJs
                 });
 
                 currentContext.router.swapContent(contentViewInstance);

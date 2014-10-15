@@ -10,8 +10,7 @@
         template = require('hbs!templates/OutageMap'),
         regions = require('regions'),
         appIncidents = require('incidents'),
-        appResources = require('resources'),
-        aeptexas = require('maps/aeptexas2');
+        appResources = require('resources');
 
     var _countyPrefix = '_x3C_';
     var _countySuffix = '_x3E_';
@@ -22,7 +21,8 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
-            this.outageMap = options.outageMap;
+            this.outageMapSvg = options.outageMapSvg;
+            this.outageMapJs = options.outageMapJs;
 
             this.listenTo(this.model, 'request', this.showLoading);
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
@@ -49,10 +49,19 @@
             return this;
         },
 
+        _render: function () {
+            var currentContext = this;
+            if (!this.mapInitialized) {
+                var svgElement = $('#svg-container').html(currentContext.outageMapSvg);
+                this.svgRendered = true;
+                this.trigger('svg-rendered');
+            }
+        },
+
         _renderLegacy: function () {
             var currentContext = this;
             if (!this.mapInitialized) {
-                aeptexas.render('svg-container');
+                currentContext.outageMapJs.render('svg-container');
                 this.svgRendered = true;
                 this.trigger('svg-rendered');
             }
@@ -60,7 +69,7 @@
 
         showLoading: function () {
             var currentContext = this;
-            aeptexas.resetServiceCounties();
+            currentContext.outageMapJs.resetServiceCounties();
         },
 
         updateViewFromModel: function () {
@@ -175,7 +184,7 @@
             var incidentLevelConfig = appIncidents.getIncidentLevel(incident.customersAffected);
             if (incidentLevelConfig) {
                 var tooltipText = tooltipFormatString.format(incident.properCountyName, env.formatNumber(incident.customersAffected));
-                var serviceCounty = aeptexas.getServiceCounty(countySvgElementId);
+                var serviceCounty = currentContext.outageMapJs.getServiceCounty(countySvgElementId);
                 if (serviceCounty) {
                     serviceCounty.attr({
                         'cursor': 'pointer',

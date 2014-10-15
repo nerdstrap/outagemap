@@ -18,7 +18,8 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
-            this.outageMap = options.outageMap;
+            this.outageMapSvg = options.outageMapSvg;
+            this.outageMapJs = options.outageMapJs;
 
             this.listenTo(events, events.showOutageMap, this.showOutageMapView);
             this.listenTo(events, events.showOutageReport, this.showOutageReportView);
@@ -41,7 +42,8 @@
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher,
                 region: currentContext.region,
-                outageMap: currentContext.outageMap
+                outageMapSvg: currentContext.outageMapSvg,
+                outageMapJs: currentContext.outageMapJs
             });
             this.renderChild(outageMapViewInstance);
 
