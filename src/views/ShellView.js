@@ -48,7 +48,7 @@
 
         contentViewEl: function () {
             return $('#content-view', this.el);
-        },
+        }
     });
 
     return ShellView;

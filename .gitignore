@@ -7,3 +7,6 @@
 /dist
 /outagemap.v12.suo
 *.suo
+/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/parser.js
+/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/utils.js
+/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler

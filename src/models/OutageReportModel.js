@@ -17,7 +17,7 @@
             customersServed: parseInt('0'),
             customersAffected: parseInt('0'),
             repairIssues: parseInt('0'),
-            percentageAffected: parseFloat('0'),
+            percentageAffected: parseFloat('0')
         };
 
         // id
@@ -201,7 +201,7 @@
             this.requestedRegion = region;
             var xhr = this.fetch({
                 url: env.getApiUrl() + '/OutageXml.aspx',
-                reset: true,
+                reset: true
             });
 
             return xhr;

@@ -60,6 +60,7 @@
 
         showLoading: function () {
             var currentContext = this;
+            aeptexas.resetServiceCounties();
         },
 
         updateViewFromModel: function () {
