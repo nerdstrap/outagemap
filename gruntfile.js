@@ -41,16 +41,7 @@ module.exports = function (grunt) {
                     mainConfigFile: 'src/js/main.js',
                     modules: [
                         {
-                            name: 'main',
-                            exclude: [
-                                'maps/aepohio.js',
-                                'maps/aeptexas.js',
-                                'maps/apco.js',
-                                'maps/im.js',
-                                'maps/kentucky.js',
-                                'maps/pso.js',
-                                'maps/swepco.js'
-                            ]
+                            name: 'main'
                         }
                     ],
                     removeCombined: true,

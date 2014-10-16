@@ -1,104 +1,54 @@
-﻿@font-face {
+@font-face {
     font-family: "HelveticaNeue Condensed Heavy";
     src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix");
     src: url("../fonts/3d1a3114-ffd3-4f16-99c5-0e0441676d88.eot?#iefix") format("eot"),url("../fonts/33bb86d1-8adf-454e-aee3-ca1c89445476.woff") format("woff"),url("../fonts/921ef834-872c-4460-ac11-f5fbcac9fa2d.ttf") format("truetype"),url("../fonts/9d3bb5f2-6932-419e-a56f-382131ffd4b8.svg#9d3bb5f2-6932-419e-a56f-382131ffd4b8") format("svg");
 }
-
 @font-face {
     font-family: "HelveticaNeue Condensed";
     src: url("../fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix");
     src: url("../fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix") format("eot"),url("../fonts/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff") format("woff"),url("../fonts/c74505d5-13e8-47ed-94a8-630aab4da3e6.ttf") format("truetype"),url("../fonts/6cd480d1-47d0-48b4-86bd-283db2cb9235.svg#6cd480d1-47d0-48b4-86bd-283db2cb9235") format("svg");
 }
-
-/*.headline {
-    font-size: 1.5em;
-    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000;
-}
-
-.subheader {
-    font-size: 1em;
-    font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000;
-}
-
-.body {
-    font-size: 1em;
-    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000;
-}
-
-.detail {
-    font-size: 0.875em;
-    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000;
-}
-
-.footnote {
-    font-size: 0.750em;
-    font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000;
-}
-
-.links {
-    font-size: 0.813em;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    text-decoration: underline;
-    color: #0251F0;
-}*/
-
 root {
     display: block;
     font-size: 1em;
 }
-
 body {
     font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #58595b;
 }
-
 .hidden {
     display: none;
 }
-
 .invisible {
     visibility: hidden;
 }
-
 #shell-view {
     width: 768px;
 }
-
     #shell-view .shell-view {
         width: 758px;
         margin: 5px;
     }
-
 #header-view {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-
     #header-view .header-view {
     }
-
 #twitter-link-container,
 #facebook-link-container {
     line-height: 24px;
 }
-
 #twitter-icon,
 #facebook-icon {
     height: 24px;
     width: 24px;
 }
-
 #show-outage-map-view-button-container,
 #show-outage-report-view-button-container {
     text-align: right;
     line-height: 24px;
 }
-
 #twitter-post-button,
 #twitter-follow-us-button,
 #facebook-follow-us-button,
@@ -111,91 +61,68 @@ body {
     vertical-align: middle;
     color: #0251F0;
 }
-
 #content-view {
 }
-
     #content-view .content-view {
         width: 758px;
         border: 1px solid #B9B9B9;
     }
-
 #outage-map-view {
 }
-
     #outage-map-view .outage-map-view {
         width: 746px;
         height: 486px;
         margin: 5px;
         border: 1px solid #B9B9B9;
     }
-
 #outage-report-view {
 }
-
     #outage-report-view .outage-report-view {
         width: 746px;
         margin: 5px;
     }
-
 #outage-report-title-container {
     background-color: #FFF8CC;
     padding: 0.875em;
     line-height: 1.5em;
 }
-
 #report-title-label {
     font-size: 1.5em;
     font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 #timestamp-label-container {
     text-align: right;
     line-height: 1.5em;
 }
-
 #timestamp-label {
     font-size: 0.875em;
 }
-
 #outage-report-no-incidents-container,
 #outage-report-service-unavailable-container {
     background-color: #EAE7D0;
     text-align: center;
     padding: 70px 40px 0 0.875em;
 }
-
 #no-incidents-label,
 #service-unavailable-label {
     font-size: 1em;
 }
-
 #outage-report-header-container {
     background-color: #EAE7D0;
     padding: 0.875em;
 }
-
-/*#outage-report-data-container {
-    height: 300px;
-    overflow: scroll;
-    overflow-x: hidden;
-}*/
-
 #outage-report-loading-container {
     background-color: #EAE7D0;
     text-align: center;
     padding: 40px 0.875em;
 }
-
 #outage-report-header-container .columns {
     position: relative;
     height: 50px;
 }
-
 #outage-report-header-container .numeric {
     text-align: right;
 }
-
 #outage-report-header-container .columns .header-label {
     position: absolute;
     bottom: 0;
@@ -205,102 +132,80 @@ body {
     line-height: 1.5em;
     font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 #outage-report-header-container .numeric .header-label {
     left: initial;
     right: 0;
 }
-
 #outage-report-view .outage-report-view .incident {
     background-color: #EAE7D0;
     padding: 3px 0.875em;
 }
-
 #outage-report-view .outage-report-view .bold {
     font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 #outage-report-view .outage-report-view .incident .columns span {
     font-size: 1em;
     line-height: 1em;
 }
-
 #outage-report-view .outage-report-view .incident .numeric {
     text-align: right;
 }
-
 #outage-report-view .outage-report-view .alternate {
     background-color: #FFFFFF;
 }
-
 #outage-report-view .outage-report-view .level-0-incident {
     background-color: #FFDD00;
 }
-
 #outage-report-view .outage-report-view .level-1-incident {
     background-color: #F4B576;
 }
-
 #outage-report-view .outage-report-view .level-2-incident {
     background-color: #F78D8D;
 }
-
 #outage-report-service-statistics-container {
     background-color: #EAE7D0;
     padding: 4em 0.875em 0.875em;
 }
-
 #service-statistics-label {
     font-size: 0.875em;
 }
-
 #outage-report-disclaimer-container {
     background-color: #EAE7D0;
     margin-top: 5px;
     padding: 20px 0.875em;
 }
-
 #disclaimer-label {
     font-size: 0.875em;
 }
-
 #footer-view {
     margin-top: 0.75em;
 }
-
     #footer-view .footer-view {
         padding: 0 20px;
     }
-
 #logo-icon {
     width: 268px;
     height: 78px;
     margin-top: 0.5em;
 }
-
 #outage-map-legend-view {
 }
-
     #outage-map-legend-view .outage-map-legend-view {
     }
-
         #outage-map-legend-view .outage-map-legend-view .header {
             line-height: 1.333em;
             padding: 2px 5px;
         }
-
         #outage-map-legend-view .outage-map-legend-view .icons {
             line-height: 1.333em;
             padding: 2px 5px;
         }
-
 #outages-header-label,
 #legend-header-label {
     font-family: 'HelveticaNeue Condensed Heavy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1.333em;
 }
-
 #level-0-incident-label,
 #level-1-incident-label,
 #level-2-incident-label,
@@ -310,41 +215,34 @@ body {
     line-height: 1.333em;
     font-size: 0.750em;
 }
-
 #level-0-incident-icon {
     background-color: #FFFF54;
 }
-
 #level-1-incident-icon {
     background-color: #FFA24F;
 }
-
 #level-2-incident-icon {
     background-color: #FF4444;
 }
-
 #level-0-incident-icon,
 #level-1-incident-icon,
 #level-2-incident-icon {
     width: 24px;
     height: 24px;
 }
-
 #service-territory-icon,
 #county-lines-icon,
 #major-highways-icon {
     width: 72px;
     height: 24px;
 }
-/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
     border-radius: 5px;
     border: 2px solid #000;
     background-color: #FFF8CC;
     color: #000000;
 }
-
-    /* Use this next selector to style things like font-size and line-height: */
+    
     .tooltipster-default .tooltipster-content {
         font-family: 'HelveticaNeue Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 14px;
@@ -352,19 +250,14 @@ body {
         padding: 8px 10px;
         overflow: hidden;
     }
-
-    /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+    
     .tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
-        /* border-color: ... !important; */
+        
     }
-
-/* If you're using the icon option, use this next selector to style them */
 .tooltipster-icon {
     cursor: help;
     margin-left: 4px;
 }
-
-/* This is the base styling required to make all Tooltipsters work */
 .tooltipster-base {
     padding: 0;
     font-size: 0;
@@ -377,12 +270,9 @@ body {
     width: auto;
     overflow: visible;
 }
-
     .tooltipster-base .tooltipster-content {
         overflow: hidden;
     }
-
-/* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
 .tooltipster-arrow {
     display: block;
     text-align: center;
@@ -393,7 +283,6 @@ body {
     left: 0;
     z-index: -1;
 }
-
     .tooltipster-arrow span,
     .tooltipster-arrow-border {
         display: block;
@@ -401,7 +290,6 @@ body {
         height: 0;
         position: absolute;
     }
-
 .tooltipster-arrow-top span,
 .tooltipster-arrow-top-right span,
 .tooltipster-arrow-top-left span {
@@ -410,7 +298,6 @@ body {
     border-top: 8px solid;
     bottom: -7px;
 }
-
 .tooltipster-arrow-top .tooltipster-arrow-border,
 .tooltipster-arrow-top-right .tooltipster-arrow-border,
 .tooltipster-arrow-top-left .tooltipster-arrow-border {
@@ -419,7 +306,6 @@ body {
     border-top: 9px solid;
     bottom: -7px;
 }
-
 .tooltipster-arrow-bottom span,
 .tooltipster-arrow-bottom-right span,
 .tooltipster-arrow-bottom-left span {
@@ -428,7 +314,6 @@ body {
     border-bottom: 8px solid;
     top: -7px;
 }
-
 .tooltipster-arrow-bottom .tooltipster-arrow-border,
 .tooltipster-arrow-bottom-right .tooltipster-arrow-border,
 .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
@@ -437,7 +322,6 @@ body {
     border-bottom: 9px solid;
     top: -7px;
 }
-
 .tooltipster-arrow-top span,
 .tooltipster-arrow-top .tooltipster-arrow-border,
 .tooltipster-arrow-bottom span,
@@ -446,27 +330,22 @@ body {
     right: 0;
     margin: 0 auto;
 }
-
 .tooltipster-arrow-top-left span,
 .tooltipster-arrow-bottom-left span {
     left: 6px;
 }
-
 .tooltipster-arrow-top-left .tooltipster-arrow-border,
 .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
     left: 5px;
 }
-
 .tooltipster-arrow-top-right span,
 .tooltipster-arrow-bottom-right span {
     right: 6px;
 }
-
 .tooltipster-arrow-top-right .tooltipster-arrow-border,
 .tooltipster-arrow-bottom-right .tooltipster-arrow-border {
     right: 5px;
 }
-
 .tooltipster-arrow-left span,
 .tooltipster-arrow-left .tooltipster-arrow-border {
     border-top: 8px solid transparent !important;
@@ -476,14 +355,12 @@ body {
     margin-top: -7px;
     right: -7px;
 }
-
 .tooltipster-arrow-left .tooltipster-arrow-border {
     border-top: 9px solid transparent !important;
     border-bottom: 9px solid transparent !important;
     border-left: 9px solid;
     margin-top: -8px;
 }
-
 .tooltipster-arrow-right span,
 .tooltipster-arrow-right .tooltipster-arrow-border {
     border-top: 8px solid transparent !important;
@@ -493,15 +370,12 @@ body {
     margin-top: -7px;
     left: -7px;
 }
-
 .tooltipster-arrow-right .tooltipster-arrow-border {
     border-top: 9px solid transparent !important;
     border-bottom: 9px solid transparent !important;
     border-right: 9px solid;
     margin-top: -8px;
 }
-
-/* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
 .tooltipster-fade {
     opacity: 0;
     -webkit-transition-property: opacity;
@@ -510,11 +384,9 @@ body {
     -ms-transition-property: opacity;
     transition-property: opacity;
 }
-
 .tooltipster-fade-show {
     opacity: 1;
 }
-
 .tooltipster-grow {
     -webkit-transform: scale(0,0);
     -moz-transform: scale(0,0);
@@ -528,7 +400,6 @@ body {
     transition-property: transform;
     -webkit-backface-visibility: hidden;
 }
-
 .tooltipster-grow-show {
     -webkit-transform: scale(1,1);
     -moz-transform: scale(1,1);
@@ -542,7 +413,6 @@ body {
     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
-
 .tooltipster-swing {
     opacity: 0;
     -webkit-transform: rotateZ(4deg);
@@ -556,7 +426,6 @@ body {
     -ms-transition-property: -ms-transform;
     transition-property: transform;
 }
-
 .tooltipster-swing-show {
     opacity: 1;
     -webkit-transform: rotateZ(0deg);
@@ -571,7 +440,6 @@ body {
     -o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
     transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
 }
-
 .tooltipster-fall {
     top: 0;
     -webkit-transition-property: top;
@@ -586,10 +454,8 @@ body {
     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
-
 .tooltipster-fall-show {
 }
-
 .tooltipster-fall.tooltipster-dying {
     -webkit-transition-property: all;
     -moz-transition-property: all;
@@ -599,7 +465,6 @@ body {
     top: 0px !important;
     opacity: 0;
 }
-
 .tooltipster-slide {
     left: -40px;
     -webkit-transition-property: left;
@@ -614,10 +479,8 @@ body {
     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
-
     .tooltipster-slide.tooltipster-slide-show {
     }
-
     .tooltipster-slide.tooltipster-dying {
         -webkit-transition-property: all;
         -moz-transition-property: all;
@@ -627,8 +490,6 @@ body {
         left: 0px !important;
         opacity: 0;
     }
-
-/* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
 .tooltipster-content-changing {
     opacity: 0.5;
     -webkit-transform: scale(1.1, 1.1);
