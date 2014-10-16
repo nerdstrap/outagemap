@@ -1,10 +1,5 @@
 ﻿﻿<!DOCTYPE html>
-<!--[if lt IE 9 ]>
-    <html class="legacy">
-<![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html class="" lang="en">
-<!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -29,6 +24,11 @@
     <script data-main="js/main.js" src="js/libs/require.min.js"></script>
 </head>
 <body>
-    <div id="shell-view"></div>
+    <!--[if lt IE 9 ]>
+    <div id="shell-view" class="legacy"></div>
+    <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <div id="shell-view" class="modern"></div>
+    <!--<![endif]-->
 </body>
 </html>

@@ -6,7 +6,7 @@ require.config({
         },
         'env': {
             'apiUrl': '',
-            'appFolder': '/src',
+            'appFolder': '',
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100

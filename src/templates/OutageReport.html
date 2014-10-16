@@ -1,23 +1,23 @@
 <div class="outage-report-view">
     <div id="outage-report-title-container" class="row collapse">
-        <div class="small-6 columns">
+        <div class="six small-6 columns">
             <span id="report-title-label">{{{titleText}}}</span>
         </div>
-        <div id="timestamp-label-container" class="small-6 columns">
+        <div id="timestamp-label-container" class="six small-6 columns">
             <span id="timestamp-label">{{{timestamp}}}</span>
         </div>
     </div>
     <div id="outage-report-header-container" class="row collapse">
-        <div class="small-3 columns">
+        <div class="three small-3 columns">
             <span class="header-label">{{{countyNameTitleText}}}</span>
         </div>
-        <div class="small-3 columns numeric">
+        <div class="three small-3 columns numeric">
             <span class="header-label">{{{customersAffectedTitleText}}}</span>
         </div>
-        <div class="small-3 columns numeric">
+        <div class="three small-3 columns numeric">
             <span class="header-label">{{{customersServedTitleText}}}</span>
         </div>
-        <div class="small-3 columns numeric">
+        <div class="three small-3 columns numeric">
             <span class="header-label">{{{percentageAffectedTitleText}}}</span>
         </div>
     </div>
@@ -25,7 +25,7 @@
         {{#if reportRows}}
         {{#stripeRows reportRows "row collapse incident" "row collapse incident alternate" "grandTotal" "bold"}}
         <div class="{{stripeClass}}" data-uuid="{{uuid}}">
-            <div class="small-3 columns">
+            <div class="three small-3 columns">
                 {{#if properCountyName}}
                 <span class="county-name-label">{{{countyNameFormatted}}}</span>
                 {{/if}}
@@ -36,19 +36,19 @@
                 <span class="footer-label">{{{grandTotalTitleText}}}</span>
                 {{/if}}
             </div>
-            <div class="small-3 columns numeric">
+            <div class="three small-3 columns numeric">
                 {{#if customersAffected}}
                 <span class="customers-affected-label">{{formatNumber customersAffected}}</span>
                 {{/if}}
             </div>
-            <div class="small-3 columns numeric">
+            <div class="three small-3 columns numeric">
                 {{#if customersServed}}
                 <span class="customers-served-label">{{formatNumber customersServed}}</span>
                 {{else}}
                 <span class="customers-served-label">&nbsp;</span>
                 {{/if}}
             </div>
-            <div class="small-3 columns numeric">
+            <div class="three small-3 columns numeric">
                 {{#if percentageAffected}}
                 <span class="percentage-affected-label">{{percentageAffected}}</span>
                 {{/if}}
@@ -62,22 +62,22 @@
         <img id="outage-report-loading-icon" src="{{getAppUri loadingIconSrc}}" />
     </div>
     <div id="outage-report-no-incidents-container" class="row collapse hidden">
-        <div class="small-12 columns">
+        <div class="twelve small-12 columns">
             <span id="no-incidents-label">{{{noOutagesMessage}}}</span>
         </div>
     </div>
     <div id="outage-report-service-unavailable-container" class="row collapse hidden">
-        <div class="small-12 columns">
+        <div class="twelve small-12 columns">
             <span id="service-unavailable-label">{{{serviceUnavailableMessage}}}</span>
         </div>
     </div>
     <div id="outage-report-service-statistics-container" class="row collapse">
-        <div class="small-12 columns">
+        <div class="twelve small-12 columns">
             <span id="service-statistics-label">{{{serviceStatistics}}}</span>
         </div>
     </div>
     <div id="outage-report-disclaimer-container" class="row collapse">
-        <div class="small-12 columns">
+        <div class="twelve small-12 columns">
             <span id="disclaimer-label">{{{disclaimer}}}</span>
         </div>
     </div>
