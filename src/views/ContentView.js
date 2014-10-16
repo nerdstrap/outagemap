@@ -18,8 +18,8 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
-            this.outageMapSvg = options.outageMapSvg;
-            this.outageMapJs = options.outageMapJs;
+            this.outageMap = options.outageMap;
+            this.useLegacy = options.useLegacy;
 
             this.listenTo(events, events.showOutageMap, this.showOutageMapView);
             this.listenTo(events, events.showOutageReport, this.showOutageReportView);
@@ -42,8 +42,8 @@
                 model: currentContext.model,
                 dispatcher: currentContext.dispatcher,
                 region: currentContext.region,
-                outageMapSvg: currentContext.outageMapSvg,
-                outageMapJs: currentContext.outageMapJs
+                outageMap: currentContext.outageMap,
+                useLegacy: currentContext.useLegacy
             });
             this.renderChild(outageMapViewInstance);
 

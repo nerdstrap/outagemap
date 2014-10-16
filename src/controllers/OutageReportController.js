@@ -47,12 +47,19 @@
             var currentContext = this,
                 deferred = $.Deferred();
 
-            require(['svg!maps/' + region + '.svg', 'maps/' + region], function (outageMapSvg, outageMapJs) {
+            var outageMapTextName = 'svg!maps/' + region + '.svg';
+            var useLegacy = false;
+            if ($('html').is('.legacy')) {
+                outageMapTextName = 'maps/' + region;
+                useLegacy = true;
+            }
+
+            require([outageMapTextName], function (outageMap) {
                 var contentViewInstance = new ContentView({
                     region: region,
                     model: currentContext.outageReportModelInstance,
-                    outageMapSvg : outageMapSvg,
-                    outageMapJs: outageMapJs
+                    outageMap : outageMap,
+                    useLegacy: useLegacy
                 });
 
                 currentContext.router.swapContent(contentViewInstance);

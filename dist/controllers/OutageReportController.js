@@ -47,18 +47,26 @@
             var currentContext = this,
                 deferred = $.Deferred();
 
-            require(['svg!maps/' + region + '.svg'], function (outageMap) {
+            var outageMapTextName = 'svg!maps/' + region + '.svg';
+            var useLegacy = false;
+            if ($('html').is('.legacy')) {
+                outageMapTextName = 'maps/' + region;
+                useLegacy = true;
+            }
+
+            require([outageMapTextName], function (outageMap) {
                 var contentViewInstance = new ContentView({
                     region: region,
                     model: currentContext.outageReportModelInstance,
-                    outageMap : outageMap
+                    outageMap : outageMap,
+                    useLegacy: useLegacy
                 });
 
                 currentContext.router.swapContent(contentViewInstance);
-                //currentContext.outageReportModelInstance.getCurrentOutageReport(region);
-                //setInterval(function () {
-                //    currentContext.refreshData();
-                //}, env.getRefreshInterval());
+                currentContext.outageReportModelInstance.getCurrentOutageReport(region);
+                setInterval(function () {
+                    currentContext.refreshData();
+                }, env.getRefreshInterval());
                 var fragmentAlreadyMatches = (Backbone.history.fragment === 'outageReport?region=' + region || Backbone.history.fragment === '');
                 currentContext.router.navigate('outageReport?region=' + region, { replace: fragmentAlreadyMatches });
                 deferred.resolve(contentViewInstance);

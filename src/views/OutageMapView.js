@@ -21,13 +21,17 @@
             options || (options = {});
             this.dispatcher = options.dispatcher || this;
             this.region = options.region || '';
-            this.outageMapSvg = options.outageMapSvg;
-            this.outageMapJs = options.outageMapJs;
+            this.outageMap = options.outageMap;
+            this.useLegacy = options.useLegacy;
 
             this.listenTo(this.model, 'request', this.showLoading);
             this.listenTo(this.model, 'sync', this.updateViewFromModel);
 
-            this.listenTo(this, 'swapped', this._renderLegacy);
+            if (this.useLegacy) {
+                this.listenTo(this, 'swapped', this._renderLegacy);
+            } else {
+                this.listenTo(this, 'swapped', this._render);
+            }
 
             this.listenTo(events, events.beforeShowOutageMap, this.beforeShowOutageMap);
             this.listenTo(events, events.beforeHideOutageMap, this.beforeHideOutageMap);
@@ -52,7 +56,10 @@
         _render: function () {
             var currentContext = this;
             if (!this.mapInitialized) {
-                var svgElement = $('#svg-container').html(currentContext.outageMapSvg);
+                var svgElement = currentContext.$el.find('#svg-container');
+                if (svgElement) {
+                    svgElement.html(currentContext.outageMap);
+                }
                 this.svgRendered = true;
                 this.trigger('svg-rendered');
             }
@@ -61,7 +68,7 @@
         _renderLegacy: function () {
             var currentContext = this;
             if (!this.mapInitialized) {
-                currentContext.outageMapJs.render('svg-container');
+                currentContext.outageMap.render('svg-container');
                 this.svgRendered = true;
                 this.trigger('svg-rendered');
             }
@@ -69,7 +76,11 @@
 
         showLoading: function () {
             var currentContext = this;
-            currentContext.outageMapJs.resetServiceCounties();
+            if (currentContext.useLegacy) {
+                currentContext.outageMap.resetServiceCounties();
+            } else {
+                currentContext.resetServiceCounties();
+            }
         },
 
         updateViewFromModel: function () {
@@ -128,17 +139,22 @@
             var incidentLegacyTooltipFormatString = currentContext.region === 'swepco' ? appResources.getResource('swepcoIncidentLegacyTooltipFormatString') : appResources.getResource('incidentLegacyTooltipFormatString');
             var states = currentContext.model.getStates();
 
+            currentContext.serviceCounties = [];
+
             _.each(states, function (state) {
                 if (state.customersAffected > 0) {
                     if (state.incidents && state.incidents.length > 0) {
                         _.each(state.incidents, function (incident) {
                             var countySvgElementId = _countyPrefix + incident.countyId + _countySuffix;
-                            //currentContext.renderLegacyIncidentTooltip(countySvgElementId, incident, incidentTooltipFormatString);
-                            currentContext.renderLegacyIncidentTooltip(countySvgElementId, incident, incidentLegacyTooltipFormatString);
-                            //var countySvgElement = $('#' + countySvgElementId);
-                            //if (countySvgElement) {
-                            //    currentContext.renderIncidentTooltip(countySvgElement, incident, incidentTooltipFormatString);
-                            //}
+                            if (currentContext.useLegacy) {
+                                currentContext.renderLegacyIncidentTooltip(countySvgElementId, incident, incidentLegacyTooltipFormatString);
+                            } else {
+                                var countySvgElement = currentContext.$('#' + countySvgElementId);
+                                if (countySvgElement) {
+                                    currentContext.renderIncidentTooltip(countySvgElement, incident, incidentTooltipFormatString);
+                                    currentContext.serviceCounties.push({ id: countySvgElementId, svgElement: countySvgElement });
+                                }
+                            }
                         });
                     }
                 }
@@ -184,8 +200,9 @@
             var incidentLevelConfig = appIncidents.getIncidentLevel(incident.customersAffected);
             if (incidentLevelConfig) {
                 var tooltipText = tooltipFormatString.format(incident.properCountyName, env.formatNumber(incident.customersAffected));
-                var serviceCounty = currentContext.outageMapJs.getServiceCounty(countySvgElementId);
+                var serviceCounty = currentContext.outageMap.getServiceCounty(countySvgElementId);
                 if (serviceCounty) {
+                    //serviceCounty.toFront();
                     serviceCounty.attr({
                         'cursor': 'pointer',
                         'fill': incidentLevelConfig.fillColor,
@@ -193,9 +210,29 @@
                     });
                     serviceCounty.data('data-class-name', incidentLevelConfig.className);
                     serviceCounty.data('data-uuid', incident.uuid);
+                    serviceCounty.title = tooltipText;
+                    $(serviceCounty.node).tooltipster({
+                        contentAsHTML: true,
+                        touchDevices: false
+                    });
                     serviceCounty.click(currentContext.showOutageReportLegacy);
                 }
             }
+        },
+
+        resetServiceCounties: function () {
+            var currentContext = this;
+            _.each(currentContext.serviceCounties, function (s) {
+                var svgElement = s.svgElement;
+                svgElement.attr('cursor', 'default');
+                svgElement.attr('fill', 'none');
+                svgElement.removeAttr('data-uuid');
+                svgElement.removeAttr('data-class-name');
+                svgElement.title = '';
+                svgElement.removeAttr('title');
+                svgElement.tooltipster('destroy');
+                svgElement.off('click');
+            })
         }
     });
 
