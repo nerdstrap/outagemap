@@ -49,7 +49,7 @@
 
             var outageMapTextName = 'svg!maps/' + region + '.svg';
             var useLegacy = false;
-            if ($('html').is('.legacy')) {
+            if ($('#shell-view').is('.legacy')) {
                 outageMapTextName = 'maps/' + region;
                 useLegacy = true;
             }

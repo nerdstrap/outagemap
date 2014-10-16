@@ -130,6 +130,7 @@
             if (event) {
                 event.preventDefault();
             }
+            $(this.node).tooltipster('hide');
             events.trigger(events.showOutageReport, this.data('data-uuid'), this.data('data-class-name'));
         },
 

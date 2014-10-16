@@ -16,7 +16,7 @@ require.config({
         },
         'svg': {
             'extension': 'xml'
-        },
+        }
     },
     paths: {
         /* Require */
