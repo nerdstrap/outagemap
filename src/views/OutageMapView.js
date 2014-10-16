@@ -231,7 +231,9 @@
                 svgElement.removeAttr('data-class-name');
                 svgElement.title = '';
                 svgElement.removeAttr('title');
-                svgElement.tooltipster('destroy');
+                if (svgElement.is('.tooltipstered')) {
+                    svgElement.tooltipster('destroy');
+                }
                 svgElement.off('click');
             })
         }
