@@ -200,7 +200,7 @@
         getCurrentOutageReport: function (region) {
             this.requestedRegion = region;
             var xhr = this.fetch({
-                url: env.getApiUrl() + '/OutageXml.aspx',
+                url: env.getApiUrl() + '/OutageXml.aspx?output=json',
                 reset: true
             });
 

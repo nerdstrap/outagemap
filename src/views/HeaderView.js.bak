@@ -101,6 +101,7 @@
 
             var shellHeight = this.getShellHeight();
             this.setResizer(shellHeight);
+
         },
 
         showOutageMapClick: function (event) {

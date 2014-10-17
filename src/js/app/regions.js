@@ -1607,7 +1607,7 @@
           },
           {
               "stateName": "VA",
-              "countyId": "DANVILLE (IND CITY)",
+              "countyId": "DANVILLE_CITY",
               "properCountyName": "Danville (Ind City)"
           },
           {
@@ -1632,7 +1632,7 @@
           },
           {
               "stateName": "VA",
-              "countyId": "GALAX (IND CITY)",
+              "countyId": "GALAX_CITY",
               "properCountyName": "Galax (Ind City)"
           },
           {
@@ -1652,12 +1652,12 @@
           },
           {
               "stateName": "VA",
-              "countyId": "LYNCHBURG (IND CITY)",
+              "countyId": "LYNCHBURG_CITY",
               "properCountyName": "Lynchburg (Ind City)"
           },
           {
               "stateName": "VA",
-              "countyId": "MARTINSVILLE (IND CITY)",
+              "countyId": "MARTINSVILLE_CITY",
               "properCountyName": "Martinsville (Ind City)"
           },
           {
@@ -1687,7 +1687,7 @@
           },
           {
               "stateName": "VA",
-              "countyId": "RADFORD (IND CITY)",
+              "countyId": "RADFORD_CITY",
               "properCountyName": "Radford (Ind City)"
           },
           {
@@ -1697,7 +1697,7 @@
           },
           {
               "stateName": "VA",
-              "countyId": "ROANOKE (IND CITY)",
+              "countyId": "ROANOKE_CITY",
               "properCountyName": "Roanoke (Ind City)"
           },
           {
@@ -1707,7 +1707,7 @@
           },
           {
               "stateName": "VA",
-              "countyId": "SALEM (IND CITY)",
+              "countyId": "SALEM_CITY",
               "properCountyName": "Salem (Ind City)"
           },
           {
@@ -1890,6 +1890,10 @@
 
         getServiceCounty: function (stateName, countyId) {
             var result = _.find(serviceCounties, function (county) { return county.stateName === stateName && county.countyId === countyId; });
+            if (!result) {
+                console.trace('serviceCounty for stateName /"' + stateName.toString() + '/" and countyId /"' + countyId.toString() + '/" not found!');
+                result = defaultCounty;
+            }
             return result;
         }
     };

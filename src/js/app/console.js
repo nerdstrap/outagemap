@@ -32,7 +32,7 @@ define(function (require) {
     }
 
     // Can be customized if needed
-    console.levels = ['debug', 'trace', 'info', 'warn', 'error'];
+    console.levels = ['debug', 'trace', 'info', 'warn', 'error', 'log'];
 
     // Disabled by default
     console._level = 'off';
@@ -49,6 +49,7 @@ define(function (require) {
         if (console.getLevel() === 'off') {
             return false;
         }
+		var strategy = console.getLevel();
         if (_.indexOf(console.levels, level) === -1) {
             throw new Error('Invalid log level "' + strategy + '", must be one of ' + JSON.stringify(console.levels));
         }

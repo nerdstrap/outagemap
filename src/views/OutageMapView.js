@@ -122,13 +122,26 @@
                 }
             }
         },
-
+        getShellHeight: function () {
+            return $('#shell-view').height();
+        },
+        setResizer: function (height) {
+            var resizer = $('#ifResizer');
+            if (resizer) {
+                //resizer.attr('src', '/outages/IFrameResizer.aspx?height=' + height)
+            }
+        },
         showOutageReport: function (event) {
             if (event) {
                 event.preventDefault();
             }
             $(this).tooltipster('hide');
             events.trigger(events.showOutageReport, this.getAttribute('data-uuid'), this.getAttribute('data-class-name'));
+            var shellHeight = $('#shell-view').height();
+            var resizer = $('#ifResizer');
+            if (resizer) {
+                //resizer.attr('src', '/outages/IFrameResizer.aspx?height=' + height);
+            }
         },
 
         showOutageReportLegacy: function (event) {
@@ -137,6 +150,11 @@
             }
             $(this.node).tooltipster('hide');
             events.trigger(events.showOutageReport, this.data('data-uuid'), this.data('data-class-name'));
+            var shellHeight = $('#shell-view').height();
+            var resizer = $('#ifResizer');
+            if (resizer) {
+                //resizer.attr('src', '/outages/IFrameResizer.aspx?height=' + height);
+            }
         },
 
         renderIncidents: function () {
