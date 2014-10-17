@@ -1,7 +1,8 @@
 ﻿define(function (require) {
     'use strict';
 
-    var $ = require('jquery'),
+    var module = require('module'),
+        $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
         CompositeView = require('views/CompositeView'),
@@ -10,10 +11,14 @@
         template = require('hbs!templates/OutageMap'),
         regions = require('regions'),
         appIncidents = require('incidents'),
-        appResources = require('resources');
+        appResources = require('resources'),
+        masterConfig = (module.config && module.config()) || {};
 
     var _countyPrefix = '_x3C_';
     var _countySuffix = '_x3E_';
+
+    var _svgWidth = masterConfig.svgWidth;
+    var _svgHeight = masterConfig.svgHeight;
 
     var OutageMapView = CompositeView.extend({
         initialize: function (options) {
@@ -68,7 +73,7 @@
         _renderLegacy: function () {
             var currentContext = this;
             if (!this.mapInitialized) {
-                currentContext.outageMap.render('svg-container');
+                currentContext.outageMap.render('svg-container', _svgWidth, _svgHeight);
                 this.svgRendered = true;
                 this.trigger('svg-rendered');
             }

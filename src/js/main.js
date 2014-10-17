@@ -16,6 +16,10 @@ require.config({
         },
         'svg': {
             'extension': 'xml'
+        },
+        'views/OutageMapView': {
+            'svgWidth': 686,
+            'svgHeight': 446
         }
     },
     paths: {
