@@ -1884,8 +1884,7 @@
         },
 
         getServiceCounties: function (stateName) {
-            var results = _.filter(serviceCounties, function (county) { return county.stateName === stateName; });
-            return results;
+            return _.filter(serviceCounties, function (county) { return county.stateName === stateName; });
         },
 
         getServiceCounty: function (stateName, countyId) {

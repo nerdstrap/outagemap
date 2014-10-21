@@ -98,7 +98,7 @@
                     }
 
                     var stateCopy = _.clone(state);
-                    stateCopy.grandTotal = true,
+                    stateCopy.grandTotal = true;
                     stateCopy.percentageAffected = (stateCopy.percentageAffected * 100).toFixed(1);
                     stateReportRows.push(stateCopy);
                 }
@@ -112,7 +112,7 @@
             if (states.length > 1 && stateReportRows.length > 0) {
                 for (var j = 0; j < stateReportRows.length; j++) {
                     reportRows.push(stateReportRows[j]);
-                };
+                }
                 reportRows.push({});
             }
 

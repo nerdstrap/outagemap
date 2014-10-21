@@ -78,7 +78,7 @@
         twitterPost: function () {
             var statusPostFormatString = appResources.getResource('twitterStatusPostFormatString');
             var twitterPostLinkFormatString = appResources.getResource('twitterPostLinkFormatString');
-            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName(), this.outageReportModelInstance.getOutageMapLink())
+            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName(), this.outageReportModelInstance.getOutageMapLink());
             var twitterPostLink = twitterPostLinkFormatString.format(statusPost);
             globals.window.open(twitterPostLink);
         },
@@ -92,7 +92,7 @@
         facebookPost: function () {
             var statusPostFormatString = appResources.getResource('facebookStatusPostFormatString');
             var facebookPostLinkFormatString = appResources.getResource('facebookPostLinkFormatString');
-            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName())
+            var statusPost = statusPostFormatString.format(this.outageReportModelInstance.getOperatingCompanyName());
             var facebookPostLink = facebookPostLinkFormatString.format(this.outageReportModelInstance.getOutageMapLink(), statusPost);
             globals.window.open(facebookPostLink);
         },

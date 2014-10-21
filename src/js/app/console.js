@@ -39,11 +39,11 @@ define(function (require) {
 
     console.getLevel = function () {
         return console._level;
-    }
+    };
 
     console.setLevel = function (level) {
         console._level = level;
-    }
+    };
 
     var enabledFor = function (level) {
         if (console.getLevel() === 'off') {

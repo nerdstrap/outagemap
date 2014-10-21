@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -16,3 +16,21 @@
 /node_modules/matchdep/.travis.yml
 /node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/parser.js
 /node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/utils.js
+
+.idea/outagemap.iml
+
+.idea/scopes/scope_settings.xml
+
+.idea/webResources.xml
+
+.idea/.name
+
+.idea/misc.xml
+
+.idea/encodings.xml
+
+.idea/modules.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
