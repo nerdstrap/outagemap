@@ -47,12 +47,8 @@
             var currentContext = this,
                 deferred = $.Deferred();
 
-            var outageMapTextName = 'svg!maps/' + region + '.svg';
-            var useLegacy = false;
-            if ($('#shell-view').is('.legacy')) {
-                outageMapTextName = 'maps/' + region + '.ie8.raphael';
-                useLegacy = true;
-            }
+            var outageMapTextName = 'maps/' + region + '.ie8.raphael';
+            var useLegacy = true;
 
             require([outageMapTextName], function (outageMap) {
                 var contentViewInstance = new ContentView({

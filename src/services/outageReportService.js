@@ -38,6 +38,7 @@ define(function (require) {
                           "abbr": "VA",
                           "counties_served": "38",
                           "customers_served": "528060",
+                          "disabled": "true",
                           "incident": [
                             {
                                 "county": "ALBEMARLE",
