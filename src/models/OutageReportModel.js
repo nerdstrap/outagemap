@@ -239,7 +239,7 @@
                         var dataset = NewDataSet.dataset;
                         if (dataset.hasOwnProperty('timestamp')) {
                             try {
-                                var timestamp = new Date(dataset.timestamp);
+                                var timestamp = env.dateFromISO(dataset.timestamp);
                                 derivedAttributes.timestamp = timestamp;
                             }
                             catch (e) {

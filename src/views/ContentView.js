@@ -21,6 +21,9 @@
             this.outageMap = options.outageMap;
             this.useLegacy = options.useLegacy;
 
+            this.listenTo(this.model, 'request', this.showLoading);
+            this.listenTo(this.model, 'sync', this.hideLoading);
+
             this.listenTo(events, events.showOutageMap, this.showOutageMapView);
             this.listenTo(events, events.showOutageReport, this.showOutageReportView);
         },
@@ -70,11 +73,33 @@
                     rowObj.removeClass('level-0-incident').removeClass('level-1-incident').removeClass('level-2-incident');
                 }
             });
+
+            var shellHeight = this.getShellHeight();
+            this.setResizer(shellHeight);
+
         },
 
         showOutageMapView: function (event) {
             this.$('#outage-report-view').addClass('hidden');
             this.$('#outage-map-view').removeClass('hidden');
+
+            var shellHeight = this.getShellHeight();
+            this.setResizer(shellHeight);
+        },
+        getShellHeight: function () {
+            return $('#shell-view').height();
+        },
+        setResizer: function (height) {
+            var resizer = $('#ifResizer');
+            if (resizer) {
+                resizer.attr('src', '../IFrameResizer.aspx?height=' + height);
+            }
+        },
+        showLoading: function () {
+            this.$('.content-view').addClass('refreshing');
+        },
+        hideLoading: function () {
+            this.$('.content-view').removeClass('refreshing');
         }
     });
 

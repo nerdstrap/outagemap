@@ -1,0 +1,66 @@
+﻿/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+
+	JBU 5/19/2011 - Modifications from default
+	- Changed close button to upper right
+	- Lessened the bottom border
+
+*/
+#cboxOverlay{background:#000;}
+#colorbox{}
+    #cboxTopLeft{width:14px; height:43px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) no-repeat 0 0;}
+    #cboxTopCenter{height:43px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/border2.png) repeat-x top left;}
+    #cboxTopRight{width:14px; height:43px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) no-repeat -36px 0;}
+    #cboxBottomLeft{width:14px; height:14px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) no-repeat 0 -61px;}
+    #cboxBottomCenter{height:14px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/border2.png) repeat-x bottom left;}
+    #cboxBottomRight{width:14px; height:14px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) no-repeat -36px -61px;}
+    #cboxMiddleLeft{width:14px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) repeat-y -175px 0;}
+    #cboxMiddleRight{width:14px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) repeat-y -211px 0;}
+    #cboxContent{background:#fff; overflow:visible;}
+        #cboxLoadedContent{margin-bottom:5px;}
+        #cboxLoadedContent .colorboxContentPadding { padding: 10px; }
+        #cboxLoadingOverlay{background:url(/global/utilities/lib/images/skins/jquery/colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(/global/utilities/lib/images/skins/jquery/colorbox/loading.gif) no-repeat center center;}
+        #cboxTitle{position:absolute; bottom:-25px; left:0; text-align:center; width:100%; font-weight:bold; color:#7C7C7C;}
+        #cboxCurrent{position:absolute; bottom:-25px; left:58px; font-weight:bold; color:#7C7C7C;}
+        
+        #cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{position:absolute; top:-29px; background:url(/global/utilities/lib/images/skins/jquery/colorbox/controls2.png) no-repeat 0px 0px; width:23px; height:23px; text-indent:-9999px;}
+        #cboxPrevious{left:0px; background-position: -51px -25px;}
+        #cboxPrevious.hover{background-position:-51px 0px;}
+        #cboxNext{left:27px; background-position:-75px -25px;}
+        #cboxNext.hover{background-position:-75px 0px;}
+        #cboxClose{right:0; background-position:-100px -25px;}
+        #cboxClose.hover{background-position:-100px 0px;}
+        
+        .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0px; right:27px;}
+        .cboxSlideshow_on #cboxSlideshow.hover{background-position:-150px 0px;}
+        .cboxSlideshow_off #cboxSlideshow{background-position:-150px -25px; right:27px;}
+        .cboxSlideshow_off #cboxSlideshow.hover{background-position:-125px 0px;}
+
+#colorbox { width: 500px; }
+
+
+
+/*
+    DRR 07/28/2011 - Added fix for Android 2.3.x and below to accomodate issue 
+    `                where absolute positioned divs with high z-index property is
+                     ignored causing lower z-indexed items to bleed through
+*/
+.androidNoTapHighlight:not(#cboxContent) { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }

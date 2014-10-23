@@ -82,15 +82,6 @@
             }
             events.trigger(events.facebookFollowUs);
         },
-        getShellHeight: function() {
-        	return $('#shell-view').height();
-        },
-        setResizer: function(height) {
-            var resizer = $('#ifResizer');
-            if (resizer) {
-                //resizer.attr('src', '/outages/IFrameResizer.aspx?height=' + height);
-            }
-        },
         showOutageReportClick: function (event) {
             if (event) {
                 event.preventDefault();
@@ -98,9 +89,6 @@
             this.showOutageMapButton();
             events.trigger(events.beforeHideOutageMap);
             events.trigger(events.showOutageReport);
-
-            var shellHeight = this.getShellHeight();
-            this.setResizer(shellHeight);
         },
 
         showOutageMapClick: function (event) {
@@ -111,9 +99,6 @@
 
             events.trigger(events.beforeShowOutageMap);
             events.trigger(events.showOutageMap);
-
-            var shellHeight = this.getShellHeight();
-            this.setResizer(shellHeight);
         },
 
         showOutageReportButton: function () {
