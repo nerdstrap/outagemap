@@ -6,8 +6,8 @@ require.config({
         },
         'env': {
             'apiUrl': '',
-            /*'appFolder': '/src',*/
-            'appFolder': '/~michaelbaltic/outagemap/src',
+            'appFolder': '/src',
+            /*'appFolder': '/~michaelbaltic/outagemap/src',*/
             'refreshInterval': 30000, /*30 seconds*/
             'dataExpiration': 3600000,/*1 hour*/
             'incidentTotalThreshold': 100
@@ -19,8 +19,8 @@ require.config({
             'extension': 'xml'
         },
         'views/OutageMapView': {
-            'svgWidth': 686,
-            'svgHeight': 446
+            'svgWidth': 676,
+            'svgHeight': 442
         }
     },
     paths: {

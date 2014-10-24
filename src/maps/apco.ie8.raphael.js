@@ -236,27 +236,27 @@ define(function (require) {
         var rect_dl = rsr.rect(393.8, 11, 67.6, 17.7).attr({x: '393.8',y: '11',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dl');
         var text_dm = rsr.text(0, 0, 'Wheeling').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 343.7502 17.3664").data('id', 'text_dm');
         var rect_dn = rsr.rect(477.6, 416.3, 82.1, 15.4).attr({x: '477.6',y: '416.3',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dn');
-        var text_do = rsr.text(0, 0, 'Martinsville').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 427.5953 422.6232").data('id', 'text_do');
+        var text_do = rsr.text(0, 0, 'Martinsville').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 415.5953 422.6232").data('id', 'text_do');
         var rect_dp = rsr.rect(303.2, 402.5, 53.8, 15.3).attr({x: '303.2',y: '402.5',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dp');
-        var text_dq = rsr.text(0, 0, 'Marion').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 260.2495 406.9053").data('id', 'text_dq');
+        var text_dq = rsr.text(0, 0, 'Marion').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 260.2495 408.9053").data('id', 'text_dq');
         var rect_dr = rsr.rect(132.7, 437.6, 67.9, 14.9).attr({x: '132.7',y: '437.6',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dr');
         var text_ds = rsr.text(0, 0, 'Kingsport').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 170.3447 445.9216").data('id', 'text_ds');
         var rect_dt = rsr.rect(301.7, 326.5, 86, 16.2).attr({x: '301.7',y: '326.5',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dt');
-        var text_du = rsr.text(0, 0, 'Bluefield').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 310.8871 345.8866").data('id', 'text_du');
+        var text_du = rsr.text(0, 0, 'Bluefield').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 300.8871 345.8866").data('id', 'text_du');
         var rect_dv = rsr.rect(416.9, 373, 107.7, 17.8).attr({x: '416.9',y: '373',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dv');
-        var text_dw = rsr.text(0, 0, 'Christiansburg').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 350.8964 377.3182").data('id', 'text_dw');
+        var text_dw = rsr.text(0, 0, 'Christiansburg').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 345.8964 379.3182").data('id', 'text_dw');
         var rect_dx = rsr.rect(469.6, 348.1, 66, 16).attr({x: '469.6',y: '348.1',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dx');
-        var text_dy = rsr.text(0, 0, 'Roanoke').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 4150.5621 355.4328").data('id', 'text_dy');
+        var text_dy = rsr.text(0, 0, 'Roanoke').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 412.5621 355.4328").data('id', 'text_dy');
         var rect_dz = rsr.rect(346.7, 287, 54.3, 16.8).attr({x: '346.7',y: '287',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_dz');
-        var text_ea = rsr.text(0, 0, 'Beckley').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 316.6788 290.4089").data('id', 'text_ea');
+        var text_ea = rsr.text(0, 0, 'Beckley').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 300.6788 291.4089").data('id', 'text_ea');
         var rect_eb = rsr.rect(253.4, 159.6, 99.2, 15.5).attr({x: '253.4',y: '159.6',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_eb');
-        var text_ec = rsr.text(0, 0, 'Point Pleasant').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 220.3705 163.0041").data('id', 'text_ec');
+        var text_ec = rsr.text(0, 0, 'Point Pleasant').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 185.3705 165.0041").data('id', 'text_ec');
         var rect_ed = rsr.rect(301.8, 218.8, 84.3, 15.5).attr({x: '301.8',y: '218.8',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_ed');
-        var text_ee = rsr.text(0, 0, 'Charleston').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 301.8209 230.1744").data('id', 'text_ee');
+        var text_ee = rsr.text(0, 0, 'Charleston').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 345.8209 225.1744").data('id', 'text_ee');
         var rect_ef = rsr.rect(147.5, 225.9, 88.6, 16.7).attr({x: '147.5',y: '225.9',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_ef');
-        var text_eg = rsr.text(0, 0, 'Huntington').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 147.5124 237.3049").data('id', 'text_eg');
+        var text_eg = rsr.text(0, 0, 'Huntington').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 162.5124 219.3049").data('id', 'text_eg');
         var rect_eh = rsr.rect(550.5, 331.6, 73.6, 18).attr({x: '550.5',y: '331.6',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_eh');
-        var text_ei = rsr.text(0, 0, 'Lynchburg').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 550.5297 342.9442").data('id', 'text_ei');
+        var text_ei = rsr.text(0, 0, 'Lynchburg').attr({fill: '#58595B',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 495.5297 337.9442").data('id', 'text_ei');
         STATE_NAMES_x2F__CITIES.attr({'id': 'STATE_NAMES_x2F__CITIES','name': 'STATE_NAMES_x2F__CITIES'});
         var group_a = rsr.set();
         var path_ej = rsr.path("M542.2,342.1c-2.5,0-4.6-2.1-4.6-4.6s2.1-4.6,4.6-4.6s4.6,2.1,4.6,4.6S544.8,342.1,542.2,342.1z").attr({fill: '#58595B',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'path_ej');
@@ -315,8 +315,7 @@ define(function (require) {
         group_k.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_k'});
         var group_l = rsr.set();
         var rect_fq = rsr.rect(489.1, 30.7, 129.1, 19.5).attr({x: '489.1',y: '30.7',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_fq');
-        var text_fr = rsr.text(0, 0, 'PENNSYLVA').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 489.1463 42.0929").data('id', 'text_fr');
-        var text_fs = rsr.text(0, 0, '-').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 591.0463 42.0929").data('id', 'text_fs');
+        var text_fr = rsr.text(0, 0, 'PENNSYLVANIA').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 489.1463 42.0929").data('id', 'text_fr');
         group_l.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_l'});
         var group_m = rsr.set();
         var rect_ft = rsr.rect(184.1, 76.9, 57.7, 21.3).attr({x: '184.1',y: '76.9',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_ft');
@@ -324,8 +323,7 @@ define(function (require) {
         group_m.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_m'});
         var group_n = rsr.set();
         var rect_fv = rsr.rect(387.7, 454.2, 149.3, 19.4).attr({x: '387.7',y: '454.2',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_fv');
-        var text_fw = rsr.text(0, 0, 'NORTH CAROLI').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 387.667 465.5926").data('id', 'text_fw');
-        var text_fx = rsr.text(0, 0, '-').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 518.467 465.5926").data('id', 'text_fx');
+        var text_fw = rsr.text(0, 0, 'NORTH CAROLINA').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 387.667 465.5926").data('id', 'text_fw');
         group_n.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_n'});
         var group_o = rsr.set();
         var rect_fy = rsr.rect(32, 449.4, 105.5, 19.3).attr({x: '32',y: '449.4',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_fy');
@@ -656,8 +654,7 @@ define(function (require) {
         );
         group_l.push(
             rect_fq ,
-            text_fr ,
-            text_fs
+            text_fr
         );
         group_m.push(
             rect_ft ,
@@ -665,8 +662,7 @@ define(function (require) {
         );
         group_n.push(
             rect_fv ,
-            text_fw ,
-            text_fx
+            text_fw
         );
         group_o.push(
             rect_fy ,

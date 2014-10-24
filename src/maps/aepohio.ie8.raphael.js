@@ -8,8 +8,7 @@ define(function (require) {
     var map = {};
 
     map.render = function (rootElementId, width, height) {
-        var rsr = Raphael(document.getElementById(rootElementId));
-        rsr.setViewBox(0, 0, width, height, true);
+        var rsr = Raphael(document.getElementById(rootElementId), width, height);
 
         var BASE_LAYER = rsr.set();
         var _x3C_BASE_LAYER_BACKGROUND_COLOR_x3E_ = rsr.rect(0, 0, 744, 484).attr({ id: '_x3C_BASE_LAYER_BACKGROUND_COLOR_x3E_', fill: '#EAE7D0', parent: 'BASE_LAYER', 'stroke-width': '0', 'stroke-opacity': '1' }).data('id', '_x3C_BASE_LAYER_BACKGROUND_COLOR_x3E_');
@@ -187,7 +186,7 @@ define(function (require) {
         group_b.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_b'});
         var group_c = rsr.set();
         var rect_br = rsr.rect(516, 380.1, 186.3, 19.9).attr({x: '516',y: '380.1',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_br');
-        var text_bs = rsr.text(0, 0, 'WEST VIRGINIA').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 574.6127 386.5073").data('id', 'text_bs');
+        var text_bs = rsr.text(0, 0, 'WEST VIRGINIA').attr({fill: '#BBB5AF',"font-family": "HelveticaNeue Condensed, Helvetica, Arial, sans-serif","font-size": '16',"letter-spacing": '2',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).transform("m1 0 0 1 594.6127 386.5073").data('id', 'text_bs');
         group_c.attr({'parent': 'STATE_NAMES_x2F__CITIES','name': 'group_c'});
         var group_d = rsr.set();
         var rect_bt = rsr.rect(657, 188, 87.3, 13.6).attr({x: '657',y: '188',fill: 'none',parent: 'STATE_NAMES_x2F__CITIES','stroke-width': '0','stroke-opacity': '1'}).data('id', 'rect_bt');
